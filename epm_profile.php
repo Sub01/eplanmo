@@ -80,7 +80,7 @@ include 'assets/php/php_epm_genset.php';
 		<div class="col-xl-12 col-md-12 mb-4">
 			<div class="card border-left-primary shadow h-100 py-2">
 				<div class="row">
-  					<div class="col-3">
+  					<div class="col-md-3">
     					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       						<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Personal Information</a>
       						<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
@@ -88,11 +88,11 @@ include 'assets/php/php_epm_genset.php';
       						<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
     					</div>
   					</div>
-  					<div class="col-9">
+  					<div class="col-md-9">
     					<div class="tab-content" id="v-pills-tabContent">
       						<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 								<div class="row">
-									<div class="col-8">
+									<div class="col-md-4">
 									<table class="table">
               						<tr>
                 						<td class="text">Name</td>
@@ -126,7 +126,7 @@ include 'assets/php/php_epm_genset.php';
               						</tr>
             						</table>
 								</div>
-								<div class="col-4">
+								<div class="col-md-4">
 									<center>
 									<?php echo '<img style="height:50%; width:50%; border-radius:20%" alt="" loading="lazy" src="data:image/jpeg;base64,'.base64_encode($image).'"/>'; ?>
 									<br>
