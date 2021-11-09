@@ -91,7 +91,7 @@ include 'assets/php/php_epm_genset.php';
   					<div class="col-9">
     					<div class="tab-content" id="v-pills-tabContent">
       						<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-								<div class="col-8">
+								<div class="col-7">
 									<table class="table">
               						<tr>
                 						<td class="text">Name</td>
