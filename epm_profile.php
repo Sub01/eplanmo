@@ -91,7 +91,8 @@ include 'assets/php/php_epm_genset.php';
   					<div class="col-9">
     					<div class="tab-content" id="v-pills-tabContent">
       						<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-								<div class="col-7">
+								<div class="row">
+									<div class="col-8">
 									<table class="table">
               						<tr>
                 						<td class="text">Name</td>
@@ -134,6 +135,7 @@ include 'assets/php/php_epm_genset.php';
 									<button class="button btn btn-primary" id="updateButton" data-toggle="modal" data-target="#modalUpdateInfo">Update Information</button>
 									<button href="#" class="btn btn-primary" id="updateButton" data-toggle="modal" data-target="#modalUpdatePassword">Update Password</button>
 									</center>
+								</div>
 								</div>
 							</div>
       						<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"></div>
