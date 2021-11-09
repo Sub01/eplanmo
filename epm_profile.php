@@ -131,9 +131,9 @@ include 'assets/php/php_epm_genset.php';
 									<?php echo '<img style="height:50%; width:50%; border-radius:20%" alt="" loading="lazy" src="data:image/jpeg;base64,'.base64_encode($image).'"/>'; ?>
 									<br>
 									<br>
-									<button class="button btn btn-primary" id="updateButton" data-toggle="modal" data-target="#modalUpdateImage">Update Image</button>
-									<button class="button btn btn-primary" id="updateButton" data-toggle="modal" data-target="#modalUpdateInfo">Update Information</button>
-									<button href="#" class="btn btn-primary" id="updateButton" data-toggle="modal" data-target="#modalUpdatePassword">Update Password</button>
+									<button class="button btn btn-primary" id="updateButton" data-toggle="modal" data-target="#modalUpdateImage" style="margin-bottom: 3px;">Update Image</button>
+									<button class="button btn btn-primary" id="updateButton" data-toggle="modal" data-target="#modalUpdateInfo" style="margin-bottom: 3px;">Update Information</button>
+									<button href="#" class="btn btn-primary" id="updateButton" data-toggle="modal" data-target="#modalUpdatePassword" style="margin-bottom: 3px;">Update Password</button>
 									</center>
 								</div>
 								</div>
