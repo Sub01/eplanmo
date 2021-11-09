@@ -127,7 +127,7 @@ include 'assets/php/php_epm_genset.php';
 								</div>
 								<div class="col-4">
 									<center>
-									<?php echo '<img style="height:300px; width:300px; border-radius:20%" alt="" loading="lazy" src="data:image/jpeg;base64,'.base64_encode($image).'"/>'; ?>
+									<?php echo '<img style="height:50%; width:50%; border-radius:20%" alt="" loading="lazy" src="data:image/jpeg;base64,'.base64_encode($image).'"/>'; ?>
 									<br>
 									<br>
 									<button class="button btn btn-primary" id="updateButton" data-toggle="modal" data-target="#modalUpdateImage">Update Image</button>
