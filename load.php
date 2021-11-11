@@ -4,7 +4,7 @@ $connect = new PDO('mysql:host=
 mysql-57012-0.cloudclusters.net;dbname=eplanmo', 'admin', 'izju8Wk1');
 $id = $_SESSION['User'];
 $data = array();
-$query = "SELECT * FROM events WHERE Name='$id' ORDER BY ID";
+$query = "SELECT * FROM events WHERE Name='$id'";
 $statement = $connect->prepare($query);
 $statement->execute();
 
