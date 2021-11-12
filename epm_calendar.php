@@ -236,11 +236,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 											</div>
 										</div>
 										<!--============= END CARD TABS CONTENT ===============-->
-										
-							
-										
-
-										
 									</div>
 								</div>
 							</div>

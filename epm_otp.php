@@ -53,10 +53,10 @@ else{
 		$result = $db-> query($sql);
 		if ($result-> num_rows >0) {
     		$row = mysqli_fetch_assoc($result);
-		
+			$code = rand(999999, 111111);
+      		$status = "Unverified";
 			$name = $row['Name'];
 			$surname = $row['Surname'];
-			$code = $row['Code'];
 		
 			//==========================  INSTANTIATE MAILER
 			$mail = new PHPMailer(true);
@@ -85,7 +85,14 @@ else{
 			$mail->msgHTML($message);
 		
 			if($mail->send()){
-				$script = "<script> $(document).ready(function(){ $('#modalResendSuccess').modal('show'); }); </script>";
+				$sql = "UPDATE users SET Code='$code' WHERE email='$email'";
+				$result = $db-> query($sql);
+				if($result){
+					$script = "<script> $(document).ready(function(){ $('#modalResendSuccess').modal('show'); }); </script>";
+				}
+				else{
+					$script = "<script> $(document).ready(function(){ $('#modalResendFailed').modal('show'); }); </script>";
+				}
 			}else{
 				$script = "<script> $(document).ready(function(){ $('#modalResendFailed').modal('show'); }); </script>";
 			}
