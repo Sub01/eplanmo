@@ -52,7 +52,7 @@ else{
 		$sql = "SELECT * FROM users WHERE Email='$email'";
 		$result = $db-> query($sql);
 		if ($result-> num_rows >0) {
-    		$fetch = mysqli_fetch_assoc($result);
+    		$row = mysqli_fetch_assoc($result);
 		
 			$name = $row['Name'];
 			$surname = $row['Surname'];
