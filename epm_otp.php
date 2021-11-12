@@ -86,9 +86,11 @@ else{
 		
 			if($mail->send()){
 				$script = "<script> $(document).ready(function(){ $('#modalResendSuccess').modal('show'); }); </script>";
+				header("location: epm_otp.php?email=$email");
 				exit();
 			}else{
 				$script = "<script> $(document).ready(function(){ $('#modalResendFailed').modal('show'); }); </script>";
+				header("location: epm_otp.php?email=$email");
 				exit();
 			}
 		}
