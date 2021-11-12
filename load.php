@@ -1,6 +1,6 @@
 <?php
 session_start();
-$connect = new PDO("mysql:host=mysql-57012-0.cloudclusters.net; dbname=eplanmo", 'admin', 'izju8Wk1');
+$connect = new PDO("mysql:host=mysql-57012-0.cloudclusters.net;port=15418; dbname=eplanmo", 'admin', 'izju8Wk1');
 $id = $_SESSION['User'];
 $data = array();
 $query = "SELECT * FROM events WHERE Name='$id'";
@@ -18,7 +18,5 @@ foreach($result as $row)
         'end'=> $row["End"]
     );
 }
-
 echo json_encode($data);
-
 ?>

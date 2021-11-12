@@ -33,6 +33,43 @@ $result =$db->query($sql);
 		exit();
 	}
 }
+
+if(isset($_POST['resend'])) {
+$email = $_SESSION['email'];
+$otp = $_POST['otp'];
+$sql = "SELECT * FROM users WHERE Code='$otp' AND Email='$email'";
+$result =$db->query($sql);
+	if($result-> num_rows>0){
+		$fetch = mysqli_fetch_assoc($result);
+		$email = $fetch['Email'];
+		$sql2 = "UPDATE `users` SET Code='0', Status='Verified' WHERE Email='$email'";
+		$result2 = $db-> query($sql2);
+		if($result2){
+			$_SESSION['status'] = "success";
+			$_SESSION['message'] = "EMAIL VERIFICATION COMPLETE";
+			header('Location: index.php');
+			exit();
+		}
+		else{
+			$_SESSION['status'] = "error";
+			$_SESSION['message'] = "There's a problem processing your request";
+			header('Location: epm_otp.php');
+			exit();
+		}
+	}
+	else{
+		$_SESSION['status'] = "error";
+		$_SESSION['message'] = "YOU'VE ENTERED A WRONG OTP";
+		header('Location: epm_otp.php');
+		exit();
+	}
+}
+
+if(isset($_POST['back'])){
+	unset($_SESSION['email']);
+	header('Location: index.php');
+	exit();
+}
 ?>
 <!doctype html>
 <html>
@@ -79,21 +116,19 @@ $result =$db->query($sql);
 							<?php unset($_SESSION['message']); ?>
 							<?php unset($_SESSION['status']); ?>
 						</div>
-						<div class="input-div">
-							<div class="i">
-								<i class="fas fa-key"></i>
-							</div>
-							<div class="div">
-								<h5>Enter OTP</h5>
-								<input class="input" type="text" name="otp">
-							</div>
+						<div class="row form-group">								
+							<i class="fas fa-key fa-2x" style="padding: 5px;"></i>
+							<span style="width: 90%"><input class="form-control" type="text" name="otp" placeholder="ENTER OTP"></span>
 						</div>
 						<div class="row">
-							<div class="col-md-6">
-								<button type="button" onclick="window.location.href='index.php'" class="btn" style="width: 50%"><i class="fas fa-hand-point-left"></i> BACK</button>
+							<div class="col-md-4">
+								<button type="button" onclick="window.location.href='index.php'" class="btn" style="width: 100%"><i class="fas fa-hand-point-left"></i> BACK</button>
 							</div>
-							<div class="col-md-6">
-								<button class="btn btn-secondary fa-pull-right" name="submit" type="submit" style="width: 50%"><i class="fas fa-check"></i> SUBMIT</button>
+							<div class="col-md-4">
+								<button type="button" class="btn" style="width: 100%" name="resend"><i class="fas fa-envelope"></i> RESEND EMAIL</button>
+							</div>
+							<div class="col-md-4">
+								<button class="btn btn-secondary fa-pull-right" name="submit" type="submit" style="width: 100%"><i class="fas fa-check"></i> SUBMIT</button>
 							</div>
 							</form>	
 						</div>		

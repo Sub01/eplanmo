@@ -2,17 +2,21 @@
 	include "config.php";
 	include ("assets/php/php_epm_genset.php");
    	session_start();
-   
+ 
 if(isset($_POST['login'])){
-	// username and password sent from form 
-    $username = mysqli_real_escape_string($db,$_POST['username']);
-    $password = mysqli_real_escape_string($db,$_POST['password']); 
+
+    $username = $_POST['username'];
+    $password = $_POST['password']; 
+	
     $sql = "SELECT * FROM `users` WHERE Username = '$username' and Password = '$password'";
+	
     $result = $db-> query($sql);
 	
     if ($result-> num_rows >0) {
     	$row = $result-> fetch_assoc();
+		
 		if($row['Status'] == 'Unverified'){
+			$_SESSION['email'] = $row['Email'];
 			$_SESSION['status'] = "error";
          	$_SESSION['message'] = "It appears that your account is not verified yet, please check your email and enter the OTP below to activate your account!";  
 			header("Location: epm_otp.php");
@@ -47,7 +51,7 @@ if(isset($_POST['forgot'])){
 	   		$message .= '<h3 style="font-family: Verdana;"> HELLO ' .strip_tags($_POST['username2']). ' !</h3>';
 		    $message .= '<h5>We have successfuly tracked your account and your request in now available.';
 		    $message .= '<h5>Please click the link below to proceed in reset password page.<br>';
-		    $message .= "<a href='https://localhost/EPM/epm_resetpass.php?Code=$code&User=$username&Email=$email'>https://localhost/EPM/epm_resetpass.php?Code=$code&User=$username&Email=$email</a>";
+		    $message .= "<a href='https://eplanmo.herokuapp.com/epm_resetpass.php?Code=$code&User=$username&Email=$email'>https://localhost/EPM/epm_resetpass.php?Code=$code&User=$username&Email=$email</a>";
 		    $headers = "From: eplanmo@noreply.com\r\n";
 		    $headers .= "MIME-Version: 1.0\r\n";
 		    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
@@ -113,6 +117,7 @@ if(isset($_POST['forgot'])){
             		<?php endif; ?>
             		<?php unset($_SESSION['message']); ?>
             		<?php unset($_SESSION['status']); ?>
+					<?php unset($_SESSION['email']); ?>
 				</div>
             	<div class="card-body">
 				    <form action="" method="POST">

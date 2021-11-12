@@ -9,6 +9,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+
+
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -41,8 +43,13 @@ else
       	$status = "Unverified";
 	  	$_SESSION['email'] = $email;
 	  	
+		//==========================  INSTANTIATE MAILER
 		$mail = new PHPMailer(true);
+		$mail->isHTML(true);
 		$mail->isSMTP();
+		$mail->CharSet = "utf-8";
+		
+		//==========================  GOOGLE ACCOUNT CREDENTIALS
 		$mail->Host = 'smtp.gmail.com';
 		$mail->SMTPAuth = "true";
 		$mail->Username = "mh.tokio@gmail.com";
@@ -50,10 +57,17 @@ else
 		$mail->SMTPSecure = "ssl";
 		$mail->Port = "465";
 		
-		$mail->setFrom("tgp.lagunaprovincialcouncil@gmail.com");
-		$mail->addAddress("$email");
-		$mail->isHTML(true);
-		$mail->Body = "$code";
+		//==========================  EMAIL INFORMATIONS
+		$mail->setFrom("mh.tokio@gmail.com","Gino Toralba/EPM DEV");
+		$name = $name. " " .$surname;
+		$mail->addAddress("$email", $name);
+		
+		$email_template = 'epm_mail_template.html';
+		$message = file_get_contents($email_template);
+		$message = str_replace('%user%', $uname, $message);
+		$message = str_replace('%code%', $code, $message);
+		
+		$mail->msgHTML($message);
 		
 	   	if($mail->send()){
 			$sql2 = "INSERT INTO `users`(`Images`,`Username`,`Password`,`Name`,`Middle_Name`,`Surname`,`Birthday`,`Contact_No`,`Email`,`Code`,`Status`) VALUES('$img_data','$uname','$pword1','$name','$middle','$surname','$bday','$contact','$email','$code','$status')";

@@ -26,7 +26,7 @@ if(isset($_GET['Code']) && isset($_GET['User']) && isset($_GET['Email'])){
 	}
 }
 else{
-	header("Location: /EPM/index.php");
+	header("Location: /index.php");
 	exit();
 }
 ?>

@@ -1,7 +1,6 @@
 <?php
 
-$connect = new PDO('mysql:host=
-mysql-57012-0.cloudclusters.net;dbname=eplanmo', 'admin', 'izju8Wk1');
+$connect = new PDO('mysql:host=mysql-57012-0.cloudclusters.net;port=15418; dbname=eplanmo', 'admin', 'izju8Wk1');
 
 if(isset($_POST["id"]))
 {
