@@ -59,12 +59,12 @@ else
 		
 		//==========================  EMAIL INFORMATIONS
 		$mail->setFrom("mh.tokio@gmail.com","Gino Toralba/EPM DEV");
-		$name = $name. " " .$surname;
+		$newname = $name. " " .$surname;
 		$mail->addAddress("$email", $name);
 		
 		$email_template = 'epm_mail_template.html';
 		$message = file_get_contents($email_template);
-		$message = str_replace('%user%', $uname, $message);
+		$message = str_replace('%user%', $newname, $message);
 		$message = str_replace('%code%', $code, $message);
 		
 		$mail->msgHTML($message);
