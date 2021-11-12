@@ -17,87 +17,84 @@ if(!isset($_GET['email'])){
 	header('Location: index.php');
 	exit();
 }
-if(isset($_POST['submit'])) {
-	
-$otp = $_POST['otp'];
-$email = $_GET['email'];
-$sql = "SELECT * FROM users WHERE Code='$otp' AND Email='$email'";
-$result =$db->query($sql);
-	if($result-> num_rows>0){
-		$fetch = mysqli_fetch_assoc($result);
-		$email = $fetch['Email'];
-		$sql2 = "UPDATE `users` SET Code='0', Status='Verified' WHERE Email='$email'";
-		$result2 = $db-> query($sql2);
-		if($result2){
-			$_SESSION['status'] = "success";
-			$_SESSION['message'] = "EMAIL VERIFICATION COMPLETE";
-			header('Location: index.php');
-			exit();
+else{
+	$email = $_GET['email'];
+	if(isset($_POST['submit'])) {
+		$sql = "SELECT * FROM users WHERE AND Email='$email'";
+		$result =$db->query($sql);
+		if($result-> num_rows>0){
+			$fetch = mysqli_fetch_assoc($result);
+			$email = $fetch['Email'];
+			$sql2 = "UPDATE `users` SET Code='0', Status='Verified' WHERE Email='$email'";
+			$result2 = $db-> query($sql2);
+			if($result2){
+				$_SESSION['status'] = "success";
+				$_SESSION['message'] = "EMAIL VERIFICATION COMPLETE";
+				header('Location: index.php');
+				exit();
+			}
+			else{
+				$_SESSION['status'] = "error";
+				$_SESSION['message'] = "There's a problem processing your request";
+				header("Location: epm_otp.php?email=$email");
+				exit();
+			}
 		}
 		else{
 			$_SESSION['status'] = "error";
-			$_SESSION['message'] = "There's a problem processing your request";
+			$_SESSION['message'] = "YOU'VE ENTERED A WRONG OTP";
 			header("Location: epm_otp.php?email=$email");
 			exit();
 		}
 	}
-	else{
-		$_SESSION['status'] = "error";
-		$_SESSION['message'] = "YOU'VE ENTERED A WRONG OTP";
-		header("Location: epm_otp.php?email=$email");
-		exit();
-	}
-}
-
-if(isset($_POST['resend'])) {
-	$email = $_GET['email'];
-	$sql1 = "SELECT Username FROM users Where Email = '$email' LIMIT 1";
-	$result = $db-> query($sql);
-	if ($result-> num_rows >0) {
-    	$row = $result-> fetch_assoc();
+	if(isset($_POST['resend'])) {
+		$sql1 = "SELECT Username FROM users Where Email = '$email' LIMIT 1";
+		$result = $db-> query($sql);
+		if ($result-> num_rows >0) {
+    		$row = $result-> fetch_assoc();
 		
-		$name = $row['Name'];
-		$surname = $row['Surname'];
-		$code = $row['Code'];
+			$name = $row['Name'];
+			$surname = $row['Surname'];
+			$code = $row['Code'];
 		
-		//==========================  INSTANTIATE MAILER
-		$mail = new PHPMailer(true);
-		$mail->isHTML(true);
-		$mail->isSMTP();
-		$mail->CharSet = "utf-8";
+			//==========================  INSTANTIATE MAILER
+			$mail = new PHPMailer(true);
+			$mail->isHTML(true);
+			$mail->isSMTP();
+			$mail->CharSet = "utf-8";
 		
-		//==========================  GOOGLE ACCOUNT CREDENTIALS
-		$mail->Host = 'smtp.gmail.com';
-		$mail->SMTPAuth = "true";
-		$mail->Username = "mh.tokio@gmail.com";
-		$mail->Password = "cwovxtcdrzoxjmmp";
-		$mail->SMTPSecure = "ssl";
-		$mail->Port = "465";
+			//==========================  GOOGLE ACCOUNT CREDENTIALS
+			$mail->Host = 'smtp.gmail.com';
+			$mail->SMTPAuth = "true";
+			$mail->Username = "mh.tokio@gmail.com";
+			$mail->Password = "cwovxtcdrzoxjmmp";
+			$mail->SMTPSecure = "ssl";
+			$mail->Port = "465";
 		
-		//==========================  EMAIL INFORMATIONS
-		$mail->setFrom("mh.tokio@gmail.com","E-Plan Mo");
-		$newname = $name. " " .$surname;
-		$mail->addAddress("$email", $name);
+			//==========================  EMAIL INFORMATIONS
+			$mail->setFrom("mh.tokio@gmail.com","E-Plan Mo");
+			$newname = $name. " " .$surname;
+			$mail->addAddress("$email", $name);
 		
-		$email_template = 'epm_mail_template.html';
-		$message = file_get_contents($email_template);
-		$message = str_replace('%user%', $newname, $message);
-		$message = str_replace('%code%', $code, $message);
+			$email_template = 'epm_mail_template.html';
+			$message = file_get_contents($email_template);
+			$message = str_replace('%user%', $newname, $message);
+			$message = str_replace('%code%', $code, $message);
 		
-		$mail->msgHTML($message);
+			$mail->msgHTML($message);
 		
-		if($mail->send()){
-			$script = "<script> $(document).ready(function(){ $('#modalResendSuccess').modal('show'); }); </script>";
-		}else{
-			$script = "<script> $(document).ready(function(){ $('#modalResendFailed').modal('show'); }); </script>";
+			if($mail->send()){
+				$script = "<script> $(document).ready(function(){ $('#modalResendSuccess').modal('show'); }); </script>";
+			}else{
+				$script = "<script> $(document).ready(function(){ $('#modalResendFailed').modal('show'); }); </script>";
+			}
 		}
 	}
-}
-
-if(isset($_POST['back'])){
-	unset($_SESSION['email']);
-	header('Location: index.php');
-	exit();
+	if(isset($_POST['back'])){
+		unset($_SESSION['email']);
+		header('Location: index.php');
+		exit();
+	}
 }
 ?>
 <!doctype html>
