@@ -12,14 +12,15 @@ use PHPMailer\PHPMailer\Exception;
 
 session_start();
 
-$email = $_SESSION['email'];
+
 if(!isset($_GET['email'])){
 	header('Location: index.php');
 	exit();
 }
 if(isset($_POST['submit'])) {
-
+	
 $otp = $_POST['otp'];
+$email = $_GET['email'];
 $sql = "SELECT * FROM users WHERE Code='$otp' AND Email='$email'";
 $result =$db->query($sql);
 	if($result-> num_rows>0){
@@ -36,20 +37,20 @@ $result =$db->query($sql);
 		else{
 			$_SESSION['status'] = "error";
 			$_SESSION['message'] = "There's a problem processing your request";
-			header('Location: epm_otp.php');
+			header("Location: epm_otp.php?email=$email");
 			exit();
 		}
 	}
 	else{
 		$_SESSION['status'] = "error";
 		$_SESSION['message'] = "YOU'VE ENTERED A WRONG OTP";
-		header('Location: epm_otp.php');
+		header("Location: epm_otp.php?email=$email");
 		exit();
 	}
 }
 
 if(isset($_POST['resend'])) {
-
+	$email = $_GET['email'];
 	$sql1 = "SELECT Username FROM users Where Email = '$email' LIMIT 1";
 	$result = $db-> query($sql);
 	if ($result-> num_rows >0) {
@@ -186,6 +187,7 @@ if(isset($_POST['back'])){
       </div>
     </div>
   </div>
+	
 <div id="modalResendError" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
