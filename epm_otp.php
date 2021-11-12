@@ -1,10 +1,21 @@
 <?php
 include "config.php";
 include ("assets/php/php_epm_genset.php");
+
+require 'assets/mailer/Exception.php';
+require 'assets/mailer/PHPMailer.php';
+require 'assets/mailer/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 session_start();
 
-if(isset($_POST['submit'])) {
 $email = $_SESSION['email'];
+
+if(isset($_POST['submit'])) {
+
 $otp = $_POST['otp'];
 $sql = "SELECT * FROM users WHERE Code='$otp' AND Email='$email'";
 $result =$db->query($sql);
@@ -35,33 +46,47 @@ $result =$db->query($sql);
 }
 
 if(isset($_POST['resend'])) {
-$email = $_SESSION['email'];
-$otp = $_POST['otp'];
-$sql = "SELECT * FROM users WHERE Code='$otp' AND Email='$email'";
-$result =$db->query($sql);
-	if($result-> num_rows>0){
-		$fetch = mysqli_fetch_assoc($result);
-		$email = $fetch['Email'];
-		$sql2 = "UPDATE `users` SET Code='0', Status='Verified' WHERE Email='$email'";
-		$result2 = $db-> query($sql2);
-		if($result2){
-			$_SESSION['status'] = "success";
-			$_SESSION['message'] = "EMAIL VERIFICATION COMPLETE";
-			header('Location: index.php');
-			exit();
+
+	$sql1 = "SELECT Username FROM users Where Email = '$email' LIMIT 1";
+	$result = $db-> query($sql);
+	if ($result-> num_rows >0) {
+    	$row = $result-> fetch_assoc();
+		
+		$name = $row['Name'];
+		$surname = $row['Surname'];
+		$code = $row['Code'];
+		
+		//==========================  INSTANTIATE MAILER
+		$mail = new PHPMailer(true);
+		$mail->isHTML(true);
+		$mail->isSMTP();
+		$mail->CharSet = "utf-8";
+		
+		//==========================  GOOGLE ACCOUNT CREDENTIALS
+		$mail->Host = 'smtp.gmail.com';
+		$mail->SMTPAuth = "true";
+		$mail->Username = "mh.tokio@gmail.com";
+		$mail->Password = "cwovxtcdrzoxjmmp";
+		$mail->SMTPSecure = "ssl";
+		$mail->Port = "465";
+		
+		//==========================  EMAIL INFORMATIONS
+		$mail->setFrom("mh.tokio@gmail.com","E-Plan Mo");
+		$newname = $name. " " .$surname;
+		$mail->addAddress("$email", $name);
+		
+		$email_template = 'epm_mail_template.html';
+		$message = file_get_contents($email_template);
+		$message = str_replace('%user%', $newname, $message);
+		$message = str_replace('%code%', $code, $message);
+		
+		$mail->msgHTML($message);
+		
+		if($mail->send()){
+			$script = "<script> $(document).ready(function(){ $('#modalResendSuccess').modal('show'); }); </script>";
+		}else{
+			$script = "<script> $(document).ready(function(){ $('#modalResendFailed').modal('show'); }); </script>";
 		}
-		else{
-			$_SESSION['status'] = "error";
-			$_SESSION['message'] = "There's a problem processing your request";
-			header('Location: epm_otp.php');
-			exit();
-		}
-	}
-	else{
-		$_SESSION['status'] = "error";
-		$_SESSION['message'] = "YOU'VE ENTERED A WRONG OTP";
-		header('Location: epm_otp.php');
-		exit();
 	}
 }
 
@@ -140,6 +165,38 @@ if(isset($_POST['back'])){
 			</div>
 		</div>
 	</div>
+	
+	
+	
+	
+<div id="modalResendSuccess" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+			<img src="assets/images/congrats.png" style="width: 10%;height: 10%">
+          	<h2 class="modal-title">Email Sent</h2>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Email has been successfuly resent. If you still can't find the email, try checking your spam folder.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div id="modalResendError" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+			<img src="assets/images/error.png" style="width: 10%;height: 10%">
+          	<h2 class="modal-title">Email failed to resend !</h2>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
 <script>
 const inputs = document.querySelectorAll(".input");
 function addcl(){
