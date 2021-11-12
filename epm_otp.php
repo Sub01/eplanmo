@@ -86,12 +86,8 @@ else{
 		
 			if($mail->send()){
 				$script = "<script> $(document).ready(function(){ $('#modalResendSuccess').modal('show'); }); </script>";
-				header("location: epm_otp.php?email=$email");
-				exit();
 			}else{
 				$script = "<script> $(document).ready(function(){ $('#modalResendFailed').modal('show'); }); </script>";
-				header("location: epm_otp.php?email=$email");
-				exit();
 			}
 		}
 	}
@@ -170,6 +166,10 @@ else{
 			<div class="col-md-2">
 				
 			</div>
+		</div>
+		<div class="row">
+			<?php if(isset($script)){ echo $script; } ?>
+			<?php unset($script); ?>
 		</div>
 	</div>
 	
