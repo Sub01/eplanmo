@@ -1,6 +1,6 @@
 <?php 
 
-$sql1 = "SELECT * FROM users WHERE Email='$email'";
+$sql = "SELECT * FROM users WHERE Email='$email'";
 $result = $db-> query($sql);
 if ($result-> num_rows >0) {
     $row = mysqli_fetch_assoc($result);

@@ -48,6 +48,49 @@ else{
 			exit();
 		}
 	}
+	if(isset($_POST['resend'])) {
+		$sql = "SELECT * FROM users WHERE Email='$email'";
+		$result = $db-> query($sql);
+		if ($result-> num_rows >0) {
+    		$fetch = mysqli_fetch_assoc($result);
+		
+			$name = $row['Name'];
+			$surname = $row['Surname'];
+			$code = $row['Code'];
+		
+			//==========================  INSTANTIATE MAILER
+			$mail = new PHPMailer(true);
+			$mail->isHTML(true);
+			$mail->isSMTP();
+			$mail->CharSet = "utf-8";
+		
+			//==========================  GOOGLE ACCOUNT CREDENTIALS
+			$mail->Host = 'smtp.gmail.com';
+			$mail->SMTPAuth = "true";
+			$mail->Username = "mh.tokio@gmail.com";
+			$mail->Password = "cwovxtcdrzoxjmmp";
+			$mail->SMTPSecure = "ssl";
+			$mail->Port = "465";
+		
+			//==========================  EMAIL INFORMATIONS
+			$mail->setFrom("mh.tokio@gmail.com","E-Plan Mo");
+			$newname = $name. " " .$surname;
+			$mail->addAddress("$email", $name);
+		
+			$email_template = 'epm_mail_template.html';
+			$message = file_get_contents($email_template);
+			$message = str_replace('%user%', $newname, $message);
+			$message = str_replace('%code%', $code, $message);
+		
+			$mail->msgHTML($message);
+		
+			if($mail->send()){
+				$script = "<script> $(document).ready(function(){ $('#modalResendSuccess').modal('show'); }); </script>";
+			}else{
+				$script = "<script> $(document).ready(function(){ $('#modalResendFailed').modal('show'); }); </script>";
+			}
+		}
+	}
 	if(isset($_POST['back'])){
 		unset($_SESSION['email']);
 		header('Location: index.php');
@@ -109,7 +152,7 @@ else{
 								<button type="button" onclick="window.location.href='index.php'" class="btn" style="width: 100%"><i class="fas fa-hand-point-left"></i> BACK</button>
 							</div>
 							<div class="col-md-4">
-								<button type="submit" class="btn resend" style="width: 100%" name="resend"><i class="fas fa-envelope"></i> RESEND EMAIL</button>
+								<button type="submit" class="btn" style="width: 100%" name="resend"><i class="fas fa-envelope"></i> RESEND EMAIL</button>
 							</div>
 							<div class="col-md-4">
 								<button class="btn btn-secondary fa-pull-right" name="submit" type="submit" style="width: 100%"><i class="fas fa-check"></i> SUBMIT</button>
@@ -178,12 +221,6 @@ $("document").ready(function(){
        $("div.alert").remove();
     }, <?php echo $gensetmodclose ?> ); 
 
-});
-$('.resend').click(function() {
-  $.ajax({
-    type: "POST",
-    url: "epm_otp2.php"
-  })
 });
 </script>
 <body>
