@@ -19,8 +19,9 @@ if(!isset($_GET['email'])){
 }
 else{
 	$email = $_GET['email'];
+	
 	if(isset($_POST['submit'])) {
-		$sql = "SELECT * FROM users WHERE AND Email='$email'";
+		$sql = "SELECT * FROM users WHERE Email='$email'";
 		$result =$db->query($sql);
 		if($result-> num_rows>0){
 			$fetch = mysqli_fetch_assoc($result);
@@ -48,10 +49,10 @@ else{
 		}
 	}
 	if(isset($_POST['resend'])) {
-		$sql1 = "SELECT * FROM users WHERE Email = '$email' LIMIT 1";
+		$sql1 = "SELECT * FROM users WHERE Email='$email'";
 		$result = $db-> query($sql);
 		if ($result-> num_rows >0) {
-    		$row = $result-> fetch_assoc();
+    		$row = mysqli_fetch_assoc($result);
 		
 			$name = $row['Name'];
 			$surname = $row['Surname'];
