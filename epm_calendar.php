@@ -173,7 +173,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     											<a class="nav-item nav-link active" id="nav-events-tab" data-toggle="tab" href="#nav-events" role="tab" aria-controls="nav-events" aria-selected="true">ADD EVENTS</a>
     											<a class="nav-item nav-link" id="nav-teachers-tab" data-toggle="tab" href="#nav-teachers" role="tab" aria-controls="nav-teachers" aria-selected="false">ADD TEACHERS</a>
     											<a class="nav-item nav-link" id="nav-subjects-tab" data-toggle="tab" href="#nav-subjects" role="tab" aria-controls="nav-subject" aria-selected="false">ADD SUBJECT</a>
-												<a class="nav-item nav-link" id="nav-schedule-tab" data-toggle="tab" href="#nav-schedule" role="tab" aria-controls="nav-schedule" aria-selected="false">ADD SCHEDULE</a>
+												<a class="nav-item nav-link" id="nav-schedule-tab" data-toggle="tab" href="#nav-schedule" role="tab" aria-controls="nav-schedule" aria-selected="false">ADD GRADES</a>
 												
   											</div>
 										</nav>
