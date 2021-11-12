@@ -48,7 +48,7 @@ else{
 		}
 	}
 	if(isset($_POST['resend'])) {
-		$sql1 = "SELECT Username FROM users Where Email = '$email' LIMIT 1";
+		$sql1 = "SELECT * FROM users WHERE Email = '$email' LIMIT 1";
 		$result = $db-> query($sql);
 		if ($result-> num_rows >0) {
     		$row = $result-> fetch_assoc();
