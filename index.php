@@ -14,7 +14,7 @@ if(isset($_POST['login'])){
 	
     if ($result-> num_rows >0) {
     	$row = $result-> fetch_assoc();
-		
+		$email = $row['Email'];
 		if($row['Status'] == 'Unverified'){
 			$_SESSION['email'] = $row['Email'];
 			$_SESSION['status'] = "error";
