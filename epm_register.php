@@ -229,7 +229,7 @@ else
         <div class="modal-header">
 			<img src="assets/images/congrats.png" style="width: 10%;height: 10%">
           	<h2 class="modal-title">Congratulations</h2>
-          <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='epm_otp.php'">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='epm_otp.php?email=<?php echo $email?>'">&times;</button>
         </div>
         <div class="modal-body">
           <p>Congratulations on successfuly creating your account. Please check your email for the One Time Pin Code.</p>

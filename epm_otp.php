@@ -13,7 +13,10 @@ use PHPMailer\PHPMailer\Exception;
 session_start();
 
 $email = $_SESSION['email'];
-
+if(!isset($_GET['email'])){
+	header('Location: index.php');
+	exit();
+}
 if(isset($_POST['submit'])) {
 
 $otp = $_POST['otp'];

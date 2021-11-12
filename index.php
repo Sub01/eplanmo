@@ -19,7 +19,7 @@ if(isset($_POST['login'])){
 			$_SESSION['email'] = $row['Email'];
 			$_SESSION['status'] = "error";
          	$_SESSION['message'] = "It appears that your account is not verified yet, please check your email and enter the OTP below to activate your account!";  
-			header("Location: epm_otp.php");
+			header("Location: epm_otp.php?email=$email");
          	exit();
 		 }
 		 else{
