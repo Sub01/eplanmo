@@ -150,7 +150,7 @@ if(isset($_POST['back'])){
 								<button type="button" onclick="window.location.href='index.php'" class="btn" style="width: 100%"><i class="fas fa-hand-point-left"></i> BACK</button>
 							</div>
 							<div class="col-md-4">
-								<button type="button" class="btn" style="width: 100%" name="resend"><i class="fas fa-envelope"></i> RESEND EMAIL</button>
+								<button type="submit" class="btn" style="width: 100%" name="resend"><i class="fas fa-envelope"></i> RESEND EMAIL</button>
 							</div>
 							<div class="col-md-4">
 								<button class="btn btn-secondary fa-pull-right" name="submit" type="submit" style="width: 100%"><i class="fas fa-check"></i> SUBMIT</button>
