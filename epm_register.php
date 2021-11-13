@@ -40,7 +40,9 @@ else
       	$allowed = ['png', 'gif', 'jpg', 'jpeg'];
       	$img_data = addslashes(file_get_contents($_FILES['image']['tmp_name']));
 	  	$code = rand(999999, 111111);
-      	$status = "Unverified";
+      	$account_status = "Unverified";
+		$code_status = "Valid";
+		$timer = 120;
 	  	$_SESSION['email'] = $email;
 	  	
 		//==========================  INSTANTIATE MAILER
@@ -70,7 +72,7 @@ else
 		$mail->msgHTML($message);
 		
 	   	if($mail->send()){
-			$sql2 = "INSERT INTO `users`(`Images`,`Username`,`Password`,`Name`,`Middle_Name`,`Surname`,`Birthday`,`Contact_No`,`Email`,`Code`,`Status`) VALUES('$img_data','$uname','$pword1','$name','$middle','$surname','$bday','$contact','$email','$code','$status')";
+			$sql2 = "INSERT INTO `users`(`Images`,`Username`,`Password`,`Name`,`Middle_Name`,`Surname`,`Birthday`,`Contact_No`,`Email`,`Code`,`Code_Status`, `Timer`, `Account_StatUs`) VALUES('$img_data','$uname','$pword1','$name','$middle','$surname','$bday','$contact','$email','$code','$code_status','$timer','$account_status')";
 		   	$result2 = mysqli_query($db, $sql2);
 		   	$script = "<script> $(document).ready(function(){ $('#modalRegSuccess').modal('show'); }); </script>";
        	}else{
