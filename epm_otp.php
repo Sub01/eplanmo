@@ -34,7 +34,7 @@ else{
 		$otp = $fetch['Code'];
 		$time = $fetch['Timer'];
 		if(isset($_POST['submit'])) {
-			if($cstts =="invalid"){
+			if($cstts =="Invalid"){
 				$_SESSION['status'] = "error";
 				$_SESSION['message'] = "YOU'VE ENTERED AN EXPIRED OTP. CLICK RESEND TO GENERATE ANOTHER OTP";
 				header("Location: epm_otp.php?email=$email");
