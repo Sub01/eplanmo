@@ -22,13 +22,15 @@ else{
 	$sql = "SELECT * FROM users WHERE Email='$email'";
 	$result =$db->query($sql);
 	$fetch = mysqli_fetch_assoc($result);
-	$time = $fetch['Timer'];
-	$cstts = $fetch['Code_Status'];
 	if(!$result){
+		$_SESSION['status'] = "error";
+		$_SESSION['message'] = "SESSION EXPIRED";
 		header('Location: index.php');
 		exit();
 	}
 	else{
+		$time = $fetch['Timer'];
+		$cstts = $fetch['Code_Status'];
 		if(isset($_POST['submit'])) {
 		$sql2 = "UPDATE `users` SET Code='0', Status='Verified' WHERE Email='$email'";
 		$result2 = $db-> query($sql2);
