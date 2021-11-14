@@ -47,7 +47,7 @@ else{
 				exit();
 			}
 			else{
-				$sql2 = "UPDATE `users` SET Code='0', Status='Verified' WHERE Email='$email'";
+				$sql2 = "UPDATE `users` SET Code='0', Account_Status='Verified' WHERE Email='$email'";
 				$result2 = $db-> query($sql2);
 				if($result2){
 					$_SESSION['status'] = "success";

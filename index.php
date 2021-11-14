@@ -15,7 +15,7 @@ if(isset($_POST['login'])){
     if ($result-> num_rows >0) {
     	$row = $result-> fetch_assoc();
 		$email = $row['Email'];
-		if($row['Status'] == 'Unverified'){
+		if($row['Account_Status'] == 'Unverified'){
 			$_SESSION['email'] = $row['Email'];
 			$_SESSION['status'] = "error";
          	$_SESSION['message'] = "It appears that your account is not verified yet, please check your email and enter the OTP below to activate your account!";  
