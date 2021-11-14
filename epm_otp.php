@@ -24,7 +24,12 @@ else{
 	$fetch = mysqli_fetch_assoc($result);
 	$time = $fetch['Timer'];
 	$cstts = $fetch['Code_Status'];
-	if(isset($_POST['submit'])) {
+	if(!$result){
+		header('Location: index.php');
+		exit();
+	}
+	else{
+		if(isset($_POST['submit'])) {
 		$sql2 = "UPDATE `users` SET Code='0', Status='Verified' WHERE Email='$email'";
 		$result2 = $db-> query($sql2);
 		if($result2){
@@ -104,6 +109,7 @@ else{
 		unset($_SESSION['email']);
 		header('Location: index.php');
 		exit();
+	}
 	}
 }
 ?>
