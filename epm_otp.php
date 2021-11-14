@@ -23,14 +23,24 @@ else{
 	$result =$db->query($sql);
 	$fetch = mysqli_fetch_assoc($result);
 	$time = $fetch['Timer'];
+	$cstts = $fetch['Code_Status'];
 	if(isset($_POST['submit'])) {
 		$sql2 = "UPDATE `users` SET Code='0', Status='Verified' WHERE Email='$email'";
 		$result2 = $db-> query($sql2);
 		if($result2){
-			$_SESSION['status'] = "success";
-			$_SESSION['message'] = "EMAIL VERIFICATION COMPLETE";
-			header('Location: index.php');
-			exit();
+			if($cstts=="Valid"){
+				$_SESSION['status'] = "success";
+				$_SESSION['message'] = "EMAIL VERIFICATION COMPLETE";
+				header('Location: index.php');
+				exit();
+			}
+			else{
+				$_SESSION['status'] = "error";
+				$_SESSION['message'] = "YOU'VE ENTERED A EXPIRED OTP";
+				header("Location: epm_otp.php?email=$email");
+				exit();
+			}
+			
 		
 		}
 		else{
