@@ -21,7 +21,6 @@ else{
 	$email = $_GET['email'];
 	$sql = "SELECT * FROM users WHERE Email='$email'";
 	$result =$db->query($sql);
-	$fetch = mysqli_fetch_assoc($result);
 	if(!$result){
 		$_SESSION['status'] = "error";
 		$_SESSION['message'] = "SESSION EXPIRED";
@@ -29,32 +28,40 @@ else{
 		exit();
 	}
 	else{
-		$time = $fetch['Timer'];
+		$fetch = mysqli_fetch_assoc($result);
 		$cstts = $fetch['Code_Status'];
+		$otp = $fetch['Code'];
 		if(isset($_POST['submit'])) {
-		$sql2 = "UPDATE `users` SET Code='0', Status='Verified' WHERE Email='$email'";
-		$result2 = $db-> query($sql2);
-		if($result2){
-			if($cstts=="Valid"){
-				$_SESSION['status'] = "success";
-				$_SESSION['message'] = "EMAIL VERIFICATION COMPLETE";
-				header('Location: index.php');
-				exit();
-			}
-			else{
+			if($cstts =="invalid"){
 				$_SESSION['status'] = "error";
-				$_SESSION['message'] = "YOU'VE ENTERED A EXPIRED OTP";
+				$_SESSION['message'] = "YOU'VE ENTERED AN EXPIRED OTP. CLICK RESEND TO GENERATE ANOTHER OTP";
 				header("Location: epm_otp.php?email=$email");
 				exit();
 			}
+			elseif($otp != $_POST['otp']){
+				$_SESSION['status'] = "error";
+				$_SESSION['message'] = "OTP DO NOT MATCH";
+				header("Location: epm_otp.php?email=$email");
+				exit();
+			}
+			else{
+				$sql2 = "UPDATE `users` SET Code='0', Status='Verified' WHERE Email='$email'";
+				$result2 = $db-> query($sql2);
+				if($result2){
+					$_SESSION['status'] = "success";
+					$_SESSION['message'] = "Account Successfuly Activated";
+					header("Location: index.php");
+					exit();
+				}
+				else{
+					$_SESSION['status'] = "error";
+					$_SESSION['message'] = "ERROR PASRSING REQUEST. PLEASE RELOAD THE PAGE";
+					header("Location: epm_otp.php?email=$email");
+					exit();
+				}
+			}
+			
 		}
-		else{
-			$_SESSION['status'] = "error";
-			$_SESSION['message'] = "YOU'VE ENTERED A WRONG OTP";
-			header("Location: epm_otp.php?email=$email");
-			exit();
-		}
-	}
 	if(isset($_POST['resend'])) {
 		$sql = "SELECT * FROM users WHERE Email='$email'";
 		$result = $db-> query($sql);
