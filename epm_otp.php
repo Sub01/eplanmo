@@ -19,27 +19,19 @@ if(!isset($_GET['email'])){
 }
 else{
 	$email = $_GET['email'];
-	
+	$sql = "SELECT * FROM users WHERE Email='$email'";
+	$result =$db->query($sql);
+	$fetch = mysqli_fetch_assoc($result);
+	$time = $fetch['Timer'];
 	if(isset($_POST['submit'])) {
-		$sql = "SELECT * FROM users WHERE Email='$email'";
-		$result =$db->query($sql);
-		if($result-> num_rows>0){
-			$fetch = mysqli_fetch_assoc($result);
-			$email = $fetch['Email'];
-			$sql2 = "UPDATE `users` SET Code='0', Status='Verified' WHERE Email='$email'";
-			$result2 = $db-> query($sql2);
-			if($result2){
-				$_SESSION['status'] = "success";
-				$_SESSION['message'] = "EMAIL VERIFICATION COMPLETE";
-				header('Location: index.php');
-				exit();
-			}
-			else{
-				$_SESSION['status'] = "error";
-				$_SESSION['message'] = "There's a problem processing your request";
-				header("Location: epm_otp.php?email=$email");
-				exit();
-			}
+		$sql2 = "UPDATE `users` SET Code='0', Status='Verified' WHERE Email='$email'";
+		$result2 = $db-> query($sql2);
+		if($result2){
+			$_SESSION['status'] = "success";
+			$_SESSION['message'] = "EMAIL VERIFICATION COMPLETE";
+			header('Location: index.php');
+			exit();
+		
 		}
 		else{
 			$_SESSION['status'] = "error";
@@ -57,6 +49,8 @@ else{
       		$status = "Unverified";
 			$name = $row['Name'];
 			$surname = $row['Surname'];
+			$code_status = "Valid";
+			$timer = 120;
 		
 			//==========================  INSTANTIATE MAILER
 			$mail = new PHPMailer(true);
@@ -85,7 +79,7 @@ else{
 			$mail->msgHTML($message);
 		
 			if($mail->send()){
-				$sql = "UPDATE users SET Code='$code' WHERE email='$email'";
+				$sql = "UPDATE users SET Code='$code', Code_Status='$code_status', Timer='$timer' WHERE email='$email'";
 				$result = $db-> query($sql);
 				if($result){
 					$script = "<script> $(document).ready(function(){ $('#modalResendSuccess').modal('show'); }); </script>";
@@ -139,6 +133,9 @@ else{
 						<div class="login-content" style="padding-top: 5%;">
 							<form method="POST" action="">
 							<center><h2 class="title">EMAIL VERIFICATION</h2></center>
+							<span id="timer"><?php echo $time?> seconds remaining</span>
+							<br>
+							<br>
 							<?php if(isset($_SESSION['message']) && $_SESSION['status'] == 'error'): ?>
                   			<div class="alert alert-danger">
                   			<?php echo $_SESSION['message']; ?>
@@ -154,6 +151,9 @@ else{
 						<div class="row form-group">								
 							<i class="fas fa-key fa-2x" style="padding: 5px;"></i>
 							<span style="width: 90%"><input class="form-control" type="text" name="otp" placeholder="ENTER OTP"></span>
+						</div>
+						<div>
+							
 						</div>
 						<div class="row">
 							<div class="col-md-4">
@@ -234,6 +234,16 @@ $("document").ready(function(){
     }, <?php echo $gensetmodclose ?> ); 
 
 });
+var timeleft = <?php echo $time?> -1;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("timer").innerHTML = "Code Expired. Click Resend to get another OTP";
+  } else {
+    document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
+  }
+  timeleft -= 1;
+}, 1000);
 </script>
 <body>
 </body>
