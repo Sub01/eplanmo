@@ -257,7 +257,7 @@ else
 <script>
 	$('#pword1, #pword2').on('keyup', function () {
   		if ($('#pword1').val() == $('#pword2').val()) {
-    		$('#message').html('Password Match').css('color', 'green');
+    		$('#message').html('').css('color', 'green');
 			document.getElementById('submit').disabled = false;
 			
   		}
