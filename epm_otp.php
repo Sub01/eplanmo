@@ -32,7 +32,7 @@ else{
 		
 		$cstts = $fetch['Code_Status'];
 		$otp = $fetch['Code'];
-		$time = $fetch['Timer']
+		$time = $fetch['Timer'];
 		if(isset($_POST['submit'])) {
 			if($cstts =="invalid"){
 				$_SESSION['status'] = "error";
