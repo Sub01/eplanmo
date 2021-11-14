@@ -72,7 +72,7 @@ else
 		$mail->msgHTML($message);
 		
 	   	if($mail->send()){
-			$sql2 = "INSERT INTO `users`(`Images`,`Username`,`Password`,`Name`,`Middle_Name`,`Surname`,`Birthday`,`Contact_No`,`Email`,`Code`,`Code_Status`, `Timer`, `Account_StatUs`) VALUES('$img_data','$uname','$pword1','$name','$middle','$surname','$bday','$contact','$email','$code','$code_status','$timer','$account_status')";
+			$sql2 = "INSERT INTO `users`(`Images`,`Username`,`Password`,`Name`,`Middle_Name`,`Surname`,`Birthday`,`Contact_No`,`Email`,`Code`,`Code_Status`, `Timer`, `Account_Status`) VALUES('$img_data','$uname','$pword1','$name','$middle','$surname','$bday','$contact','$email','$code','$code_status','$timer','$account_status')";
 		   	$result2 = mysqli_query($db, $sql2);
 		   	$script = "<script> $(document).ready(function(){ $('#modalRegSuccess').modal('show'); }); </script>";
        	}else{
