@@ -133,7 +133,7 @@ else{
 						<div class="login-content" style="padding-top: 5%;">
 							<form method="POST" action="">
 							<center><h2 class="title">EMAIL VERIFICATION</h2></center>
-							<span id="timer"><?php echo $time?> seconds remaining</span>
+							<span id="timer"><?php echo $time?> seconds remaining before otp expiration.</span>
 							<br>
 							<br>
 							<?php if(isset($_SESSION['message']) && $_SESSION['status'] == 'error'): ?>
@@ -238,9 +238,9 @@ var timeleft = <?php echo $time?> -1;
 var downloadTimer = setInterval(function(){
   if(timeleft <= 0){
     clearInterval(downloadTimer);
-    document.getElementById("timer").innerHTML = "Code Expired. Click Resend to get another OTP";
+    document.getElementById("timer").innerHTML = "";
   } else {
-    document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
+    document.getElementById("timer").innerHTML = timeleft + " seconds remaining before otp expiration.";
   }
   timeleft -= 1;
 }, 1000);
