@@ -21,6 +21,7 @@ else{
 	$email = $_GET['email'];
 	$sql = "SELECT * FROM users WHERE Email='$email'";
 	$result =$db->query($sql);
+	$fetch = mysqli_fetch_assoc($result);
 	if(!$result){
 		$_SESSION['status'] = "error";
 		$_SESSION['message'] = "SESSION EXPIRED";
@@ -28,7 +29,7 @@ else{
 		exit();
 	}
 	else{
-		$fetch = mysqli_fetch_assoc($result);
+		
 		$cstts = $fetch['Code_Status'];
 		$otp = $fetch['Code'];
 		if(isset($_POST['submit'])) {
