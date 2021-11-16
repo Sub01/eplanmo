@@ -323,7 +323,7 @@ else{
 														<td>:</td>
 														<td colspan="3">
 															<select class="form-control">
-																<option hidden> </option>
+																<option hidden name="gteacher"> </option>
 																<?php
 																$name = $_SESSION['User'];
 																$ssql = "SELECT * FROM `teachers` WHERE `User`='$name'";
