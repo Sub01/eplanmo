@@ -1,40 +1,71 @@
 <?php
 include ("assets/php/php_epm_profile.php");
 include ("assets/php/php_epm_genset.php");
-
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+if(!$_SESSION['user']){
+	header("Location: /index.php");
+   	exit();
+}
+else{
 	$id = $_SESSION['User'];
-	$title = $_POST['title'];
-	$type = $_POST['type'];
-	$start = $_POST['start'];
-	$end = $_POST['end'];
-	$datenow = date("Y-m-d H:i:s");
+	if(isset($_POST["event"])) {
+		$title = $_POST['title'];
+		$type = $_POST['type'];
+		$start = $_POST['start'];
+		$end = $_POST['end'];
+		$datenow = date("Y-m-d H:i:s");
 	
-	if ($end > $datenow ) {
-		$sql = "INSERT INTO `events` (`Name`, `Title`, `Type`, `Start`,`End`, `Status`) VALUES('$id','$title','$type','$start','$end','Ongoing')";
-   		$result2 = mysqli_query($db, $sql);
-   		session_start();
-   		$_SESSION['status'] = "success";
-   		$_SESSION['message'] = "Event Added Successfully";
-   		header("Location: /epm_calendar.php");
-   		exit();
+		if ($end > $datenow ) {
+			$sql = "INSERT INTO `events` (`Name`, `Title`, `Type`, `Start`,`End`, `Status`) VALUES('$id','$title','$type','$start','$end','Ongoing')";
+   			$result2 = mysqli_query($db, $sql);
+   			session_start();
+   			$_SESSION['status'] = "success";
+   			$_SESSION['message'] = "Event Added Successfully";
+   			header("Location: /epm_calendar.php");
+   			exit();
+		}
+		elseif ($end < $datenow) {
+			$sql = "INSERT INTO `events`(`ID`, `Title`, `Type`, `Start`,`End`, `Status`) VALUES('$id','$title','$type','$start','$end','Ended')";
+   			$result2 = mysqli_query($db, $sql);
+   			session_start();
+   			$_SESSION['status'] = "success";
+   			$_SESSION['message'] = "Event Added Successfully";
+   			header("Location: /epm_calendar.php");
+   			exit();
+		}
+		else{
+			$_SESSION['status'] = "error";
+   			$_SESSION['message'] = "There's an error processing your request";
+   			header("Location: /epm_calendar.php");
+   			exit();
+		}
 	}
-	elseif ($end < $datenow) {
-		$sql = "INSERT INTO `events`(`ID`, `Title`, `Type`, `Start`,`End`, `Status`) VALUES('$id','$title','$type','$start','$end','Ended')";
-   		$result2 = mysqli_query($db, $sql);
-   		session_start();
-   		$_SESSION['status'] = "success";
-   		$_SESSION['message'] = "Event Added Successfully";
-   		header("Location: /epm_calendar.php");
-   		exit();
+	if(isset($_POST["teacher"])){
+		$tname = $_POST['tname'];
+		$tsurname = $_POST['tsurname'];
+		$temail = $_POST['temail'];
+		$sql = "INSERT INTO teachers (`ID`,`User`,T_Name,`T_Surname`,T_Email) VALUES (NULL,'$id','$tname','$tsurname','$temail')";
+		$result = mysqli_query($db, $sql);
+		if($result){
+			$_SESSION['status'] = "success";
+   			$_SESSION['message'] = "Teacher Added Successfully";
+   			header("Location: /epm_calendar.php");
+   			exit();
+		}
+		else{
+			$_SESSION['status'] = "error";
+   			$_SESSION['message'] = "Failed to add teacher!";
+   			header("Location: /epm_calendar.php");
+   			exit();
+		}
 	}
-	else{
-		$_SESSION['status'] = "error";
-   		$_SESSION['message'] = "There's an error processing your request";
-   		header("Location: /epm_calendar.php");
-   		exit();
+	if(isset($_POST["subject"])){
+		
+	}
+	if(isset($_POST["grade"])){
+		
 	}
 }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -218,7 +249,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 													<tr>
 														<td style="width: 33%"> </td>
 														<td style="width: 33%"> </td>
-														<td style="width: 34%"> <button class="btn btn-primary" type="submit" style="width:100%;">ADD EVENT</button> </td>
+														<td style="width: 34%"> <button class="btn btn-primary" name="event" type="submit" style="width:100%;">ADD EVENT</button> </td>
 													</tr>
 												</table>
 												</form>
@@ -229,17 +260,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 													<tr>
 														<td>First Name</td>
 														<td>:</td>
-														<td><input type="text"  class="form-control"></td>
+														<td><input type="text" class="form-control" name="tname"></td>
 													</tr>
 													<tr>
 														<td>Last Name</td>
 														<td>:</td>
-														<td><input type="text" class="form-control"></td>
+														<td><input type="text" class="form-control" name="tsurname"></td>
 													</tr>
 													<tr>
 														<td>Email</td>
 														<td>:</td>
-														<td><input type="text" class="form-control"></td>
+														<td><input type="email" class="form-control" name="temail"></td>
 													</tr>
 												</table>
 												<table>
@@ -265,7 +296,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 												</table>
 												<table>
 													<tr>
-														<td><button type="submit" name="teacher" class="btn btn-primary">ADD TEACHER</button></td>
+														<td><button type="submit" name="subject" class="btn btn-primary">ADD SUBJECT</button></td>
 													</tr>	
 												</table>
 												</form>
@@ -286,9 +317,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 													<tr>
 														<td>Grade</td>
 														<td>:</td>
-														<td><input type="text" class="form-control"></td>
+														<td><input type="number" class="form-control"></td>
 														<td>/</td>
-														<td><input type="text" class="form-control"></td>
+														<td><input type="number" class="form-control"></td>
 													</tr>
 													<tr>
 														<td>Type</td>
@@ -298,7 +329,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 												</table>
 												<table>
 													<tr>
-														<td><button type="submit" name="teacher" class="btn btn-primary">ADD TEACHER</button></td>
+														<td><button type="submit" name="grade" class="btn btn-primary">ADD TEACHER</button></td>
 													</tr>	
 												</table>
 												</form>
