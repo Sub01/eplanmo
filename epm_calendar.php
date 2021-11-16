@@ -79,7 +79,7 @@ else{
 		$gteacher = $_POST['gteacher'];
 		$gsubject = $_POST['gsubject'];
 		$score = $_POST['gscore'];
-		$gover = $_POST['gover'];
+		$gover = $_POST['gtscore'];
 		$gtype = $_POST['gtype'];
 		$gpercent = ($score /$gover) * 100;
 		$sql = "INSERT INTO grades (`User`,`Subject_Code`,`Teacher`,'Score','Over',`Percentage`) VALUES ('$id','$gsubject','$gteacher','$gscore','$gover','$gpercent')";
