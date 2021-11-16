@@ -321,7 +321,15 @@ else{
 													<tr>
 														<td>Subject</td>
 														<td>:</td>
-														<td colspan="3"><input type="text"  class="form-control"></td>
+														<td colspan="3">
+															<select class="form-control">
+																<option type="hidden"> </option>
+																<?php
+																while($row = mysqli_fetch_array($result)){ ?>
+																<option><?php echo $srow['T_Name'] &nbsp $srow['S_Name']?></option>
+																<?php }?>
+															</select>
+														</td>
 													</tr>
 													<tr>
 														<td>Teacher</td>
