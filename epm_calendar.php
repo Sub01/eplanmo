@@ -329,7 +329,7 @@ else{
 																$ssql = "SELECT * FROM `teachers` WHERE `User`='$name'";
 																$sresult = $db-> query($ssql);
 																while($srow = mysqli_fetch_array($sresult)){ ?>
-																<option><?php echo $srow['T_Name']?> <?php echo $srow['S_Name']?></option>
+																<option><?php echo $srow['T_Name']?> <?php echo $srow['T_Surname']?></option>
 																<?php }?>
 															</select>
 														</td>
