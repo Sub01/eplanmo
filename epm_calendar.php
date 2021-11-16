@@ -287,6 +287,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 														<td>Grade</td>
 														<td>:</td>
 														<td><input type="text" class="form-control"></td>
+														<td>/</td>
+														<td><input type="text" class="form-control"></td>
 													</tr>
 													<tr>
 														<td>Type</td>
