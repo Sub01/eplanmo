@@ -244,7 +244,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 												</table>
 												<table>
 													<tr>
-														<td>ADD TEACHER</td>
+														<td><button type="submit" name="teacher" class="btn btn-primary">ADD TEACHER</button></td>
 													</tr>	
 												</table>
 												</form>
