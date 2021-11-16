@@ -1,7 +1,6 @@
 <?php
 include ("assets/php/php_epm_profile.php");
 include ("assets/php/php_epm_genset.php");
-include ("assets/php/summary2.php");
 session_start();
 if(!isset($_SESSION['User'])){
 	header("Location: /index.php");
@@ -326,8 +325,11 @@ else{
 															<select class="form-control">
 																<option type="hidden"> </option>
 																<?php
-																while($row = mysqli_fetch_array($result)){ ?>
-																<option><?php echo $srow['T_Name'] &nbsp $srow['S_Name']?></option>
+																$name = $_SESSION['User'];
+																$ssql = "SELECT * FROM `teachers` WHERE `User`='$name'";
+																$sresult = $db-> query($ssql);
+																while($srow = mysqli_fetch_array($sresult)){ ?>
+																<option><?php echo $srow['T_Name']?> <?php echo $srow['S_Name']?></option>
 																<?php }?>
 															</select>
 														</td>
