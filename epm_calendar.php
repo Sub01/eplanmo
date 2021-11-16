@@ -158,6 +158,13 @@ else{
   </script>
 
   </head>
+	<style>
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+ 		-webkit-appearance: none;
+  		margin: 0;
+	}
+	</style>
  <?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light ">
