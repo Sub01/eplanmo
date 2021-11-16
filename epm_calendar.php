@@ -78,7 +78,7 @@ else{
 	if(isset($_POST["grade"])){
 		$gteacher = $_POST['gteacher'];
 		$gsubject = $_POST['gsubject'];
-		$score = $_POST['gscore'];
+		$gscore = $_POST['gscore'];
 		$gover = $_POST['gtscore'];
 		$gtype = $_POST['gtype'];
 		$gpercent = ($score /$gover) * 100;
