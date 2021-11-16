@@ -1,6 +1,7 @@
 <?php
 include ("assets/php/php_epm_profile.php");
 include ("assets/php/php_epm_genset.php");
+session_start();
 if(!$_SESSION['user']){
 	header("Location: /index.php");
    	exit();
@@ -17,7 +18,6 @@ else{
 		if ($end > $datenow ) {
 			$sql = "INSERT INTO `events` (`Name`, `Title`, `Type`, `Start`,`End`, `Status`) VALUES('$id','$title','$type','$start','$end','Ongoing')";
    			$result2 = mysqli_query($db, $sql);
-   			session_start();
    			$_SESSION['status'] = "success";
    			$_SESSION['message'] = "Event Added Successfully";
    			header("Location: /epm_calendar.php");
@@ -26,7 +26,6 @@ else{
 		elseif ($end < $datenow) {
 			$sql = "INSERT INTO `events`(`ID`, `Title`, `Type`, `Start`,`End`, `Status`) VALUES('$id','$title','$type','$start','$end','Ended')";
    			$result2 = mysqli_query($db, $sql);
-   			session_start();
    			$_SESSION['status'] = "success";
    			$_SESSION['message'] = "Event Added Successfully";
    			header("Location: /epm_calendar.php");
