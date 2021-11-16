@@ -60,7 +60,7 @@ else{
 	if(isset($_POST["subject"])){
 		$scode= $_POST['scode'];
 		$sdes= $_POST['sdes'];
-		$sql = "INSERT INTO teachers (`S_Code`,`S_Description`,`User`) VALUES ('$scode','$sdes','$id')";
+		$sql = "INSERT INTO subjects (`S_Code`,`S_Description`,`User`) VALUES ('$scode','$sdes','$id')";
 		$result = mysqli_query($db, $sql);
 		if($result){
 			$_SESSION['status'] = "success";
