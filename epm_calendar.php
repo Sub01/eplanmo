@@ -58,7 +58,22 @@ else{
 		}
 	}
 	if(isset($_POST["subject"])){
-		
+		$scode= $_POST['scode'];
+		$sdes= $_POST['sdes'];
+		$sql = "INSERT INTO teachers (`S_Code`,`S_Description`,`User`) VALUES ('$scode','$sdes','$id')";
+		$result = mysqli_query($db, $sql);
+		if($result){
+			$_SESSION['status'] = "success";
+   			$_SESSION['message'] = "Subject Added Successfully";
+   			header("Location: /epm_calendar.php");
+   			exit();
+		}
+		else{
+			$_SESSION['status'] = "error";
+   			$_SESSION['message'] = "Failed to add subject!";
+   			header("Location: /epm_calendar.php");
+   			exit();
+		}
 	}
 	if(isset($_POST["grade"])){
 		
@@ -280,17 +295,17 @@ else{
 												</form>
 											</div>
   											<div class="tab-pane fade" id="nav-subjects" role="tabpanel" aria-labelledby="nav-subjects-tab">
-												<form>
+												<form action="" method="post">
 												<table class="table">
 													<tr>
 														<td>Subject Code</td>
 														<td>:</td>
-														<td><input type="text"  class="form-control"></td>
+														<td><input type="text" name=scode"" class="form-control"></td>
 													</tr>
 													<tr>
 														<td>Subject Description</td>
 														<td>:</td>
-														<td><input type="text" class="form-control"></td>
+														<td><input type="text" name="sdes" class="form-control"></td>
 													</tr>
 												</table>
 												<table>
