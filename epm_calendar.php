@@ -225,22 +225,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 											</div>
   											<div class="tab-pane fade" id="nav-teachers" role="tabpanel" aria-labelledby="nav-teachers-tab">
 												<form>
-												<div class="form-group">
-													<h4>First Name</h4>
-													<input class="form-control">
-												</div>
-												<div class="form-group">
-													<h4>Surame</h4>
-													<input class="form-control">
-												</div>
-												<div class="form-group">
-													<h4>Email</h4>
-													<input class="form-control">
-												</div>
-												<div class="form-group">
-													<h4>Picture</h4>
-													<input class="form-control" type="file">
-												</div>
+												<table class="table">
+													<tr>
+														<td>First Name</td>
+														<td>:</td>
+														<td><input type="text"></td>
+													</tr>
+													<tr>
+														<td>Last Name</td>
+														<td>:</td>
+														<td><input type="text"></td>
+													</tr>
+													<tr>
+														<td>Email</td>
+														<td>:</td>
+														<td><input type="text"></td>
+													</tr>
+												</table>
+												<table>
+													<tr>
+														<td>ADD TEACHER</td>
+													</tr>	
+												</table>
 												</form>
 											</div>
   											<div class="tab-pane fade" id="nav-subjects" role="tabpanel" aria-labelledby="nav-subjects-tab">
