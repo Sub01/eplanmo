@@ -76,7 +76,26 @@ else{
 		}
 	}
 	if(isset($_POST["grade"])){
-		
+		$gteacher = $_POST['gteacher'];
+		$gsubject = $_POST['gsubject'];
+		$score = $_POST['gscore'];
+		$gover = $_POST['gover'];
+		$gtype = $_POST['gtype'];
+		$gpercent = ($score /$gover) * 100;
+		$sql = "INSERT INTO grade (`S_Code`,`S_Description`,`User`) VALUES ('$scode','$sdes','$id')";
+		$result = mysqli_query($db, $sql);
+		if($result){
+			$_SESSION['status'] = "success";
+   			$_SESSION['message'] = "Grade Added Successfully";
+   			header("Location: /epm_calendar.php");
+   			exit();
+		}
+		else{
+			$_SESSION['status'] = "error";
+   			$_SESSION['message'] = "Failed to add grade!";
+   			header("Location: /epm_calendar.php");
+   			exit();
+		}
 	}
 }
 
@@ -307,7 +326,7 @@ else{
 													<tr>
 														<td>Subject Code</td>
 														<td>:</td>
-														<td><input type="text" name=scode"" class="form-control"></td>
+														<td><input type="text" name="scode" class="form-control"></td>
 													</tr>
 													<tr>
 														<td>Subject Description</td>
@@ -346,13 +365,13 @@ else{
 														<td>:</td>
 														<td colspan="3">
 															<select class="form-control">
-																<option hidden name="gteacher"> </option>
+																<option hidden name="gsubject"> </option>
 																<?php
 																$name = $_SESSION['User'];
 																$ssql = "SELECT * FROM `subjects` WHERE `User`='$name'";
 																$sresult = $db-> query($ssql);
 																while($srow = mysqli_fetch_array($sresult)){ ?>
-																<option><?php echo $srow['S_Code']?> <?php echo $srow['S_Description']?></option>
+																<option value="<?php echo $srow['S_Code']?>"><?php echo $srow['S_Code']?></option>
 																<?php }?>
 															</select>
 														</td>
@@ -360,14 +379,21 @@ else{
 													<tr>
 														<td>Grade</td>
 														<td>:</td>
-														<td><input type="number" class="form-control"></td>
+														<td><input type="number" name="gscore" class="form-control"></td>
 														<td>/</td>
-														<td><input type="number" class="form-control"></td>
+														<td><input type="number" name="gtscore" class="form-control"></td>
 													</tr>
 													<tr>
 														<td>Type</td>
 														<td>:</td>
-														<td colspan="3"><input type="text" class="form-control"></td>
+														<td colspan="3">
+															<select name="gtype" class="form-control">
+																<option hidden> </option>
+																<option>Written</option>
+																<option>Oral</option>
+																<option>Practical</option>
+															</select>
+														</td>
 													</tr>
 												</table>
 												<table>
