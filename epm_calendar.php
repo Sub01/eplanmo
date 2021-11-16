@@ -276,12 +276,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 													<tr>
 														<td>Subject</td>
 														<td>:</td>
-														<td><input type="text"  class="form-control"></td>
+														<td colspan="3"><input type="text"  class="form-control"></td>
 													</tr>
 													<tr>
 														<td>Teacher</td>
 														<td>:</td>
-														<td><input type="text" class="form-control"></td>
+														<td colspan="3"><input type="text" class="form-control"></td>
 													</tr>
 													<tr>
 														<td>Grade</td>
@@ -293,7 +293,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 													<tr>
 														<td>Type</td>
 														<td>:</td>
-														<td><input type="text" class="form-control"></td>
+														<td colspan="3"><input type="text" class="form-control"></td>
 													</tr>
 												</table>
 												<table>
