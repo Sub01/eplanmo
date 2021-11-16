@@ -345,7 +345,7 @@ else{
 																$ssql = "SELECT * FROM `subjects` WHERE `User`='$name'";
 																$sresult = $db-> query($ssql);
 																while($srow = mysqli_fetch_array($sresult)){ ?>
-																<option><?php echo $srow['T_Name']?> <?php echo $srow['T_Surname']?></option>
+																<option><?php echo $srow['S_Code']?> <?php echo $srow['S_Description']?></option>
 																<?php }?>
 															</select>
 														</td>
