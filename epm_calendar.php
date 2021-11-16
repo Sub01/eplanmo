@@ -226,8 +226,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   											<div class="tab-pane fade" id="nav-teachers" role="tabpanel" aria-labelledby="nav-teachers-tab">
 												<form>
 												<div class="form-group">
-													<h4 class="form-control">Teacher Name</h4>
+													<h4>First Name</h4>
 													<input class="form-control">
+												</div>
+												<div class="form-group">
+													<h4>Surame</h4>
+													<input class="form-control">
+												</div>
+												<div class="form-group">
+													<h4>Email</h4>
+													<input class="form-control">
+												</div>
+												<div class="form-group">
+													<h4>Picture</h4>
+													<input class="form-control" type="file">
 												</div>
 												</form>
 											</div>
@@ -242,7 +254,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 												</form>
 											</div>
 											<div class="tab-pane fade" id="nav-schedule" role="tabpanel" aria-labelledby="nav-schedule-tab">
-											
+												<div class="form-group">
+													<h4 class="form-control">Subject Code</h4>
+													<input class="form-control">
+													<h4 class="form-control">Subject Description</h4>
+													<input class="form-control">
+												</div>
 											</div>
 										</div>
 										<!--============= END CARD TABS CONTENT ===============-->
