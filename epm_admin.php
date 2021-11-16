@@ -163,7 +163,7 @@ include ("assets/php/summary.php");
                                 		TEACHERS
                             		</div>
                             		<div class="h5 mb-0 font-weight-bold text-gray-800">
-                                		<?php echo $archived ?>
+                                		<?php echo $teachers ?>
                             		</div>
                         		</div>
                         		<div class="col-auto">
