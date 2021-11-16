@@ -81,7 +81,7 @@ else{
 		$gscore = $_POST['gscore'];
 		$gover = $_POST['gtscore'];
 		$gtype = $_POST['gtype'];
-		$gpercent = ($score /$gover) * 100;
+		$gpercent = ($gscore /$gover) * 100;
 		$sql = "INSERT INTO grades (`User`,`Subject_Code`,`Teacher`,'Score','Over',`Percentage`) VALUES ('$id','$gsubject','$gteacher','$gscore','$gover','$gpercent')";
 		$result = mysqli_query($db, $sql);
 		if($result){
