@@ -1,6 +1,7 @@
 <?php
 include ("assets/php/php_epm_profile.php");
 include ("assets/php/php_epm_genset.php");
+include ("assets/php/summary2.php");
 session_start();
 if(!isset($_SESSION['User'])){
 	header("Location: /index.php");
