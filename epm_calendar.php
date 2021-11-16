@@ -2,7 +2,7 @@
 include ("assets/php/php_epm_profile.php");
 include ("assets/php/php_epm_genset.php");
 session_start();
-if(!isset($_SESSION['user'])){
+if(!isset($_SESSION['User'])){
 	header("Location: /index.php");
    	exit();
 }
