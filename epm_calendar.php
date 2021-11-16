@@ -229,17 +229,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 													<tr>
 														<td>First Name</td>
 														<td>:</td>
-														<td><input type="text"></td>
+														<td><input type="text"  class="form-control"></td>
 													</tr>
 													<tr>
 														<td>Last Name</td>
 														<td>:</td>
-														<td><input type="text"></td>
+														<td><input type="text" class="form-control"></td>
 													</tr>
 													<tr>
 														<td>Email</td>
 														<td>:</td>
-														<td><input type="text"></td>
+														<td><input type="text" class="form-control"></td>
 													</tr>
 												</table>
 												<table>
