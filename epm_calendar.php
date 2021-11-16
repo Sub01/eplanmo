@@ -319,7 +319,7 @@ else{
 												<form>
 												<table class="table">
 													<tr>
-														<td>Subject</td>
+														<td>Teacher</td>
 														<td>:</td>
 														<td colspan="3">
 															<select class="form-control">
@@ -335,9 +335,20 @@ else{
 														</td>
 													</tr>
 													<tr>
-														<td>Teacher</td>
+														<td>Subject</td>
 														<td>:</td>
-														<td colspan="3"><input type="text" class="form-control"></td>
+														<td colspan="3">
+															<select class="form-control">
+																<option hidden name="gteacher"> </option>
+																<?php
+																$name = $_SESSION['User'];
+																$ssql = "SELECT * FROM `subjects` WHERE `User`='$name'";
+																$sresult = $db-> query($ssql);
+																while($srow = mysqli_fetch_array($sresult)){ ?>
+																<option><?php echo $srow['T_Name']?> <?php echo $srow['T_Surname']?></option>
+																<?php }?>
+															</select>
+														</td>
 													</tr>
 													<tr>
 														<td>Grade</td>
