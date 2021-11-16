@@ -342,7 +342,7 @@ else{
 												</form>
 											</div>
 											<div class="tab-pane fade" id="nav-schedule" role="tabpanel" aria-labelledby="nav-schedule-tab">
-												<form>
+												<form action="" method="post">
 												<table class="table">
 													<tr>
 														<td>Teacher</td>
@@ -398,7 +398,7 @@ else{
 												</table>
 												<table>
 													<tr>
-														<td><button type="submit" name="grade" class="btn btn-primary">ADD TEACHER</button></td>
+														<td><button type="submit" name="grade" class="btn btn-primary">ADD GRADE</button></td>
 													</tr>	
 												</table>
 												</form>
