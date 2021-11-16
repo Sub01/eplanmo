@@ -42,7 +42,7 @@ else{
 		$tname = $_POST['tname'];
 		$tsurname = $_POST['tsurname'];
 		$temail = $_POST['temail'];
-		$sql = "INSERT INTO teachers (`ID`,`User`,T_Name,`T_Surname`,T_Email) VALUES (NULL,'$id','$tname','$tsurname','$temail')";
+		$sql = "INSERT INTO teachers (`User`,T_Name,`T_Surname`,T_Email) VALUES ('$id','$tname','$tsurname','$temail')";
 		$result = mysqli_query($db, $sql);
 		if($result){
 			$_SESSION['status'] = "success";
@@ -254,7 +254,7 @@ else{
 												</form>
 											</div>
   											<div class="tab-pane fade" id="nav-teachers" role="tabpanel" aria-labelledby="nav-teachers-tab">
-												<form>
+												<form action="" method="post">
 												<table class="table">
 													<tr>
 														<td>First Name</td>
