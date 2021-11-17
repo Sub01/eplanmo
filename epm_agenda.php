@@ -2,6 +2,7 @@
 include ("assets/php/php_epm_profile.php");
 include ("assets/php/php_epm_genset.php");
 include ("assets/php/summary.php");
+include ("grades.php");
 ?>
 <!doctype html>
 <html>
@@ -211,15 +212,6 @@ include ("assets/php/summary.php");
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row">
-							<?php 
-							$id = $_SESSION['User'];
-							$sql = "SELECT * FROM grades WHERE Name='$id'";
-                			$result =$db->query($sql);
-							while ($row = mysqli_fetch_array($result)) {
-								$score = $row['Score'];
-								$over = $row['Over'];
-								$scode = $row['Subject_Code'];
-								$percentage = (($score/$over) * 100);}?>
 								<?php if($percentage >=75):?>
 									<div class='col-xl-6 col-md-6 mb-4'>
 										<div class='col-xl-6 col-md-6 mb-4'>
