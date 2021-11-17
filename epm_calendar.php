@@ -387,7 +387,7 @@ else{
 														<td>Type</td>
 														<td>:</td>
 														<td colspan="3">
-															<select name="gtype" class="form-control">
+															<select name="type" class="form-control">
 																<option hidden> </option>
 																<option>Written</option>
 																<option>Oral</option>
