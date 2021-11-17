@@ -38,7 +38,7 @@ else{
    			exit();
 		}
 	}
-	if(isset($_POST["teacher"])){
+	if(isset($_POST['teacher'])){
 		$tname = $_POST['tname'];
 		$tsurname = $_POST['tsurname'];
 		$temail = $_POST['temail'];
@@ -57,7 +57,7 @@ else{
    			exit();
 		}
 	}
-	if(isset($_POST["subject"])){
+	if(isset($_POST['subject'])){
 		$scode= $_POST['scode'];
 		$sdes= $_POST['sdes'];
 		$sql = "INSERT INTO subjects (`S_Code`,`S_Description`,`User`) VALUES ('$scode','$sdes','$id')";
@@ -75,7 +75,7 @@ else{
    			exit();
 		}
 	}
-	if(isset($_POST["grade"])){
+	if(isset($_POST['grade'])){
 		$teacher = $_POST['teacher'];
 		$subject = $_POST['subject'];
 		$score = $_POST['score'];
