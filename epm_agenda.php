@@ -220,7 +220,7 @@ include ("assets/php/summary.php");
 									$scode = $row['Subject_Code'];
 									$percentage = (($score/$over) * 100);
 									if($percentage >= 75){ ?>
-										<div class="col-xl-6 col-md-6 mb-4">
+										<div class="col-xl-4 col-md-4 mb-4">
                 							<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:green">
                     							<div class="card-header">
 													<div class="row">
@@ -229,8 +229,10 @@ include ("assets/php/summary.php");
 														<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
 													</div>
 													<div class="col-lg-4">
+														<center>
 														<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 30px;"><?php echo $percentage ?>%</span><br>
 														<span>PASS</span>
+														</center>
 													</div>
 													</div>
 												</div>
@@ -238,7 +240,7 @@ include ("assets/php/summary.php");
 										</div>
 								<?php }
 								else{ ?>
-									<div class="col-xl-6 col-md-6 mb-4">
+									<div class="col-xl-4 col-md-4 mb-4">
                 						<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:red">
                     						<div class="card-header">
 												<div class="row">
@@ -247,8 +249,10 @@ include ("assets/php/summary.php");
 													<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
 												</div>
 												<div class="col-lg-4">
+													<center>
 													<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 30px"><?php echo $percentage ?>% </span><br>
 													<span>FAILED</span>
+													</center>
 												</div>
 												</div>
 											</div>
