@@ -213,7 +213,7 @@ include ("assets/php/summary.php");
 							<div class="row">
 							<?php 
 							$id = $_SESSION['User'];
-							$sql = "SELECT * FROM grades WHERE Name='$uname'";
+							$sql = "SELECT * FROM grades WHERE Name='$id'";
                 			$result =$db->query($sql);
 							while ($row = mysqli_fetch_array($result)) {
 								$fetch = mysqli_fetch_assoc($result);
