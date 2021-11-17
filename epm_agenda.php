@@ -200,6 +200,39 @@ include ("assets/php/summary.php");
 			</div>
 		</div>
 	</div>
+	<div class="row">
+	<div class="col-md-6">
+			<div class="row">
+				<div class="col-xl-12 col-md-12 mb-4">
+					<div class="card border-left-primary shadow py-2">
+						<div class="card-header">
+							WITHIN 14 DAYS
+						</div>
+                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
+							<div class="row">
+							<?php 
+							$sql = "SELECT * FROM grades WHERE Name='$uname'";
+                			$result =$db->query($sql);
+							while ($row = mysqli_fetch_array($result)) {
+								$fetch = mysqli_fetch_assoc($result);
+								$score = $fetch['Score'];
+								$over = $fetch['Over'];
+								$scode = $fetch['Subject_Code'];
+								$percentage = (($score/$over) * 100);
+								if($percentage >= 75){
+									echo "<div class='col-xl-6 col-md-6 mb-4'><div class='col-xl-6 col-md-6 mb-4'><div class='card border-top-primary shadow' style='border-left-style: solid; border-top-width: thick; border-top-color:green'><div class='card-header'><span class='font-weight-bold text-dark text-uppercase mb-1'> .$scode.</span><br><span class='text-gray text-uppercase mb-1'>.$Score. / .$over.</span></div><div class='card-body'>.$percentage% PASS.</div></div><br>";
+								}
+								else{
+									echo "<div class='col-xl-6 col-md-6 mb-4'><div class='col-xl-6 col-md-6 mb-4'><div class='card border-top-primary shadow' style='border-left-style: solid; border-top-width: thick; border-top-color:red'><div class='card-header'><span class='font-weight-bold text-dark text-uppercase mb-1'> .$scode.</span><br><span class='text-gray text-uppercase mb-1'>.$Score. / .$over.</span></div><div class='card-body'>.$percentage.% FAILED</div></div><br>";
+								}
+							}?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
 </div>
 </body>
 </html>
