@@ -230,7 +230,7 @@ include ("assets/php/summary.php");
 													</div>
 													<div class="col-lg-4">
 														<center>
-														<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 30px;"><?php echo $percentage ?>%</span><br>
+														<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20;"><?php echo $percentage ?>%</span><br>
 														<span>PASS</span>
 														</center>
 													</div>
@@ -250,7 +250,7 @@ include ("assets/php/summary.php");
 												</div>
 												<div class="col-lg-4">
 													<center>
-													<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 30px"><?php echo $percentage ?>% </span><br>
+													<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20"><?php echo $percentage ?>% </span><br>
 													<span>FAILED</span>
 													</center>
 												</div>
