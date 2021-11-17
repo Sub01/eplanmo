@@ -240,12 +240,12 @@ include ("assets/php/summary.php");
 								else{?>
 									<div class='col-xl-6 col-md-6 mb-4'>
 										<div class='col-xl-6 col-md-6 mb-4'>
-											<div class='card border-top-primary shadow' style='border-left-style: solid; border-top-width: thick; border-top-color:green'>
+											<div class='card border-top-primary shadow' style='border-left-style: solid; border-top-width: thick; border-top-color:red'>
 												<div class='card-header'>
 													<span class='font-weight-bold text-dark text-uppercase mb-1'> <?php echo $scode?></span><br>
 													<span class='text-gray text-uppercase mb-1'><?php echo $score?> / <?php echo $over?></span>
 												</div>
-												<div class='card-body'><?php echo $percentage?>% PASS
+												<div class='card-body'><?php echo $percentage?>% FAILED
 												</div>
 											</div>
 											<br>
