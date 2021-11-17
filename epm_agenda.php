@@ -2,7 +2,6 @@
 include ("assets/php/php_epm_profile.php");
 include ("assets/php/php_epm_genset.php");
 include ("assets/php/summary.php");
-include ("grades.php");
 ?>
 <!doctype html>
 <html>
@@ -180,8 +179,7 @@ include ("grades.php");
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row">
-							<?php
-								
+							<?php 
 							$sql = "SELECT * FROM events WHERE Name='$uname' AND  (DATEDIFF(Start,NOW()) BETWEEN 8 AND 14)";
                 			$result =$db->query($sql);
 							while ($row = mysqli_fetch_array($result)) {?>
@@ -208,40 +206,41 @@ include ("grades.php");
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
-							WITHIN 14 DAYS
+							MY GRADES
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row">
-								<?php if($percentage >=75):?>
-									<div class='col-xl-6 col-md-6 mb-4'>
-										<div class='col-xl-6 col-md-6 mb-4'>
-											<div class='card border-top-primary shadow' style='border-left-style: solid; border-top-width: thick; border-top-color:green'>
-												<div class='card-header'>
-													<span class='font-weight-bold text-dark text-uppercase mb-1'> <?php echo $scode?></span><br>
-													<span class='text-gray text-uppercase mb-1'><?php echo $score?> / <?php echo $over?></span>
-												</div>
-												<div class='card-body'><?php echo $percentage?>% PASS
-												</div>
-											</div>
-											<br>
+							<?php if($percentage >= 75): ?>
+							<div class="col-xl-6 col-md-6 mb-4">
+                				<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:green">
+                    				<div class="card-header">
+										<div class="col-lg-8">
+											<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?></span><br>
+											<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
+										</div>
+										<div class="col-lg-4">
+											<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $percentage ?>% - PASS</span><br>
 										</div>
 									</div>
-								<?php elseif($percentage <75): ?>
-									<div class='col-xl-6 col-md-6 mb-4'>
-										<div class='col-xl-6 col-md-6 mb-4'>
-											<div class='card border-top-primary shadow' style='border-left-style: solid; border-top-width: thick; border-top-color:red'>
-												<div class='card-header'>
-													<span class='font-weight-bold text-dark text-uppercase mb-1'> <?php echo $scode?></span><br>
-													<span class='text-gray text-uppercase mb-1'><?php echo $score?> / <?php echo $over?></span>
-												</div>
-												<div class='card-body'><?php echo $percentage?>% FAILED
-												</div>
-											</div>
-											<br>
+                  				</div>
+							</div>
+							<?php elseif($percentage < 75): ?>
+							<div class="col-xl-6 col-md-6 mb-4">
+                				<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:red">
+                    				<div class="card-header">
+										<div class="col-lg-8">
+											<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?></span><br>
+											<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
+										</div>
+										<div class="col-lg-4">
+											<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $percentage ?>% - FAILED</span><br>
 										</div>
 									</div>
-								 <?php endif; ?>
-								</div>
+                  				</div>
+							</div>
+							<?php endif; ?>
+							<br>
+							</div>
 						</div>
 					</div>
 				</div>

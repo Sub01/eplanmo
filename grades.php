@@ -1,6 +1,6 @@
 <?php 
 	$id = $_SESSION['User'];
-	$sql = "SELECT * FROM grades WHERE Name='$id'";
+	$sql = "SELECT * FROM grades WHERE User='$id'";
     $result =$db->query($sql);
 	while ($row = mysqli_fetch_array($result)) {
 		$score = $row['Score'];
