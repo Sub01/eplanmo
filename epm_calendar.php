@@ -76,13 +76,13 @@ else{
 		}
 	}
 	if(isset($_POST["grade"])){
-		$gteacher = $_POST['gteacher'];
-		$gsubject = $_POST['gsubject'];
-		$gscore = $_POST['gscore'];
-		$gover = $_POST['gtscore'];
-		$gtype = $_POST['gtype'];
-		$gpercent = ($gscore /$gover) * 100;
-		$sql = "INSERT INTO grades (`User`,`Subject_Code`,`Teacher`,'Score','Over',`Percentage`) VALUES ('$id','$gsubject','$gteacher','$gscore','$gover','$gpercent')";
+		$teacher = $_POST['teacher'];
+		$subject = $_POST['subject'];
+		$score = $_POST['score'];
+		$over = $_POST['over'];
+		$type = $_POST['type'];
+		$percent = ($gscore /$gover) * 100;
+		$sql = "INSERT INTO grades (`User`,`Subject_Code`,`Teacher`,`Score`,`Over`,`Percentage`) VALUES ('$id','$subject','$teacher','$score','$over','$percent')";
 		$result = mysqli_query($db, $sql);
 		if($result){
 			$_SESSION['status'] = "success";
@@ -349,7 +349,7 @@ else{
 														<td>:</td>
 														<td colspan="3">
 															<select class="form-control">
-																<option hidden name="gteacher"> </option>
+																<option hidden name="teacher"> </option>
 																<?php
 																$name = $_SESSION['User'];
 																$ssql = "SELECT * FROM `teachers` WHERE `User`='$name'";
@@ -365,7 +365,7 @@ else{
 														<td>:</td>
 														<td colspan="3">
 															<select class="form-control">
-																<option hidden name="gsubject"> </option>
+																<option hidden name="subject"> </option>
 																<?php
 																$name = $_SESSION['User'];
 																$ssql = "SELECT * FROM `subjects` WHERE `User`='$name'";
@@ -379,9 +379,9 @@ else{
 													<tr>
 														<td>Grade</td>
 														<td>:</td>
-														<td><input type="number" name="gscore" class="form-control"></td>
+														<td><input type="number" name="score" class="form-control"></td>
 														<td>/</td>
-														<td><input type="number" name="gtscore" class="form-control"></td>
+														<td><input type="number" name="over" class="form-control"></td>
 													</tr>
 													<tr>
 														<td>Type</td>
