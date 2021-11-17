@@ -81,8 +81,7 @@ else{
 		$score = $_POST['score'];
 		$over = $_POST['over'];
 		$type = $_POST['type'];
-		$percent = ($gscore /$gover) * 100;
-		$sql = "INSERT INTO grades (`User`,`Subject_Code`,`Teacher`,`Score`,`Over`,`Percentage`) VALUES ('$id','$subject','$teacher','$score','$over','$percent')";
+		$sql = "INSERT INTO grades (`User`,`Subject_Code`,`Teacher`,`Score`,`Over`,`Type`) VALUES ('$id','$subject','$teacher','$score','$over','$type')";
 		$result = mysqli_query($db, $sql);
 		if($result){
 			$_SESSION['status'] = "success";
