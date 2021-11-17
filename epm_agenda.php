@@ -216,10 +216,9 @@ include ("assets/php/summary.php");
 							$sql = "SELECT * FROM grades WHERE Name='$id'";
                 			$result =$db->query($sql);
 							while ($row = mysqli_fetch_array($result)) {
-								$fetch = mysqli_fetch_assoc($result);
-								$score = $fetch['Score'];
-								$over = $fetch['Over'];
-								$scode = $fetch['Subject_Code'];
+								$score = $row['Score'];
+								$over = $row['Over'];
+								$scode = $row['Subject_Code'];
 								$percentage = (($score/$over) * 100);
 								if($percentage >= 75){ ?>
 									<div class='col-xl-6 col-md-6 mb-4'>
