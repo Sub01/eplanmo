@@ -229,7 +229,8 @@ include ("assets/php/summary.php");
 														<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
 													</div>
 													<div class="col-lg-4">
-														<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $percentage ?>% - PASS</span><br>
+														<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 30px;"><?php echo $percentage ?>%</span><br>
+														<span>PASS</span>
 													</div>
 													</div>
 												</div>
@@ -246,7 +247,8 @@ include ("assets/php/summary.php");
 													<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
 												</div>
 												<div class="col-lg-4">
-													<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $percentage ?>% - FAILED</span><br>
+													<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 30px"><?php echo $percentage ?>% </span><br>
+													<span>FAILED</span>
 												</div>
 												</div>
 											</div>
