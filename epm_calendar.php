@@ -38,7 +38,7 @@ else{
    			exit();
 		}
 	}
-	if(isset($_POST['teacher'])){
+	elseif(isset($_POST['teacher'])){
 		$tname = $_POST['tname'];
 		$tsurname = $_POST['tsurname'];
 		$temail = $_POST['temail'];
@@ -57,7 +57,7 @@ else{
    			exit();
 		}
 	}
-	if(isset($_POST['subject'])){
+	elseif(isset($_POST['subject'])){
 		$scode= $_POST['scode'];
 		$sdes= $_POST['sdes'];
 		$sql = "INSERT INTO subjects (`S_Code`,`S_Description`,`User`) VALUES ('$scode','$sdes','$id')";
@@ -75,13 +75,13 @@ else{
    			exit();
 		}
 	}
-	if(isset($_POST['grade'])){
-		$teacher = $_POST['teacher'];
-		$subject = $_POST['subject'];
-		$score = $_POST['score'];
-		$over = $_POST['over'];
-		$type = $_POST['type'];
-		$sql = "INSERT INTO grades (`User`,`Subject_Code`,`Teacher`,`Score`,`Over`,`Type`) VALUES ('$id','$subject','$teacher','$score','$over','$type')";
+	elseif(isset($_POST['ggrade'])){
+		$teacher = $_POST['gteacher'];
+		$subject = $_POST['gsubject'];
+		$score = $_POST['gscore'];
+		$over = $_POST['gover'];
+		$type = $_POST['gtype'];
+		$sql = "INSERT INTO grades (`ID`, `User`,`Subject_Code`,`Teacher`,`Score`,`Over`,`Type`) VALUES (NULL,'$id','$subject','$teacher','$score','$over','$type')";
 		$result = mysqli_query($db, $sql);
 		if($result){
 			$_SESSION['status'] = "success";
@@ -347,7 +347,7 @@ else{
 														<td>Teacher</td>
 														<td>:</td>
 														<td colspan="3">
-															<select class="form-control" name="teacher">
+															<select class="form-control" name="gteacher">
 																<option hidden> </option>
 																<?php
 																$name = $_SESSION['User'];
@@ -363,7 +363,7 @@ else{
 														<td>Subject</td>
 														<td>:</td>
 														<td colspan="3">
-															<select class="form-control" name="subject">
+															<select class="form-control" name="gsubject">
 																<option hidden> </option>
 																<?php
 																$name = $_SESSION['User'];
@@ -378,15 +378,15 @@ else{
 													<tr>
 														<td>Grade</td>
 														<td>:</td>
-														<td><input type="number" name="score" class="form-control"></td>
+														<td><input type="number" name="gscore" class="form-control"></td>
 														<td>/</td>
-														<td><input type="number" name="over" class="form-control"></td>
+														<td><input type="number" name="gover" class="form-control"></td>
 													</tr>
 													<tr>
 														<td>Type</td>
 														<td>:</td>
 														<td colspan="3">
-															<select name="type" class="form-control">
+															<select name="gtype" class="form-control">
 																<option hidden> </option>
 																<option value="Written">Written</option>
 																<option value="Oral">Oral</option>
@@ -397,7 +397,7 @@ else{
 												</table>
 												<table>
 													<tr>
-														<td><button type="submit" name="grade" class="btn btn-primary">ADD GRADE</button></td>
+														<td><button type="submit" name="ggrade" class="btn btn-primary">ADD GRADE</button></td>
 													</tr>	
 												</table>
 												</form>
