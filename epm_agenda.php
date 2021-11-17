@@ -179,7 +179,8 @@ include ("assets/php/summary.php");
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row">
-							<?php 
+							<?php
+								
 							$sql = "SELECT * FROM events WHERE Name='$uname' AND  (DATEDIFF(Start,NOW()) BETWEEN 8 AND 14)";
                 			$result =$db->query($sql);
 							while ($row = mysqli_fetch_array($result)) {?>
@@ -211,6 +212,7 @@ include ("assets/php/summary.php");
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row">
 							<?php 
+							$id = $_SESSION['User'];
 							$sql = "SELECT * FROM grades WHERE Name='$uname'";
                 			$result =$db->query($sql);
 							while ($row = mysqli_fetch_array($result)) {
