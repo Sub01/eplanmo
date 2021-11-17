@@ -219,8 +219,8 @@ include ("assets/php/summary.php");
 								$score = $row['Score'];
 								$over = $row['Over'];
 								$scode = $row['Subject_Code'];
-								$percentage = (($score/$over) * 100);
-								if($percentage >= 75){ ?>
+								$percentage = (($score/$over) * 100);}?>
+								<?php if($percentage >=75):?>
 									<div class='col-xl-6 col-md-6 mb-4'>
 										<div class='col-xl-6 col-md-6 mb-4'>
 											<div class='card border-top-primary shadow' style='border-left-style: solid; border-top-width: thick; border-top-color:green'>
@@ -234,9 +234,7 @@ include ("assets/php/summary.php");
 											<br>
 										</div>
 									</div>
-								<?php
-								}
-								else{?>
+								<?php else: ?>
 									<div class='col-xl-6 col-md-6 mb-4'>
 										<div class='col-xl-6 col-md-6 mb-4'>
 											<div class='card border-top-primary shadow' style='border-left-style: solid; border-top-width: thick; border-top-color:red'>
@@ -249,11 +247,9 @@ include ("assets/php/summary.php");
 											</div>
 											<br>
 										</div>
-									<?php } 
-							}?>
 									</div>
+								 <?php endif; ?>
 								</div>
-							
 						</div>
 					</div>
 				</div>
