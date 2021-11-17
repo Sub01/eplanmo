@@ -226,7 +226,7 @@ include ("grades.php");
 											<br>
 										</div>
 									</div>
-								<?php else: ?>
+								<?php elseif($percentage <75): ?>
 									<div class='col-xl-6 col-md-6 mb-4'>
 										<div class='col-xl-6 col-md-6 mb-4'>
 											<div class='card border-top-primary shadow' style='border-left-style: solid; border-top-width: thick; border-top-color:red'>
