@@ -348,14 +348,14 @@ else{
 														<td>Teacher</td>
 														<td>:</td>
 														<td colspan="3">
-															<select class="form-control">
-																<option hidden name="teacher"> </option>
+															<select class="form-control" name="teacher">
+																<option hidden> </option>
 																<?php
 																$name = $_SESSION['User'];
 																$ssql = "SELECT * FROM `teachers` WHERE `User`='$name'";
 																$sresult = $db-> query($ssql);
 																while($srow = mysqli_fetch_array($sresult)){ ?>
-																<option><?php echo $srow['T_Name']?> <?php echo $srow['T_Surname']?></option>
+																<option value="<?php echo $srow['T_Name']?> <?php echo $srow['T_Surname']?>"><?php echo $srow['T_Name']?> <?php echo $srow['T_Surname']?></option>
 																<?php }?>
 															</select>
 														</td>
@@ -364,8 +364,8 @@ else{
 														<td>Subject</td>
 														<td>:</td>
 														<td colspan="3">
-															<select class="form-control">
-																<option hidden name="subject"> </option>
+															<select class="form-control" name="subject">
+																<option hidden> </option>
 																<?php
 																$name = $_SESSION['User'];
 																$ssql = "SELECT * FROM `subjects` WHERE `User`='$name'";
@@ -389,9 +389,9 @@ else{
 														<td colspan="3">
 															<select name="type" class="form-control">
 																<option hidden> </option>
-																<option>Written</option>
-																<option>Oral</option>
-																<option>Practical</option>
+																<option value="Written">Written</option>
+																<option value="Oral">Oral</option>
+																<option value="Practical">Practical</option>
 															</select>
 														</td>
 													</tr>
