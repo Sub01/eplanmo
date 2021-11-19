@@ -183,7 +183,7 @@ else{
   		margin: 0;
 	}
 	</style>
- <body style="background-image:url(/"assets/images/background.png");background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">
+ <?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light ">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
