@@ -10,19 +10,13 @@ include 'assets/php/php_epm_genset.php';
 	<link rel="stylesheet" href="assets/css/animation.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!--===============================================================================================-->
-   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-<!--===============================================================================================-->     
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 <!--===============================================================================================-->  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<!--===============================================================================================-->  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<!--===============================================================================================-->  
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!--===============================================================================================-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 <!--===============================================================================================-->
-   <link rel="stylesheet" href="assets/css/dashboard_main.css">
+   	<link rel="stylesheet" href="assets/css/dashboard_main.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
   </head>
 	<style>
 		.text{
@@ -30,52 +24,73 @@ include 'assets/php/php_epm_genset.php';
 		}
 	</style>
   <?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#"><h2 style="font-family: Courier">EPM</h2></a>
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item">
-         		<a class="nav-link" href="epm_admin.php">DASHBOARD</a>
-        	</li>
-			<li class="nav-item">
-         		<a class="nav-link" href="epm_calendar.php">CALENDAR</a>
-        	</li>
-			<li class="nav-item">
-         		<a class="nav-link" href="epm_agenda.php">AGENDA</a>
-        	</li>
-    </ul>
-    <div class="dropdown d-flex align-items-center">
-		
-      	<a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		  <?php echo '<img class="rounded-circle" height="50" width="50" alt="" loading="lazy" src="data:image/jpeg;base64,'.base64_encode($image).'"/>'; ?>
-      	</a>
-      	<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-			<h6 class="dropdown-item disabled"><span class="text-gray-600 large"><?php echo $names; ?> <?php echo $sname; ?></span></h6> 
-    		<a class="dropdown-item" href="epm_profile.php"><i class="far fa-id-card"></i> Profile</a>
-    		<a class="dropdown-item" href="assets/php/session_logout.php" onclick="return confirm('Are you sure you want to Log Out?')"><i class="fas fa-sign-out-alt"></i> Log Out</a>
-  		</div>
-    </div>
-  </div>
-</nav>
-	  
-<div class="container" style="margin-top:20px;">
-	<div class="row">
-		<?php if(isset($_SESSION['message']) && $_SESSION['status'] == 'error'): ?>
-        <div class="alert alert-danger">
-        <?php echo $_SESSION['message']; ?>
+<div class="wrapper d-flex">
+	<nav id="sidebar" class="">
+		<div class="custom-menu">
+			
         </div>
-      	<?php elseif (isset($_SESSION['message']) && $_SESSION['status'] == 'success'):?>
-        <div class="alert alert-success">
-        <?php echo $_SESSION['message']; ?>
-        </div>     
-        <?php endif; ?>
-        <?php unset($_SESSION['message']); ?>
-        <?php unset($_SESSION['status']); ?>
-	</div>
+	  	<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+			E-PLAN MO
+	  	</div>
+        <ul class="list-unstyled components mb-5">
+        	<li class="active">
+            	<a href="epm_admin.php"><span class="fa fa-home mr-3"></span> Dashboard</a>
+          	</li>
+          	<li>
+              <a href="epm_calendar.php"><span class="fa fa-download mr-3 notif"><small class="d-flex align-items-center justify-content-center">5</small></span> Events</a>
+          	</li>
+          	<li>
+            	<a href="epm_agenda.php"><span class="fa fa-gift mr-3"></span> Agenda</a>
+          	</li>
+        </ul>
+    </nav>
+    <div id="content" class="d-flex flex-column">
+    	<div id="content">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <i type="button" id="sidebarCollapse" class="fas fa-bars"></i>
+                    </button>
+                    <ul class="navbar-nav ml-auto">
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $names; ?> <?php echo $sname; ?></span>
+                                <?php echo '<img class="rounded-circle" height="50" width="50" alt="" loading="lazy" src="data:image/jpeg;base64,'.base64_encode($image).'"/>'; ?>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="epm_profile.php">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="index.php" onclick="return confirm('Are you sure you want to Log Out?')">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <div class="row">
+						<div class="col-lg-12">
+							<?php if(isset($_SESSION['message']) && $_SESSION['status'] == 'error'): ?>
+    						<div class="alert alert-danger">
+    						<?php echo $_SESSION['message']; ?>
+    						</div>
+    						<?php elseif (isset($_SESSION['message']) && $_SESSION['status'] == 'success'):?>
+    						<div class="alert alert-success">
+    						<?php echo $_SESSION['message']; ?>
+    						</div>     
+    						<?php endif; ?>
+    						<?php unset($_SESSION['message']); ?>
+    						<?php unset($_SESSION['status']); ?>
+						</div>
+                      </div>
     <div class="row">
 		<div class="col-xl-12 col-md-12 mb-4">
 			<div class="card border-left-primary shadow h-100 py-2">
@@ -264,8 +279,19 @@ include 'assets/php/php_epm_genset.php';
       </div>
     </div>
   </div>
+ 
 <!--SCRIPTS-->  
-   <script src="assets/js/dashboard_main.js"></script>
+<!--===============================================================================================-->  
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/js/linechart.js"></script>
+<!--===============================================================================================-->
+<script src="assets/js/dashboard_main.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<!--===============================================================================================-->
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
      <script>
     $("document").ready(function(){
     setTimeout(function(){
