@@ -165,6 +165,8 @@ elseif(isset($_POST['forgot'])){
 				                <button type="submit" name="login" class="btn btn-block" style="background: #7A313E; border-radius: 30px"><i class="fas fa-sign-in-alt mr-2" style="color: #fff"></i><label style="color: #fff;">Sign In</label></button>
 								<?php if(isset($script)){ echo $script; } ?>
 								<?php unset($script); ?>
+								<br>
+								<br>
 				            </div>
 							<div class="col-lg 6">
 								
