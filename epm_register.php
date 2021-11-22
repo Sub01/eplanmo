@@ -181,7 +181,7 @@ else
 									</div>
 									<div class="form-group">
 										<input class="form-control" id="pword2" type="password" name="pword2" required="" placeholder="Re-type Password" maxlength="20"><br>
-										<center><input type="checkbox" style="margin-top: 4px; margin-right: 4px;" onClick="showPassword2();">Show Password</center>
+										<center><input type="checkbox" style="margin-top: 4px; margin-right: 4px;" onClick="showPassword1();">Show Password</center>
 										<center><label id="message"></label></center>
 										Select Profile Picture (Required)
 										<input type="file" name="image" required="">
@@ -260,24 +260,16 @@ else
 		} 	
 	});
 	function showPassword1() {
-		  var x = document.getElementById("pword1");
-			var y = document.getElementById("pword2");
-		  if (x.type === "password" && y.type === "password") {
+		var x = document.getElementById("pword1");
+		var y = document.getElementById("pword2");
+		  if (x.type === "password") {
 			  x.type = "text";
 			  y.type = "text";
 			  
 		  } 
 		  else {
     		x.type = "password";
-  			}
-	  }
-	function showPassword2() {
-		  var x = document.getElementById("pword2");
-		  if (x.type === "password") {
-			  x.type = "text";
-		  } 
-		  else {
-    		x.type = "password";
+			y.type = "password";
   			}
 	  }
 const inputs = document.querySelectorAll(".input");
