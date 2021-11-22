@@ -78,7 +78,7 @@ if(isset($_POST['forgot'])){
 		
 			$mail->msgHTML($message);
 			
-			if(mail($email, $subject, $message, $headers)){
+			if($mail->send()){
 				$sql2 = "UPDATE users SET Code='$code' WHERE Username='$username'";
 				$result2 = mysqli_query($db,$sql2);
   				$script = "<script> $(document).ready(function(){ $('#modalSuccess').modal('show'); }); </script>";
