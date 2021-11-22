@@ -183,7 +183,7 @@ else{
 	</style>
  <?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
 <div class="wrapper d-flex">
-	<nav id="sidebar" class="">
+	<nav id="sidebar" class="" style="background-color: maroon;">
 		<div class="custom-menu">
 			
         </div>
@@ -195,10 +195,10 @@ else{
             	<a href="epm_admin.php"><span class="fa fa-home mr-3"></span> Dashboard</a>
           	</li>
           	<li>
-              <a href="epm_calendar.php"><span class="fa fa-download mr-3 notif"><small class="d-flex align-items-center justify-content-center">5</small></span> Events</a>
+              <a href="epm_calendar.php"><span class="fa fa-calendar-week mr-3"></span> Events</a>
           	</li>
           	<li>
-            	<a href="epm_agenda.php"><span class="fa fa-gift mr-3"></span> Agenda</a>
+            	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
         </ul>
     </nav>

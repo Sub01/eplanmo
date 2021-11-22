@@ -103,6 +103,7 @@ else
 <!--===============================================================================================-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/animation.css">
 <!--===============================================================================================-->
 
@@ -115,21 +116,44 @@ else
 	}
 	input[type="date"]:in-range::-webkit-datetime-edit-year-field, input[type="date"]:in-range::-webkit-datetime-edit-month-field, input[type="date"]:in-range::-webkit-datetime-edit-day-field, input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: black; 
 	}
+
+	input[type="file"]{
+		display: none;
+	}
+	#filebutton{
+		color: #fff;
+		padding: 2px;
+		height: 30px;
+		width: 150px;
+		margin: auto;
+		background-color: #D44347;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 15px;
+		float: left;
+		display: flex;
+		border-radius: 30px;
+		opacity: 10px;
+		justify-content: center;
+		align-items: center;
+	}
 	</style>
-<?php echo '<body style="overflow-y:auto; background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
-	
-<div class="container-fluid" style="margin-top: 5%;">
+	<?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>    
+<div class="wrapper d-flex">
+<div class="container-fluid" style="margin-top: 5px; padding: 20px;">
 	<div class="row">
-		<div class="col-md-2">
+		<div class="col-md-3">
 			
 		</div>
-		<div class="col-md-8" style="background-color: transparent;">
+		<div class="col-md-6" style="background-color: transparent;">
         	<div class="row">
 				<div class="col-xl-12 col-md-12 mb-4">
-					<div class="card border-left-primary shadow h-100 py-2" style="border:2px dashed black">
-						<div class="card-header">
-							<form action="" method="POST" enctype="multipart/form-data">
-							<center><h2>REGISTRATION</h2></center>
+					<div class="card">
+						<div class="card-header" style="background: #7A313E; height: 50px; color: #fff;">
+							<center><i class="fas fa-angle-down" style="margin-top:10px; font-size: 40px; background: #7A313E; height: 50px; width: 50px;border-radius: 60px; padding-top:10px"></i></center>
+				</div>
+               <div class="card-body">
+               <form action="" method="POST" enctype="multipart/form-data">
+							<h2 class="title" style="color: #7A313E; text-align: center; padding: 10px 0 20px 0">SIGN UP</h2>
 							<?php if(isset($_SESSION['message']) && $_SESSION['status'] == 'error'): ?>
 							<div class="alert alert-danger">
 							<?php echo $_SESSION['message']; ?>
@@ -141,66 +165,56 @@ else
 							<?php endif; ?>
 							<?php unset($_SESSION['message']); ?>
 							<?php unset($_SESSION['status']); ?>
-						</div>
-                    	<div class="card-body">
 							<div class="row">
 								<div class="col-xl-6 col-md-6 mb-4">
-									<legend>Personal Information</legend>
+									<h5>Personal Information</h5>
 									<div class="form-group">
-										<h5>Name</h5>
-										<input class="form-control" type="text" name="name" required="" maxlength="25" style="width: 100%">
+										<input class="form-control" type="text" name="name" required="" placeholder="First Name" maxlength="25" style="width: 100%">
 									</div>
 									<div class="form-group">
-										<h5>Middle Name</h5>
-										<input class="form-control" type="text" name="mname" required="" maxlength="25">
+										<input class="form-control" type="text" name="mname" required="" placeholder="Middle Name" maxlength="25">
 									</div>
 									<div class="form-group">
-										<h5>Surname</h5>
-										<input class="form-control" type="text" name="sname" required="" maxlength="25" style="width: 100%">
+										<input class="form-control" type="text" name="sname" required="" placeholder="Last Name" maxlength="25" style="width: 100%">
 									</div>
 									<div class="form-group">
-										<h5>Birthday</h5>
-										<input class="form-control" type="date" name="bday" required="" maxlength="25" style="width: 100%">
+										<input class="form-control" type="date" name="bday" required="" placeholder="Birthday" maxlength="25" style="width: 100%">
 									</div>
 									<div class="form-group">
-										<h5>Contact Number</h5>
-										<input class="form-control" type="number" name="cno" required="" onKeyPress="if(this.value.length==14) return false;" style="width: 100%">
+										<input class="form-control" type="number" name="cno" required="" placeholder="Phone Number" onKeyPress="if(this.value.length==14) return false;" style="width: 100%">
 									</div>
 									<div class="form-group">
-										<h5>Email</h5>
-										<input class="form-control" type="email" name="email" required="" maxlength="50" style="width: 100%">
+										<input class="form-control" type="email" name="email" required="" placeholder="Email" maxlength="50" style="width: 100%">
 									</div>
 									<div class="form-group">
 										
 									</div>
 								</div>
 								<div class="col-xl-6 col-md-6 mb-4">
-									<legend>Account Information</legend>
+									<h5>Account Information</h5>
 									<div class="form-group">
-										<h5>Username</h5>
-										<input type="text" class="form-control" name="uname" required="" maxlength="20" style="width: 100%">
+										<input type="text" class="form-control" name="uname" required="" placeholder="Username" maxlength="20">
 									</div>
 									<div class="form-group">
-										<h5>Password</h5>
-										<input class="form-control" id="pword1" type="password" name="pword1" required="" maxlength="20" style="width: 90%"><br>
-										<input type="checkbox" class="fa-pull-left" style="margin-top: 4px; margin-right: 4px;" onClick="showPassword1();"><p style="text-align: left">Show Password</p>
+										<input class="form-control" id="pword1" type="password" name="pword1" required="" placeholder="Password" maxlength="20">
+										<!-- <input type="checkbox" class="fa-pull-left" style="margin-top: 4px; margin-right: 4px;" onClick="showPassword1();"><p style="text-align: left">Show Password</p> -->
 									</div>
 									<div class="form-group">
-										<h5>Repeat Password</h5>
-										<input class="form-control" id="pword2" type="password" name="pword2" required="" maxlength="20" style="width: 90%"><br>
-										<input type="checkbox" class="fa-pull-left" style="margin-top: 4px; margin-right: 4px;" onClick="showPassword2();"><p style="text-align: left">Show Password</p>
+										<input class="form-control" id="pword2" type="password" name="pword2" required="" placeholder="Re-type Password" maxlength="20"><br>
+										<center><input type="checkbox" style="margin-top: 4px; margin-right: 4px;" onClick="showPassword2();">Show Password</center>
 										<center><label id="message"></label></center>
-									</div>
-									<div class="form-group">
-										<h5>Select Profile Picture (Required)</h5>
-										<input type="file" name="image" required="" style="width: 90%">
+										<label style="font-size: 15px;">Select Profile Picture (Required)</label>
+										<input type="file" name="image" id="file" accept="images/*" required=""><label for="file" id="filebutton"><i class="material-icons">add_photo_alternate</i>Choose Photo</label>
 									</div>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-xl-12 col-md-6 mb-4">
-									<button type="button" onclick="window.location.href='index.php'" class="btn btn-primary" style="width: 20%; float: left">BACK</button>
-									<button type="submit" class="btn btn-primary" id="submit" style="width: 30%; float: right"></i>Register</a>
+								<div class="col-md-12" style="padding: 20px 180px 0 180px">
+									<!-- <button type="button" onclick="window.location.href='index.php'" class="btn btn-primary" style="width: 20%; float: left">BACK</button> -->
+									<button type="submit" class="btn btn-block" id="submit" style="background: #7A313E; border-radius: 30px"><i class="fas fa-sign-in-alt mr-2" style="color: #fff"></i><label style="color: #fff;">Sign Up</label></button>
+								</div>
+								<div class="col-md-12" style="margin-top: 10px">
+								<center>Already have an account? <a href="index.php"> Login here</a></center>
 								</div>
 							</div>
 							<div class="row">

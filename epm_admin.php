@@ -39,10 +39,10 @@ include ("assets/php/summary.php");
             	<a href="epm_admin.php"><span class="fa fa-home mr-3"></span> Dashboard</a>
           	</li>
           	<li>
-              <a href="epm_calendar.php"><span class="fa fa-download mr-3 notif"><small class="d-flex align-items-center justify-content-center">5</small></span> Events</a>
+              <a href="epm_calendar.php"><span class="fa fa-calendar-week mr-3"></span> Events</a>
           	</li>
           	<li>
-            	<a href="epm_agenda.php"><span class="fa fa-gift mr-3"></span> Agenda</a>
+            	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
         </ul>
     </nav>
@@ -202,7 +202,7 @@ include ("assets/php/summary.php");
                                 		SUBJECTS
                             		</div>
                             		<div class="h5 mb-0 font-weight-bold text-gray-800">
-                                		<?php echo $archived ?>
+                                		<?php echo $subjects ?>
                             		</div>
                         		</div>
                         		<div class="col-auto">

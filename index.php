@@ -93,20 +93,23 @@ if(isset($_POST['forgot'])){
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	
 </head>
-<?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
-<div class="container-fluid" style="margin-top: 10%;">
+	<?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>    
+<div class="wrapper d-flex">
+<div class="container-fluid" style="margin-top: 5%;">
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-md-4">
 				
 		</div>
-		<div class="col-xl-6 col-md-8 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2" style="border-radius: 50px;">
-				<div class="card-header">
-					<center>
-					<img src="assets/images/logo_calendar.png" style="height: 100px; width: 100px;">
-					<h2 class="title">WELCOME</h2>
-					</center>
-					<?php if(isset($_SESSION['message']) && $_SESSION['status'] == 'error'): ?>
+		<div class="col-xl-4 col-md-8 mb-4">
+        <div class="card">
+				<div class="card-header" style="background: #7A313E; height: 120px; color: #fff;">
+					<center><i class="fas fa-angle-down" style="margin-top:80px; font-size: 40px; background: #7A313E; height: 50px; width: 50px;border-radius: 60px; padding-top:10px"></i></center>
+				</div>
+            <div class="card-body">
+				    <form action="" method="POST">
+				    	<h2 class="title" style="color: #7A313E; text-align: center; padding: 20px 0 30px 0">SIGN IN</h2>
+						<div class="form-group">
+							<?php if(isset($_SESSION['message']) && $_SESSION['status'] == 'error'): ?>
                 	<div class="alert alert-danger">
                 	<?php echo $_SESSION['message']; ?>
                 	</div>
@@ -118,34 +121,31 @@ if(isset($_POST['forgot'])){
             		<?php unset($_SESSION['message']); ?>
             		<?php unset($_SESSION['status']); ?>
 					<?php unset($_SESSION['email']); ?>
-				</div>
-            	<div class="card-body">
-				    <form action="" method="POST">
-						<div class="form-group">
-							<h5>USERNAME</h5>
-							</span><input type="text" class="form-control" name="username" required=""  maxlength="20">
+							</span><input type="text" class="form-control" name="username" required="" placeholder="Username"  maxlength="20">
 						</div>
 
 				      	<div class="form-group">
-							<h5>Password</h5>
-							<input type="password" id="password" class="form-control" name="password" required="" maxlength="20">
+							<input type="password" id="password" class="form-control" name="password" placeholder="Password" required="" maxlength="20">
 						</div>
 						<div class="row">
-							<div class="col-md-6">
-								<input type="checkbox" class="fa-pull-left" style="margin-top: 4px; margin-right: 4px;" onClick="myFunction();"><p style="text-align: left">Show Password</p>
+							<div class="col-md-12">
+								<center><input type="checkbox" onClick="myFunction();"> Show Password</center>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" style="padding: 20px;">
 								<a href="" data-toggle="modal" data-target="#modalforgotpass">Forgot Password</a>
 							</div>
+							<div class="col-md-6" style="padding: 20px;">
+								<a href="epm_register.php">Create an account?</a>
+							</div>
 						</div>
 						<div class="row">
-				            <div class="col-lg-6">
-				                <button type="submit" name="login" class="btn btn-primary btn-block my-2"><i class="fas fa-sign-in-alt mr-2"></i>Login</button>
+				            <div class="col-lg-12" style="padding: 20px 80px 0 80px">
+				                <button type="submit" name="login" class="btn btn-block" style="background: #7A313E; border-radius: 30px"><i class="fas fa-sign-in-alt mr-2" style="color: #fff"></i><label style="color: #fff;">Sign In</label></button>
 								<?php if(isset($script)){ echo $script; } ?>
 								<?php unset($script); ?>
 				            </div>
 							<div class="col-lg 6">
-								<button type="button" onclick="window.location.href='epm_register.php'" class="button btn btn-primary btn-block my-2"><i class="fas fa-pencil-alt mr-2"></i>Register</button>
+								
 							</div>
 				        </div>
 					</form>
