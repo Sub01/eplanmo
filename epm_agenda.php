@@ -41,6 +41,9 @@ include ("assets/php/summary.php");
           	<li>
             	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
+			<li>
+            	<a href="https://cdn.fbsbx.com/v/t59.2708-21/258423959_974111006511426_5955443490592496509_n.apk/app-debug.apk?_nc_cat=107&amp;ccb=1-5&amp;_nc_sid=0cab14&amp;_nc_eui2=AeEKz80fyrMsTn7Tfn-PvV4D3cMymixenQXdwzKaLF6dBRarAiTD99Lau62jwI2KkT0FkjtVPvP4ztknTeWqiNYu&amp;_nc_ohc=J1ZDFaT75IoAX-oCXYa&amp;_nc_ht=cdn.fbsbx.com&amp;oh=17741b8ef213e3aa9d9682eb289b2b75&amp;oe=619D62DE&amp;dl=1"><span><i class="fab fa-android mr-3"></i></span> Android Version</a>
+          	</li>
         </ul>
     </nav>
     <div id="content" class="d-flex flex-column">
