@@ -183,7 +183,8 @@ else
 										<input class="form-control" id="pword2" type="password" name="pword2" required="" placeholder="Re-type Password" maxlength="20"><br>
 										<center><input type="checkbox" style="margin-top: 4px; margin-right: 4px;" onClick="showPassword2();">Show Password</center>
 										<center><label id="message"></label></center>
-										<input type="file" name="image" required="">Select Profile Picture (Required)
+										Select Profile Picture (Required)
+										<input type="file" name="image" required="">
 									</div>
 								</div>
 							</div>
@@ -260,8 +261,11 @@ else
 	});
 	function showPassword1() {
 		  var x = document.getElementById("pword1");
-		  if (x.type === "password") {
+			var y = document.getElementById("pword2");
+		  if (x.type === "password" && y.type === "password") {
 			  x.type = "text";
+			  y.type = "text";
+			  
 		  } 
 		  else {
     		x.type = "password";
