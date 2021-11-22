@@ -44,8 +44,8 @@ if(isset($_POST['login'])){
       		$_SESSION['status'] = "error";
          	$_SESSION['message'] = "Your Login Name or Password is invalid";
       }
-   }
-if(isset($_POST['forgot'])){
+}
+elseif(isset($_POST['forgot'])){
 	$username = $_POST['username2'];
 	$email = $_POST['email2'];
 	$sql1 = "SELECT * FROM `users` WHERE `Username`='$username' AND `Email`='$email'";
@@ -90,10 +90,6 @@ if(isset($_POST['forgot'])){
 		else{
 			$script = "<script> $(document).ready(function(){ $('#modalEmailError').modal('show'); }); </script>";
 		}
-	}
-	else{
-		$script = "<script> $(document).ready(function(){ $('#modalUserError').modal('show'); }); </script>";
-		
 	}
 
 ?>
