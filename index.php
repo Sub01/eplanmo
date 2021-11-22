@@ -95,7 +95,7 @@ if(isset($_POST['forgot'])){
 		$script = "<script> $(document).ready(function(){ $('#modalUserError').modal('show'); }); </script>";
 		
 	}
-}
+
 ?>
 
 <!DOCTYPE html>
