@@ -10,19 +10,23 @@
 	$sql3 = "SELECT Count(`Name`) AS total3 FROM `events` WHERE `Name`='$name' AND `Status`='Ended'";
 	$sql4 = "SELECT Count(`Name`) AS total4 FROM `events` WHERE `Name`='$name' AND `Status`='Archived'";
 	$sql5 = "SELECT Count(`T_Name`) AS total5 FROM `teachers` WHERE `User`='$name'";
+	$sql6 = "SELECT Count(`S_Code`) AS total6 FROM `subjects` WHERE `User`='$name'";
 	$result1 = $db-> query($sql1);
 	$result2 = $db-> query($sql2);
 	$result3 = $db-> query($sql3);
 	$result4 = $db-> query($sql4);
 	$result5 = $db-> query($sql5);
+	$result6 = $db-> query($sql6);
     $row1 = $result1-> fetch_assoc();
     $row2 = $result2-> fetch_assoc();
     $row3 = $result3-> fetch_assoc();
 	$row4 = $result4-> fetch_assoc();
 	$row5 = $result5-> fetch_assoc();
+	$row6 = $result6-> fetch_assoc();
     $all = $row1["total"];
     $ongoing = $row2["total2"];
     $ended = $row3["total3"];
 	$archived = $row4["total4"];
 	$teachers = $row5['total5'];
+	$grades = $row5['total6'];
 ?>	
