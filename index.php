@@ -1,7 +1,17 @@
 <?php
-	include "config.php";
-	include ("assets/php/php_epm_genset.php");
-   	session_start();
+include "config.php";
+include ("assets/php/php_epm_genset.php");
+include "config.php";
+include 'assets/php/php_epm_genset.php';
+require 'assets/mailer/Exception.php';
+require 'assets/mailer/PHPMailer.php';
+require 'assets/mailer/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+session_start();
  
 if(isset($_POST['login'])){
 
@@ -46,15 +56,32 @@ if(isset($_POST['forgot'])){
 		$sql2 = "UPDATE users SET Code='$code' WHERE Username='$username'";
 		$result2 = mysqli_query($db,$sql2);
 		if($result2){
-			$subject = "Request for Reset Password";  
-	   		$message = '<html><body>';
-	   		$message .= '<h3 style="font-family: Verdana;"> HELLO ' .strip_tags($_POST['username2']). ' !</h3>';
-		    $message .= '<h5>We have successfuly tracked your account and your request in now available.';
-		    $message .= '<h5>Please click the link below to proceed in reset password page.<br>';
-		    $message .= "<a href='https://eplanmo.herokuapp.com/epm_resetpass.php?Code=$code&User=$username&Email=$email'>https://localhost/EPM/epm_resetpass.php?Code=$code&User=$username&Email=$email</a>";
-		    $headers = "From: eplanmo@noreply.com\r\n";
-		    $headers .= "MIME-Version: 1.0\r\n";
-		    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+			
+			$mail = new PHPMailer(true);
+			$mail->isHTML(true);
+			$mail->isSMTP();
+			$mail->CharSet = "utf-8";
+		
+			//==========================  GOOGLE ACCOUNT CREDENTIALS
+			$mail->Host = 'smtp.gmail.com';
+			$mail->SMTPAuth = "true";
+			$mail->Username = "mh.tokio@gmail.com";
+			$mail->Password = "cwovxtcdrzoxjmmp";
+			$mail->SMTPSecure = "ssl";
+			$mail->Port = "465";
+		
+			//==========================  EMAIL INFORMATIONS
+			$mail->setFrom("mh.tokio@gmail.com","Gino Toralba/EPM DEV");
+			$mail->addAddress("$email", $name);
+		
+			$email_template = 'epm_mail_template2.html';
+			$message = file_get_contents($email_template);
+			$message = str_replace('%username%', $username, $message);
+			$message = str_replace('%code%', $code, $message);
+			$message = str_replace('%email%', $email, $message);
+		
+			$mail->msgHTML($message);
+			
 			if(mail($email, $subject, $message, $headers)){
   				$script = "<script> $(document).ready(function(){ $('#modalSuccess').modal('show'); }); </script>";
             }
@@ -183,7 +210,7 @@ if(isset($_POST['forgot'])){
 						<input type="email" class="form-control" name="email2" required=""  maxlength="50">
 				</div>
 			</div>
-              <button class="btn btn-primary" name="forgot" type="submit">Update</button>
+              <button class="btn btn-primary" name="forgot" type="submit" style="width: 100%">CONFIRM</button>
           </form>
         </div>
       </div>
