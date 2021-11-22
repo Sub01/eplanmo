@@ -203,8 +203,7 @@ else
 										<input class="form-control" id="pword2" type="password" name="pword2" required="" placeholder="Re-type Password" maxlength="20"><br>
 										<center><input type="checkbox" style="margin-top: 4px; margin-right: 4px;" onClick="showPassword2();">Show Password</center>
 										<center><label id="message"></label></center>
-										<label style="font-size: 15px;">Select Profile Picture (Required)</label>
-										<input type="file" name="image" id="file"  required="">
+										<input type="file" name="image" required="">Select Profile Picture (Required)
 									</div>
 								</div>
 							</div>
