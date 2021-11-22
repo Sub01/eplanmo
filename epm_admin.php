@@ -44,9 +44,6 @@ include ("assets/php/summary.php");
           	<li>
             	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
-			<li>
-            	<a href="https://doc-0c-7s-docs.googleusercontent.com/docs/securesc/fd8nbvldc2trq8b5roc4k9ec64jtfeto/aj230g73q10fo2qeqevdk48386u86il4/1637588175000/12962519734540790465/12962519734540790465/17S-3Wywsgy7W7YYyezfrpQB16ilMDG-w?e=download&amp;authuser=0&amp;nonce=h9o3v8jhtu7jq&amp;user=12962519734540790465&amp;hash=hn9lvqrem84kfkaft02rlt7ahd9el7uv"><span class="fa fa-calendar-check mr-3"></span>DOWNLOAD APK</a>
-          	</li>
         </ul>
     </nav>
     <div id="content" class="d-flex flex-column">
