@@ -112,7 +112,7 @@ else{
         <div class="modal-header">
 			<img src="assets/images/congrats.png" style="width: 10%;height: 10%">
           	<h2 class="modal-title">Password Reset Successfuly</h2>
-          <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='epm_login.php'">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='index.php'">&times;</button>
         </div>
         <div class="modal-body">
           <p>You can now logged in your account using your new password.</p>
@@ -126,10 +126,10 @@ else{
         <div class="modal-header">
 			<img src="assets/images/error.png" style="width: 10%;height: 10%">
           	<h2 class="modal-title">OTP has been already used</h2>
-          <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='epm_login.php'">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='index.php'">&times;</button>
         </div>
         <div class="modal-body">
-          <p>The One Time Password you attempt to use is already expired. please request another One Time Pin in Forgot Password in Login Page.</p>
+          <p>Link or Session you have used has been expired. please request another Request in Forgot Password in Login Page.</p>
         </div>
       </div>
     </div>
