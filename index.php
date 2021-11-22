@@ -154,12 +154,9 @@ elseif(isset($_POST['forgot'])){
 							</div>
 						</div>
 					<div class="row">
-							<div class="col-md-6" style="padding: 20px;">
+							<div class="col-md-12" style="padding: 20px;">
 								<a href="" data-toggle="modal" data-target="#modalforgotpass">Forgot Password</a>
-								<a href="epm_register.php">Create an account?</a>
-							</div>
-							<div class="col-md-6" style="padding: 20px; text-align: right">
-								<a href="epm_register.php">Create an account?</a>
+								<span style="float: right"><a href="epm_register.php">Create an account?</a></span>
 							</div>
 					</div>
 						</div>
