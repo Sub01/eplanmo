@@ -28,5 +28,5 @@
     $ended = $row3["total3"];
 	$archived = $row4["total4"];
 	$teachers = $row5['total5'];
-	$subjects = $row5['total6'];
+	$subjects = $row6['total6'];
 ?>	
