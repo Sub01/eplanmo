@@ -116,26 +116,6 @@ else
 	}
 	input[type="date"]:in-range::-webkit-datetime-edit-year-field, input[type="date"]:in-range::-webkit-datetime-edit-month-field, input[type="date"]:in-range::-webkit-datetime-edit-day-field, input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: black; 
 	}
-
-	input[type="file"]{
-		display: none;
-	}
-	#filebutton{
-		color: #fff;
-		padding: 2px;
-		height: 30px;
-		width: 150px;
-		margin: auto;
-		background-color: #D44347;
-		font-family: 'Montserrat', sans-serif;
-		font-size: 15px;
-		float: left;
-		display: flex;
-		border-radius: 30px;
-		opacity: 10px;
-		justify-content: center;
-		align-items: center;
-	}
 	</style>
 	<?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>    
 <div class="wrapper d-flex">
