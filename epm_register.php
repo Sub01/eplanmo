@@ -129,7 +129,6 @@ else
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card">
 						<div class="card-header" style="background: #7A313E; height: 50px; color: #fff;">
-							<center><h4>E-PLAN MO</h4></center>
 							<center><i class="fas fa-angle-down" style="margin-top:10px; font-size: 40px; background: #7A313E; height: 50px; width: 50px;border-radius: 60px; padding-top:10px"></i></center>
 				</div>
                <div class="card-body">
