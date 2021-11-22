@@ -204,7 +204,7 @@ else
 										<center><input type="checkbox" style="margin-top: 4px; margin-right: 4px;" onClick="showPassword2();">Show Password</center>
 										<center><label id="message"></label></center>
 										<label style="font-size: 15px;">Select Profile Picture (Required)</label>
-										<input type="file" name="image" id="file" accept="images/*" required=""><label for="file" id="filebutton"><i class="material-icons">add_photo_alternate</i>Choose Photo</label>
+										<input type="file" name="image" id="file"  required="">
 									</div>
 								</div>
 							</div>
