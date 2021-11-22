@@ -152,12 +152,16 @@ elseif(isset($_POST['forgot'])){
 							<div class="col-md-12">
 								<input type="checkbox" onClick="myFunction();"> Show Password
 							</div>
+						</div>
+					<div class="row">
 							<div class="col-md-6" style="padding: 20px;">
 								<a href="" data-toggle="modal" data-target="#modalforgotpass">Forgot Password</a>
+								<a href="epm_register.php">Create an account?</a>
 							</div>
 							<div class="col-md-6" style="padding: 20px; text-align: right">
 								<a href="epm_register.php">Create an account?</a>
 							</div>
+					</div>
 						</div>
 						<div class="row">
 				            <div class="col-lg-12" style="padding: 20px 80px 0 80px">
