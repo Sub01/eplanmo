@@ -32,13 +32,13 @@ include ("assets/php/summary.php");
 			E-PLAN MO
 	  	</div>
         <ul class="list-unstyled components mb-5">
-        	<li class="active">
+        	<li>
             	<a href="epm_admin.php"><span class="fa fa-home mr-3"></span> Dashboard</a>
           	</li>
           	<li>
               <a href="epm_calendar.php"><span class="fa fa-calendar-week mr-3"></span> Events</a>
           	</li>
-          	<li>
+          	<li class="active">
             	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
 			<li>
