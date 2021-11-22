@@ -53,15 +53,11 @@ if(isset($_POST['forgot'])){
 	if($result-> num_rows>0){
 		$row = $result-> fetch_assoc();
 		$code = rand(999999, 111111);
-		$sql2 = "UPDATE users SET Code='$code' WHERE Username='$username'";
-		$result2 = mysqli_query($db,$sql2);
-		if($result2){
 			
 			$mail = new PHPMailer(true);
 			$mail->isHTML(true);
 			$mail->isSMTP();
 			$mail->CharSet = "utf-8";
-		
 			//==========================  GOOGLE ACCOUNT CREDENTIALS
 			$mail->Host = 'smtp.gmail.com';
 			$mail->SMTPAuth = "true";
@@ -83,6 +79,8 @@ if(isset($_POST['forgot'])){
 			$mail->msgHTML($message);
 			
 			if(mail($email, $subject, $message, $headers)){
+				$sql2 = "UPDATE users SET Code='$code' WHERE Username='$username'";
+				$result2 = mysqli_query($db,$sql2);
   				$script = "<script> $(document).ready(function(){ $('#modalSuccess').modal('show'); }); </script>";
             }
 			else{
