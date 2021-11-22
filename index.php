@@ -174,23 +174,13 @@ if(isset($_POST['forgot'])){
         <div class="modal-body">
           <form action="" method="POST">
 			<div class="login-content" style="padding-top: 5%;">
-				<div class="input-div one">
-					<div class="i">
-						<i class="fas fa-user"></i>
-					</div>
-					<div class="div">
+				<div class="form-group">
 						<h5>Username</h5>
-						<input type="text" class="input" name="username2" required=""  maxlength="20">
-					</div>
+						<input type="text" class="form-control" name="username2" required=""  maxlength="20">
 				</div>
-				<div class="input-div one">
-					<div class="i">
-						<i class="fas fa-user"></i>
-					</div>
-					<div class="div">
+				<div class="form-group">
 						<h5>Email Address</h5>
-						<input type="email" class="input" name="email2" required=""  maxlength="50">
-					</div>
+						<input type="email" class="form-control" name="email2" required=""  maxlength="50">
 				</div>
 			</div>
               <button class="btn btn-primary" name="forgot" type="submit">Update</button>
