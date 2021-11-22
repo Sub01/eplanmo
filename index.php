@@ -150,7 +150,7 @@ elseif(isset($_POST['forgot'])){
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<center><input type="checkbox" onClick="myFunction();"> Show Password</center>
+								<input type="checkbox" onClick="myFunction();"> Show Password
 							</div>
 							<div class="col-md-6" style="padding: 20px;">
 								<a href="" data-toggle="modal" data-target="#modalforgotpass">Forgot Password</a>
