@@ -13,7 +13,7 @@ use PHPMailer\PHPMailer\Exception;
 
 session_start();
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+if(isset($_POST['register'])) {
 
 $name = $_POST['name'];
 $middle = $_POST['mname'];
@@ -189,9 +189,8 @@ else
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-12" style="padding: 20px 180px 0 180px">
-									<!-- <button type="button" onclick="window.location.href='index.php'" class="btn btn-primary" style="width: 20%; float: left">BACK</button> -->
-									<button type="submit" class="btn btn-block" id="submit" style="background: #7A313E; border-radius: 30px"><i class="fas fa-sign-in-alt mr-2" style="color: #fff"></i><label style="color: #fff;">Sign Up</label></button>
+								<div class="col-md-12">
+									<button type="submit" class="btn btn-block" name="register" style="background: #7A313E; border-radius: 30px"><i class="fas fa-sign-in-alt mr-2" style="color: #fff"></i>Sign Up</button>
 								</div>
 								<div class="col-md-12" style="margin-top: 10px">
 								<center>Already have an account? <a href="index.php"> Login here</a></center>
