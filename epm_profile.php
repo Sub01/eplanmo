@@ -160,13 +160,17 @@ session_start();
 								</div>
 							</div>
       						<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-								<table>
-									<tr>
-										<td>sample</td>
-									</tr>
-									<tr>
-										<td>sample</td>	
-									</tr>
+								<table class="table" id="tbltchr">
+									<thead>
+										<tr>
+											<td>sample</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>sample</td>	
+										</tr>
+									</tbody>
 								</table>
 							</div>
       						<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
