@@ -7,6 +7,9 @@ if(!isset($_SESSION['User'])){
 	header("Location: index.php");
 	exit();
 }
+else{
+	$username = $_SESSION["User"];
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -168,13 +171,18 @@ if(!isset($_SESSION['User'])){
 								<table class="table" id="tbltchr">
 									<thead>
 										<tr>
-											<td>sample</td>
+											<th hidden="">ID</th>
 										</tr>
 									</thead>
 									<tbody>
+										<?php
+                						$sql = "SELECT * FROM events WHERE Name='$username' AND Status='Ongoing'";
+                						$result =$db->query($sql);
+                						while ($row = mysqli_fetch_array($result)) {?>
 										<tr>
-											<td>sample</td>	
+											<td hidden=""><?php echo $row['ID'] ?></td>	
 										</tr>
+										<?php  } ?>
 									</tbody>
 								</table>
 							</div>
