@@ -42,7 +42,7 @@ include ("assets/php/summary.php");
             	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
 			<li>
-            	<a href="https://drive.google.com/file/d/1IzF4Zl4sONXmk1uT8XAYgAWV-o5brriu/view?usp=sharing"><span><i class="fab fa-android mr-3"></i></span> Android Version</a>
+            	<a href="https://mega.nz/file/T3AhzCgZ#BfyRpaYACNhw8AceTwl76YdSw__jPAN70wuRHQUk9-8g"><span><i class="fab fa-android mr-3"></i></span> Android Version</a>
           	</li>
         </ul>
     </nav>
