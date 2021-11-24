@@ -2,7 +2,6 @@
 include 'assets/php/php_epm_profile.php';
 include 'assets/php/php_epm_genset.php';
 session_start();
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -161,6 +160,10 @@ session_start();
 								</div>
 							</div>
       						<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+								
+							</div>
+      						<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+								<div class="row">
 									
 												<table class="table" id="table_teachers">
 													<thead>
@@ -190,8 +193,8 @@ session_start();
 														<?php  } ?>
 													</tbody>
 												</table>
+								</div>
 							</div>
-      						<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
       						<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
     					</div>
   					</div>
