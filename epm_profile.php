@@ -159,42 +159,7 @@ include 'assets/php/php_epm_genset.php';
 								</div>
 							</div>
       						<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-								<div class="row">
-									<div class="col-xl-8 col-md-8 mb-4">
-			 							<div class="card border-left-warning shadow h-100 py-2">
-											<div class="card-header">
-												<table class="table" id="teachers">
-													<thead>
-														<tr>
-															<th hidden="">ID</th>
-															<th>Name</th>
-															<th>Surname</th>
-															<th>Email</th>
-															<th>==</th>
-														</tr>
-													</thead>
-													<?php
-                									$sql = "SELECT * FROM teachers WHERE Name='$username'";
-                									$result =$db->query($sql);
-                									while ($row = mysqli_fetch_array($result)) {?>
-													<tbody>
-														<tr>
-															<td hidden=""><?php echo $row['ID'] ?></td>
-															<td><?php echo $row['T_Name'] ?></td>
-															<td><?php echo $row['T_Surname'] ?></td>
-															<td><?php echo $row['T_Email'] ?></td>
-															<td>
-																<button type="button" class="btn btn-primary editbutton" data-bs-toggle="modal" data-bs-target="#updateTeacher"><i class="fas fa-edit"></i></button>
-                            									<a name="delete" href="assets/php/event_archived.php?id=<?php echo $row['ID']?>" class="btn btn-warning" onclick="return confirm('Are you sure you want to archive this event?')"><i class="fas fa-trash"></i></a>
-															</td>
-														</tr>
-														<?php  } ?>
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-								</div>
+								
 							</div>
       						<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
       						<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
