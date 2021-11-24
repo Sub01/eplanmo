@@ -201,7 +201,7 @@ else{
             	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
 			<li>
-            	<a href="https://drive.google.com/file/d/1TKJAF_timsl2lkTc4M6U-C3AJKNPnvi2/view?usp=sharing"><span><i class="fab fa-android mr-3"></i></span> Android Version</a>
+            	<a href="#" onclick="window.open('https://drive.google.com/file/d/1TKJAF_timsl2lkTc4M6U-C3AJKNPnvi2/view?usp=sharing')"><span><i class="fab fa-android mr-3"></i></span> Android Version</a>
           	</li>
         </ul>
     </nav>
