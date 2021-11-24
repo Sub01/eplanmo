@@ -188,6 +188,7 @@ include 'assets/php/php_epm_genset.php';
                             									<a name="delete" href="assets/php/event_archived.php?id=<?php echo $row['ID']?>" class="btn btn-warning" onclick="return confirm('Are you sure you want to archive this event?')"><i class="fas fa-trash"></i></a>
 															</td>
 														</tr>
+														<?php  } ?>
 													</tbody>
 												</table>
 											</div>
