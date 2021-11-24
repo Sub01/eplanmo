@@ -170,11 +170,11 @@ include 'assets/php/php_epm_genset.php';
 															<th>==</th>
 														</tr>
 													</thead>
-													<?php
+													<tbody>
+														<?php
                 									$sql = "SELECT * FROM teachers WHERE Name='$username'";
                 									$result =$db->query($sql);
                 									while ($row = mysqli_fetch_array($result)) {?>
-													<tbody>
 														<tr>
 															<td hidden=""><?php echo $row['ID'] ?></td>
 															<td><?php echo $row['T_Name'] ?></td>
