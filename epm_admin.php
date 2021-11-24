@@ -46,7 +46,7 @@ include ("assets/php/summary.php");
           	</li>
 			</li>
           	<li>
-            	<a href="#" onclick="window.open('https://drive.google.com/file/d/1IzF4Zl4sONXmk1uT8XAYgAWV-o5brriu/view?usp=sharing')"><span><i class="fab fa-android mr-3"></i></span> Android Version</a>
+            	<a href="https://drive.google.com/file/d/1IzF4Zl4sONXmk1uT8XAYgAWV-o5brriu/view?usp=sharing"><span><i class="fab fa-android mr-3"></i></span> Android Version</a>
           	</li>
         </ul>
     </nav>
