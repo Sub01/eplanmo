@@ -7,38 +7,36 @@ if(!isset($_SESSION['User'])){
 	header("Location: index.php");
 	exit();
 }
-else{
-	if(isset($_POST['updateTeacher'])){
-		$sql = "UPDATE `teachers` SET `T_Name`='$tname', `T_Surname`='$tsname', `T_Email`='$temail' WHERE `ID`='$tid'";
-		$result = $db->query($sql);
-		if($result){
-			$_SESSION['status'] = "success";
-   			$_SESSION['message'] = "Teacher's Information Successfuly Updated";
-			header("Location: epm_agenda.php");
-			exit();
-		}
-		else{
-			$_SESSION['status'] = "error";
-   			$_SESSION['message'] = "Failed to Update Teacher's Information";
-			header("Location: epm_agenda.php");
-			exit();
-		}
+elseif(isset($_POST['updateTeacher'])){
+	$sql = "UPDATE `teachers` SET `T_Name`='$tname', `T_Surname`='$tsname', `T_Email`='$temail' WHERE `ID`='$tid'";
+	$result = $db->query($sql);
+	if($result){
+		$_SESSION['status'] = "success";
+   		$_SESSION['message'] = "Teacher's Information Successfuly Updated";
+		header("Location: epm_agenda.php");
+		exit();
 	}
-	elseif(isset($_POST['updateSubject'])){
-		$sql = "UPDATE `subjects` SET `S_Code`='$scode', `S_Description`='$sdes' WHERE `ID`='$sid'";
-		$result = $db->query($sql);
-		if($result){
-			$_SESSION['status'] = "success";
-   			$_SESSION['message'] = "Subject's Information Successfuly Updated";
-			header("Location: epm_agenda.php");
-			exit();
-		}
-		else{
-			$_SESSION['status'] = "error";
-   			$_SESSION['message'] = "Failed to Update Subject's Information";
-			header("Location: epm_agenda.php");
-			exit();
-		}
+	else{
+		$_SESSION['status'] = "error";
+   		$_SESSION['message'] = "Failed to Update Teacher's Information";
+		header("Location: epm_agenda.php");
+		exit();
+	}
+}
+elseif(isset($_POST['updateSubject'])){
+	$sql = "UPDATE `subjects` SET `S_Code`='$scode', `S_Description`='$sdes' WHERE `ID`='$sid'";
+	$result = $db->query($sql);
+	if($result){
+		$_SESSION['status'] = "success";
+   		$_SESSION['message'] = "Subject's Information Successfuly Updated";
+		header("Location: epm_agenda.php");
+		exit();
+	}
+	else{
+		$_SESSION['status'] = "error";
+   		$_SESSION['message'] = "Failed to Update Subject's Information";
+		header("Location: epm_agenda.php");
+		exit();
 	}
 }
 ?>
