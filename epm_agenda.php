@@ -3,11 +3,8 @@ include ("assets/php/php_epm_profile.php");
 include ("assets/php/php_epm_genset.php");
 include ("assets/php/summary.php");
 
-if(!isset($_SESSION['User'])){
-	header("Location: index.php");
-	exit();
-}
-else{
+
+
 	if(isset($_POST['updateSubject'])){
 	$sql = "UPDATE `subjects` SET `S_Code`='$scode', `S_Description`='$sdes' WHERE `ID`='$sid'";
 	$result = $db->query($sql);
@@ -40,7 +37,6 @@ else{
 		header("Location: epm_agenda.php");
 		exit();
 	}
-}
 }
 ?>
 <!doctype html>
@@ -440,7 +436,7 @@ else{
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="update_teacher.php">
+        <form method="post" action="">
          <div class="form-group">
             <label>Name</label>
             <input  hidden="" name="tid" id="id" value="">
