@@ -245,7 +245,7 @@ include ("assets/php/summary.php");
 										<td><?php echo $row['T_Surname']?></td>
 										<td><?php echo $row['T_Email']?></td>
 										<td>
-											<button class="btn btn-warning"><i class="fas fa-edit"></i></button>
+											<button class="btn btn-warning editteacher" data-bs-toggle="modal" data-bs-target="#updateTeacher"><i class="fas fa-edit"></i></button>
 											<button class="btn btn-danger"><i class="fas fa-trash"></i></button>
 										</td>
 									</tr>
@@ -388,6 +388,43 @@ include ("assets/php/summary.php");
 		</div>	
 	</div>
 </div>
+		
+		
+<div class="modal fade" id="updateTeacher" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Teacher Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="">
+         <div class="form-group">
+            <label>Name</label>
+            <input hidden="" name="id" id="id" value="">
+            <input type="text" name="title" id="tname" value="">
+         </div>
+         <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="type" id="tlname" value="">
+         </div>
+         <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="start" id="temail" value="">
+         </div>
+		<div class="form-group">
+        	<button type="submit" class="btn btn-primary">Save changes</button>
+      	</div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>		
+		
+		
 <!--SCRIPTS-->  
 <!--===============================================================================================-->  
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -400,5 +437,23 @@ include ("assets/php/summary.php");
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <!--===============================================================================================-->
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script>
+		
+$(document).ready(function(){
+   $('.editteacher').on('click', function(){
+      $('#updateTeacher').modal('show');
+      $tr = $(this).closest('tr');
+      var data = $tr.children("td").map(function(){
+         return $(this).text();
+      }).get();
+      console.log(data);
+      $('#id').val(data[0]);
+      $('#tname').val(data[1]);
+      $('#tlname').val(data[2]);
+      $('#temail').val(data[3]);
+   });
+});	
+	
+</script>
 </body>
 </html>
