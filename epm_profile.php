@@ -172,6 +172,7 @@ else{
 									<thead>
 										<tr>
 											<th hidden="">ID</th>
+											<th>Name</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -180,7 +181,8 @@ else{
                 						$result =$db->query($sql);
                 						while ($row = mysqli_fetch_array($result)) {?>
 										<tr>
-											<td hidden=""><?php echo $row['ID'] ?></td>	
+											<td hidden=""><?php echo $row['ID'] ?></td>
+											<td hidden=""><?php echo $row['T_Name'] ?></td>	
 										</tr>
 										<?php  } ?>
 									</tbody>
