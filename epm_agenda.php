@@ -237,19 +237,24 @@ include ("assets/php/summary.php");
 									$percentage = (($score/$over) * 100);
 									if($percentage >= 75){ ?>
 										<div class="col-xl-4 col-md-4 mb-4">
-                						<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:greenyellow">
-                    						<div class="card-header">
+                						<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:green">
+											<div class="card-header">
+												<center>
+													<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?> | <?php echo $stype ?></span>
+												</center>
+											</div>
+                    						<div class="card-body">
 												<div class="row">
 													<div class="col-sm-12">
 														<div>
 															<span style="float: left">
-															<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?></span><br>
+															<span class="font-weight-bold text-dark text-uppercase mb-1">SCORE</span><br>
 															<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
 															</span>
 															
 															<span style="float: right">
 															<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20"><?php echo $percentage ?>% </span><br>
-															<span>FAILED</span>
+															<span>PASS</span>
 															</span>
 														</div>
 													</div>
