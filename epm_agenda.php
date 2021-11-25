@@ -290,7 +290,7 @@ if(!isset($_SESSION['User'])){
 										<td><?php echo $row['S_Code']?></td>
 										<td><?php echo $row['S_Description']?></td>
 										<td>
-											<button class="btn btn-warning editSubject" data-bs-toggle="modal" data-bs-target="#updateSubject"><i class="fas fa-edit"></i></button>
+											<button class="btn btn-warning editsubject" data-bs-toggle="modal" data-bs-target="#updateSubject"><i class="fas fa-edit"></i></button>
 											<button class="btn btn-danger"><i class="fas fa-trash"></i></button>
 										</td>
 									</tr>
