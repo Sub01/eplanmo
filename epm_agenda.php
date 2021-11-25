@@ -215,7 +215,7 @@ include ("assets/php/summary.php");
 		</div>
 	</div>
 	<div class="row">
-	<div class="col-md-8">
+	<div class="col-md-7">
 			<div class="row">
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
@@ -257,7 +257,7 @@ include ("assets/php/summary.php");
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-5">
 			<div class="row">
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
@@ -270,7 +270,7 @@ include ("assets/php/summary.php");
 									<tr>
 										<th hidden="">ID</th>
 										<th>Subject Code </th>
-										<th>Subject Description</th>1
+										<th>Subject Description</th>
 										<th>FUNTION </th>
 									</tr>
 								</thead>
