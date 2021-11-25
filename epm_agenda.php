@@ -442,12 +442,12 @@ if(!isset($_SESSION['User'])){
         <form method="post" action="">
          <div class="form-group">
             <label>Subject Code</label>
-            <input  hidden="" name="id" id="id" value="">
-            <input class="form-control" type="text" name="title" id="tname" value="">
+            <input  hidden="" name="id" id="sid" value="">
+            <input class="form-control" type="text" name="title" id="scode" value="">
          </div>
          <div class="form-group">
             <label>Subject Description</label>
-            <input class="form-control" type="text" name="type" id="tlname" value="">
+            <input class="form-control" type="text" name="type" id="sdes" value="">
          </div>
 		<div class="form-group">
         	<button class="form-control" type="submit" class="btn btn-primary">Save changes</button>
@@ -496,10 +496,9 @@ $(document).ready(function(){
          return $(this).text();
       }).get();
       console.log(data);
-      $('#id').val(data[0]);
-      $('#tname').val(data[1]);
-      $('#tlname').val(data[2]);
-      $('#temail').val(data[3]);
+      $('#sid').val(data[0]);
+      $('#scode').val(data[1]);
+      $('#sdes').val(data[2]);
    });
 });	
 </script>
