@@ -112,7 +112,7 @@ if(!isset($_SESSION['User'])){
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row overflow-auto">
 							<?php 
-							$sql = "SELECT * FROM events WHERE Name='$uname' AND (DATEDIFF(Start,NOW()) = 0)";
+							$sql = "SELECT * FROM events WHERE Name='$uname' AND (DATEDIFF(Start,NOW()) =< 0) AND (DATEDIFF(End,NOW()) => 0 )";
                 			$result =$db->query($sql);
 							while ($row = mysqli_fetch_array($result)) {?>
 							<div class="col-xl-6 col-md-6 mb-4">
