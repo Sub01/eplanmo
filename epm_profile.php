@@ -167,26 +167,9 @@ else{
 								</div>
 								</div>
 							</div>
+<!--
       						<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-								<table class="table" id="tbltchr">
-									<thead>
-										<tr>
-											<th hidden="">ID</th>
-											<th>Name</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php
-                						$sql = "SELECT * FROM teachers WHERE User='$username'";
-                						$result =$db->query($sql);
-                						while ($row = mysqli_fetch_array($result)) {?>
-										<tr>
-											<td hidden=""><?php echo $row['ID'] ?></td>
-											<td><?php echo $row['T_Name'] ?></td>	
-										</tr>
-										<?php  } ?>
-									</tbody>
-								</table>
+								
 							</div>
       						<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
 						
@@ -194,6 +177,7 @@ else{
       						<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
 							
 							</div>
+-->
     					</div>
   					</div>
 				</div>
