@@ -244,8 +244,8 @@ include ("assets/php/summary.php");
 										<td><?php echo $row['T_Surname']?></td>
 										<td><?php echo $row['T_Email']?></td>
 										<td>
-											<button><i class="fas fa-edit"></i></button>
-											<button><i class="fas fa-trash"></i></button>
+											<button style="btn btn-warning"><i class="fas fa-edit"></i></button>
+											<button style="btn btn-danger"><i class="fas fa-trash"></i></button>
 										</td>
 									</tr>
 									<?php } ?>
