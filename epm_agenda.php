@@ -222,7 +222,35 @@ include ("assets/php/summary.php");
 							<span style="text-align: center; color: black; font-weight: bold">MY TEACHERS</span>
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
-							
+							<table>
+								<thead>
+									<tr>
+										<th hidden="">ID</th>
+										<th>NAME </th>
+										<th>LAST NAME </th>
+										<th>EMAIL </th>
+										<th>FUNTION </th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php 
+									$id = $_SESSION['User'];
+									$sql = "SELECT * FROM teachers WHERE User='$id'";
+    								$result =$db->query($sql);
+									while ($row = mysqli_fetch_array($result)) {?>
+									<tr>
+										<td hidden=""><?php echo $row['ID']?>  </td>
+										<td><?php echo $row['T_Name']?></td>
+										<td><?php echo $row['T_Surname']?></td>
+										<td><?php echo $row['T_Email']?></td>
+										<td>
+											<button><i class="fas fa-edit"></i></button>
+											<button><i class="fas fa-trash"></i></button>
+										</td>
+									</tr>
+									<?php } ?>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
