@@ -448,7 +448,7 @@ else{
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="update_teacher.php">
+        <form method="post" action="">
          <div class="form-group">
             <label>Name</label>
             <input  hidden="" name="tid" id="tid" value="">
@@ -482,7 +482,7 @@ else{
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="update_subject.php">
+        <form method="post" action="">
          <div class="form-group">
             <label>Subject Code</label>
             <input  hidden="" name="sid" id="sid" value="">
