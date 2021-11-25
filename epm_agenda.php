@@ -257,8 +257,10 @@ include ("assets/php/summary.php");
 												<div class="row">
 													<div class="col-sm-12">
 														<div>
+															<span style="float: left">
 															<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?></span><br>
 															<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
+															</span>
 															
 															<span style="float: right">
 															<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20"><?php echo $percentage ?>% </span><br>
