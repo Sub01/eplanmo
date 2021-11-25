@@ -101,7 +101,7 @@ include ("assets/php/summary.php");
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
-							<span style="text-align: center; color: black">TODAY</span>
+							<span style="text-align: center; color: black; font-weight: bold">TODAY</span>
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row overflow-auto">
@@ -130,7 +130,7 @@ include ("assets/php/summary.php");
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
-							<span style="text-align: center; color: black">TOMMOROW</span>
+							<span style="text-align: center; color: black; font-weight: bold">TOMMOROW</span>
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row">
@@ -159,7 +159,7 @@ include ("assets/php/summary.php");
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
-							<span style="text-align: center; color: black">WITHIN 7 DAYS</span>
+							<span style="text-align: center; color: black; font-weight: bold">WITHIN 7 DAYS</span>
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row">
@@ -188,7 +188,7 @@ include ("assets/php/summary.php");
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
-							<span style="text-align: center; color: black">WITHIN 14 DAYS</span>
+							<span style="text-align: center; color: black; font-weight: bold">WITHIN 14 DAYS</span>
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row">
@@ -220,7 +220,7 @@ include ("assets/php/summary.php");
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
 							<center>
-							<span style="text-align: center; color: black">MY GRADES</span>
+							<span style="text-align: center; color: black; font-weight: bold">MY GRADES</span>
 								</center>
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
