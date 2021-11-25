@@ -222,7 +222,7 @@ include ("assets/php/summary.php");
 							<span style="text-align: center; color: black; font-weight: bold">MY TEACHERS</span>
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
-							<table>
+							<table class="table">
 								<thead>
 									<tr>
 										<th hidden="">ID</th>
