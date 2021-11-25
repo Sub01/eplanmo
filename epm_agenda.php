@@ -101,7 +101,7 @@ include ("assets/php/summary.php");
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
-							TODAY
+							<span style="text-align: center; color: black">TODAY</span>
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row overflow-auto">
@@ -130,7 +130,7 @@ include ("assets/php/summary.php");
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
-							TOMMOROW
+							<span style="text-align: center; color: black">TOMMOROW</span>
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row">
@@ -159,7 +159,7 @@ include ("assets/php/summary.php");
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
-							WITHIN 7 DAYS
+							<span style="text-align: center; color: black">WITHIN 7 DAYS</span>
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row">
@@ -188,7 +188,7 @@ include ("assets/php/summary.php");
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
-							WITHIN 14 DAYS
+							<span style="text-align: center; color: black">WITHIN 14 DAYS</span>
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row">
@@ -219,7 +219,7 @@ include ("assets/php/summary.php");
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
-							MY GRADES
+							<span style="text-align: center; color: black">MY GRADES</span>
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
 							<div class="row">
@@ -234,21 +234,26 @@ include ("assets/php/summary.php");
 									$percentage = (($score/$over) * 100);
 									if($percentage >= 75){ ?>
 										<div class="col-xl-4 col-md-4 mb-4">
-                							<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:green">
-                    							<div class="card-header">
-													<div class="row">
-														<div class="col-lg-8">
+                						<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:greenyellow">
+                    						<div class="card-header">
+												<div class="row">
+													<div class="col-sm-12">
+														<div>
+															<span style="float: left">
 															<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?></span><br>
 															<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
-														</div>
-														<div class="col-lg-4">
-															<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20;"><?php echo $percentage ?>%</span><br>
-															<span>PASS</span>
+															</span>
+															
+															<span style="float: right">
+															<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20"><?php echo $percentage ?>% </span><br>
+															<span>FAILED</span>
+															</span>
 														</div>
 													</div>
 												</div>
-                  							</div>
-										</div>
+											</div>
+                  						</div>
+									</div>
 								<?php }
 								else{ ?>
 									<div class="col-xl-4 col-md-4 mb-4">
