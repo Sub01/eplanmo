@@ -241,10 +241,10 @@ include ("assets/php/summary.php");
 															<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?></span><br>
 															<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
 														</div>
-															<div class="col-lg-4">
-																<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20;"><?php echo $percentage ?>%</span><br>
-																<span>PASS</span>
-															</div>
+														<div class="col-lg-4">
+															<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20;"><?php echo $percentage ?>%</span><br>
+															<span>PASS</span>
+														</div>
 													</div>
 												</div>
                   							</div>
@@ -255,16 +255,16 @@ include ("assets/php/summary.php");
                 						<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:red">
                     						<div class="card-header">
 												<div class="row">
-													<div class="col-sm-8">
-													<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?></span><br>
-													<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
-												</div>
-												<div class="col-sm-4">
-													<center>
-													<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20"><?php echo $percentage ?>% </span><br>
-													<span>FAILED</span>
-													</center>
-												</div>
+													<div class="col-sm-12">
+														<div>
+															<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?></span><br>
+															<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
+														</div>
+														<div class="pull-right">
+															<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20"><?php echo $percentage ?>% </span><br>
+															<span>FAILED</span>
+														</div>
+													</div>
 												</div>
 											</div>
                   						</div>
