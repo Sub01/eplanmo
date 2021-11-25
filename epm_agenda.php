@@ -372,6 +372,7 @@ elseif(isset($_POST['teacher'])){
 											<div class="card-header">
 												<center>
 													<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?> | <?php echo $stype ?></span>
+													<span style="float: right"><button type="button" class="close" data-dismiss="modal" aria-label="Close"></span>
 												</center>
 											</div>
                     						<div class="card-body">
@@ -400,6 +401,7 @@ elseif(isset($_POST['teacher'])){
 											<div class="card-header">
 												<center>
 													<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?> | <?php echo $stype ?></span>
+													<span style="float:right"><button type="button" class="close" data-dismiss="modal" aria-label="Close"></span>
 												</center>
 											</div>
                     						<div class="card-body">
