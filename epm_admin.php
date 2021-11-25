@@ -127,7 +127,7 @@ if(!isset($_SESSION['User'])){
                   	</div>
                	</div>
 				<div class="col-xl-2 col-md-2 mb-4">
-            		<div class="card border-left-success shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(108, 117, 125)">
+            		<div class="card border-left-primary shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(108, 117, 125)">
                 		<div class="card-body">
                     		<div class="row no-gutters align-items-center">
                         		<div class="col mr-2">
@@ -146,7 +146,7 @@ if(!isset($_SESSION['User'])){
             		</div>
         		</div>
 				<div class="col-xl-2 col-md-2 mb-4">
-            		<div class="card border-left-info shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(40, 167, 69)">
+            		<div class="card border-left-sucess shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(40, 167, 69)">
                 		<div class="card-body">
                     		<div class="row no-gutters align-items-center">
                         		<div class="col mr-2">
@@ -165,12 +165,12 @@ if(!isset($_SESSION['User'])){
             		</div>
         		</div>
 				<div class="col-xl-2 col-md-2 mb-4">
-            		<div class="card border-left-warning shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(220, 53, 69)">
+            		<div class="card border-left-danger shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(220, 53, 69)">
                 		<div class="card-body">
                     		<div class="row no-gutters align-items-center">
                         		<div class="col mr-2">
                             		<div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
-                                		ARCHIVED
+                                		ENDED
                             		</div>
                             		<div class="h5 mb-0 font-weight-bold text-gray-800">
                                 		<?php echo $archived ?>
@@ -184,11 +184,11 @@ if(!isset($_SESSION['User'])){
             		</div>
         		</div>
 				<div class="col-xl-2 col-md-2 mb-4">
-            		<div class="card border-left-warning shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(255, 193, 7)">
+            		<div class="card border-left-dark shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(255, 193, 7)">
                 		<div class="card-body">
                     		<div class="row no-gutters align-items-center">
                         		<div class="col mr-2">
-                            		<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            		<div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
                                 		TEACHERS
                             		</div>
                             		<div class="h5 mb-0 font-weight-bold text-gray-800">
@@ -203,11 +203,11 @@ if(!isset($_SESSION['User'])){
             		</div>
         		</div>
 				<div class="col-xl-2 col-md-2 mb-4">
-            		<div class="card border-left-warning shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(23, 162, 184)">
+            		<div class="card border-left-primary shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(23, 162, 184)">
                 		<div class="card-body">
                     		<div class="row no-gutters align-items-center">
                         		<div class="col mr-2">
-                            		<div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                            		<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 		SUBJECTS
                             		</div>
                             		<div class="h5 mb-0 font-weight-bold text-gray-800">
@@ -229,7 +229,7 @@ if(!isset($_SESSION['User'])){
 
                     <div class="row">
 						<div class="col-xl-8 col-md-8 mb-4">
-			 				<div class="card border-left-warning shadow h-100 py-2">
+			 				<div class="card shadow h-100 py-2">
 								<div class="card-header">
 									<strong>ONGOING EVENTS</strong>
 								</div>
@@ -270,7 +270,7 @@ if(!isset($_SESSION['User'])){
 						<div class="col-lg-4">
 						<div class="row">
 							<div class="col-xl-12 col-md-12 mb-4">
-								<div class="card border-left-warning shadow h-100 py-2">
+								<div class="card shadow h-100 py-2">
             						<div class="card-body">
 										<div id="chartContainer" style="height: 300px; width: 100%;">
   										</div>
