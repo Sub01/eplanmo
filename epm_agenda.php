@@ -215,7 +215,7 @@ include ("assets/php/summary.php");
 		</div>
 	</div>
 	<div class="row">
-	<div class="col-md-6">
+	<div class="col-md-8">
 			<div class="row">
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
@@ -245,8 +245,8 @@ include ("assets/php/summary.php");
 										<td><?php echo $row['T_Surname']?></td>
 										<td><?php echo $row['T_Email']?></td>
 										<td>
-											<button style="btn btn-warning"><i class="fas fa-edit"></i></button>
-											<button style="btn btn-danger"><i class="fas fa-trash"></i></button>
+											<button class="btn btn-warning"><i class="fas fa-edit"></i></button>
+											<button class="btn btn-danger"><i class="fas fa-trash"></i></button>
 										</td>
 									</tr>
 									<?php } ?>
@@ -257,7 +257,7 @@ include ("assets/php/summary.php");
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<div class="row">
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
@@ -265,7 +265,33 @@ include ("assets/php/summary.php");
 							<span style="text-align: center; color: black; font-weight: bold">MY SUBJECTS</span>
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
-
+							<table class="table">
+								<thead>
+									<tr>
+										<th hidden="">ID</th>
+										<th>Subject Code </th>
+										<th>Subject Description</th>1
+										<th>FUNTION </th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php 
+									$id = $_SESSION['User'];
+									$sql = "SELECT * FROM subjects WHERE User='$id'";
+    								$result =$db->query($sql);
+									while ($row = mysqli_fetch_array($result)) {?>
+									<tr>
+										<td hidden=""><?php echo $row['ID']?>  </td>
+										<td><?php echo $row['S_Code']?></td>
+										<td><?php echo $row['S_Description']?></td>
+										<td>
+											<button class="btn btn-warning"><i class="fas fa-edit"></i></button>
+											<button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+										</td>
+									</tr>
+									<?php } ?>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
