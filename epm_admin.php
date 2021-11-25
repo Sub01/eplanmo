@@ -127,7 +127,7 @@ if(!isset($_SESSION['User'])){
                   	</div>
                	</div>
 				<div class="col-xl-2 col-md-2 mb-4">
-            		<div class="card border-left-primary shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(108, 117, 125)">
+            		<div class="card border-left-secondary shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(108, 117, 125)">
                 		<div class="card-body">
                     		<div class="row no-gutters align-items-center">
                         		<div class="col mr-2">

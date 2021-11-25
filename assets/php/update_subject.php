@@ -1,4 +1,5 @@
 <?php 
+if(isset($_POST['updateSubject'])){
 	$sql = "UPDATE `subjects` SET `S_Code`='$scode', `S_Description`='$sdes' WHERE `ID`='$sid'";
 	$result = $db->query($sql);
 	if($result){
@@ -13,4 +14,5 @@
 		header("Location: epm_agenda.php");
 		exit();
 	}
+}
 ?>
