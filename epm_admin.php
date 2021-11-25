@@ -145,6 +145,7 @@ if(!isset($_SESSION['User'])){
                 		</div>
             		</div>
         		</div>
+<!--
 				<div class="col-xl-2 col-md-2 mb-4">
             		<div class="card border-left-sucess shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(40, 167, 69)">
                 		<div class="card-body">
@@ -154,7 +155,7 @@ if(!isset($_SESSION['User'])){
                                 		ENDED ACTIVITIES
                             		</div>
                             		<div class="h5 mb-0 font-weight-bold text-gray-800">
-                                		<?php echo $ended ?>
+                                		echo $ended ?>
                             		</div>
                         		</div>
                         		<div class="col-auto">
@@ -164,6 +165,7 @@ if(!isset($_SESSION['User'])){
                 		</div>
             		</div>
         		</div>
+-->
 				<div class="col-xl-2 col-md-2 mb-4">
             		<div class="card border-left-danger shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(220, 53, 69)">
                 		<div class="card-body">
