@@ -238,15 +238,13 @@ include ("assets/php/summary.php");
                     							<div class="card-header">
 													<div class="row">
 														<div class="col-lg-8">
-														<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?></span><br>
-														<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
-													</div>
-													<div class="col-lg-4">
-														<center>
-														<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20;"><?php echo $percentage ?>%</span><br>
-														<span>PASS</span>
-														</center>
-													</div>
+															<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?></span><br>
+															<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
+														</div>
+															<div class="col-lg-4">
+																<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20;"><?php echo $percentage ?>%</span><br>
+																<span>PASS</span>
+															</div>
 													</div>
 												</div>
                   							</div>
