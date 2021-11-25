@@ -290,7 +290,7 @@ if(!isset($_SESSION['User'])){
 										<td><?php echo $row['S_Code']?></td>
 										<td><?php echo $row['S_Description']?></td>
 										<td>
-											<button class="btn btn-warning"><i class="fas fa-edit"></i></button>
+											<button class="btn btn-warning editSubject" data-bs-toggle="modal" data-bs-target="#updateSubject"><i class="fas fa-edit"></i></button>
 											<button class="btn btn-danger"><i class="fas fa-trash"></i></button>
 										</td>
 									</tr>
@@ -408,19 +408,19 @@ if(!isset($_SESSION['User'])){
         <form method="post" action="">
          <div class="form-group">
             <label>Name</label>
-            <input hidden="" name="id" id="id" value="">
-            <input type="text" name="title" id="tname" value="">
+            <input  hidden="" name="id" id="id" value="">
+            <input class="form-control" type="text" name="title" id="tname" value="">
          </div>
          <div class="form-group">
             <label>Last Name</label>
-            <input type="text" name="type" id="tlname" value="">
+            <input class="form-control" type="text" name="type" id="tlname" value="">
          </div>
          <div class="form-group">
             <label>Email</label>
-            <input type="email" name="start" id="temail" value="">
+            <input class="form-control" type="email" name="start" id="temail" value="">
          </div>
 		<div class="form-group">
-        	<button type="submit" class="btn btn-primary">Save changes</button>
+        	<button class="form-control" type="submit" class="btn btn-primary">Save changes</button>
       	</div>
         </form>
       </div>
@@ -428,7 +428,36 @@ if(!isset($_SESSION['User'])){
     </div>
   </div>
 </div>		
-		
+
+<div class="modal fade" id="updateSubject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Subject Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="">
+         <div class="form-group">
+            <label>Subject Code</label>
+            <input  hidden="" name="id" id="id" value="">
+            <input class="form-control" type="text" name="title" id="tname" value="">
+         </div>
+         <div class="form-group">
+            <label>Subject Description</label>
+            <input class="form-control" type="text" name="type" id="tlname" value="">
+         </div>
+		<div class="form-group">
+        	<button class="form-control" type="submit" class="btn btn-primary">Save changes</button>
+      	</div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>		
 		
 <!--SCRIPTS-->  
 <!--===============================================================================================-->  
@@ -458,7 +487,21 @@ $(document).ready(function(){
       $('#temail').val(data[3]);
    });
 });	
-	
+
+$(document).ready(function(){
+   $('.editsubject').on('click', function(){
+      $('#updateSubject').modal('show');
+      $tr = $(this).closest('tr');
+      var data = $tr.children("td").map(function(){
+         return $(this).text();
+      }).get();
+      console.log(data);
+      $('#id').val(data[0]);
+      $('#tname').val(data[1]);
+      $('#tlname').val(data[2]);
+      $('#temail').val(data[3]);
+   });
+});	
 </script>
 </body>
 </html>
