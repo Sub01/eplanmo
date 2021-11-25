@@ -177,7 +177,7 @@ else{
 									</thead>
 									<tbody>
 										<?php
-                						$sql = "SELECT * FROM events WHERE Name='$username' AND Status='Ongoing'";
+                						$sql = "SELECT * FROM events WHERE Name='$username'";
                 						$result =$db->query($sql);
                 						while ($row = mysqli_fetch_array($result)) {?>
 										<tr>
