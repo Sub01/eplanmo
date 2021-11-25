@@ -7,6 +7,40 @@ if(!isset($_SESSION['User'])){
 	header("Location: index.php");
 	exit();
 }
+else{
+	if(isset($_POST['updateTeacher'])){
+		$sql = "UPDATE `teachers` SET `T_Name`='$tname', `T_Surname`='$tsname', `T_Email`='$temail' WHERE `ID`='$tid'";
+		$result = $db->query($sql);
+		if($result){
+			$_SESSION['status'] = "success";
+   			$_SESSION['message'] = "Teacher's Information Successfuly Updated";
+			header("Location: epm_agenda.php");
+			exit();
+		}
+		else{
+			$_SESSION['status'] = "error";
+   			$_SESSION['message'] = "Failed to Update Teacher's Information";
+			header("Location: epm_agenda.php");
+			exit();
+		}
+	}
+	elseif(isset($_POST['updateSubject'])){
+		$sql = "UPDATE `subjects` SET `S_Code`='$scode', `S_Description`='$sdes' WHERE `ID`='$sid'";
+		$result = $db->query($sql);
+		if($result){
+			$_SESSION['status'] = "success";
+   			$_SESSION['message'] = "Subject's Information Successfuly Updated";
+			header("Location: epm_agenda.php");
+			exit();
+		}
+		else{
+			$_SESSION['status'] = "error";
+   			$_SESSION['message'] = "Failed to Update Subject's Information";
+			header("Location: epm_agenda.php");
+			exit();
+		}
+	}
+}
 ?>
 <!doctype html>
 <html>
@@ -408,19 +442,19 @@ if(!isset($_SESSION['User'])){
         <form method="post" action="">
          <div class="form-group">
             <label>Name</label>
-            <input  hidden="" name="id" id="id" value="">
-            <input class="form-control" type="text" name="title" id="tname" value="">
+            <input  hidden="" name="tid" id="id" value="">
+            <input class="form-control" type="text" name="tname" id="tname" value="">
          </div>
          <div class="form-group">
             <label>Last Name</label>
-            <input class="form-control" type="text" name="type" id="tlname" value="">
+            <input class="form-control" type="text" name="tsname" id="tlname" value="">
          </div>
          <div class="form-group">
             <label>Email</label>
-            <input class="form-control" type="email" name="start" id="temail" value="">
+            <input class="form-control" type="email" name="temail" id="temail" value="">
          </div>
 		<div class="form-group">
-        	<button class="form-control" type="submit" class="btn btn-primary">Save changes</button>
+        	<button class="form-control" type="submit" class="btn btn-primary" name="updateTeacher">Save changes</button>
       	</div>
         </form>
       </div>
@@ -443,14 +477,14 @@ if(!isset($_SESSION['User'])){
          <div class="form-group">
             <label>Subject Code</label>
             <input  hidden="" name="id" id="sid" value="">
-            <input class="form-control" type="text" name="title" id="scode" value="">
+            <input class="form-control" type="text" name="scode" id="scode" value="">
          </div>
          <div class="form-group">
             <label>Subject Description</label>
-            <input class="form-control" type="text" name="type" id="sdes" value="">
+            <input class="form-control" type="text" name="sdes" id="sdes" value="">
          </div>
 		<div class="form-group">
-        	<button class="form-control" type="submit" class="btn btn-primary">Save changes</button>
+        	<button class="form-control" type="submit" class="btn btn-primary" name="updateSubject">Save changes</button>
       	</div>
         </form>
       </div>
