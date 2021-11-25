@@ -7,10 +7,8 @@ session_start();
 if(!isset($_SESSION["User"])){
 	header("Location: index.php");
 	exit();
-}
-else{
-	
-	if(isset($_POST['subject'])){
+}	
+elseif(isset($_POST['subject'])){
 	$scode = $_POST['scode'];
 	$sdes = $_POST['sdes'];
 	$sid = $_POST['$sid'];
@@ -28,8 +26,8 @@ else{
 			header("Location: epm_agenda.php");
 			exit();
 		}
-	}
-	if(isset($_POST['teacher'])){
+}
+elseif(isset($_POST['teacher'])){
 		$tname = $_POST['tname'];
 		$tsname = $_POST['tsname'];
 		$temail = $_POST['temail'];
@@ -49,7 +47,6 @@ else{
 			exit();
 		}
 	}
-}
 
 ?>
 <!doctype html>
