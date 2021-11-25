@@ -219,6 +219,36 @@ include ("assets/php/summary.php");
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
+							<span style="text-align: center; color: black; font-weight: bold">MY TEACHERS</span>
+						</div>
+                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-xl-12 col-md-12 mb-4">
+					<div class="card border-left-primary shadow py-2">
+						<div class="card-header">
+							<span style="text-align: center; color: black; font-weight: bold">MY SUBJECTS</span>
+						</div>
+                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
+			<div class="row">
+				<div class="col-xl-12 col-md-12 mb-4">
+					<div class="card border-left-primary shadow py-2">
+						<div class="card-header">
 							<center>
 							<span style="text-align: center; color: black; font-weight: bold">MY GRADES</span>
 								</center>
