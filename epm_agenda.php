@@ -9,11 +9,12 @@ if(!isset($_SESSION["User"])){
 	exit();
 }
 else{
+	
 	if(isset($_POST['subject'])){
 	$scode = $_POST['scode'];
 	$sdes = $_POST['sdes'];
 	$sid = $_POST['$sid'];
-	$sql = "UPDATE subjects SET S_Code='$scode', S_Description='$sdes' WHERE ID='$sid'";
+	$sql = "UPDATE subjects SET S_Code='$scode' AND S_Description='$sdes' WHERE ID='$sid'";
 	$result = $db->query($sql);
 		if($result){
 			$_SESSION['status'] = "success";
@@ -28,7 +29,7 @@ else{
 			exit();
 		}
 	}
-	elseif(isset($_POST['teacher'])){
+	if(isset($_POST['teacher'])){
 		$tname = $_POST['tname'];
 		$tsname = $_POST['tsname'];
 		$temail = $_POST['temail'];
