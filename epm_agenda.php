@@ -405,7 +405,7 @@ if(!isset($_SESSION['User'])){
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="assets/php/update_teacher.php">
+        <form method="post" action="update_teacher.php">
          <div class="form-group">
             <label>Name</label>
             <input  hidden="" name="tid" id="id" value="">
@@ -439,7 +439,7 @@ if(!isset($_SESSION['User'])){
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="assets/php/update_subject.php">
+        <form method="post" action="update_subject.php">
          <div class="form-group">
             <label>Subject Code</label>
             <input  hidden="" name="id" id="sid" value="">
