@@ -1,5 +1,6 @@
 <?php
-
+include("config.db");
+session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$sql = "UPDATE `teachers` SET `T_Name`='$tname', `T_Surname`='$tsname', `T_Email`='$temail' WHERE `ID`='$tid'";
 	$result = $db->query($sql);

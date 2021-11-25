@@ -1,4 +1,6 @@
-<?php 
+<?php
+include("config.db");
+session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$sql = "UPDATE `subjects` SET `S_Code`='$scode', `S_Description`='$sdes' WHERE `ID`='$sid'";
 	$result = $db->query($sql);
