@@ -4,8 +4,7 @@ include ("assets/php/php_epm_genset.php");
 include ("assets/php/summary.php");
 
 
-
-	if(isset($_POST['updateSubject'])){
+if(isset($_POST['subject'])){
 	$sql = "UPDATE `subjects` SET `S_Code`='$scode', `S_Description`='$sdes' WHERE `ID`='$sid'";
 	$result = $db->query($sql);
 		if($result){
@@ -22,7 +21,7 @@ include ("assets/php/summary.php");
 	}
 		
 }
-	elseif(isset($_POST['updateTeacher'])){
+	elseif(isset($_POST['teacher'])){
 	$sql = "UPDATE `teachers` SET `T_Name`='$tname', `T_Surname`='$tsname', `T_Email`='$temail' WHERE `ID`='$tid'";
 	$result = $db->query($sql);
 	if($result){
@@ -439,19 +438,19 @@ include ("assets/php/summary.php");
         <form method="post" action="">
          <div class="form-group">
             <label>Name</label>
-            <input  hidden="" name="tid" id="id" value="">
+            <input  hidden="" name="tid" id="tid" value="">
             <input class="form-control" type="text" name="tname" id="tname" value="">
          </div>
          <div class="form-group">
             <label>Last Name</label>
-            <input class="form-control" type="text" name="tsname" id="tlname" value="">
+            <input class="form-control" type="text" name="tsname" id="tsname" value="">
          </div>
          <div class="form-group">
             <label>Email</label>
             <input class="form-control" type="email" name="temail" id="temail" value="">
          </div>
 		<div class="form-group">
-        	<button class="form-control" type="submit" class="btn btn-primary" name="updateTeacher">Save changes</button>
+        	<button class="form-control" type="submit" class="btn btn-primary" name="teacher">Save changes</button>
       	</div>
         </form>
       </div>
@@ -473,7 +472,7 @@ include ("assets/php/summary.php");
         <form method="post" action="">
          <div class="form-group">
             <label>Subject Code</label>
-            <input  hidden="" name="id" id="sid" value="">
+            <input  hidden="" name="sid" id="sid" value="">
             <input class="form-control" type="text" name="scode" id="scode" value="">
          </div>
          <div class="form-group">
@@ -481,7 +480,7 @@ include ("assets/php/summary.php");
             <input class="form-control" type="text" name="sdes" id="sdes" value="">
          </div>
 		<div class="form-group">
-        	<button class="form-control" type="submit" class="btn btn-primary" name="updateSubject">Save changes</button>
+        	<button class="form-control" type="submit" class="btn btn-primary" name="subject">Save changes</button>
       	</div>
         </form>
       </div>
@@ -512,9 +511,9 @@ $(document).ready(function(){
          return $(this).text();
       }).get();
       console.log(data);
-      $('#id').val(data[0]);
+      $('#tid').val(data[0]);
       $('#tname').val(data[1]);
-      $('#tlname').val(data[2]);
+      $('#tsname').val(data[2]);
       $('#temail').val(data[3]);
    });
 });	
