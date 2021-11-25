@@ -1,5 +1,6 @@
 <?php
-if(isset($_POST['updateTeacher'])){
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$sql = "UPDATE `teachers` SET `T_Name`='$tname', `T_Surname`='$tsname', `T_Email`='$temail' WHERE `ID`='$tid'";
 	$result = $db->query($sql);
 	if($result){

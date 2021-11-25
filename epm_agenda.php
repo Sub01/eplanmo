@@ -4,39 +4,11 @@ include ("assets/php/php_epm_genset.php");
 include ("assets/php/summary.php");
 session_start();
 
-if(isset($_POST['subject'])){
-	$sql = "UPDATE `subjects` SET `S_Code`='$scode', `S_Description`='$sdes' WHERE `ID`='$sid'";
-	$result = $db->query($sql);
-		if($result){
-			$_SESSION['status'] = "success";
-   			$_SESSION['message'] = "Subject's Information Successfuly Updated";
-			header("Location: epm_agenda.php");
-			exit();
-		}
-		else{
-			$_SESSION['status'] = "error";
-   			$_SESSION['message'] = "Failed to Update Subject's Information";
-			header("Location: epm_agenda.php");
-			exit();
-		}
-		
-	}
-	elseif(isset($_POST['teacher'])){
-	$sql = "UPDATE `teachers` SET `T_Name`='$tname', `T_Surname`='$tsname', `T_Email`='$temail' WHERE `ID`='$tid'";
-	$result = $db->query($sql);
-	if($result){
-		$_SESSION['status'] = "success";
-   		$_SESSION['message'] = "Teacher's Information Successfuly Updated";
-		header("Location: epm_agenda.php");
-		exit();
-	}
-	else{
-		$_SESSION['status'] = "error";
-   		$_SESSION['message'] = "Failed to Update Teacher's Information";
-		header("Location: epm_agenda.php");
-		exit();
-	}
+if(!isset($_SESSION["User"])){
+	header("Location: index.php");
+	exit();
 }
+
 ?>
 <!doctype html>
 <html>
@@ -435,19 +407,19 @@ if(isset($_POST['subject'])){
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="">
+        <form method="post" action="update_teacher.php">
          <div class="form-group">
             <label>Name</label>
             <input  hidden="" name="tid" id="tid" value="">
-            <input class="form-control" type="text" name="tname" id="tname">
+            <input class="form-control" type="text" name="tname" id="tname" value="">
          </div>
          <div class="form-group">
             <label>Last Name</label>
-            <input class="form-control" type="text" name="tsname" id="tsname">
+            <input class="form-control" type="text" name="tsname" id="tsname" value="">
          </div>
          <div class="form-group">
             <label>Email</label>
-            <input class="form-control" type="email" name="temail" id="temail">
+            <input class="form-control" type="email" name="temail" id="temail" value="">
          </div>
 		<div class="form-group">
         	<button class="form-control" type="submit" class="btn btn-primary" name="teacher">Save changes</button>
@@ -469,15 +441,15 @@ if(isset($_POST['subject'])){
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="">
+        <form method="post" action="update_subject.php">
          <div class="form-group">
             <label>Subject Code</label>
-            <input  hidden="" name="sid" id="sid">
-            <input class="form-control" type="text" name="scode" id="scode">
+            <input  hidden="" name="sid" id="sid" value="">
+            <input class="form-control" type="text" name="scode" id="scode" value="">
          </div>
          <div class="form-group">
             <label>Subject Description</label>
-            <input class="form-control" type="text" name="sdes" id="sdes">
+            <input class="form-control" type="text" name="sdes" id="sdes" value="">
          </div>
 		<div class="form-group">
         	<button class="form-control" type="submit" class="btn btn-primary" name="subject">Save changes</button>
