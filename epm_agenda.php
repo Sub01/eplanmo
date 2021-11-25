@@ -8,7 +8,7 @@ if(!isset($_SESSION["User"])){
 	header("Location: index.php");
 	exit();
 }	
-elseif(isset($_POST['subject'])){
+elseif(isset($_POST['sub'])){
 	$scode = $_POST['scode'];
 	$sdes = $_POST['sdes'];
 	$sid = $_POST['$sid'];
@@ -491,7 +491,7 @@ elseif(isset($_POST['teacher'])){
             <input class="form-control" type="text" name="sdes" id="sdes" value="">
          </div>
 		<div class="form-group">
-        	<button class="form-control" type="submit" class="btn btn-primary" name="subject">Save changes</button>
+        	<button class="form-control" type="submit" class="btn btn-primary" name="sub">Save changes</button>
       	</div>
         </form>
       </div>
