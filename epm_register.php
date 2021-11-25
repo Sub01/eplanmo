@@ -78,7 +78,7 @@ else
 		   	$script = "<script> $(document).ready(function(){ $('#modalRegSuccess').modal('show'); }); </script>";
        	}else{
             $_SESSION['status'] = "error";
-   			$_SESSION['message'] = $mail->ErrorInfo;;
+   			$_SESSION['message'] = $mail->ErrorInfo;
        	}
 	}
 }
