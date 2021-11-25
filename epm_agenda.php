@@ -41,11 +41,11 @@ include ("assets/php/summary.php");
           	<li class="active">
             	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
-			<li class="active">
-            	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Pomodoro Technique</a>
-          	</li>
 			<li>
-            	<a href="https://mega.nz/file/T3AhzCgZ#BfyRpaYACNhw8AceTwl76YdSw__jPAN70wuRHQUk9-8g"><span><i class="fab fa-android mr-3"></i></span> Android Version</a>
+				<a href="http://www.tomatotimers.com/"><span class="fa fa-calendar-check mr-3"></span> Pomodoro Technique</a>
+			</li>
+          	<li>
+            	<a href="https://mega.nz/file/T3AhzCgZ#BfyRpaYACNhw8AceTwl76YdSw__jPAN70wuRHQUk9-8"><span><i class="fab fa-android mr-3"></i></span> Android Version</a>
           	</li>
         </ul>
     </nav>
