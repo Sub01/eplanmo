@@ -1,4 +1,5 @@
 <?php
+include 'config.php';
 session_start();
 $id = $_GET['id'];
 $sql = "DELETE FROM Teachers WHERE ID='$id'";
