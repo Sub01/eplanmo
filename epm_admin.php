@@ -49,7 +49,7 @@ if(!isset($_SESSION['User'])){
             	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
             <li>
-            	<a href="epm_school.php"><span class="fa fa-school mr-3"></span> School</a>
+            	<a href="epm_teachers.php"><span class="fa fa-chalkboard-teacher mr-3"></span> Teachers</a>
           	</li>
         </ul>
     </nav>
@@ -151,7 +151,7 @@ if(!isset($_SESSION['User'])){
                                 		ENDED
                             		</div>
                             		<div class="h5 mb-0 font-weight-bold text-gray-800">
-                                		<?php echo $archived ?>
+                                		<?php echo $ended ?>
                             		</div>
                         		</div>
                         		<div class="col-auto">
