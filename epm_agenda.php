@@ -86,11 +86,8 @@ elseif(isset($_POST['teacher'])){
           	<li class="active">
             	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
-			<li>
-				<a href="http://www.tomatotimers.com/"><span class="fa fa-calendar-check mr-3"></span> Pomodoro Technique</a>
-			</li>
-          	<li>
-            	<a href="https://mega.nz/file/T3AhzCgZ#BfyRpaYACNhw8AceTwl76YdSw__jPAN70wuRHQUk9-8"><span><i class="fab fa-android mr-3"></i></span> Android Version</a>
+			 <li>
+            	<a href="epm_teachers.php"><span class="fa fa-chalkboard-teacher mr-3"></span> Teachers</a>
           	</li>
         </ul>
     </nav>
@@ -310,33 +307,7 @@ elseif(isset($_POST['teacher'])){
 							<span style="text-align: center; color: black; font-weight: bold">MY SUBJECTS</span>
 						</div>
                     	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto;max-height: calc(350px - 20px - 20px);">
-							<table class="table">
-								<thead>
-									<tr>
-										<th hidden="">ID</th>
-										<th>Subject Code </th>
-										<th>Subject Description</th>
-										<th>FUNTION </th>
-									</tr>
-								</thead>
-								<tbody>
-									<?php 
-									$id = $_SESSION['User'];
-									$sql = "SELECT * FROM subjects WHERE User='$id'";
-    								$result =$db->query($sql);
-									while ($row = mysqli_fetch_array($result)) {?>
-									<tr>
-										<td hidden=""><?php echo $row['ID']?>  </td>
-										<td><?php echo $row['S_Code']?></td>
-										<td><?php echo $row['S_Description']?></td>
-										<td>
-											<button class="btn btn-warning editsubject" data-bs-toggle="modal" data-bs-target="#updateSubject"><i class="fas fa-edit"></i></button>
-											<button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-										</td>
-									</tr>
-									<?php } ?>
-								</tbody>
-							</table>
+							
 						</div>
 					</div>
 				</div>
@@ -434,72 +405,9 @@ elseif(isset($_POST['teacher'])){
 			</div>
 		</div>	
 	</div>
-</div>
-		
-		
-<div class="modal fade" id="updateTeacher" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Teacher Information</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form method="post" action="">
-         <div class="form-group">
-            <label>Name</label>
-            <input  hidden="" name="tid" id="tid" value="">
-            <input class="form-control" type="text" name="tname" id="tname" value="">
-         </div>
-         <div class="form-group">
-            <label>Last Name</label>
-            <input class="form-control" type="text" name="tsname" id="tsname" value="">
-         </div>
-         <div class="form-group">
-            <label>Email</label>
-            <input class="form-control" type="email" name="temail" id="temail" value="">
-         </div>
-		<div class="form-group">
-        	<button class="form-control" type="submit" class="btn btn-primary" name="teacher">Save changes</button>
-      	</div>
-        </form>
-      </div>
-      
-    </div>
-  </div>
-</div>		
+</div>	
 
-<div class="modal fade" id="updateSubject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Subject Information</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form method="post" action="">
-         <div class="form-group">
-            <label>Subject Code</label>
-            <input  hidden="" name="sid" id="sid" value="">
-            <input class="form-control" type="text" name="scode" id="scode" value="">
-         </div>
-         <div class="form-group">
-            <label>Subject Description</label>
-            <input class="form-control" type="text" name="sdes" id="sdes" value="">
-         </div>
-		<div class="form-group">
-        	<button class="form-control" type="submit" class="btn btn-primary" name="sub">Save changes</button>
-      	</div>
-        </form>
-      </div>
-      
-    </div>
-  </div>
-</div>		
+	
 		
 <!--SCRIPTS-->  
 <!--===============================================================================================-->  
@@ -529,20 +437,7 @@ $(document).ready(function(){
       $('#temail').val(data[3]);
    });
 });	
-
-$(document).ready(function(){
-   $('.editsubject').on('click', function(){
-      $('#updateSubject').modal('show');
-      $tr = $(this).closest('tr');
-      var data = $tr.children("td").map(function(){
-         return $(this).text();
-      }).get();
-      console.log(data);
-      $('#sid').val(data[0]);
-      $('#scode').val(data[1]);
-      $('#sdes').val(data[2]);
-   });
-});	
+	
 </script>
 </body>
 </html>

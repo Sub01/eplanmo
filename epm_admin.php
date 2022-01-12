@@ -51,6 +51,9 @@ if(!isset($_SESSION['User'])){
             <li>
             	<a href="epm_teachers.php"><span class="fa fa-chalkboard-teacher mr-3"></span> Teachers</a>
           	</li>
+            <li>
+            	<a href="epm_subjects.php"><span class="fa fa-chalkboard-teacher mr-3"></span> Subjects</a>
+          	</li>
         </ul>
     </nav>
     <div id="content" class="d-flex flex-column">

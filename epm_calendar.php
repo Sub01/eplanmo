@@ -37,24 +37,6 @@ else{
    			exit();
 		}
 	}
-	elseif(isset($_POST['subject'])){
-		$scode= $_POST['scode'];
-		$sdes= $_POST['sdes'];
-		$sql = "INSERT INTO subjects (`S_Code`,`S_Description`,`User`) VALUES ('$scode','$sdes','$id')";
-		$result = mysqli_query($db, $sql);
-		if($result){
-			$_SESSION['status'] = "success";
-   			$_SESSION['message'] = "Subject Added Successfully";
-   			header("Location: /epm_calendar.php");
-   			exit();
-		}
-		else{
-			$_SESSION['status'] = "error";
-   			$_SESSION['message'] = "Failed to add subject!";
-   			header("Location: /epm_calendar.php");
-   			exit();
-		}
-	}
 	elseif(isset($_POST['ggrade'])){
 		$teacher = $_POST['gteacher'];
 		$subject = $_POST['gsubject'];
@@ -146,6 +128,9 @@ else{
           	</li>
           	<li>
             	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
+          	</li>
+            <li>
+            	<a href="epm_teachers.php"><span class="fa fa-chalkboard-teacher mr-3"></span> Teachers</a>
           	</li>
         </ul>
     </nav>
