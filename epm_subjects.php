@@ -91,7 +91,7 @@ else{
             	<a href="epm_teachers.php"><span class="fas fa-chalkboard-teacher mr-3"></span> Teachers</a>
           	</li>
             <li class="active">
-            	<a href="epm_subjects.php"><span class="fas fa-books mr-3"></span> Subjects</a>
+            	<a href="epm_subjects.php"><span class="fas fa-book mr-3"></span> Subjects</a>
           	</li>
         </ul>
     </nav>
