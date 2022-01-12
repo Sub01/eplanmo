@@ -8,11 +8,11 @@ if(!isset($_SESSION["User"])){
 	exit();
 }	
 else{
-    $id = $_SESSION['User'];
     if(isset($_POST['sub'])){
         $scode= $_POST['scode'];
 		$sdes= $_POST['sdes'];
-        $sql = "UPDATE `subjects` SET `S_Code`='$scode', `S_Description`='$sdes' WHERE `ID`='$id'";
+        $sid= $_POST['sid'];
+        $sql = "UPDATE `subjects` SET `S_Code`='$scode', `S_Description`='$sdes' WHERE `ID`='$sid'";
         $result = $db->query($sql);
 		if($result){
 			$_SESSION['status'] = "success";
@@ -188,7 +188,7 @@ else{
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Teacher Information</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Subject Information</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
