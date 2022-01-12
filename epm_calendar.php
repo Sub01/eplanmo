@@ -191,22 +191,8 @@ else{
 							<div class="col-xl-12 col-md-12 mb-4">
 								<div class="card border-left-primary shadow h-100 py-2">
 									<div class="card-header"> 
-										<!--=========== CARD NAVIGATION TABS =============-->
-										<nav>
-  											<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-    											<a class="nav-item nav-link active" id="nav-events-tab" data-toggle="tab" href="#nav-events" role="tab" aria-controls="nav-events" aria-selected="true">ADD EVENTS</a>
-    											<a class="nav-item nav-link" id="nav-teachers-tab" data-toggle="tab" href="#nav-teachers" role="tab" aria-controls="nav-teachers" aria-selected="false">ADD TEACHERS</a>
-    											<a class="nav-item nav-link" id="nav-subjects-tab" data-toggle="tab" href="#nav-subjects" role="tab" aria-controls="nav-subject" aria-selected="false">ADD SUBJECT</a>
-												<a class="nav-item nav-link" id="nav-schedule-tab" data-toggle="tab" href="#nav-schedule" role="tab" aria-controls="nav-schedule" aria-selected="false">ADD GRADES</a>
-												
-  											</div>
-										</nav>
-										<!--========= END CARD NAVIGATION TABS ============-->
-									</div>
+										ADD EVENTS
                     				<div class="card-body">
-										<!--============= CARD TABS CONTENT ===============-->
-										<div class="tab-content" id="nav-tabContent">
-  											<div class="tab-pane fade show active" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
 												<form action="" method="POST" enctype="multipart/form-data">
 												<table class="table">
 													<tr>
@@ -247,117 +233,6 @@ else{
 												</table>
 												</form>
 											</div>
-  											<div class="tab-pane fade" id="nav-teachers" role="tabpanel" aria-labelledby="nav-teachers-tab">
-												<form action="" method="post">
-												<table class="table">
-													<tr>
-														<td>First Name</td>
-														<td>:</td>
-														<td><input type="text" class="form-control" name="tname"></td>
-													</tr>
-													<tr>
-														<td>Last Name</td>
-														<td>:</td>
-														<td><input type="text" class="form-control" name="tsurname"></td>
-													</tr>
-													<tr>
-														<td>Email</td>
-														<td>:</td>
-														<td><input type="email" class="form-control" name="temail"></td>
-													</tr>
-												</table>
-												<table>
-													<tr>
-														<td><button type="submit" name="teacher" class="btn btn-primary">ADD TEACHER</button></td>
-													</tr>	
-												</table>
-												</form>
-											</div>
-  											<div class="tab-pane fade" id="nav-subjects" role="tabpanel" aria-labelledby="nav-subjects-tab">
-												<form action="" method="post">
-												<table class="table">
-													<tr>
-														<td>Subject Code</td>
-														<td>:</td>
-														<td><input type="text" name="scode" class="form-control"></td>
-													</tr>
-													<tr>
-														<td>Subject Description</td>
-														<td>:</td>
-														<td><input type="text" name="sdes" class="form-control"></td>
-													</tr>
-												</table>
-												<table>
-													<tr>
-														<td><button type="submit" name="subject" class="btn btn-primary">ADD SUBJECT</button></td>
-													</tr>	
-												</table>
-												</form>
-											</div>
-											<div class="tab-pane fade" id="nav-schedule" role="tabpanel" aria-labelledby="nav-schedule-tab">
-												<form action="" method="post">
-												<table class="table">
-													<tr>
-														<td>Teacher</td>
-														<td>:</td>
-														<td colspan="3">
-															<select class="form-control" name="gteacher">
-																<option hidden> </option>
-																<?php
-																$name = $_SESSION['User'];
-																$ssql = "SELECT * FROM `teachers` WHERE `User`='$name'";
-																$sresult = $db-> query($ssql);
-																while($srow = mysqli_fetch_array($sresult)){ ?>
-																<option value="<?php echo $srow['T_Name']?> <?php echo $srow['T_Surname']?>"><?php echo $srow['T_Name']?> <?php echo $srow['T_Surname']?></option>
-																<?php }?>
-															</select>
-														</td>
-													</tr>
-													<tr>
-														<td>Subject</td>
-														<td>:</td>
-														<td colspan="3">
-															<select class="form-control" name="gsubject">
-																<option hidden> </option>
-																<?php
-																$name = $_SESSION['User'];
-																$ssql = "SELECT * FROM `subjects` WHERE `User`='$name'";
-																$sresult = $db-> query($ssql);
-																while($srow = mysqli_fetch_array($sresult)){ ?>
-																<option value="<?php echo $srow['S_Code']?>"><?php echo $srow['S_Code']?></option>
-																<?php }?>
-															</select>
-														</td>
-													</tr>
-													<tr>
-														<td>Grade</td>
-														<td>:</td>
-														<td><input type="number" name="gscore" class="form-control"></td>
-														<td>/</td>
-														<td><input type="number" name="gover" class="form-control"></td>
-													</tr>
-													<tr>
-														<td>Type</td>
-														<td>:</td>
-														<td colspan="3">
-															<select name="gtype" class="form-control">
-																<option hidden> </option>
-																<option value="Written">Written</option>
-																<option value="Oral">Oral</option>
-																<option value="Practical">Practical</option>
-															</select>
-														</td>
-													</tr>
-												</table>
-												<table>
-													<tr>
-														<td><button type="submit" name="ggrade" class="btn btn-primary">ADD GRADE</button></td>
-													</tr>	
-												</table>
-												</form>
-											</div>
-										</div>
-										<!--============= END CARD TABS CONTENT ===============-->
 									</div>
 								</div>
 							</div>
