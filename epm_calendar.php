@@ -142,37 +142,31 @@ else{
   </script>
 
   </head>
-	<style>
-	input::-webkit-outer-spin-button,
-	input::-webkit-inner-spin-button {
- 		-webkit-appearance: none;
-  		margin: 0;
-	}
-	</style>
+	<style></style>
  <?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
 <div class="wrapper d-flex">
 	<nav id="sidebar" class="" style="background-color: maroon;">
 		<div class="custom-menu">
 			
-        </div>
+        
 	  	<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
 			E-PLAN MO
-	  	</div>
+	  	
         <ul class="list-unstyled components mb-5">
         	<li>
-            	<a href="epm_admin.php"><span class="fa fa-home mr-3"></span> Dashboard</a>
+            	<a href="epm_admin.php"><span class="fa fa-home mr-3"> Dashboard</a>
           	</li>
           	<li class="active">
-              <a href="epm_calendar.php"><span class="fa fa-calendar-week mr-3"></span> Calendar</a>
+              <a href="epm_calendar.php"><span class="fa fa-calendar-week mr-3"> Calendar</a>
           	</li>
           	<li>
-            	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
+            	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"> Agenda</a>
           	</li>
 			<li>
-				<a href="http://www.tomatotimers.com/"><span class="fa fa-calendar-check mr-3"></span> Pomodoro Technique</a>
+				<a href="http://www.tomatotimers.com/"><span class="fa fa-calendar-check mr-3"> Pomodoro Technique</a>
 			</li>
           	<li>
-            	<a href="https://mega.nz/file/T3AhzCgZ#BfyRpaYACNhw8AceTwl76YdSw__jPAN70wuRHQUk9-8"><span><i class="fab fa-android mr-3"></i></span> Android Version</a>
+            	<a href="https://mega.nz/file/T3AhzCgZ#BfyRpaYACNhw8AceTwl76YdSw__jPAN70wuRHQUk9-8"><i class="fab fa-android mr-3"></i> Android Version</a>
           	</li>
         </ul>
     </nav>
@@ -182,10 +176,10 @@ else{
                     <i type="button" id="sidebarCollapse" class="fas fa-bars"></i>
                     </button>
                     <ul class="navbar-nav ml-auto">
-                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <div class="topbar-divider d-none d-sm-block">
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $names; ?> <?php echo $sname; ?></span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $names; ?> <?php echo $sname; ?>
                                 <?php echo '<img class="rounded-circle" height="50" width="50" alt="" loading="lazy" src="data:image/jpeg;base64,'.base64_encode($image).'"/>'; ?>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -193,12 +187,12 @@ else{
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-divider">
                                 <a class="dropdown-item" href="index.php" onclick="return confirm('Are you sure you want to Log Out?')">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
-                            </div>
+                            
                         </li>
 
                     </ul>
@@ -213,16 +207,16 @@ else{
 							<?php if(isset($_SESSION['message']) && $_SESSION['status'] == 'error'): ?>
     						<div class="alert alert-danger">
     						<?php echo $_SESSION['message']; ?>
-    						</div>
+    						
     						<?php elseif (isset($_SESSION['message']) && $_SESSION['status'] == 'success'):?>
     						<div class="alert alert-success">
     						<?php echo $_SESSION['message']; ?>
-    						</div>     
+    						     
     						<?php endif; ?>
     						<?php unset($_SESSION['message']); ?>
     						<?php unset($_SESSION['status']); ?>
-						</div>
-                      </div>
+						
+                      
 					
 				<div class="row">
 					<div class="col-md-4">
@@ -238,10 +232,10 @@ else{
     											<a class="nav-item nav-link" id="nav-subjects-tab" data-toggle="tab" href="#nav-subjects" role="tab" aria-controls="nav-subject" aria-selected="false">ADD SUBJECT</a>
 												<a class="nav-item nav-link" id="nav-schedule-tab" data-toggle="tab" href="#nav-schedule" role="tab" aria-controls="nav-schedule" aria-selected="false">ADD GRADES</a>
 												
-  											</div>
+  											
 										</nav>
 										<!--========= END CARD NAVIGATION TABS ============-->
-									</div>
+									
                     				<div class="card-body">
 										<!--============= CARD TABS CONTENT ===============-->
 										<div class="tab-content" id="nav-tabContent">
@@ -285,7 +279,7 @@ else{
 													</tr>
 												</table>
 												</form>
-											</div>
+											
   											<div class="tab-pane fade" id="nav-teachers" role="tabpanel" aria-labelledby="nav-teachers-tab">
 												<form action="" method="post">
 												<table class="table">
@@ -311,7 +305,7 @@ else{
 													</tr>	
 												</table>
 												</form>
-											</div>
+											
   											<div class="tab-pane fade" id="nav-subjects" role="tabpanel" aria-labelledby="nav-subjects-tab">
 												<form action="" method="post">
 												<table class="table">
@@ -332,7 +326,7 @@ else{
 													</tr>	
 												</table>
 												</form>
-											</div>
+											
 											<div class="tab-pane fade" id="nav-schedule" role="tabpanel" aria-labelledby="nav-schedule-tab">
 												<form action="" method="post">
 												<table class="table">
@@ -394,24 +388,24 @@ else{
 													</tr>	
 												</table>
 												</form>
-											</div>
-										</div>
+											
+										
 										<!--============= END CARD TABS CONTENT ===============-->
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+									
+								
+							
+						
+					
 					<div class="col-xl-8 col-md-8">
 						<div class="card border-left-primary shadow h-100 py-2" style="max-height: 1000px;">
                     		<div class="card-body">
 								<div id="calendar">
-               					</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+               					
+							
+						
+					
+				
+			
               
 
 
@@ -422,17 +416,17 @@ else{
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Add Event</h4>
-          <div>
+          
             
-          </div>
+          
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
+        
         <div class="modal-body">
           <form action="assets/php/add_event.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
               <label>Title:</label>
               <input type="text" name="title" required="" style="width:100%">
-            </div>
+            
             <div class="form-group">
               <label>Type:</label>
               <select name="type" required="" style="width:100%">
@@ -442,23 +436,23 @@ else{
                   <option>Birthday</option>
 				  <option>Others</option>
               </select>
-            </div>
+            
             <div class="form-group">
               <label>Start Date and Time:</label>
               <input type="datetime-local" name="start" required="" style="width:100%">
-            </div>
+            
             <div class="form-group">
               <label>End Date and Time:</label>
               <input type="datetime-local" name="end" required="" style="width:100%">
-            </div>
+            
             <div class="form-group">
               <button class="btn btn-primary" type="submit" style="margin-left: 70%;">ADD EVENT</button>
-            </div>
+            
           </form>
-        </div>
-      </div>
-    </div>
-  </div>
+        
+      
+    
+  
 
 
 <!-- Modal -->
@@ -468,38 +462,41 @@ else{
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Voice Recognition</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+            <span aria-hidden="true">&times;</span></button>
+      
       <div class="modal-body">
 		  <form action="assets/php/add_event_voice.php" method="post">
 			<div class="form-group">
 				
 				<input type="text" class="title" name="title" placeholder="Event Title" required="" style="width: 50%;" readonly>
-			</div>
+			
 			<div class="form-group">
 				<button  type="button" class="btn btn-dark btn-start-2"><i class="fas fa-microphone-alt"></i> Start</button>
 				<button  type="button" class="btn btn-dark btn-stop-2"><i class="fas fa-microphone-alt"></i> Stop</button>
 				<input type="text" name="type" class="type" placeholder="Event Type" required="" style="width: 50%;" readonly>
-			</div>
+			
 			<div class="form-group">
 				<label>Start Date and Time</label>
 				<input type="datetime-local" name="start" placeholder="Event Type" style="width: 100%;">
-			</div>
+			
 			<div class="form-group">
 				<label>End Date and Time</label>
 				<input type="datetime-local" name="end" placeholder="Event Type" style="width: 100%;">
-			</div>
+			
 		  <script src="assets/js/calendar_voice.js"></script>
 		  <script src="assets/js/calendar_voice2.js"></script>
-      </div>
+      
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary">Add Event</button>
-      </div>
+        </div>
+                </div>
+                </div>
+                </div>
+              </div>
 	</form>
-    </div>
-  </div>
-</div>
+    
+  
+
 <!--SCRIPTS-->  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
