@@ -189,49 +189,35 @@ else{
 					<div class="col-md-4">
 						<div class="row">
 							<div class="col-xl-12 col-md-12 mb-4">
-								<div class="card border-left-primary shadow h-100 py-2">
+								<div class="card border-left-primary shadow h-100">
 									<div class="card-header"> 
 										ADD EVENTS
                                     </div>
                     				<div class="card-body">
 												<form action="" method="POST" enctype="multipart/form-data">
-												<table class="table">
-													<tr>
-														<td>TITLE</td>
-														<td>:</td>
-														<td>
-															<input class="title myInput" type="text" name="title" required="" style="width:68%" value="">
-															<button type="button" class="btn btn-dark btn-sm btn-start"><i class="fas fa-play"></i></button>
-															<button type="button" class="btn btn-dark btn-sm btn-stop"><i class="fas fa-stop"></i></button>
-														</td>
-													</tr>
-													<tr>
-														<td>TYPE</td>
-														<td>:</td>
-														<td>
-															<input class="type myInput" type="text" name="type" required="" style="width:68%" value="">
-															<button type="button" class="btn btn-dark btn-sm btn-start-2"><i class="fas fa-play"></i></button>
-															<button type="button" class="btn btn-dark btn-sm btn-stop-2"><i class="fas fa-stop"></i></button>
-														</td>
-													</tr>
-													<tr>
-														<td>START</td>
-														<td>:</td>
-														<td><input  class="myInput" type="datetime-local" name="start" required="" style="width:100%" value=""></td>
-													</tr>
-													<tr>
-														<td>END</td>
-														<td>:</td>
-														<td><input  class="myInput" type="datetime-local" name="end" required="" style="width:100%"></td>
-													</tr>
-												</table>
-												<table class="table">
-													<tr>
-														<td style="width: 33%"> </td>
-														<td style="width: 33%"> </td>
-														<td style="width: 34%"> <button class="btn btn-primary" name="event" type="submit" style="width:100%;">ADD EVENT</button> </td>
-													</tr>
-												</table>
+                                                    <div class="form-group">
+                                                        <label>TITLE</label>
+                                                        <button type="button" class="btn btn-dark btn-sm btn-start"><i class="fas fa-play"></i></button>
+												        <button type="button" class="btn btn-dark btn-sm btn-stop"><i class="fas fa-stop"></i></button>
+                                                        <input class="form-control" type="text" name="title" required="" style="width:68%" value="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>TITLE</label>
+                                                        <button type="button" class="btn btn-dark btn-sm btn-start-2"><i class="fas fa-play"></i></button>
+												        <button type="button" class="btn btn-dark btn-sm btn-stop-2"><i class="fas fa-stop"></i></button>
+                                                        <input class="form-control" type="text" name="type" required="" style="width:68%" value="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>START</label>
+                                                        <input  class="form-control" type="datetime-local" name="start" required="" style="width:100%" value="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>END</label>
+                                                        <input  class="form-control" type="datetime-local" name="end" required="" style="width:100%" value="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                       <button class="btn btn-primary btn-sm" name="event" type="submit">ADD EVENT</button>
+                                                    </div>
 												</form>
 											</div>
 									</div>
