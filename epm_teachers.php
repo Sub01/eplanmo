@@ -169,7 +169,7 @@ else{
                     <td><?php echo $row['T_Surname'] ?></td>
                     <td><?php echo $row['T_Email'] ?></td>
                     <td><button class="btn btn-warning btn-sm editteacher"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td>
+                    <a href="assets/php/delete_teachers.php?id=<?php echo $row['ID'] ?>"><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></a></td>
                 </tr>
                 <?php  } ?>
             </tbody>
