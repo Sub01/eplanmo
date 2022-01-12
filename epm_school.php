@@ -142,297 +142,44 @@ else{
 						</div>
                       </div>
 	<div class="row">
-		<div class="col-md-3">
-			<div class="row">
-				<div class="col-xl-12 col-md-12 mb-4">
-					<div class="card border-left-primary shadow py-2">
-						<div class="card-header">
-							<span style="text-align: center; color: black; font-weight: bold"><i class="fas fa-calendar"></i> TODAY</span>
-						</div>
-                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; height:350px; max-height: calc(350px - 20px - 20px);">
-							<div class="row overflow-auto">
-							<?php 
-							$sql = "SELECT * FROM events WHERE Name='$uname' AND (DATEDIFF(Start,NOW()) = 0)";
-                			$result =$db->query($sql);
-							while ($row = mysqli_fetch_array($result)) {?>
-							<div class="col-xl-6 col-md-6 mb-4">
-                				<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:rgb(0, 123, 255)">
-                    				<div class="card-header">
-										<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $row['Title'] ?></span><br>
-										<span class="text-gray text-uppercase mb-1">END : <?php echo $row['End'] ?></span>
-									</div>
-                  				</div>
-							</div>
-							<br>
-							<?php  } ?>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="row">
-				<div class="col-xl-12 col-md-12 mb-4">
-					<div class="card border-left-primary shadow py-2">
-						<div class="card-header">
-							<span style="text-align: center; color: black; font-weight: bold"><i class="fas fa-calendar"></i> TOMMOROW</span>
-						</div>
-                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto;  height:350px;max-height: calc(350px - 20px - 20px);">
-							<div class="row">
-							<?php 
-							$sql = "SELECT * FROM events WHERE Name='$uname' AND  (DATEDIFF(Start,NOW()) = 1)";
-                			$result =$db->query($sql);
-							while ($row = mysqli_fetch_array($result)) {?>
-							<div class="col-xl-6 col-md-6 mb-4">
-                				<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:rgb(0, 123, 255)">
-                    				<div class="card-header">
-										<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $row['Title'] ?></span><br>
-										<span class="text-gray text-uppercase mb-1">END : <?php echo $row['End'] ?></span>
-									</div>
-                  				</div>
-							</div>
-							<br>
-							<?php  } ?>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="row">
-				<div class="col-xl-12 col-md-12 mb-4">
-					<div class="card border-left-primary shadow py-2">
-						<div class="card-header">
-							<span style="text-align: center; color: black; font-weight: bold"><i class="fas fa-calendar"></i> WITHIN 7 DAYS</span>
-						</div>
-                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; height:350px; max-height: calc(350px - 20px - 20px);">
-							<div class="row">
-							<?php 
-							$sql = "SELECT * FROM events WHERE  Name='$uname' AND (DATEDIFF(Start,NOW()) BETWEEN 2 AND 7)";
-                			$result =$db->query($sql);
-							while ($row = mysqli_fetch_array($result)) {?>
-							<div class="col-xl-6 col-md-6 mb-4">
-                				<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:rgb(0, 123, 255)">
-                    				<div class="card-header">
-										<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $row['Title'] ?></span><br>
-										<span class="text-gray text-uppercase mb-1">END : <?php echo $row['End'] ?></span>
-									</div>
-                  				</div>
-							</div>
-							<br>
-							<?php  } ?>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="row">
-				<div class="col-xl-12 col-md-12 mb-4">
-					<div class="card border-left-primary shadow py-2">
-						<div class="card-header">
-							<span style="text-align: center; color: black; font-weight: bold"><i class="fas fa-calendar"></i> WITHIN 14 DAYS</span>
-						</div>
-                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto;  height:350px;max-height: calc(350px - 20px - 20px);">
-							<div class="row">
-							<?php 
-							$sql = "SELECT * FROM events WHERE Name='$uname' AND  (DATEDIFF(Start,NOW()) BETWEEN 8 AND 14)";
-                			$result =$db->query($sql);
-							while ($row = mysqli_fetch_array($result)) {?>
-							<div class="col-xl-6 col-md-6 mb-4">
-                				<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:rgb(0, 123, 255)">
-                    				<div class="card-header">
-										<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $row['Title'] ?></span><br>
-										<span class="text-gray text-uppercase mb-1">END : <?php echo $row['End'] ?></span>
-									</div>
-                  				</div>
-							</div>
-							<br>
-							<?php  } ?>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div class="col-xl-2 col-md-2 mb-4">
+            <div class="card border-left-dark shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(255, 193, 7)">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">TEACHERS</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $teachers ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-2 col-md-2 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(23, 162, 184)">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">SUBJECTS</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $subjects ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-book-open fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</div>
+    <div class="row">
+        <button class="btn btn-primary">ADD TEACHER</button>
+        <button class="btn btn-primary">ADD SUBJECT</button>   
+        <button class="btn btn-primary">ADD GRADES</button>   
+    </div>
 	<div class="row">
-	<div class="col-md-7">
-			<div class="row">
-				<div class="col-xl-12 col-md-12 mb-4">
-					<div class="card border-left-primary shadow py-2">
-						<div class="card-header">
-							<span style="text-align: center; color: black; font-weight: bold">MY TEACHERS</span>
-						</div>
-                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
-							<table class="table">
-								<thead>
-									<tr>
-										<th hidden="">ID</th>
-										<th>NAME </th>
-										<th>LAST NAME </th>
-										<th>EMAIL </th>
-										<th>FUNTION </th>
-									</tr>
-								</thead>
-								<tbody>
-									<?php 
-									$id = $_SESSION['User'];
-									$sql = "SELECT * FROM teachers WHERE User='$id'";
-    								$result =$db->query($sql);
-									while ($row = mysqli_fetch_array($result)) {?>
-									<tr>
-										<td hidden=""><?php echo $row['ID']?>  </td>
-										<td><?php echo $row['T_Name']?></td>
-										<td><?php echo $row['T_Surname']?></td>
-										<td><?php echo $row['T_Email']?></td>
-										<td>
-											<button class="btn btn-warning editteacher" data-bs-toggle="modal" data-bs-target="#updateTeacher"><i class="fas fa-edit"></i></button>
-											<button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-										</td>
-									</tr>
-									<?php } ?>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-5">
-			<div class="row">
-				<div class="col-xl-12 col-md-12 mb-4">
-					<div class="card border-left-primary shadow py-2">
-						<div class="card-header">
-							<span style="text-align: center; color: black; font-weight: bold">MY SUBJECTS</span>
-						</div>
-                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto;max-height: calc(350px - 20px - 20px);">
-							<table class="table">
-								<thead>
-									<tr>
-										<th hidden="">ID</th>
-										<th>Subject Code </th>
-										<th>Subject Description</th>
-										<th>FUNTION </th>
-									</tr>
-								</thead>
-								<tbody>
-									<?php 
-									$id = $_SESSION['User'];
-									$sql = "SELECT * FROM subjects WHERE User='$id'";
-    								$result =$db->query($sql);
-									while ($row = mysqli_fetch_array($result)) {?>
-									<tr>
-										<td hidden=""><?php echo $row['ID']?>  </td>
-										<td><?php echo $row['S_Code']?></td>
-										<td><?php echo $row['S_Description']?></td>
-										<td>
-											<button class="btn btn-warning editsubject" data-bs-toggle="modal" data-bs-target="#updateSubject"><i class="fas fa-edit"></i></button>
-											<button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-										</td>
-									</tr>
-									<?php } ?>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-	<div class="col-md-12">
-			<div class="row">
-				<div class="col-xl-12 col-md-12 mb-4">
-					<div class="card border-left-primary shadow py-2">
-						<div class="card-header">
-							<center>
-							<span style="text-align: center; color: black; font-weight: bold">MY GRADES</span>
-								</center>
-						</div>
-                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
-							<div class="row">
-							<?php 
-								$id = $_SESSION['User'];
-								$sql = "SELECT * FROM grades WHERE User='$id'";
-    							$result =$db->query($sql);
-								while ($row = mysqli_fetch_array($result)) {
-									$score = $row['Score'];
-									$over = $row['Over'];
-									$scode = $row['Subject_Code'];
-									$stype = $row['Type'];
-									$percentage = (($score/$over) * 100);
-									if($percentage >= 75){ ?>
-										<div class="col-xl-4 col-md-4 mb-4">
-                						<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:green">
-											<div class="card-header">
-												<center>
-													<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?> | <?php echo $stype ?></span>
-													<span style="float: right"><i class="fas fa-times"></i></span>
-												</center>
-											</div>
-                    						<div class="card-body">
-												<div class="row">
-													<div class="col-sm-12">
-														<div>
-															<span style="float: left">
-															<span class="font-weight-bold text-dark text-uppercase mb-1">SCORE</span><br>
-															<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
-															</span>
-															
-															<span style="float: right">
-															<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20"><?php echo $percentage ?>% </span><br>
-															<span>PASS</span>
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-                  						</div>
-									</div>
-								<?php }
-								else{ ?>
-									<div class="col-xl-4 col-md-4 mb-4">
-                						<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:red">
-											<div class="card-header">
-												<center>
-													<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?> | <?php echo $stype ?></span>
-													<span style="float: right"><i class="fas fa-times"></i></span>
-												</center>
-											</div>
-                    						<div class="card-body">
-												<div class="row">
-													<div class="col-sm-12">
-														<div>
-															<span style="float: left">
-															<span class="font-weight-bold text-dark text-uppercase mb-1">SCORE</span><br>
-															<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
-															</span>
-															
-															<span style="float: right">
-															<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20"><?php echo $percentage ?>% </span><br>
-															<span>FAILED</span>
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-                  						</div>
-									</div>
-								<?php 
-									}
-								}
-								?>
-							<br>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>	
+        
 	</div>
 </div>
 		

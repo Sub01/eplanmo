@@ -48,11 +48,8 @@ if(!isset($_SESSION['User'])){
           	<li>
             	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
-			<li>
-				<a href="http://www.tomatotimers.com/"><span class="fa fa-calendar-check mr-3"></span> Pomodoro Technique</a>
-			</li>
-          	<li>
-            	<a href="https://mega.nz/file/T3AhzCgZ#BfyRpaYACNhw8AceTwl76YdSw__jPAN70wuRHQUk9-8"><span><i class="fab fa-android mr-3"></i></span> Android Version</a>
+            <li>
+            	<a href="epm_school.php"><span class="fa fa-school mr-3"></span> School</a>
           	</li>
         </ul>
     </nav>
@@ -145,27 +142,6 @@ if(!isset($_SESSION['User'])){
                 		</div>
             		</div>
         		</div>
-<!--
-				<div class="col-xl-2 col-md-2 mb-4">
-            		<div class="card border-left-sucess shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(40, 167, 69)">
-                		<div class="card-body">
-                    		<div class="row no-gutters align-items-center">
-                        		<div class="col mr-2">
-                            		<div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                		ENDED ACTIVITIES
-                            		</div>
-                            		<div class="h5 mb-0 font-weight-bold text-gray-800">
-                                		echo $ended ?>
-                            		</div>
-                        		</div>
-                        		<div class="col-auto">
-                            		<i class="fas fa-calendar fa-2x text-gray-300"></i>
-                        		</div>
-                    		</div>
-                		</div>
-            		</div>
-        		</div>
--->
 				<div class="col-xl-2 col-md-2 mb-4">
             		<div class="card border-left-danger shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(220, 53, 69)">
                 		<div class="card-body">
@@ -185,48 +161,8 @@ if(!isset($_SESSION['User'])){
                 		</div>
             		</div>
         		</div>
-				<div class="col-xl-2 col-md-2 mb-4">
-            		<div class="card border-left-dark shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(255, 193, 7)">
-                		<div class="card-body">
-                    		<div class="row no-gutters align-items-center">
-                        		<div class="col mr-2">
-                            		<div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
-                                		TEACHERS
-                            		</div>
-                            		<div class="h5 mb-0 font-weight-bold text-gray-800">
-                                		<?php echo $teachers ?>
-                            		</div>
-                        		</div>
-                        		<div class="col-auto">
-                            		<i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>
-                        		</div>
-                    		</div>
-                		</div>
-            		</div>
-        		</div>
-				<div class="col-xl-2 col-md-2 mb-4">
-            		<div class="card border-left-primary shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(23, 162, 184)">
-                		<div class="card-body">
-                    		<div class="row no-gutters align-items-center">
-                        		<div class="col mr-2">
-                            		<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                		SUBJECTS
-                            		</div>
-                            		<div class="h5 mb-0 font-weight-bold text-gray-800">
-                                		<?php echo $subjects ?>
-                            		</div>
-                        		</div>
-                        		<div class="col-auto">
-                            		<i class="fas fa-book-open fa-2x text-gray-300"></i>
-                        		</div>
-                    		</div>
-                		</div>
-            		</div>
-        		</div>
 			</div>
 		</div>
-                      
-
                     </div>
 
                     <div class="row">
