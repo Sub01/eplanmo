@@ -121,12 +121,14 @@ else{
     						<?php unset($_SESSION['status']); ?>
 						</div>
                       </div>
-
-    <div class="row">
-        <button class="btn btn-primary" style="margin:5px;"><i class="fas fa-add"></i> ADD TEACHER</button>
-    </div>
 	<div class="row">
-        <table class="table table-bordered">
+        <div class="col-xl-2 col-md-2 mb-4">
+            		<div class="card border-left-danger shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(220, 53, 69)">
+                        <div class="card-header">
+                            <button class="btn btn-primary" style="margin:5px;"><i class="fas fa-add"></i> ADD TEACHER</button>
+                        </div>
+                		<div class="card-body">
+                    		<table class="table table-bordered">
             <thead>
                 <tr>
                     <th>NAME</th>
@@ -150,6 +152,11 @@ else{
                 <?php  } ?>
             </tbody>
         </table>
+                		</div>
+            		</div>
+        		</div>
+    </div>
+        
 	</div>
 </div>
 		
