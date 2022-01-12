@@ -15,13 +15,13 @@ else{
 		if($result){
 			$_SESSION['status'] = "success";
    			$_SESSION['message'] = "Subject's Information Successfuly Updated";
-			header("Location: epm_agenda.php");
+			header("Location: /epm_subjects.php");
 			exit();
 		}
 		else{
 			$_SESSION['status'] = "error";
    			$_SESSION['message'] = "Failed to Update Subject's Information";
-			header("Location: epm_agenda.php");
+			header("Location: /epm_subjects.php");
 			exit();
 		}
 		
@@ -34,13 +34,13 @@ else{
 		if($result){
 			$_SESSION['status'] = "success";
    			$_SESSION['message'] = "Subject Added Successfully";
-   			header("Location: /epm_calendar.php");
+   			header("Location: /epm_subjects.php");
    			exit();
 		}
 		else{
 			$_SESSION['status'] = "error";
    			$_SESSION['message'] = "Failed to add subject!";
-   			header("Location: /epm_calendar.php");
+   			header("Location: /epm_subject.php");
    			exit();
 		}
 	}
