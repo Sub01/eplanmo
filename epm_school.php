@@ -54,7 +54,7 @@ else{
 <html>
 <head>
 <meta charset="utf-8">
-<title>Agenda</title>
+<title>School</title>
 	
 	<!--===============================================================================================-->
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
@@ -142,7 +142,7 @@ else{
 						</div>
                       </div>
 	<div class="row">
-		<div class="col-xl-2 col-md-2 mb-4">
+		<div class="col-xl-4 col-md-4 mb-4">
             <div class="card border-left-dark shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(255, 193, 7)">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -157,7 +157,7 @@ else{
                 </div>
             </div>
         </div>
-        <div class="col-xl-2 col-md-2 mb-4">
+        <div class="col-xl-4 col-md-4 mb-4">
             <div class="card border-left-primary shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(23, 162, 184)">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -172,11 +172,26 @@ else{
                 </div>
             </div>
         </div>
+        <div class="col-xl-4 col-md-4 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(23, 162, 184)">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">GRADES</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $subjects ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-book-open fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</div>
     <div class="row">
-        <button class="btn btn-primary">ADD TEACHER</button>
-        <button class="btn btn-primary">ADD SUBJECT</button>   
-        <button class="btn btn-primary">ADD GRADES</button>   
+        <button class="btn btn-primary" style="margin:2px;">ADD TEACHER</button>
+        <button class="btn btn-primary" style="margin:2px;">ADD SUBJECT</button>   
+        <button class="btn btn-primary" style="margin:2px;">ADD GRADES</button>   
     </div>
 	<div class="row">
         
