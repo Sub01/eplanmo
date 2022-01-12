@@ -131,6 +131,7 @@ else{
                     		<table class="table table-bordered">
             <thead>
                 <tr>
+                    <th hidden>ID</th>
                     <th>NAME</th>
                     <th>SURNAME</th>
                     <th>EMAIL</th>
@@ -143,11 +144,12 @@ else{
                 $result =$db->query($sql);
                 while ($row = mysqli_fetch_array($result)) {?>
                 <tr>
+                    <td hidden><?php echo $row['ID'] ?></td>
                     <td><?php echo $row['T_Name'] ?></td>
                     <td><?php echo $row['T_Surname'] ?></td>
                     <td><?php echo $row['T_Email'] ?></td>
-                    <td><button class="btn btn-warning btn-sm editteacher"><i class="fas-fa-edit"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fas-fa-trash"></i></button></td>
+                    <td><button class="btn btn-warning btn-sm editteacher"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td>
                 </tr>
                 <?php  } ?>
             </tbody>
