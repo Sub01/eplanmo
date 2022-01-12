@@ -143,30 +143,30 @@ else{
 
   </head>
 	<style></style>
- <?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
+ <?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>    
 <div class="wrapper d-flex">
 	<nav id="sidebar" class="" style="background-color: maroon;">
 		<div class="custom-menu">
 			
-        
+        </div>
 	  	<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
 			E-PLAN MO
-	  	
+	  	</div>
         <ul class="list-unstyled components mb-5">
-        	<li>
-            	<a href="epm_admin.php"><span class="fa fa-home mr-3"> Dashboard</a>
-          	</li>
-          	<li class="active">
-              <a href="epm_calendar.php"><span class="fa fa-calendar-week mr-3"> Calendar</a>
+        	<li class="active">
+            	<a href="epm_admin.php"><span class="fa fa-home mr-3"></span> Dashboard</a>
           	</li>
           	<li>
-            	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"> Agenda</a>
+              <a href="epm_calendar.php"><span class="fa fa-calendar-week mr-3"></span> Calendar</a>
+          	</li>
+          	<li>
+            	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
 			<li>
-				<a href="http://www.tomatotimers.com/"><span class="fa fa-calendar-check mr-3"> Pomodoro Technique</a>
+				<a href="http://www.tomatotimers.com/"><span class="fa fa-calendar-check mr-3"></span> Pomodoro Technique</a>
 			</li>
           	<li>
-            	<a href="https://mega.nz/file/T3AhzCgZ#BfyRpaYACNhw8AceTwl76YdSw__jPAN70wuRHQUk9-8"><i class="fab fa-android mr-3"></i> Android Version</a>
+            	<a href="https://mega.nz/file/T3AhzCgZ#BfyRpaYACNhw8AceTwl76YdSw__jPAN70wuRHQUk9-8"><span><i class="fab fa-android mr-3"></i></span> Android Version</a>
           	</li>
         </ul>
     </nav>
@@ -488,7 +488,11 @@ else{
       
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary">Add Event</button>
-
+        </div>
+                </div>
+                </div>
+                </div>
+              </div>
 	</form>
     
   
