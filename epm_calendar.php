@@ -127,20 +127,14 @@ else{
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
       headerToolbar: {
-        left: 'prevYear,prev,next,nextYear today',
+        left: 'prev,next, today',
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
       },
-         views: {
-        listDay: { buttonText: 'list day' },
-      },
-
       navLinks: true, // can click day/week names to navigate views
       editable: true,
       dayMaxEvents: true, // allow "more" link when too many events
       events: 'load.php',
-    selectable:true,
-    selectHelper:true,
     });
     calendar.render();
   });
