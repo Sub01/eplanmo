@@ -488,11 +488,7 @@ else{
       
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary">Add Event</button>
-        </div>
-                </div>
-                </div>
-                </div>
-              </div>
+
 	</form>
     
   
