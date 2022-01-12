@@ -75,7 +75,7 @@ else{
    	<link rel="stylesheet" href="assets/css/dashboard_main.css">
    	<link rel="stylesheet" href="assets/css/calendar_main.css">
 	<link rel="stylesheet" href="assets/css/animation.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	  	<link rel="stylesheet" href="assets/css/bootstrap.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
@@ -202,18 +202,18 @@ else{
                                                         <input class="form-control" type="text" name="title" required="" style="width:68%" value="">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>TITLE</label>
+                                                        <label>TYPE</label>
                                                         <button type="button" class="btn btn-dark btn-sm btn-start-2"><i class="fas fa-play"></i></button>
 												        <button type="button" class="btn btn-dark btn-sm btn-stop-2"><i class="fas fa-stop"></i></button>
-                                                        <input class="form-control" type="text" name="type" required="" style="width:68%" value="">
+                                                        <input class="myInput" type="text" name="type" required="" style="width:100%" value="">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>START</label>
-                                                        <input  class="form-control" type="datetime-local" name="start" required="" style="width:100%" value="">
+                                                        <input class="myInput" type="datetime-local" name="start" required="" style="width:100%" value="">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>END</label>
-                                                        <input  class="form-control" type="datetime-local" name="end" required="" style="width:100%" value="">
+                                                        <input class="myInput" type="datetime-local" name="end" required="" style="width:100%" value="">
                                                     </div>
                                                     <div class="form-group">
                                                        <button class="btn btn-primary btn-sm" name="event" type="submit">ADD EVENT</button>
