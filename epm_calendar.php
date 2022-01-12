@@ -192,6 +192,7 @@ else{
 								<div class="card border-left-primary shadow h-100 py-2">
 									<div class="card-header"> 
 										ADD EVENTS
+                                    </div>
                     				<div class="card-body">
 												<form action="" method="POST" enctype="multipart/form-data">
 												<table class="table">
