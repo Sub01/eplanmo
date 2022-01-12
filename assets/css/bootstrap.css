@@ -1612,7 +1612,6 @@ pre {
       -o-transition: none;
       transition: none; } }
   .form-control::-ms-expand {
-    background-color: transparent;
     border: 0; }
   .form-control:focus {
     color: #495057;
