@@ -195,11 +195,11 @@ else{
         <form action="" method="post">
             <div class="form-group">
                 <label>Subject Code</label>
-                <input class="form-control" type="text" name="scode" id="scode" value="">
+                <input class="form-control" type="text" name="scode" value="">
             </div>
             <div class="form-group">
                 <label>Subject Description</label>
-                <input class="form-control" type="text" name="sdes" id="sdes" value="">
+                <input class="form-control" type="text" name="sdes" value="">
             </div>
             <div class="form-group">
         	   <button class="form-control" type="submit" class="btn btn-primary" name="adds">ADD SUBJECT</button>
