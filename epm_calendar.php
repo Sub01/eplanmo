@@ -105,41 +105,72 @@ else{
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!--===============================================================================================-->
-      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
+   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">  
 <!--===============================================================================================-->   
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 <!--===============================================================================================-->
-      <link rel="stylesheet" href="assets/css/dashboard_main.css">
-      <link rel="stylesheet" href="assets/css/calendar_main.css">
-      <link rel="stylesheet" href="assets/css/animation.css">
-      <link rel="stylesheet" href="assets/css/bootstrap.css">
+   	<link rel="stylesheet" href="assets/css/dashboard_main.css">
+   	<link rel="stylesheet" href="assets/css/calendar_main.css">
+	<link rel="stylesheet" href="assets/css/animation.css">
+	  	<link rel="stylesheet" href="assets/css/bootstrap.css">
 <!--===============================================================================================-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.js"></script> 
-      <script>
-   
-   document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      headerToolbar: {
-        left: 'prev,next, today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
-      },
-      navLinks: true, // can click day/week names to navigate views
-      editable: true,
-      dayMaxEvents: true, // allow "more" link when too many events
-      events: 'load.php',
-    });
-    calendar.render();
-  });
 
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+   <script type="text/javascript">
+   
+  $(document).ready(function() {
+   var calendar = $('#calendar').fullCalendar({
+    editable:true,
+    header:{
+     left:'title',
+     center:'',
+     right:'prev,next'
+    },
+    events: 'load.php',
+    selectable:true,
+    selectHelper:true,
+    editable:true,
+    editable:true,
+    eventResize:function(event)
+    {
+     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+     var title = event.title;
+     var id = event.id;
+     $.ajax({
+      url:"update.php",
+      type:"POST",
+      data:{title:title, start:start, end:end, id:id},
+      success:function(){
+       calendar.fullCalendar('refetchEvents');
+       alert('Event Update');
+      }
+     })
+    },
+
+    eventDrop:function(event)
+    {
+     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+     var title = event.title;
+     var id = event.id;
+     $.ajax({
+      url:"update.php",
+      type:"POST",
+      data:{title:title, start:start, end:end, id:id},
+      success:function()
+      {
+       calendar.fullCalendar('refetchEvents');
+       alert("Event Updated");
+      }
+     });
+    },
+   });
+  }); 
   </script>
 
   </head>
@@ -397,9 +428,11 @@ else{
 							</div>
 						</div>
 					</div>
-					<div class="col-xl-8 col-md-8 mb-4" style="font-size:20px">
-						<div class="card border-left-primary shadow h-100 py-2" style="max-height: 1000px;font-size:20px">
-                    		<div class="card-body" id="calendar" style="font-size:20px">
+					<div class="col-xl-7 col-md-7 mb-4">
+						<div class="card border-left-primary shadow h-100 py-2" style="max-height: 1000px;">
+                    		<div class="card-body">
+								<div id="calendar">
+               					</div>
 							</div>
 						</div>
 					</div>
@@ -494,10 +527,12 @@ else{
   </div>
 </div>
 <!--SCRIPTS-->  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!--===============================================================================================-->  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!--===============================================================================================-->
     <script src="assets/js/dashboard_main.js"></script>
+<!--===============================================================================================-->
 <script>
 $("document").ready(function(){
 	setTimeout(function(){
