@@ -12,7 +12,7 @@ else{
     if(isset($_POST['sub'])){
         $scode= $_POST['scode'];
 		$sdes= $_POST['sdes'];
-        $sql = "UPDATE `subjects` SET `S_Code`='$scode', `S_Description`='$sdes' WHERE `ID`='$sid'";
+        $sql = "UPDATE `subjects` SET `S_Code`='$scode', `S_Description`='$sdes' WHERE `ID`='$id'";
         $result = $db->query($sql);
 		if($result){
 			$_SESSION['status'] = "success";
