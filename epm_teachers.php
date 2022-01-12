@@ -145,7 +145,7 @@ else{
         <div class="col-xl-12 col-md-12 mb-4">
             		<div class="card border-left-danger shadow h-100 py-2">
                         <div class="card-header">
-                            <button class="btn btn-primary" style="margin:5px;"><i class="fas fa-plus"></i> ADD TEACHER</button>
+                            <button class="btn btn-primary btn-sm" style="margin:5px;" data-toggle="modal" data-target="#addTeacher"><i class="fas fa-plus"></i> ADD TEACHER</button>
                         </div>
                 		<div class="card-body">
                     		<table class="table table-bordered">
