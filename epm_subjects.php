@@ -10,6 +10,8 @@ if(!isset($_SESSION["User"])){
 else{
     $id = $_SESSION['User'];
     if(isset($_POST['sub'])){
+        $scode= $_POST['scode'];
+		$sdes= $_POST['sdes'];
         $sql = "UPDATE `subjects` SET `S_Code`='$scode', `S_Description`='$sdes' WHERE `ID`='$sid'";
         $result = $db->query($sql);
 		if($result){
