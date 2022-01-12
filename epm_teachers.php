@@ -147,8 +147,8 @@ else{
                         <div class="card-header">
                             <button class="btn btn-primary btn-sm" style="margin:5px;" data-toggle="modal" data-target="#addTeacher"><i class="fas fa-plus"></i> ADD TEACHER</button>
                         </div>
-                		<div class="card-body">
-                    		<table class="table table-bordered" id="table">
+                		<div class="card-body" style="overflow-x:auto;">
+                    		<table class="table table-bordered">
             <thead>
                 <tr>
                     <th hidden>ID</th>
@@ -274,11 +274,13 @@ $(document).ready(function(){
       $('#temail').val(data[3]);
    });
 });
-$(document).ready( function () {
-    $('#table').DataTable({
-      "autoWidth": true
-    });
-} );
+$("document").ready(function(){
+    setTimeout(function(){
+       $("div.alert").remove();
+		
+    }, <?php echo $gensetmodclose ?> ); 
+
+});
 </script>
 </body>
 </html>
