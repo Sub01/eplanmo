@@ -245,8 +245,8 @@ else{
 														<td>:</td>
 														<td>
 															<input class="title myInput" type="text" name="title" required="" style="width:68%" value="">
-															<button type="button" class="btn btn-dark btn-start"><i class="fas fa-play"></i></button>
-															<button type="button" class="btn btn-dark btn-stop"><i class="fas fa-stop"></i></button>
+															<button type="button" class="btn btn-dark btn-sm btn-start"><i class="fas fa-play"></i></button>
+															<button type="button" class="btn btn-dark btn-sm btn-stop"><i class="fas fa-stop"></i></button>
 														</td>
 													</tr>
 													<tr>
@@ -254,8 +254,8 @@ else{
 														<td>:</td>
 														<td>
 															<input class="type myInput" type="text" name="type" required="" style="width:68%" value="">
-															<button type="button" class="btn btn-dark btn-start-2"><i class="fas fa-play"></i></button>
-															<button type="button" class="btn btn-dark btn-stop-2"><i class="fas fa-stop"></i></button>
+															<button type="button" class="btn btn-dark btn-sm btn-start-2"><i class="fas fa-play"></i></button>
+															<button type="button" class="btn btn-dark btn-sm btn-stop-2"><i class="fas fa-stop"></i></button>
 														</td>
 													</tr>
 													<tr>
