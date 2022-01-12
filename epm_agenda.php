@@ -78,19 +78,19 @@ elseif(isset($_POST['teacher'])){
 	  	</div>
         <ul class="list-unstyled components mb-5">
         	<li>
-            	<a href="epm_admin.php"><span class="fa fa-home mr-3"></span> Dashboard</a>
+            	<a href="epm_admin.php"><span class="fas fa-home mr-3"></span> Dashboard</a>
           	</li>
           	<li>
-              <a href="epm_calendar.php"><span class="fa fa-calendar-week mr-3"></span> Calendar</a>
+              <a href="epm_calendar.php"><span class="fas fa-calendar-week mr-3"></span> Calendar</a>
           	</li>
           	<li class="active">
-            	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
+            	<a href="epm_agenda.php"><span class="fas fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
             <li>
-            	<a href="epm_teachers.php"><span class="fa fa-chalkboard-teacher mr-3"></span> Teachers</a>
+            	<a href="epm_teachers.php"><span class="fas fa-chalkboard-teacher mr-3"></span> Teachers</a>
           	</li>
             <li>
-            	<a href="epm_subjects.php"><span class="fa fa-books mr-3"></span> Subjects</a>
+            	<a href="epm_subjects.php"><span class="fas fa-books mr-3"></span> Subjects</a>
           	</li>
         </ul>
     </nav>
