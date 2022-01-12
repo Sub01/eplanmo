@@ -189,9 +189,9 @@ else{
         </div>
 	</div>
     <div class="row">
-        <button class="btn btn-primary" style="margin:2px;">ADD TEACHER</button>
-        <button class="btn btn-primary" style="margin:2px;">ADD SUBJECT</button>   
-        <button class="btn btn-primary" style="margin:2px;">ADD GRADES</button>   
+        <button class="btn btn-primary" style="margin:5px;">ADD TEACHER</button>
+        <button class="btn btn-primary" style="margin:5px;">ADD SUBJECT</button>   
+        <button class="btn btn-primary" style="margin:5px;">ADD GRADES</button>   
     </div>
 	<div class="row">
         
