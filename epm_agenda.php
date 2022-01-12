@@ -86,8 +86,11 @@ elseif(isset($_POST['teacher'])){
           	<li class="active">
             	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
-			 <li>
+            <li>
             	<a href="epm_teachers.php"><span class="fa fa-chalkboard-teacher mr-3"></span> Teachers</a>
+          	</li>
+            <li>
+            	<a href="epm_subjects.php"><span class="fa fa-books mr-3"></span> Subjects</a>
           	</li>
         </ul>
     </nav>
