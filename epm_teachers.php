@@ -125,7 +125,7 @@ else{
         <div class="col-xl-12 col-md-12 mb-4">
             		<div class="card border-left-danger shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(220, 53, 69)">
                         <div class="card-header">
-                            <button class="btn btn-primary" style="margin:5px;"><i class="fas fa-add"></i> ADD TEACHER</button>
+                            <button class="btn btn-primary" style="margin:5px;"><i class="fas fa-plus"></i> ADD TEACHER</button>
                         </div>
                 		<div class="card-body">
                     		<table class="table table-bordered">
@@ -146,8 +146,8 @@ else{
                     <td><?php echo $row['T_Name'] ?></td>
                     <td><?php echo $row['T_Surname'] ?></td>
                     <td><?php echo $row['T_Email'] ?></td>
-                    <td><button class="btn btn-warning btn-sm editteacher"><i class="fs-fa-edit"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fs-fa-trash"></i></button></td>
+                    <td><button class="btn btn-warning btn-sm editteacher"><i class="fas-fa-edit"></i></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas-fa-trash"></i></button></td>
                 </tr>
                 <?php  } ?>
             </tbody>
