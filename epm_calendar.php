@@ -399,11 +399,9 @@ else{
 							</div>
 						</div>
 					</div>
-					<div class="col-xl-7 col-md-7 mb-4">
+					<div class="col-xl-8 col-md-8 mb-4">
 						<div class="card border-left-primary shadow h-100 py-2" style="max-height: 1000px;">
-                    		<div class="card-body">
-								<div id="calendar">
-               					</div>
+                    		<div class="card-body" id="calendar">
 							</div>
 						</div>
 					</div>
