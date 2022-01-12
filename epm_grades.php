@@ -8,26 +8,8 @@ if(!isset($_SESSION["User"])){
 	exit();
 }	
 else{
-    if(isset($_POST['sub'])){
-        $scode = $_POST['scode'];
-        $sdes = $_POST['sdes'];
-        $sid = $_POST['$sid'];
-        $sql = "UPDATE subjects SET S_Code='$scode' AND S_Description='$sdes' WHERE ID='$sid'";
-        $result = $db->query($sql);
-		if($result){
-			$_SESSION['status'] = "success";
-   			$_SESSION['message'] = "Subject's Information Successfuly Updated";
-			header("Location: epm_agenda.php");
-			exit();
-		}
-		else{
-			$_SESSION['status'] = "error";
-   			$_SESSION['message'] = "Failed to Update Subject's Information";
-			header("Location: epm_agenda.php");
-			exit();
-		}
-    }
-    elseif(isset($_POST['teacher'])){
+    $id = $_SESSION['User'];
+    if(isset($_POST['teacher'])){
         $tname = $_POST['tname'];
 		$tsname = $_POST['tsname'];
 		$temail = $_POST['temail'];
@@ -37,14 +19,33 @@ else{
 		if($result){
 			$_SESSION['status'] = "success";
    			$_SESSION['message'] = "Teacher's Information Successfuly Updated";
-			header("Location: epm_agenda.php");
+			header("Location: /epm_teachers.php");
 			exit();
 		}
 		else{
 			$_SESSION['status'] = "error";
    			$_SESSION['message'] = "Failed to Update Teacher's Information";
-			header("Location: epm_agenda.php");
+			header("Location: /epm_teachers.php");
 			exit();
+		}
+	}
+    elseif(isset($_POST['addt'])){
+		$tname = $_POST['tname'];
+		$tsurname = $_POST['tsurname'];
+		$temail = $_POST['temail'];
+		$sql = "INSERT INTO teachers (`User`,T_Name,`T_Surname`,T_Email) VALUES ('$id','$tname','$tsurname','$temail')";
+		$result = mysqli_query($db, $sql);
+		if($result){
+			$_SESSION['status'] = "success";
+   			$_SESSION['message'] = "Teacher Added Successfully";
+   			header("Location: /epm_teachers.php");
+   			exit();
+		}
+		else{
+			$_SESSION['status'] = "error";
+   			$_SESSION['message'] = "Failed to add teacher!";
+   			header("Location: /epm_teachers.php");
+   			exit();
 		}
 	}
 }
@@ -80,18 +81,20 @@ else{
 	  	</div>
         <ul class="list-unstyled components mb-5">
         	<li>
-            	<a href="epm_admin.php"><span class="fa fa-home mr-3"></span> Dashboard</a>
+            	<a href="epm_admin.php"><span class="fas fa-home mr-3"></span> Dashboard</a>
           	</li>
           	<li>
-              <a href="epm_calendar.php"><span class="fa fa-calendar-week mr-3"></span> Calendar</a>
+              <a href="epm_calendar.php"><span class="fas fa-calendar-week mr-3"></span> Calendar</a>
           	</li>
           	<li>
-            	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
+            	<a href="epm_agenda.php"><span class="fas fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
             <li class="active">
-            	<a href="epm_school.php"><span class="fa fa-school mr-3"></span> School</a>
+            	<a href="epm_teachers.php"><span class="fas fa-chalkboard-teacher mr-3"></span> Teachers</a>
           	</li>
-			
+            <li>
+            	<a href="epm_subjects.php"><span class="fas fa-book mr-3"></span> Subjects</a>
+          	</li>	
         </ul>
     </nav>
     <div id="content" class="d-flex flex-column">
@@ -142,63 +145,92 @@ else{
 						</div>
                       </div>
 	<div class="row">
-		<div class="col-xl-4 col-md-4 mb-4">
-            <div class="card border-left-dark shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(255, 193, 7)">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">TEACHERS</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $teachers ?></div>
+        <div class="col-xl-12 col-md-12 mb-4">
+            		<div class="card border-left-danger shadow h-100 py-2">
+                        <div class="card-header">
+                            <button class="btn btn-primary btn-sm" style="margin:5px;" data-toggle="modal" data-target="#addTeacher"><i class="fas fa-plus"></i> ADD GRADES</button>
                         </div>
-                        <div class="col-auto">
-                            <i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-4 col-md-4 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(23, 162, 184)">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">SUBJECTS</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $subjects ?></div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-book-open fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-4 col-md-4 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(23, 162, 184)">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">GRADES</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $subjects ?></div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-book-open fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-	</div>
-    <div class="row">
-        <button class="btn btn-primary" style="margin:5px;">ADD TEACHER</button>
-        <button class="btn btn-primary" style="margin:5px;">ADD SUBJECT</button>   
-        <button class="btn btn-primary" style="margin:5px;">ADD GRADES</button>   
+                		<div class="card-body" style="overflow-x:auto;">
+                    		<table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th hidden>ID</th>
+                                        <th>SUBJECT CODE</th>
+                                        <th>TEACHER</th>
+                                        <th>TYPE</th>
+                                        <th>SCORE</th>
+                                        <th>ITEMS</th>
+                                        <th>GRADE</th>
+                                        <th>STATUS</th>
+                                        <th>ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $sql = "SELECT * FROM grades WHERE User='$username'";
+                                    $result =$db->query($sql);
+                                    while ($row = mysqli_fetch_array($result)) {
+                                    $score = $row['Score'];
+		                            $over = $row['Over'];
+                                    ?>
+                                    <tr>
+                                        <td hidden><?php echo $row['ID'] ?></td>
+                                        <td><?php echo $row['Subject_Code'] ?></td>
+                                        <td><?php echo $row['Teacher'] ?></td>
+                                        <td><?php echo $row['Type'] ?></td>
+                                        <td><?php echo $row['Score'] ?></td>
+                                        <td><?php echo $row['Over'] ?></td>
+                                        <td><?php echo $percentage = (($row['Score']/$row['Over']) * 100); ?></td>
+                                        <td>
+                                        
+                                        
+                                        </td>
+                                        <td><button class="btn btn-warning btn-sm editteacher"><i class="fas fa-edit"></i></button>
+                                        <a href="assets/php/delete_teachers.php?id=<?php echo $row['ID'] ?>" onclick="return confirm('Are you sure you want to delete this teacher?')"><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></a></td>
+                                    </tr>
+                                    <?php  } ?>
+                                </tbody>
+                            </table>
+                		</div>
+            		</div>
+        		</div>
     </div>
-	<div class="row">
         
 	</div>
 </div>
 		
-		
+<div class="modal fade" id="addTeacher" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Teacher Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="">
+         <div class="form-group">
+            <label>Name</label>
+            <input class="form-control" type="text" name="tname" value="">
+         </div>
+         <div class="form-group">
+            <label>Last Name</label>
+            <input class="form-control" type="text" name="tsurname" value="">
+         </div>
+         <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" type="email" name="temail" value="">
+         </div>
+		<div class="form-group">
+        	<button class="form-control" type="submit" class="btn btn-primary" name="addt">ADD</button>
+      	</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>			
+    
 <div class="modal fade" id="updateTeacher" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -228,41 +260,9 @@ else{
       	</div>
         </form>
       </div>
-      
     </div>
   </div>
-</div>		
-
-<div class="modal fade" id="updateSubject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Subject Information</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form method="post" action="">
-         <div class="form-group">
-            <label>Subject Code</label>
-            <input  hidden="" name="sid" id="sid" value="">
-            <input class="form-control" type="text" name="scode" id="scode" value="">
-         </div>
-         <div class="form-group">
-            <label>Subject Description</label>
-            <input class="form-control" type="text" name="sdes" id="sdes" value="">
-         </div>
-		<div class="form-group">
-        	<button class="form-control" type="submit" class="btn btn-primary" name="sub">Save changes</button>
-      	</div>
-        </form>
-      </div>
-      
-    </div>
-  </div>
-</div>		
-		
+</div>			
 <!--SCRIPTS-->  
 <!--===============================================================================================-->  
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -290,21 +290,14 @@ $(document).ready(function(){
       $('#tsname').val(data[2]);
       $('#temail').val(data[3]);
    });
-});	
+});
+$("document").ready(function(){
+    setTimeout(function(){
+       $("div.alert").remove();
+		
+    }, <?php echo $gensetmodclose ?> ); 
 
-$(document).ready(function(){
-   $('.editsubject').on('click', function(){
-      $('#updateSubject').modal('show');
-      $tr = $(this).closest('tr');
-      var data = $tr.children("td").map(function(){
-         return $(this).text();
-      }).get();
-      console.log(data);
-      $('#sid').val(data[0]);
-      $('#scode').val(data[1]);
-      $('#sdes').val(data[2]);
-   });
-});	
+});
 </script>
 </body>
 </html>
