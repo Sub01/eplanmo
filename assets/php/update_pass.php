@@ -1,5 +1,5 @@
 <?php
-include("php_Epm_profile.php");
+include("php_epm_profile.php");
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 			$result = $db-> query($sql2);
 			$_SESSION['status'] = "success";
 			$_SESSION['message'] = "Password Successfully Updated";
-			header("Location: /EPM/epm_profile.php");
+			header("Location: /epm_profile.php");
 			exit();
 			}
 		
@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	else{
 		$_SESSION['status'] = 'error';
 		$_SESSION['message'] = 'Incorrect Old Password';
-		header("Location: /EPM/epm_profile.php");
+		header("Location: /epm_profile.php");
 		exit();
 	}
 }

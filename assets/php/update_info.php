@@ -15,13 +15,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		if(mysqli_query($db,$sql)){
 			$_SESSION['status'] = "success";
 			$_SESSION['message'] = "Information Successfully Updated";
-			header("Location: /EPM/epm_profile.php");
+			header("Location: /epm_profile.php");
 			exit();
 		}
 		else{
 			$_SESSION['status'] = "error";
 			$_SESSION['message'] = "There's an error processing your request";
-			header("Location: /EPM/epm_profile.php");
+			header("Location: /epm_profile.php");
 			exit();
 		}
 }
