@@ -236,7 +236,7 @@ if(!isset($_SESSION['User'])){
 									<strong>ONGOING EVENTS</strong>
 								</div>
 								<div class="card-body" style="overflow-x:auto;">
-								<table class="table display" id="table1">
+								<table class="table table-bordered" id="table1">
                 				<thead>
                 					<tr>
                     					<th hidden="">ID</th>
