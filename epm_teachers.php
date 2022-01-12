@@ -8,6 +8,7 @@ if(!isset($_SESSION["User"])){
 	exit();
 }	
 else{
+    $id = $_SESSION['User'];
     if(isset($_POST['teacher'])){
         $tname = $_POST['tname'];
 		$tsname = $_POST['tsname'];
@@ -26,6 +27,25 @@ else{
    			$_SESSION['message'] = "Failed to Update Teacher's Information";
 			header("Location: /epm_teachers.php");
 			exit();
+		}
+	}
+    elseif(isset($_POST['addt'])){
+		$tname = $_POST['tname'];
+		$tsurname = $_POST['tsurname'];
+		$temail = $_POST['temail'];
+		$sql = "INSERT INTO teachers (`User`,T_Name,`T_Surname`,T_Email) VALUES ('$id','$tname','$tsurname','$temail')";
+		$result = mysqli_query($db, $sql);
+		if($result){
+			$_SESSION['status'] = "success";
+   			$_SESSION['message'] = "Teacher Added Successfully";
+   			header("Location: /epm_teachers.php");
+   			exit();
+		}
+		else{
+			$_SESSION['status'] = "error";
+   			$_SESSION['message'] = "Failed to add teacher!";
+   			header("Location: /epm_teachers.php");
+   			exit();
 		}
 	}
 }
@@ -123,7 +143,7 @@ else{
                       </div>
 	<div class="row">
         <div class="col-xl-12 col-md-12 mb-4">
-            		<div class="card border-left-danger shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(220, 53, 69)">
+            		<div class="card border-left-danger shadow h-100 py-2">
                         <div class="card-header">
                             <button class="btn btn-primary" style="margin:5px;"><i class="fas fa-plus"></i> ADD TEACHER</button>
                         </div>
@@ -162,7 +182,38 @@ else{
 	</div>
 </div>
 		
-		
+<div class="modal fade" id="addTeacher" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Teacher Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="">
+         <div class="form-group">
+            <label>Name</label>
+            <input class="form-control" type="text" name="tname" id="tname" value="">
+         </div>
+         <div class="form-group">
+            <label>Last Name</label>
+            <input class="form-control" type="text" name="tsname" id="tsname" value="">
+         </div>
+         <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" type="email" name="temail" id="temail" value="">
+         </div>
+		<div class="form-group">
+        	<button class="form-control" type="submit" class="btn btn-primary" name="addt">ADD</button>
+      	</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>			
+    
 <div class="modal fade" id="updateTeacher" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -192,7 +243,6 @@ else{
       	</div>
         </form>
       </div>
-      
     </div>
   </div>
 </div>			

@@ -37,25 +37,6 @@ else{
    			exit();
 		}
 	}
-	elseif(isset($_POST['teacher'])){
-		$tname = $_POST['tname'];
-		$tsurname = $_POST['tsurname'];
-		$temail = $_POST['temail'];
-		$sql = "INSERT INTO teachers (`User`,T_Name,`T_Surname`,T_Email) VALUES ('$id','$tname','$tsurname','$temail')";
-		$result = mysqli_query($db, $sql);
-		if($result){
-			$_SESSION['status'] = "success";
-   			$_SESSION['message'] = "Teacher Added Successfully";
-   			header("Location: /epm_calendar.php");
-   			exit();
-		}
-		else{
-			$_SESSION['status'] = "error";
-   			$_SESSION['message'] = "Failed to add teacher!";
-   			header("Location: /epm_calendar.php");
-   			exit();
-		}
-	}
 	elseif(isset($_POST['subject'])){
 		$scode= $_POST['scode'];
 		$sdes= $_POST['sdes'];
