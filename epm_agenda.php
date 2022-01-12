@@ -2,7 +2,6 @@
 include ("assets/php/php_epm_profile.php");
 include ("assets/php/php_epm_genset.php");
 include ("assets/php/summary.php");
-session_start();
 
 if(!isset($_SESSION["User"])){
 	header("Location: index.php");
@@ -148,9 +147,9 @@ elseif(isset($_POST['teacher'])){
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
-							<span style="text-align: center; color: black; font-weight: bold">TODAY</span>
+							<span style="text-align: center; color: black; font-weight: bold"><i class="fas fa-calendar"></i> TODAY</span>
 						</div>
-                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
+                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; height:350px; max-height: calc(350px - 20px - 20px);">
 							<div class="row overflow-auto">
 							<?php 
 							$sql = "SELECT * FROM events WHERE Name='$uname' AND (DATEDIFF(Start,NOW()) = 0)";
@@ -177,9 +176,9 @@ elseif(isset($_POST['teacher'])){
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
-							<span style="text-align: center; color: black; font-weight: bold">TOMMOROW</span>
+							<span style="text-align: center; color: black; font-weight: bold"><i class="fas fa-calendar"></i> TOMMOROW</span>
 						</div>
-                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
+                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto;  height:350px;max-height: calc(350px - 20px - 20px);">
 							<div class="row">
 							<?php 
 							$sql = "SELECT * FROM events WHERE Name='$uname' AND  (DATEDIFF(Start,NOW()) = 1)";
@@ -206,9 +205,9 @@ elseif(isset($_POST['teacher'])){
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
-							<span style="text-align: center; color: black; font-weight: bold">WITHIN 7 DAYS</span>
+							<span style="text-align: center; color: black; font-weight: bold"><i class="fas fa-calendar"></i> WITHIN 7 DAYS</span>
 						</div>
-                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
+                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; height:350px; max-height: calc(350px - 20px - 20px);">
 							<div class="row">
 							<?php 
 							$sql = "SELECT * FROM events WHERE  Name='$uname' AND (DATEDIFF(Start,NOW()) BETWEEN 2 AND 7)";
@@ -235,9 +234,9 @@ elseif(isset($_POST['teacher'])){
 				<div class="col-xl-12 col-md-12 mb-4">
 					<div class="card border-left-primary shadow py-2">
 						<div class="card-header">
-							<span style="text-align: center; color: black; font-weight: bold">WITHIN 14 DAYS</span>
+							<span style="text-align: center; color: black; font-weight: bold"><i class="fas fa-calendar"></i> WITHIN 14 DAYS</span>
 						</div>
-                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
+                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto;  height:350px;max-height: calc(350px - 20px - 20px);">
 							<div class="row">
 							<?php 
 							$sql = "SELECT * FROM events WHERE Name='$uname' AND  (DATEDIFF(Start,NOW()) BETWEEN 8 AND 14)";
@@ -310,7 +309,7 @@ elseif(isset($_POST['teacher'])){
 						<div class="card-header">
 							<span style="text-align: center; color: black; font-weight: bold">MY SUBJECTS</span>
 						</div>
-                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
+                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto;max-height: calc(350px - 20px - 20px);">
 							<table class="table">
 								<thead>
 									<tr>
