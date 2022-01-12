@@ -105,29 +105,27 @@ else{
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!--===============================================================================================-->
-   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
 <!--===============================================================================================-->   
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 <!--===============================================================================================-->
-   	<link rel="stylesheet" href="assets/css/dashboard_main.css">
-   	<link rel="stylesheet" href="assets/css/calendar_main.css">
-	<link rel="stylesheet" href="assets/css/animation.css">
-	<link rel="stylesheet" href="assets/css/bootstrap.css">
+      <link rel="stylesheet" href="assets/css/dashboard_main.css">
+      <link rel="stylesheet" href="assets/css/calendar_main.css">
+      <link rel="stylesheet" href="assets/css/animation.css">
+      <link rel="stylesheet" href="assets/css/bootstrap.css">
 <!--===============================================================================================-->
-
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.js"></script> 
- <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
-   <script type="text/javascript">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.js"></script> 
+      <script>
    
    document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
-
     var calendar = new FullCalendar.Calendar(calendarEl, {
       headerToolbar: {
         left: 'prev,next, today',
@@ -399,8 +397,8 @@ else{
 							</div>
 						</div>
 					</div>
-					<div class="col-xl-8 col-md-8 mb-4">
-						<div class="card border-left-primary shadow h-100 py-2" style="max-height: 1000px;">
+					<div class="col-xl-8 col-md-8 mb-4" style="font-size:20px">
+						<div class="card border-left-primary shadow h-100 py-2" style="max-height: 1000px;font-size:20px">
                     		<div class="card-body" id="calendar" style="font-size:20px">
 							</div>
 						</div>
