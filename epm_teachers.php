@@ -148,7 +148,7 @@ else{
                             <button class="btn btn-primary btn-sm" style="margin:5px;" data-toggle="modal" data-target="#addTeacher"><i class="fas fa-plus"></i> ADD TEACHER</button>
                         </div>
                 		<div class="card-body">
-                    		<table class="table table-bordered">
+                    		<table class="table table-bordered" id="table">
             <thead>
                 <tr>
                     <th hidden>ID</th>
@@ -195,15 +195,15 @@ else{
         <form method="post" action="">
          <div class="form-group">
             <label>Name</label>
-            <input class="form-control" type="text" name="tname" id="tname" value="">
+            <input class="form-control" type="text" name="tname" value="">
          </div>
          <div class="form-group">
             <label>Last Name</label>
-            <input class="form-control" type="text" name="tsname" id="tsname" value="">
+            <input class="form-control" type="text" name="tsurname" value="">
          </div>
          <div class="form-group">
             <label>Email</label>
-            <input class="form-control" type="email" name="temail" id="temail" value="">
+            <input class="form-control" type="email" name="temail" value="">
          </div>
 		<div class="form-group">
         	<button class="form-control" type="submit" class="btn btn-primary" name="addt">ADD</button>
@@ -273,7 +273,12 @@ $(document).ready(function(){
       $('#tsname').val(data[2]);
       $('#temail').val(data[3]);
    });
-});	
+});
+$(document).ready( function () {
+    $('#table').DataTable({
+      "autoWidth": true
+    });
+} );
 </script>
 </body>
 </html>
