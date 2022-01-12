@@ -390,7 +390,18 @@ else{
 														<td><button type="submit" name="ggrade" class="btn btn-primary">ADD GRADE</button></td>
 													</tr>	
 												</table>
-												</form>
+								</form>
+                                                </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 											
 										
 										<!--============= END CARD TABS CONTENT ===============-->
@@ -403,6 +414,10 @@ else{
 						<div class="card border-left-primary shadow h-100 py-2" style="max-height: 1000px;">
                     		<div class="card-body">
 								<div id="calendar">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                					
 							
 						
