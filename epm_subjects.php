@@ -51,7 +51,7 @@ else{
 <html>
 <head>
 <meta charset="utf-8">
-<title>School</title>
+<title>Subjects</title>
 	
 	<!--===============================================================================================-->
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
@@ -85,9 +85,12 @@ else{
           	<li>
             	<a href="epm_agenda.php"><span class="fa fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
-            <li class="active">
+            <li>
             	<a href="epm_teachers.php"><span class="fa fa-school mr-3"></span> Teachers</a>
-          	</li>	
+          	</li>
+             <li class="active">
+            	<a href="epm_subjects.php"><span class="fa fa-chalkboard-teacher mr-3"></span> Subjects</a>
+          	</li>
         </ul>
     </nav>
     <div id="content" class="d-flex flex-column">
@@ -165,7 +168,7 @@ else{
 										<td><?php echo $row['S_Description']?></td>
 										<td>
 											<button class="btn btn-warning btn-sm editsubject" data-bs-toggle="modal" data-bs-target="#updateSubject"><i class="fas fa-edit"></i></button>
-											<a href="assets/php/epm_subjects.php?id=<?php echo $row['ID'] ?>" onclick="return confirm('Are you sure you want to delete this teacher?')"><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></a>
+											<a href="assets/php/delete_subjects.php?id=<?php echo $row['ID'] ?>" onclick="return confirm('Are you sure you want to delete this subject?')"><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></a>
 										</td>
 									</tr>
 									<?php } ?>
@@ -190,23 +193,17 @@ else{
       </div>
       <div class="modal-body">
         <form action="" method="post">
-            <table class="table">
-                <tr>
-				    <td>Subject Code</td>
-				    <td>:</td>
-				    <td><input type="text" name="scode" class="form-control"></td>
-                </tr>
-				<tr>
-				    <td>Subject Description</td>
-				    <td>:</td>
-				    <td><input type="text" name="sdes" class="form-control"></td>
-				    </tr>
-            </table>
-            <table>
-				<tr>
-				    <td><button type="submit" name="adds" class="btn btn-primary">ADD SUBJECT</button></td>
-				</tr>	
-            </table>
+            <div class="form-group">
+                <label>Subject Code</label>
+                <input class="form-control" type="text" name="scode" id="scode" value="">
+            </div>
+            <div class="form-group">
+                <label>Subject Description</label>
+                <input class="form-control" type="text" name="sdes" id="sdes" value="">
+            </div>
+            <div class="form-group">
+        	   <button class="form-control" type="submit" class="btn btn-primary" name="adds">ADD SUBJECT</button>
+            </div>
           </form>
       </div>
     </div>
