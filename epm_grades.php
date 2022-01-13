@@ -239,12 +239,11 @@ else{
              </select>
          </div>
          <div class="form-group">
-             
-             <div class="col-6">
+             <div class="col-sm-6">
                  <label>Scores</label>
                 <input class="form-control" type="email" name="gscore" value="">
              </div>
-             <div class="col-6">
+             <div class="col-sm-6">
                  <label>Items</label>
                 <input class="form-control" type="email" name="gover" value="">
              </div>
@@ -255,7 +254,7 @@ else{
 				<option value="Written">Written</option>
 				<option value="Oral">Oral</option>
 				<option value="Practical">Practical</option>
-            </select><button class="form-control" type="submit" class="btn btn-primary" name="addt">ADD</button>
+            </select>
       	</div>
 		<div class="form-group">
         	<button class="form-control" type="submit" class="btn btn-primary" name="addt">ADD</button>
