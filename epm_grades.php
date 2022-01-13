@@ -240,15 +240,23 @@ else{
          </div>
          <div class="form-group">
              
-             <div class="col">
+             <div class="col-6">
                  <label>Scores</label>
                 <input class="form-control" type="email" name="gscore" value="">
              </div>
-             <div class="col">
+             <div class="col-6">
                  <label>Items</label>
                 <input class="form-control" type="email" name="gover" value="">
              </div>
          </div>
+        <div class="form-group">
+            <select name="gtype" class="form-control">
+				<option hidden> </option>
+				<option value="Written">Written</option>
+				<option value="Oral">Oral</option>
+				<option value="Practical">Practical</option>
+            </select><button class="form-control" type="submit" class="btn btn-primary" name="addt">ADD</button>
+      	</div>
 		<div class="form-group">
         	<button class="form-control" type="submit" class="btn btn-primary" name="addt">ADD</button>
       	</div>
