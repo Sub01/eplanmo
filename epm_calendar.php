@@ -65,17 +65,16 @@ else{
 <html lang="en">
   <head>
    <title>Calendar</title>
-    <meta charset="utf-8">
+   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!--===============================================================================================-->
-   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">  
-<!--===============================================================================================-->   
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-<!--===============================================================================================-->
-   	<link rel="stylesheet" href="assets/css/dashboard_main.css">
-   	<link rel="stylesheet" href="assets/css/calendar_main.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	<link rel="stylesheet" href="assets/css/dashboard_main.css">
 	<link rel="stylesheet" href="assets/css/animation.css">
-	  	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/summary.css">
+	<link rel="stylesheet" href="assets/css/chart.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/general.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">

@@ -54,20 +54,17 @@ else{
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>School</title>
-	
-	<!--===============================================================================================-->
-	<link rel="stylesheet" href="assets/css/bootstrap.css">
+<title>Techers</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	<link rel="stylesheet" href="assets/css/dashboard_main.css">
 	<link rel="stylesheet" href="assets/css/animation.css">
 	<link rel="stylesheet" href="assets/css/summary.css">
 	<link rel="stylesheet" href="assets/css/chart.css">
-   	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-	<!--===============================================================================================-->
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/general.min.css">
 </head>
 
 <?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?> 
