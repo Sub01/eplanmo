@@ -198,7 +198,7 @@ else{
                                                         <label>TITLE</label>
                                                         <button type="button" class="btn btn-dark btn-sm btn-start"><i class="fas fa-play"></i></button>
 												        <button type="button" class="btn btn-dark btn-sm btn-stop"><i class="fas fa-stop"></i></button>
-                                                        <input class="myInput" type="text" name="title" required="" style="width:68%" value="">
+                                                        <input class="myInput" type="text" name="title" required="" style="width:100%" value="">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>TYPE</label>
@@ -215,7 +215,7 @@ else{
                                                         <input class="myInput" type="datetime-local" name="end" required="" style="width:100%" value="">
                                                     </div>
                                                     <div class="form-group">
-                                                       <button class="btn btn-primary btn-sm" name="event" type="submit">ADD EVENT</button>
+                                                       <button class="btn btn-primary btn-sm" name="event" type="submit" style="width:100%">ADD EVENT</button>
                                                     </div>
 												</form>
 											</div>
