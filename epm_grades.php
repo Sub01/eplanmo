@@ -172,6 +172,7 @@ else{
                                     while ($row = mysqli_fetch_array($result)) {
                                     $score = $row['Score'];
 		                            $over = $row['Over'];
+                                    $percentage = (($row['Score']/$row['Over']) * 100);
                                     ?>
                                     <tr>
                                         <td hidden><?php echo $row['ID'] ?></td>
@@ -180,10 +181,13 @@ else{
                                         <td><?php echo $row['Type'] ?></td>
                                         <td><?php echo $row['Score'] ?></td>
                                         <td><?php echo $row['Over'] ?></td>
-                                        <td><?php echo $percentage = (($row['Score']/$row['Over']) * 100); ?></td>
+                                        <td><?php echo  $percentage ?></td>
                                         <td>
-                                        
-                                        
+                                            <?php if($percentage >= 75): ?>
+                                            <h6 class="bg-success" style="border-radius:10px; text-align:center;">PASS</h6>
+                                            <?php elseif ($percentage <= 74):?>
+                                            <h6 class="bg-danger" style="border-radius:10px; text-align:center;">FAILED</h6>
+                                            <?php endif; ?>
                                         </td>
                                         <td><button class="btn btn-warning btn-sm editteacher"><i class="fas fa-edit"></i></button>
                                         <a href="assets/php/delete_teachers.php?id=<?php echo $row['ID'] ?>" onclick="return confirm('Are you sure you want to delete this teacher?')"><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></a></td>
