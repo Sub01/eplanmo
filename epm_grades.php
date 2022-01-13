@@ -145,7 +145,7 @@ else{
         <div class="col-xl-12 col-md-12 mb-4">
             		<div class="card border-left-danger shadow h-100 py-2">
                         <div class="card-header">
-                            <button class="btn btn-primary btn-sm" style="margin:5px;" data-toggle="modal" data-target="#addTeacher"><i class="fas fa-plus"></i> ADD GRADES</button>
+                            <button class="btn btn-primary btn-sm" style="margin:5px;" data-toggle="modal" data-target="#addGrade"><i class="fas fa-plus"></i> ADD GRADES</button>
                         </div>
                 		<div class="card-body" style="overflow-x:auto;">
                     		<table class="table table-bordered">
@@ -201,11 +201,11 @@ else{
 	</div>
 </div>
 		
-<div class="modal fade" id="addTeacher" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addGrade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Teacher Information</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Information</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -213,16 +213,41 @@ else{
       <div class="modal-body">
         <form method="post" action="">
          <div class="form-group">
-            <label>Name</label>
-            <input class="form-control" type="text" name="tname" value="">
+            <label>Teacher</label>
+             <select class="form-control" name="gteacher">
+			     <option hidden> </option>
+                 <?php
+				 $name = $_SESSION['User'];
+				 $ssql = "SELECT * FROM `teachers` WHERE `User`='$name'";
+				 $sresult = $db-> query($ssql);
+				 while($srow = mysqli_fetch_array($sresult)){ ?>
+				 <option value="<?php echo $srow['T_Name']?> <?php echo $srow['T_Surname']?>"><?php echo $srow['T_Name']?> <?php echo $srow['T_Surname']?></option>
+				 <?php }?>
+             </select>
          </div>
          <div class="form-group">
-            <label>Last Name</label>
-            <input class="form-control" type="text" name="tsurname" value="">
+            <label>Subject</label>
+            <select class="form-control" name="gsubject">
+				<option hidden> </option>
+				<?php
+				$name = $_SESSION['User'];
+				$ssql = "SELECT * FROM `subjects` WHERE `User`='$name'";
+				$sresult = $db-> query($ssql);
+				while($srow = mysqli_fetch_array($sresult)){ ?>
+				<option value="<?php echo $srow['S_Code']?>"><?php echo $srow['S_Code']?></option>
+				<?php }?>
+             </select>
          </div>
          <div class="form-group">
-            <label>Email</label>
-            <input class="form-control" type="email" name="temail" value="">
+             
+             <div class="col">
+                 <label>Scores</label>
+                <input class="form-control" type="email" name="gscore" value="">
+             </div>
+             <div class="col">
+                 <label>Items</label>
+                <input class="form-control" type="email" name="gover" value="">
+             </div>
          </div>
 		<div class="form-group">
         	<button class="form-control" type="submit" class="btn btn-primary" name="addt">ADD</button>
