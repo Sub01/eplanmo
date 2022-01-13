@@ -239,13 +239,15 @@ else{
              </select>
          </div>
          <div class="form-group">
-             <div class="col-sm-6">
+             <div class="row">
+                <div class="col-sm-6">
                  <label>Scores</label>
                 <input class="form-control" type="email" name="gscore" value="">
              </div>
              <div class="col-sm-6">
                  <label>Items</label>
                 <input class="form-control" type="email" name="gover" value="">
+             </div>
              </div>
          </div>
         <div class="form-group">
