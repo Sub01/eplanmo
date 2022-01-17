@@ -94,34 +94,37 @@ if(!isset($_SESSION['User'])){
                         
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-10">
-                            <div class="row">
-                                <h1>POMODORO</h1>
-                            </div>
-                            <div class="row">
-                                <figure class="clock">
-                                    <div class="mins">0</div>
-                                    <div>:</div>
-                                    <div class="secs">00</div>
-                                    <audio src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"></audio>
-                                    <svg class="progress-ring" height="120" width="120">
-                                        <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="50" cx="60" cy="60"/>
-                                    </svg>
-                                </figure>
-                            </div>
-                            <div class="row">
-                                <div class="btn-group">
-                                    <button class="start">Focus</button>
-                                    <button class="reset">Reset</button>
-                                    <button class="pause">Pause</button>
-                                </div>
-                                <form action=".">
-                                <label for="focusTime">Focus Time</label>
-                                <input type="number" value="1" id="focusTime" />
-                                <label for="breakTime">Break Time</label>
-                                <input type="number" value="1" id="breakTime" />
-                                <button type="submit">Save settings</button>
-                                </form>
-                            </div>
+                             <figure class="clock">
+      <div class="mins">0</div>
+      <div>:</div>
+      <div class="secs">00</div>
+      <audio
+        src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"
+      ></audio>
+      <svg class="progress-ring" height="120" width="120">
+        <circle
+          class="progress-ring__circle"
+          stroke-width="8"
+          fill="transparent"
+          r="50"
+          cx="60"
+          cy="60"
+        />
+      </svg>
+    </figure>
+                            <div class="btn-group">
+      <button class="start">start focus</button>
+      <button class="reset">reset</button>
+      <button class="pause">pause</button>
+    </div>
+
+    <form action=".">
+      <label for="focusTime">Focus Time</label>
+      <input type="number" value="1" id="focusTime" />
+      <label for="breakTime">Break Time</label>
+      <input type="number" value="1" id="breakTime" />
+      <button type="submit">Save settings</button>
+    </form>
                         </div>
                         <div class="col-lg-1 col-md-1 col-sm-1">
                         
