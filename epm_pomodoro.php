@@ -104,10 +104,14 @@ if(!isset($_SESSION['User'])){
                                 </div>
                             </div>
                             <div>
-                                <button class="btn btn-sm- btn-primary">Start</button>
-                                <button class="btn btn-sm- btn-success">Short Break</button>
-                                <button class="btn btn-sm- btn-success">Long Break</button>
-                                <button class="btn btn-sm- btn-danger">Stop</button>
+                                <table>
+                                    <tr>
+                                        <td><button class="btn btn-sm btn-primary">Start</button></td>
+                                        <td><button class="btn btn-sm btn-success">Short Break</button></td>
+                                        <td><button class="btn btn-sm btn-success">Long Break</button></td>
+                                        <td><button class="btn btn-sm btn-danger">Stop</button></td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                         <div class="col-lg-1 col-md-1 col-sm-1">
