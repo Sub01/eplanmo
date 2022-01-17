@@ -5,21 +5,21 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 h1 {
-  margin: 15px 0;
+
   font-weight: 900;
   font-size: 28px;
   text-align: center;
 }
 input {
   transition: 0.5s ease-in-out;
-  margin: 10px 0;
+
   font-size: 18px;
   padding: 5px;
   background: rgba(0, 0, 0, 0.11);
   border: none;
 }
 .btn-group {
-  display: flex;
+
   justify-content: space-between;
   align-items: center;
   height: 10%;
@@ -40,13 +40,11 @@ form {
   display: flex;
   flex-direction: column;
   padding: 0;
-  max-width: 370px;
   margin: 5px auto;
 }
 form button {
   background: rgb(25, 67, 255);
   width: 100%;
-  margin: 5px 0;
   color: white;
 }
 .start {
@@ -70,7 +68,6 @@ form button {
 }
 .clock {
   padding: 3px;
-  display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
@@ -136,14 +133,5 @@ form button {
   }
   footer {
     width: 100%;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  form {
-    height: 40%;
-  }
-  footer {
-    position: static;
   }
 }
