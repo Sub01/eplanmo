@@ -87,7 +87,7 @@ if(!isset($_SESSION['User'])){
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row">
                         <div class="col-lg-1 col-md-1 col-sm-1">
                         
@@ -106,6 +106,20 @@ if(!isset($_SESSION['User'])){
                                         <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="50" cx="60" cy="60"/>
                                     </svg>
                                 </figure>
+                            </div>
+                            <div class="row">
+                                <div class="btn-group">
+                                    <button class="start">Focus</button>
+                                    <button class="reset">Reset</button>
+                                    <button class="pause">Pause</button>
+                                </div>
+                                <form action=".">
+                                <label for="focusTime">Focus Time</label>
+                                <input type="number" value="1" id="focusTime" />
+                                <label for="breakTime">Break Time</label>
+                                <input type="number" value="1" id="breakTime" />
+                                <button type="submit">Save settings</button>
+                                </form>
                             </div>
                         </div>
                         <div class="col-lg-1 col-md-1 col-sm-1">
