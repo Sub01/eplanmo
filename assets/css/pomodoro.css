@@ -102,36 +102,3 @@ form button {
     transform: rotate(-90deg) scale(0.8);
   }
 }
-
-@media screen and (min-width: 768px) {
-  body {
-    display: grid;
-    grid-template-areas:
-      "head head"
-      "clock form"
-      "btns ji";
-  }
-  .btn-group {
-    grid-area: btns;
-    justify-content: center;
-  }
-  .clock {
-    grid-area: clock;
-    height: 100%;
-  }
-  h1 {
-    grid-area: head;
-
-    align-self: center;
-  }
-  form {
-    align-self: center;
-    justify-self: center;
-    grid-area: form;
-    width: 50%;
-    justify-content: space-around;
-  }
-  footer {
-    width: 100%;
-  }
-}
