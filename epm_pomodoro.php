@@ -107,10 +107,10 @@ if(!isset($_SESSION['User'])){
                             <div class="row">
                                 <table class="table">
                                     <tr>
-                                        <td><button class="btn btn-sm btn-primary">Start</button></td>
-                                        <td><button class="btn btn-sm btn-success">Short Break</button></td>
-                                        <td><button class="btn btn-sm btn-success">Long Break</button></td>
-                                        <td><button class="btn btn-sm btn-danger">Stop</button></td>
+                                        <td><button class="form-control btn btn-sm btn-primary">Start</button></td>
+                                        <td><button class="form-control btn btn-sm btn-success">Short Break</button></td>
+                                        <td><button class="form-control btn btn-sm btn-success">Long Break</button></td>
+                                        <td><button class="form-control btn btn-sm btn-danger">Stop</button></td>
                                     </tr>
                                 </table>
                             </div>
