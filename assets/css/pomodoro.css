@@ -1,104 +1,55 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap");
-
-body {
-  font-family: "Montserrat", sans-serif;
-}
-h1 {
-
-  font-weight: 900;
-  font-size: 28px;
-  text-align: center;
-}
-input {
-  transition: 0.5s ease-in-out;
-
-  font-size: 18px;
-  padding: 5px;
-  background: rgba(0, 0, 0, 0.11);
-  border: none;
-}
-.btn-group {
-
-  justify-content: space-between;
-  align-items: center;
-  height: 10%;
-  margin: 35px 0;
-}
-button {
-  margin: 5px;
-  padding: 10px;
-  border: none;
-  font-size: 18px;
-  transition: 0.5s ease-in-out;
-}
-label {
-  font-size: 12px;
-}
-form {
-  height: 20%;
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 5px auto;
-}
-form button {
-  background: rgb(25, 67, 255);
-  width: 100%;
-  color: white;
-}
-.start {
-  background: rgb(48, 33, 253);
-  color: white;
-}
-.break {
-  background: rgb(0, 199, 116);
-  color: #000000;
-}
-.reset {
-  background: rgb(250, 69, 109);
-  color: #000000;
-}
-.pause {
-  background: rgb(253, 143, 17);
-}
-.resume {
-  background: rgb(131, 10, 252);
-  color: white;
-}
-.clock {
-  padding: 3px;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  height: 30%;
-  font-size: 24px;
-}
-.progress-ring {
-  transform: translate(-50%, -50%);
+#timer{ 
+  color:#f00; 
+  font-size:50px; 
+  margin:10px auto;
+  border : 5px solid red;
+  border-radius:50%;
+  width:200px;
+  height:200px;
+  overflow:hidden;
+  position:relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor:default;
 }
 
-.progress-ring__circle {
-  transition: 0.5s;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-  stroke: rgb(51, 65, 255);
+#time{
+  margin-top:70px;
+  z-index : 1;
+  position:relative;
 }
 
-.danger {
-  stroke: rgb(243, 17, 28);
-  animation: pulse 0.9s ease-in-out infinite;
+#filler{
+  background : #ddffcc;
+  height: 0px;
+  width: 200px;
+  position:absolute;
+  bottom:0;
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    transform: rotate(-90deg) scale(1);
-  }
-  50% {
-    transform: rotate(-90deg) scale(1.05);
-  }
-  75% {
-    transform: rotate(-90deg) scale(0.8);
-  }
+#buttons button { 
+  background:#4da6ff; 
+  border:none; 
+  color:#fff; 
+  cursor:pointer; 
+  padding:5px; 
+  width:90px; 
+  margin:10px auto;
+  font-size:14px;
+  height : 50px;
+  border-radius : 50px;
+}
+
+#buttons button#shortBreak{
+  background : #0c0;
+}
+
+#buttons button#longBreak{
+  background : #080;
+}
+
+#buttons button#stop{
+  background : #f00;
 }

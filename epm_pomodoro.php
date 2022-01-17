@@ -93,37 +93,20 @@ if(!isset($_SESSION['User'])){
                         
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-10">
-                             <figure class="clock">
-      <div class="mins">0</div>
-      <div>:</div>
-      <div class="secs">00</div>
-      <audio
-        src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"
-      ></audio>
-      <svg class="progress-ring" height="120" width="120">
-        <circle
-          class="progress-ring__circle"
-          stroke-width="8"
-          fill="transparent"
-          r="50"
-          cx="60"
-          cy="60"
-        />
-      </svg>
-    </figure>
-                            <div class="btn-group">
-      <button class="start">start focus</button>
-      <button class="reset">reset</button>
-      <button class="pause">pause</button>
-    </div>
-
-    <form action=".">
-      <label for="focusTime">Focus Time</label>
-      <input type="number" value="1" id="focusTime" />
-      <label for="breakTime">Break Time</label>
-      <input type="number" value="1" id="breakTime" />
-      <button type="submit">Save settings</button>
-    </form>
+                            <div id="timer">
+                                <div id="time">
+                                    <span id="minutes">25</span>
+                                    <span id="colon">:</span>
+                                    <span id="seconds">00</span>
+                                </div>
+                                <div id="filler"></div>
+                            </div>
+                            <div id="buttons">
+                                <button id="work">Work</button>
+                                <button id="shortBreak">Short Break</button>
+                                <button id="longBreak">Long Break</button>
+                                <button id="stop">Stop</button>
+                            </div>
                         </div>
                         <div class="col-lg-1 col-md-1 col-sm-1">
                         
@@ -134,7 +117,7 @@ if(!isset($_SESSION['User'])){
 <footer class="fixed-bottom" style="color:white; background-color: black;">
 	<p>&copy; Gino Toralba & The rest of DS04 EST 2021</p>
 </footer>
-</diV>
+</div>
 
 
 	  
@@ -188,9 +171,7 @@ if(!isset($_SESSION['User'])){
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!--===============================================================================================-->
 <script src="assets/js/dashboard_main.js"></script>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <!--===============================================================================================-->
-<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
 <script>
 $(document).ready( function () {
@@ -210,70 +191,6 @@ $("document").ready(function(){
     }, <?php echo $gensetmodclose ?> ); 
 
 });
-	
-	
-$(document).ready(function(){
-   $('.editbutton').on('click', function(){
-      $('#updateEvent').modal('show');
-      $tr = $(this).closest('tr');
-      var data = $tr.children("td").map(function(){
-         return $(this).text();
-      }).get();
-
-      console.log(data);
-
-      var dateVal = new Date(data[3]);
-      var day = dateVal.getDate().toString().padStart(2, "0");
-      var month = (1 + dateVal.getMonth()).toString().padStart(2, "0");
-      var hour = dateVal.getHours().toString().padStart(2, "0");
-      var minute = dateVal.getMinutes().toString().padStart(2, "0");
-      var sec = dateVal.getSeconds().toString().padStart(2, "0");
-      var ms = dateVal.getMilliseconds().toString().padStart(3, "0");
-      var inputDate = dateVal.getFullYear() + "-" + (month) + "-" + (day) + "T" + (hour) + ":" + (minute) + ":" + (sec) + "." + (ms);
-
-      var dateVal2 = new Date(data[4]);
-      var day2 = dateVal2.getDate().toString().padStart(2, "0");
-      var month2 = (1 + dateVal2.getMonth()).toString().padStart(2, "0");
-      var hour2 = dateVal2.getHours().toString().padStart(2, "0");
-      var minute2 = dateVal2.getMinutes().toString().padStart(2, "0");
-      var sec2 = dateVal2.getSeconds().toString().padStart(2, "0");
-      var ms2 = dateVal2.getMilliseconds().toString().padStart(3, "0");
-      var inputDate2 = dateVal2.getFullYear() + "-" + (month2) + "-" + (day2) + "T" + (hour2) + ":" + (minute2) + ":" + (sec2) + "." + (ms2);
-
-      $('#id').val(data[0]);
-      $('#title').val(data[1]);
-      $('#type').val(data[2]);
-      $('#start').val(inputDate);
-      $('#end').val(inputDate2);
-
-   });
-});
- window.onload = function () {
-    var chart = new CanvasJS.Chart("chartContainer",
-    {
-
-      title:{
-      text: "ACTIVITY LOG PER DAY"
-      },
-       data: [
-      {
-        type: "<?php echo $gensetchart ?>",
-
-        dataPoints: [
-			<?php 
-			$user = $_SESSION['User'];
-			$sql2 = "SELECT DAY(Timestamp),COUNT(*) FROM `events` WHERE Name='$user' GROUP BY DAY(Timestamp) ";
-			$result2 =$db->query($sql2);
-            while ($row = mysqli_fetch_array($result2)) {?>
-        	{ x: <?php echo $row['DAY(Timestamp)'] ?>, y: <?php echo $row['COUNT(*)'] ?>},
-			<?php } ?>
-        ]
-      }
-      ]
-    });
-
-    chart.render();
-  }
 </script>
   </body>
 </html>
