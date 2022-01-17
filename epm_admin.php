@@ -59,7 +59,7 @@ if(!isset($_SESSION['User'])){
     <div id="content" class="d-flex flex-column">
     	<div id="content">
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                    <i type="button" id="sidebarCollapse" class="fas fa-bars"></i>
+                    <i type="button" id="sidebarCollapse" class="fas fa-bars">
                     </button>
                     <ul class="navbar-nav ml-auto">
                         <div class="topbar-divider d-none d-sm-block"></div>
