@@ -56,10 +56,10 @@ if(!isset($_SESSION['User'])){
           	</li>
         </ul>
     </nav>
-    <div id="content" class="d-flex flex-column">
+     <div id="content" class="d-flex flex-column">
     	<div id="content">
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                    <i type="button" id="sidebarCollapse" class="fas fa-bars">
+                    <i type="button" id="sidebarCollapse" class="fas fa-bars"></i>
                     </button>
                     <ul class="navbar-nav ml-auto">
                         <div class="topbar-divider d-none d-sm-block"></div>
