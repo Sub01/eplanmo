@@ -71,7 +71,6 @@ form button {
 .clock {
   padding: 3px;
   display: flex;
-  position: relative;
   justify-content: center;
   align-items: center;
   font-weight: bold;
@@ -79,9 +78,6 @@ form button {
   font-size: 24px;
 }
 .progress-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -90,14 +86,6 @@ form button {
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
   stroke: rgb(51, 65, 255);
-}
-
-footer {
-  position: fixed;
-  bottom: 4px;
-  text-align: center;
-  width: 80%;
-  margin: 0 auto;
 }
 
 .danger {

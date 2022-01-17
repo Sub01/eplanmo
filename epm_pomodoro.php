@@ -88,7 +88,7 @@ if(!isset($_SESSION['User'])){
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-1 col-md-1 col-sm-1">
                         
