@@ -16,7 +16,6 @@ if(!isset($_SESSION['User'])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-	<link rel="stylesheet" href="assets/css/dashboard_main.css">
 	<link rel="stylesheet" href="assets/css/animation.css">
 	<link rel="stylesheet" href="assets/css/summary.css">
 	<link rel="stylesheet" href="assets/css/chart.css">
@@ -36,7 +35,7 @@ if(!isset($_SESSION['User'])){
 		<div class="custom-menu">
 			
         </div>
-	  	<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  	<div class="img bg-wrap text-center py-4">
 			E-PLAN MO
 	  	</div>
         <ul class="list-unstyled components mb-5">
@@ -187,8 +186,6 @@ if(!isset($_SESSION['User'])){
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="assets/js/linechart.js"></script>
 <!--===============================================================================================-->
 <script src="assets/js/dashboard_main.js"></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
