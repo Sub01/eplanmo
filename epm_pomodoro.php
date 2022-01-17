@@ -156,10 +156,10 @@ var pomodoro = {
       document.querySelector('#work').onclick = function(){
         self.startWork.apply(self);
       };
-      document.querySelector('#shortBreak').onclick = function(){
+      document.querySelector('#short-break').onclick = function(){
         self.startShortBreak.apply(self);
       };
-      document.querySelector('#longBreak').onclick = function(){
+      document.querySelector('#long-break').onclick = function(){
         self.startLongBreak.apply(self);
       };
       document.querySelector('#stop').onclick = function(){
