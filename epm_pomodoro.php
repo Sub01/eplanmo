@@ -93,19 +93,21 @@ if(!isset($_SESSION['User'])){
                         
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-10">
-                            <div id="timer">
-                                <div id="time">
-                                    <span id="minutes">25</span>
-                                    <span id="colon">:</span>
-                                    <span id="seconds">00</span>
+                            <div class="row">
+                                <div id="timer">
+                                    <div id="time">
+                                        <span id="minutes">25</span>
+                                        <span id="colon">:</span>
+                                        <span id="seconds">00</span>
+                                    </div>
+                                    <div id="filler"></div>
                                 </div>
-                                <div id="filler"></div>
                             </div>
-                            <div id="buttons">
-                                <button id="work">Work</button>
-                                <button id="shortBreak">Short Break</button>
-                                <button id="longBreak">Long Break</button>
-                                <button id="stop">Stop</button>
+                            <div>
+                                <button class="btn btn-sm- btn-primary">Start</button>
+                                <button class="btn btn-sm- btn-success">Short Break</button>
+                                <button class="btn btn-sm- btn-success">Long Break</button>
+                                <button class="btn btn-sm- btn-danger">Stop</button>
                             </div>
                         </div>
                         <div class="col-lg-1 col-md-1 col-sm-1">
