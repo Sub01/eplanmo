@@ -105,7 +105,7 @@ if(!isset($_SESSION['User'])){
                             </div>
                             <br>
                             <div class="row">
-                                <table>
+                                <table class="table">
                                     <tr>
                                         <td><button class="btn btn-sm btn-primary">Start</button></td>
                                         <td><button class="btn btn-sm btn-success">Short Break</button></td>
