@@ -178,7 +178,7 @@ else{
                                         <td><?php echo $row['Type'] ?></td>
                                         <td><?php echo $row['Score'] ?></td>
                                         <td><?php echo $row['Over'] ?></td>
-                                        <td><?php echo  round($percentage,0) ?></td>
+                                        <td><?php echo  round($percentage,1) ?></td>
                                         <td>
                                             <?php if($percentage >= 75): ?>
                                             <h6 class="bg-success" style="border-radius:10px; text-align:center; color:white;">PASS</h6>
@@ -242,15 +242,16 @@ else{
              <div class="row">
                 <div class="col-sm-6">
                  <label>Scores</label>
-                <input class="form-control" type="email" name="gscore" value="">
+                <input class="form-control" type="number" name="gscore" value="">
              </div>
              <div class="col-sm-6">
                  <label>Items</label>
-                <input class="form-control" type="email" name="gover" value="">
+                <input class="form-control" type="number" name="gover" value="">
              </div>
              </div>
          </div>
         <div class="form-group">
+            <label>Type</label>
             <select name="gtype" class="form-control">
 				<option hidden> </option>
 				<option value="Written">Written</option>
