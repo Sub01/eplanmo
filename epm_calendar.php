@@ -225,7 +225,7 @@ else{
 						</div>
 					<div class="col-xl-8 col-md-8 mb-4">
 						<div class="card border-left-primary shadow h-100 py-2" style="max-height: 1000px;">
-                    		<div id="calendar">
+                    		<div class="card-header" id="calendar">
 
 							</div>
 						</div>
