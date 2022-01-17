@@ -103,7 +103,8 @@ if(!isset($_SESSION['User'])){
                                     <div id="filler"></div>
                                 </div>
                             </div>
-                            <div>
+                            <br>
+                            <div class="row">
                                 <table>
                                     <tr>
                                         <td><button class="btn btn-sm btn-primary">Start</button></td>
