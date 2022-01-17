@@ -107,10 +107,10 @@ if(!isset($_SESSION['User'])){
                             <div class="row">
                                 <table class="table" style="table-layout:fixed !important">
                                     <tr>
-                                        <td><button class="form-control btn btn-sm btn-primary">Start</button></td>
-                                        <td><button class="form-control btn btn-sm btn-success">Short Break</button></td>
-                                        <td><button class="form-control btn btn-sm btn-success">Long Break</button></td>
-                                        <td><button class="form-control btn btn-sm btn-danger">Stop</button></td>
+                                        <td><button id="work" class="form-control btn btn-sm btn-primary">Start</button></td>
+                                        <td><button id="short-break" class="form-control btn btn-sm btn-success">Short Break</button></td>
+                                        <td><button id="long-break" class="form-control btn btn-sm btn-success">Long Break</button></td>
+                                        <td><button id="stop" class="form-control btn btn-sm btn-danger">Stop</button></td>
                                     </tr>
                                 </table>
                             </div>
@@ -125,52 +125,6 @@ if(!isset($_SESSION['User'])){
 	<p>&copy; Gino Toralba & The rest of DS04 EST 2021</p>
 </footer>
 </div>
-
-
-	  
-
-
-
-<!--MODAL FOR UPDATE EVENT-->  
-<!--===============================================================================================--> 
-<div class="modal fade" id="updateEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form method="post" action="assets/php/update_event.php">
-         <div class="form-group">
-            <label>Event Title</label>
-            <input hidden="" name="ID" id="ID" value="">
-            <input type="text" name="title" id="title" value="">
-         </div>
-         <div class="form-group">
-            <label>Event Type</label>
-            <input type="text" name="type" id="type" value="">
-         </div>
-         <div class="form-group">
-            <label>Event Start</label>
-            <input type="datetime-local" name="start" id="start" value="">
-         </div>
-         <div class="form-group">
-            <label>Event End</label>
-            <input type="datetime-local" name="end" id="end" value="">
-         </div>
-		<div class="form-group">
-        	<button type="submit" class="btn btn-primary">Save changes</button>
-      	</div>
-        </form>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
 <!--SCRIPTS-->  
 <!--===============================================================================================-->  
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -181,23 +135,91 @@ if(!isset($_SESSION['User'])){
 <!--===============================================================================================-->
 
 <script>
-$(document).ready( function () {
-    $('#table1').DataTable({
-      "autoWidth": true
-    });
-} );
-$(document).ready( function () {
-    $('#table2').DataTable({
-      "autoWidth": true
-    });
-} );
-$("document").ready(function(){
-    setTimeout(function(){
-       $("div.alert").remove();
-		
-    }, <?php echo $gensetmodclose ?> ); 
-
-});
+var pomodoro = {
+    started : false,
+    minutes : 0,
+    seconds : 0,
+    fillerHeight : 0,
+    fillerIncrement : 0,
+    interval : null,
+    minutesDom : null,
+    secondsDom : null,
+    fillerDom : null,
+    init : function(){
+      var self = this;
+      this.minutesDom = document.querySelector('#minutes');
+      this.secondsDom = document.querySelector('#seconds');
+      this.fillerDom = document.querySelector('#filler');
+      this.interval = setInterval(function(){
+        self.intervalCallback.apply(self);
+      }, 1000);
+      document.querySelector('#work').onclick = function(){
+        self.startWork.apply(self);
+      };
+      document.querySelector('#shortBreak').onclick = function(){
+        self.startShortBreak.apply(self);
+      };
+      document.querySelector('#longBreak').onclick = function(){
+        self.startLongBreak.apply(self);
+      };
+      document.querySelector('#stop').onclick = function(){
+        self.stopTimer.apply(self);
+      };
+    },
+    resetVariables : function(mins, secs, started){
+      this.minutes = mins;
+      this.seconds = secs;
+      this.started = started;
+      this.fillerIncrement = 200/(this.minutes*60);
+      this.fillerHeight = 0;  
+    },
+    startWork: function() {
+      this.resetVariables(25, 0, true);
+    },
+    startShortBreak : function(){
+      this.resetVariables(5, 0, true);
+    },
+    startLongBreak : function(){
+      this.resetVariables(15, 0, true);
+    },
+    stopTimer : function(){
+      this.resetVariables(25, 0, false);
+      this.updateDom();
+    },
+    toDoubleDigit : function(num){
+      if(num < 10) {
+        return "0" + parseInt(num, 10);
+      }
+      return num;
+    },
+    updateDom : function(){
+      this.minutesDom.innerHTML = this.toDoubleDigit(this.minutes);
+      this.secondsDom.innerHTML = this.toDoubleDigit(this.seconds);
+      this.fillerHeight = this.fillerHeight + this.fillerIncrement;
+      this.fillerDom.style.height = this.fillerHeight + 'px';
+    },
+    intervalCallback : function(){
+      if(!this.started) return false;
+      if(this.seconds == 0) {
+        if(this.minutes == 0) {
+          this.timerComplete();
+          return;
+        }
+        this.seconds = 59;
+        this.minutes--;
+      } else {
+        this.seconds--;
+      }
+      this.updateDom();
+    },
+    timerComplete : function(){
+      this.started = false;
+      this.fillerHeight = 0;
+    }
+};
+window.onload = function(){
+  pomodoro.init();
+};
 </script>
   </body>
 </html>
