@@ -30,14 +30,14 @@ else{
    			exit();
 		}
 	}
-    elseif(isset($_POST['ngrade'])){
+    if(isset($_POST['ngrade'])){
         $nid = $_POST['nid'];
         $teacher = $_POST['nteacher'];
 		$subject = $_POST['nsubject'];
 		$score = $_POST['nscore'];
 		$over = $_POST['nover'];
 		$type = $_POST['ntype'];
-        $sql = "UPDATE grades SET Subject_Code='$nsubject', Teacher='$nteacher', Score='$score', Over='$over', Type='$type' WHERE ID='$nid'";
+        $sql = "UPDATE `grades` SET `Subject_Code`='$subject,`Teacher`='$teacher',`Score`='$score',`Over`='$over',`Type`=$type WHERE ID='$id'";
         $result = mysqli_query($db, $sql);
         if($result){
 			$_SESSION['status'] = "success";
