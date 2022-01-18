@@ -9,42 +9,24 @@ if(!isset($_SESSION["User"])){
 }	
 else{
     $id = $_SESSION['User'];
-    if(isset($_POST['teacher'])){
-        $tname = $_POST['tname'];
-		$tsname = $_POST['tsname'];
-		$temail = $_POST['temail'];
-		$tid = $_POST['tid'];
-		$sql = "UPDATE `teachers` SET `T_Name`='$tname', `T_Surname`='$tsname', `T_Email`='$temail' WHERE `ID`='$tid'";
-		$result = $db->query($sql);
-		if($result){
-			$_SESSION['status'] = "success";
-   			$_SESSION['message'] = "Teacher's Information Successfuly Updated";
-			header("Location: /epm_teachers.php");
-			exit();
-		}
-		else{
-			$_SESSION['status'] = "error";
-   			$_SESSION['message'] = "Failed to Update Teacher's Information";
-			header("Location: /epm_teachers.php");
-			exit();
-		}
-	}
-    elseif(isset($_POST['addt'])){
-		$tname = $_POST['tname'];
-		$tsurname = $_POST['tsurname'];
-		$temail = $_POST['temail'];
-		$sql = "INSERT INTO teachers (`User`,T_Name,`T_Surname`,T_Email) VALUES ('$id','$tname','$tsurname','$temail')";
+    if(isset($_POST['ggrade'])){
+		$teacher = $_POST['gteacher'];
+		$subject = $_POST['gsubject'];
+		$score = $_POST['gscore'];
+		$over = $_POST['gover'];
+		$type = $_POST['gtype'];
+		$sql = "INSERT INTO grades (`User`,`Subject_Code`,`Teacher`,`Score`,`Over`,`Type`) VALUES ('$id','$subject','$teacher','$score','$over','$type')";
 		$result = mysqli_query($db, $sql);
 		if($result){
 			$_SESSION['status'] = "success";
-   			$_SESSION['message'] = "Teacher Added Successfully";
-   			header("Location: /epm_teachers.php");
+   			$_SESSION['message'] = "Grade Added Successfully";
+   			header("Location: /epm_calendar.php");
    			exit();
 		}
 		else{
 			$_SESSION['status'] = "error";
-   			$_SESSION['message'] = "Failed to add teacher!";
-   			header("Location: /epm_teachers.php");
+   			$_SESSION['message'] = "Failed to add grade!";
+   			header("Location: /epm_calendar.php");
    			exit();
 		}
 	}
@@ -266,40 +248,7 @@ else{
       </div>
     </div>
   </div>
-</div>			
-    
-<div class="modal fade" id="updateTeacher" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Teacher Information</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form method="post" action="">
-         <div class="form-group">
-            <label>Name</label>
-            <input  hidden="" name="tid" id="tid" value="">
-            <input class="form-control" type="text" name="tname" id="tname" value="">
-         </div>
-         <div class="form-group">
-            <label>Last Name</label>
-            <input class="form-control" type="text" name="tsname" id="tsname" value="">
-         </div>
-         <div class="form-group">
-            <label>Email</label>
-            <input class="form-control" type="email" name="temail" id="temail" value="">
-         </div>
-		<div class="form-group">
-        	<button class="form-control" type="submit" class="btn btn-primary" name="teacher">Save changes</button>
-      	</div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>			
+</div>				
 <!--SCRIPTS-->  
 <!--===============================================================================================-->  
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
