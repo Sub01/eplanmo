@@ -290,9 +290,9 @@ else{
       <div class="modal-body">
         <form method="post" action="">
          <div class="form-group">
-            <input type="hidden" id="nid" value="">
+            <input type="hidden" name="nid" id="nid" value="">
             <label>Teacher</label>
-             <select class="form-control" name="nteacher" id="gteacher">
+             <select class="form-control" name="nteacher" id="nteacher">
 			     <option hidden> </option>
                  <?php
 				 $name = $_SESSION['User'];
@@ -305,7 +305,7 @@ else{
          </div>
          <div class="form-group">
             <label>Subject</label>
-            <select class="form-control" name="nsubject" id="gsubject">
+            <select class="form-control" name="nsubject" id="nsubject">
 				<option hidden> </option>
 				<?php
 				$name = $_SESSION['User'];
@@ -320,17 +320,17 @@ else{
              <div class="row">
                 <div class="col-sm-6">
                  <label>Scores</label>
-                <input class="form-control" type="number" name="nscore" value="" id="gscore">
+                <input class="form-control" type="number" name="nscore" value="" id="nscore">
              </div>
              <div class="col-sm-6">
                  <label>Items</label>
-                <input class="form-control" type="number" name="nover" value="" id="gover">
+                <input class="form-control" type="number" name="nover" value="" id="nover">
              </div>
              </div>
          </div>
         <div class="form-group">
             <label>Type</label>
-            <select name="ntype" class="form-control" id="gtype">
+            <select name="ntype" class="form-control" id="ntype">
 				<option hidden> </option>
 				<option value="Written">Written</option>
 				<option value="Oral">Oral</option>
@@ -366,12 +366,12 @@ $(document).ready(function(){
          return $(this).text();
       }).get();
       console.log(data);
-      $('#gid').val(data[0]);
-      $('#gteacher').val(data[2]);
-      $('#gsubject').val(data[1]);
-      $('#gscore').val(data[4]);
-      $('#gover').val(data[5]);
-      $('#gtype').val(data[3]);
+      $('#nid').val(data[0]);
+      $('#nteacher').val(data[2]);
+      $('#nsubject').val(data[1]);
+      $('#nscore').val(data[4]);
+      $('#nover').val(data[5]);
+      $('#ntype').val(data[3]);
    });
 });
 $("document").ready(function(){
