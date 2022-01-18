@@ -174,7 +174,8 @@ else{
                                             <?php endif; ?>
                                         </td>
                                         <td>
-                                        <a href="assets/php/delete_teachers.php?id=<?php echo $row['ID'] ?>" onclick="return confirm('Are you sure you want to delete this teacher?')"><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></a>
+                                        <button class="btn btn-warning btn-sm editgrades" data-bs-toggle="modal" data-bs-target="#updateGrades"><i class="fas fa-edit"></i></button>
+                                        <a href="assets/php/delete_grades.php?id=<?php echo $row['ID'] ?>" onclick="return confirm('Are you sure you want to delete this teacher?')"><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></a>
                                         </td>
                                     </tr>
                                     <?php  } ?>
@@ -253,7 +254,75 @@ else{
       </div>
     </div>
   </div>
-</div>				
+</div>
+    
+<div class="modal fade" id="updateGrade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="">
+         <div class="form-group">
+            <input type="hidden" id="gid" value="">
+            <label>Teacher</label>
+             <select class="form-control" name="gteacher" id="gteacher">
+			     <option hidden> </option>
+                 <?php
+				 $name = $_SESSION['User'];
+				 $ssql = "SELECT * FROM `teachers` WHERE `User`='$name'";
+				 $sresult = $db-> query($ssql);
+				 while($srow = mysqli_fetch_array($sresult)){ ?>
+				 <option value="<?php echo $srow['T_Name']?> <?php echo $srow['T_Surname']?>"><?php echo $srow['T_Name']?> <?php echo $srow['T_Surname']?></option>
+				 <?php }?>
+             </select>
+         </div>
+         <div class="form-group">
+            <label>Subject</label>
+            <select class="form-control" name="gsubject" id="gsubject">
+				<option hidden> </option>
+				<?php
+				$name = $_SESSION['User'];
+				$ssql = "SELECT * FROM `subjects` WHERE `User`='$name'";
+				$sresult = $db-> query($ssql);
+				while($srow = mysqli_fetch_array($sresult)){ ?>
+				<option value="<?php echo $srow['S_Code']?>"><?php echo $srow['S_Code']?></option>
+				<?php }?>
+             </select>
+         </div>
+         <div class="form-group">
+             <div class="row">
+                <div class="col-sm-6">
+                 <label>Scores</label>
+                <input class="form-control" type="number" name="gscore" value="" id="gscore">
+             </div>
+             <div class="col-sm-6">
+                 <label>Items</label>
+                <input class="form-control" type="number" name="gover" value="" id="gover">
+             </div>
+             </div>
+         </div>
+        <div class="form-group">
+            <label>Type</label>
+            <select name="gtype" class="form-control" id="gtype">
+				<option hidden> </option>
+				<option value="Written">Written</option>
+				<option value="Oral">Oral</option>
+				<option value="Practical">Practical</option>
+            </select>
+      	</div>
+		<div class="form-group">
+        	<button class="form-control" type="submit" class="btn btn-primary" name="ggrade">ADD</button>
+      	</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 <!--SCRIPTS-->  
 <!--===============================================================================================-->  
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -270,16 +339,18 @@ else{
 		
 $(document).ready(function(){
    $('.editteacher').on('click', function(){
-      $('#updateTeacher').modal('show');
+      $('#updateGrade').modal('show');
       $tr = $(this).closest('tr');
       var data = $tr.children("td").map(function(){
          return $(this).text();
       }).get();
       console.log(data);
-      $('#tid').val(data[0]);
-      $('#tname').val(data[1]);
-      $('#tsname').val(data[2]);
-      $('#temail').val(data[3]);
+      $('#gid').val(data[0]);
+      $('#gteacher').val(data[1]);
+      $('#gsubject').val(data[2]);
+      $('#gscore').val(data[3]);
+      $('#gover').val(data[4]);
+      $('#gtype').val(data[5]);
    });
 });
 $("document").ready(function(){
