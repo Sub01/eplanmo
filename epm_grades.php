@@ -332,14 +332,13 @@ else{
 <script src="assets/js/linechart.js"></script>
 <!--===============================================================================================-->
 <script src="assets/js/dashboard_main.js"></script>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <!--===============================================================================================-->
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script>
 		
 $(document).ready(function(){
    $('.editgrade').on('click', function(){
-      $('#updateGrade').modal('show');
+      $('#updateGrades').modal('show');
       $tr = $(this).closest('tr');
       var data = $tr.children("td").map(function(){
          return $(this).text();
