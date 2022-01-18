@@ -268,7 +268,7 @@ else{
       <div class="modal-body">
         <form method="post" action="assets/php/update_grades.php">
          <div class="form-group">
-            <input type="hidden" name="id" id="nid" value="">
+            <input type="text" name="id" id="nid" value="">
             <label>Teacher</label>
              <select class="form-control" name="teacher" id="nteacher">
 			     <option hidden> </option>
