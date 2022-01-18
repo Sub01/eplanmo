@@ -1,4 +1,8 @@
 <?php
+include 'config.php';
+session_start();
+if(isset($_POST["ngrade"])){
+    
     $nid = $_POST['nid'];
     $nteacher = $_POST['nteacher'];
     $nsubject = $_POST['nsubject'];
@@ -19,5 +23,6 @@
    			header("Location: /epm_grades.php");
    			exit();
 		}
+}
 
 ?>
