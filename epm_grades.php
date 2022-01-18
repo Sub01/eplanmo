@@ -330,7 +330,7 @@ else{
          </div>
         <div class="form-group">
             <label>Type</label>
-            <select name="gtype" class="form-control" id="ntype">
+            <select name="ntype" class="form-control" id="gtype">
 				<option hidden> </option>
 				<option value="Written">Written</option>
 				<option value="Oral">Oral</option>
