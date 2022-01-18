@@ -8,6 +8,7 @@ if(!isset($_SESSION["User"])){
 	exit();
 }	
 else{
+    $id = $_SESSION['User'];
     if(isset($_POST['sub'])){
         $scode= $_POST['scode'];
 		$sdes= $_POST['sdes'];
