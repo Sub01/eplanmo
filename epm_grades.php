@@ -20,18 +20,17 @@ else{
 		if($result){
 			$_SESSION['status'] = "success";
    			$_SESSION['message'] = "Grade Added Successfully";
-   			header("Location: /epm_calendar.php");
+   			header("Location: /epm_grades.php");
    			exit();
 		}
 		else{
 			$_SESSION['status'] = "error";
    			$_SESSION['message'] = "Failed to add grade!";
-   			header("Location: /epm_calendar.php");
+   			header("Location: /epm_grades.php");
    			exit();
 		}
 	}
 }
-
 ?>
 <!doctype html>
 <html>
