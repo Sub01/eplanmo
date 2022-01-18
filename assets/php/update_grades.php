@@ -1,15 +1,14 @@
 <?php
 include 'config.php';
 session_start();
-if(isset($_POST["ngrade"])){
-    
-    $nid = $_POST['nid'];
-    $nteacher = $_POST['nteacher'];
-    $nsubject = $_POST['nsubject'];
-    $nscore = $_POST['nscore'];
-    $nover = $_POST['nover'];
-    $ntype = $_POST['ntype'];
-    $sql = "UPDATE `grades` SET `Subject_Code`='$nsubject,`Teacher`='$nteacher',`Score`='$nscore',`Over`='$nover',`Type`=$ntype WHERE ID='$nid'";
+if(isset($_POST["update"])){
+    $id = $_POST['id'];
+    $teacher = $_POST['teacher'];
+    $subject = $_POST['subject'];
+    $score = $_POST['score'];
+    $over = $_POST['over'];
+    $type = $_POST['type'];
+    $sql = "UPDATE `grades` SET `Subject_Code`='$subject,`Teacher`='$teacher',`Score`='$score',`Over`='$over',`Type`=$type WHERE ID='$id'";
     $result = $db->query($sql);
     if($result){
 			$_SESSION['status'] = "success";
@@ -24,5 +23,4 @@ if(isset($_POST["ngrade"])){
    			exit();
 		}
 }
-
 ?>

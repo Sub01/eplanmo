@@ -260,7 +260,7 @@ else{
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Information</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edit Information</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -268,9 +268,9 @@ else{
       <div class="modal-body">
         <form method="post" action="assets/php/update_grades.php">
          <div class="form-group">
-            <input type="hidden" name="nid" id="nid" value="">
+            <input type="hidden" name="id" id="nid" value="">
             <label>Teacher</label>
-             <select class="form-control" name="nteacher" id="nteacher">
+             <select class="form-control" name="teacher" id="nteacher">
 			     <option hidden> </option>
                  <?php
 				 $name = $_SESSION['User'];
@@ -283,7 +283,7 @@ else{
          </div>
          <div class="form-group">
             <label>Subject</label>
-            <select class="form-control" name="nsubject" id="nsubject">
+            <select class="form-control" name="subject" id="nsubject">
 				<option hidden> </option>
 				<?php
 				$name = $_SESSION['User'];
@@ -298,17 +298,17 @@ else{
              <div class="row">
                 <div class="col-sm-6">
                  <label>Scores</label>
-                <input class="form-control" type="number" name="nscore" value="" id="nscore">
+                <input class="form-control" type="number" name="score" value="" id="nscore">
              </div>
              <div class="col-sm-6">
                  <label>Items</label>
-                <input class="form-control" type="number" name="nover" value="" id="nover">
+                <input class="form-control" type="number" name="over" value="" id="nover">
              </div>
              </div>
          </div>
         <div class="form-group">
             <label>Type</label>
-            <select name="ntype" class="form-control" id="ntype">
+            <select name="type" class="form-control" id="ntype">
 				<option hidden> </option>
 				<option value="Written">Written</option>
 				<option value="Oral">Oral</option>
@@ -316,7 +316,7 @@ else{
             </select>
       	</div>
 		<div class="form-group">
-        	<button class="form-control" type="submit" class="btn btn-primary" name="ngrade">UPDATE</button>
+        	<button class="form-control" type="submit" class="btn btn-primary" name="update">UPDATE</button>
       	</div>
         </form>
       </div>
