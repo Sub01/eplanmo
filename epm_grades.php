@@ -30,6 +30,28 @@ else{
    			exit();
 		}
 	}
+    elseif(isset($_POST['ngrade'])){
+        $nid = $_POST['nid'];
+        $teacher = $_POST['nteacher'];
+		$subject = $_POST['nsubject'];
+		$score = $_POST['nscore'];
+		$over = $_POST['nover'];
+		$type = $_POST['ntype'];
+        $sql = "UPDATE grades SET Subject_Code='$nsubject', Teacher='$nteacher', Score='$score', Over='$over', Type='$type' WHERE ID='$nid'";
+        $result = mysqli_query($db, $sql);
+        if($result){
+			$_SESSION['status'] = "success";
+   			$_SESSION['message'] = "Grade Successfully Updated";
+   			header("Location: /epm_grades.php");
+   			exit();
+		}
+		else{
+			$_SESSION['status'] = "error";
+   			$_SESSION['message'] = "Failed to Update Grade!";
+   			header("Location: /epm_grades.php");
+   			exit();
+		}
+    }
 }
 ?>
 <!doctype html>
@@ -268,9 +290,9 @@ else{
       <div class="modal-body">
         <form method="post" action="">
          <div class="form-group">
-            <input type="hidden" id="gid" value="">
+            <input type="hidden" id="nid" value="">
             <label>Teacher</label>
-             <select class="form-control" name="gteacher" id="gteacher">
+             <select class="form-control" name="nteacher" id="gteacher">
 			     <option hidden> </option>
                  <?php
 				 $name = $_SESSION['User'];
@@ -283,7 +305,7 @@ else{
          </div>
          <div class="form-group">
             <label>Subject</label>
-            <select class="form-control" name="gsubject" id="gsubject">
+            <select class="form-control" name="nsubject" id="gsubject">
 				<option hidden> </option>
 				<?php
 				$name = $_SESSION['User'];
@@ -298,17 +320,17 @@ else{
              <div class="row">
                 <div class="col-sm-6">
                  <label>Scores</label>
-                <input class="form-control" type="number" name="gscore" value="" id="gscore">
+                <input class="form-control" type="number" name="nscore" value="" id="gscore">
              </div>
              <div class="col-sm-6">
                  <label>Items</label>
-                <input class="form-control" type="number" name="gover" value="" id="gover">
+                <input class="form-control" type="number" name="nover" value="" id="gover">
              </div>
              </div>
          </div>
         <div class="form-group">
             <label>Type</label>
-            <select name="gtype" class="form-control" id="gtype">
+            <select name="gtype" class="form-control" id="ntype">
 				<option hidden> </option>
 				<option value="Written">Written</option>
 				<option value="Oral">Oral</option>
@@ -316,7 +338,7 @@ else{
             </select>
       	</div>
 		<div class="form-group">
-        	<button class="form-control" type="submit" class="btn btn-primary" name="ggrade">ADD</button>
+        	<button class="form-control" type="submit" class="btn btn-primary" name="ngrade">UPDATE</button>
       	</div>
         </form>
       </div>
@@ -355,7 +377,6 @@ $(document).ready(function(){
 $("document").ready(function(){
     setTimeout(function(){
        $("div.alert").remove();
-		
     }, <?php echo $gensetmodclose ?> ); 
 
 });
