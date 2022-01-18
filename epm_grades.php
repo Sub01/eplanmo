@@ -37,7 +37,7 @@ else{
 		$nscore = $_POST['nscore'];
 		$nover = $_POST['nover'];
 		$ntype = $_POST['ntype'];
-        $sql2 = "UPDATE `grades` SET `Subject_Code`='$nsubject,`Teacher`='$nteacher',`Score`='$nscore',`Over`='$nover',`Type`=$ntype WHERE ID='$id'";
+        $sql2 = "UPDATE `grades` SET `Subject_Code`='$nsubject,`Teacher`='$nteacher',`Score`='$nscore',`Over`='$nover',`Type`=$ntype WHERE ID='$nid'";
         $result2 = $db->query($sql2);
         if($result2){
 			$_SESSION['status'] = "success";
