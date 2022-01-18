@@ -95,10 +95,7 @@ if(!isset($_SESSION['User'])){
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-1 col-md-1 col-sm-1">
-                        
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-10">
+                        <div class="col-lg-6 col-md-6 col-sm-6 mb-4">
                             <div class="row">
                                 <div id="timer">
                                     <div id="time">
@@ -121,8 +118,14 @@ if(!isset($_SESSION['User'])){
                                 </table>
                             </div>
                         </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1">
-                        
+                        <div class="col-lg-6 col-md-6 col-sm-6 mb-4">
+                            <?php 
+                                $img = "SELECT * FROM images";
+                                $res = $db->query($img);
+                                $gim = mysqli_fetch_assoc($res);
+                                $pomo = $gim['Image'];
+                            ?>
+                            <img src="data:image/jpeg;base64,'.base64_encode($pomo).'">
                         </div>
                     </div>
                 </div>
