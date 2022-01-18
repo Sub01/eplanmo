@@ -1,6 +1,6 @@
 <?php
-include 'config.php';
 session_start();
+
 if(isset($_POST["update"])){
     $id = $_POST['id'];
     $teacher = $_POST['teacher'];
