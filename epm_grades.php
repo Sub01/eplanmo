@@ -174,7 +174,7 @@ else{
                                             <?php endif; ?>
                                         </td>
                                         <td>
-                                        <button class="btn btn-warning btn-sm editgrades" data-bs-toggle="modal" data-bs-target="#updateGrades"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-warning btn-sm editgrade" data-bs-toggle="modal" data-bs-target="#updateGrades"><i class="fas fa-edit"></i></button>
                                         <a href="assets/php/delete_grades.php?id=<?php echo $row['ID'] ?>" onclick="return confirm('Are you sure you want to delete this teacher?')"><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></a>
                                         </td>
                                     </tr>
@@ -256,7 +256,7 @@ else{
   </div>
 </div>
     
-<div class="modal fade" id="updateGrade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateGrades" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -338,7 +338,7 @@ else{
 <script>
 		
 $(document).ready(function(){
-   $('.editteacher').on('click', function(){
+   $('.editgrade').on('click', function(){
       $('#updateGrade').modal('show');
       $tr = $(this).closest('tr');
       var data = $tr.children("td").map(function(){
