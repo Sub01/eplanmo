@@ -32,14 +32,14 @@ else{
 	}
     elseif(isset($_POST['ngrade'])){
         $nid = $_POST['nid'];
-        $teacher = $_POST['nteacher'];
-		$subject = $_POST['nsubject'];
-		$score = $_POST['nscore'];
-		$over = $_POST['nover'];
-		$type = $_POST['ntype'];
-        $sql = "UPDATE `grades` SET `Subject_Code`='$subject,`Teacher`='$teacher',`Score`='$score',`Over`='$over',`Type`=$type WHERE ID='$id'";
-        $result = $db->query($sql);
-        if($result){
+        $nteacher = $_POST['nteacher'];
+		$nsubject = $_POST['nsubject'];
+		$nscore = $_POST['nscore'];
+		$nover = $_POST['nover'];
+		$ntype = $_POST['ntype'];
+        $sql2 = "UPDATE `grades` SET `Subject_Code`='$nsubject,`Teacher`='$nteacher',`Score`='$nscore',`Over`='$nover',`Type`=$ntype WHERE ID='$id'";
+        $result2 = $db->query($sql2);
+        if($result2){
 			$_SESSION['status'] = "success";
    			$_SESSION['message'] = "Grade Successfully Updated";
    			header("Location: /epm_grades.php");
