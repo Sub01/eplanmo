@@ -111,9 +111,11 @@ if(!isset($_SESSION['User'])){
                                 <table class="table" style="table-layout:fixed !important">
                                     <tr>
                                         <td><button id="work" class="form-control btn btn-sm btn-primary">Start</button></td>
+                                        <td><button id="stop" class="form-control btn btn-sm btn-danger">Stop</button></td>
+                                    </tr>
+                                    <tr>
                                         <td><button id="short-break" class="form-control btn btn-sm btn-success">Short Break</button></td>
                                         <td><button id="long-break" class="form-control btn btn-sm btn-success">Long Break</button></td>
-                                        <td><button id="stop" class="form-control btn btn-sm btn-danger">Stop</button></td>
                                     </tr>
                                 </table>
                             </div>
