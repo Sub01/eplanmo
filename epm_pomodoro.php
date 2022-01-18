@@ -120,13 +120,13 @@ if(!isset($_SESSION['User'])){
                                 </table>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 mb-4" py-2>
+                        <div class="col-lg-6 col-md-6 col-sm-6 mb-4  py-2">
                                                         <?php 
                                 $img = "SELECT * FROM images";
                                 $res = $db->query($img);
                                 $gim = mysqli_fetch_assoc($res);
                                 $pomo = $gim['Images'];
-                                echo '<img src="data:image/jpeg;base64,'.base64_encode($pomo).'">'
+                                echo '<img src="data:image/jpeg;base64,'.base64_encode($pomo).'" style="border-radius:20px;">'
                                 ?>
                         </div>
                     </div>
