@@ -345,11 +345,11 @@ $(document).ready(function(){
       }).get();
       console.log(data);
       $('#gid').val(data[0]);
-      $('#gteacher').val(data[1]);
-      $('#gsubject').val(data[2]);
-      $('#gscore').val(data[3]);
-      $('#gover').val(data[4]);
-      $('#gtype').val(data[5]);
+      $('#gteacher').val(data[2]);
+      $('#gsubject').val(data[1]);
+      $('#gscore').val(data[4]);
+      $('#gover').val(data[5]);
+      $('#gtype').val(data[3]);
    });
 });
 $("document").ready(function(){
