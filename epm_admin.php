@@ -15,6 +15,7 @@ if(!isset($_SESSION['User'])){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	<link rel="stylesheet" href="assets/css/dashboard_main.css">
 	<link rel="stylesheet" href="assets/css/animation.css">
@@ -53,6 +54,12 @@ if(!isset($_SESSION['User'])){
           	</li>
             <li>
             	<a href="epm_subjects.php"><span class="fas fa-book mr-3"></span> Subjects</a>
+          	</li>
+            <li>
+            	<a href="epm_subjects.php"><span class="fas fa-book-open mr-3"></span> Grades</a>
+          	</li>
+            <li>
+            	<a href="epm_subjects.php"><span class="fas fa-alarm-clock mr-3"></span> Pomodoro</a>
           	</li>
         </ul>
     </nav>
