@@ -123,7 +123,7 @@ if(!isset($_SESSION['User'])){
                                 $img = "SELECT * FROM images";
                                 $res = $db->query($img);
                                 $gim = mysqli_fetch_assoc($res);
-                                $pomo = $gim['Image'];
+                                $pomo = $gim['Images'];
                             ?>
                             <img src="data:image/jpeg;base64,'.base64_encode($pomo).'">
                         </div>
