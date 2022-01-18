@@ -204,13 +204,13 @@ else{
                                                         <label>TITLE</label>
                                                         <button type="button" class="btn btn-dark btn-sm btn-start"><i class="fas fa-play"></i></button>
 												        <button type="button" class="btn btn-dark btn-sm btn-stop"><i class="fas fa-stop"></i></button>
-                                                        <input class="myInput" type="text" name="title" required="" style="width:100%" value="">
+                                                        <input class="myInput title" type="text" name="title" required="" style="width:100%">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>TYPE</label>
                                                         <button type="button" class="btn btn-dark btn-sm btn-start-2"><i class="fas fa-play"></i></button>
 												        <button type="button" class="btn btn-dark btn-sm btn-stop-2"><i class="fas fa-stop"></i></button>
-                                                        <input class="myInput" type="text" name="type" required="" style="width:100%" value="">
+                                                        <input class="myInput type" type="text" name="type" required="" style="width:100%">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>START</label>
