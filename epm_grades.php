@@ -198,8 +198,8 @@ else{
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+    <form method="post" action="">
       <div class="modal-body">
-        <form method="post" action="">
          <div class="form-group">
             <label>Teacher</label>
              <select class="form-control" name="gteacher">
@@ -248,10 +248,11 @@ else{
             </select>
       	</div>
 		<div class="form-group">
-        	<button class="form-control" type="submit" class="btn btn-primary" name="ggrade">ADD</button>
+        	<button class="form-control" type="submit" class="btn btn-primary" name="update">ADD</button>
       	</div>
-        </form>
+        
       </div>
+    </form>
     </div>
   </div>
 </div>
