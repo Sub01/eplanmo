@@ -90,6 +90,12 @@ elseif(isset($_POST['teacher'])){
             <li>
             	<a href="epm_subjects.php"><span class="fas fa-book mr-3"></span> Subjects</a>
           	</li>
+            <li>
+            	<a href="epm_grades.php"><span class="fas fa-book-open mr-3"></span> Grades</a>
+          	</li>
+            <li>
+            	<a href="epm_pomodoro.php"><span class="fas fa-stopwatch mr-3"></span> Pomodoro</a>
+          	</li>
         </ul>
     </nav>
     <div id="content" class="d-flex flex-column">
@@ -256,97 +262,6 @@ elseif(isset($_POST['teacher'])){
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row">
-	<div class="col-md-12">
-			<div class="row">
-				<div class="col-xl-12 col-md-12 mb-4">
-					<div class="card border-left-primary shadow py-2">
-						<div class="card-header">
-							<center>
-							<span style="text-align: center; color: black; font-weight: bold">MY GRADES</span>
-								</center>
-						</div>
-                    	<div class="card-body" style="flex: 0 1 auto; overflow-y: auto; max-height: calc(350px - 20px - 20px);">
-							<div class="row">
-							<?php 
-								$id = $_SESSION['User'];
-								$sql = "SELECT * FROM grades WHERE User='$id'";
-    							$result =$db->query($sql);
-								while ($row = mysqli_fetch_array($result)) {
-									$score = $row['Score'];
-									$over = $row['Over'];
-									$scode = $row['Subject_Code'];
-									$stype = $row['Type'];
-									$percentage = (($score/$over) * 100);
-									if($percentage >= 75){ ?>
-										<div class="col-xl-4 col-md-4 mb-4">
-                						<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:green">
-											<div class="card-header">
-												<center>
-													<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?> | <?php echo $stype ?></span>
-													<span style="float: right"><i class="fas fa-times"></i></span>
-												</center>
-											</div>
-                    						<div class="card-body">
-												<div class="row">
-													<div class="col-sm-12">
-														<div>
-															<span style="float: left">
-															<span class="font-weight-bold text-dark text-uppercase mb-1">SCORE</span><br>
-															<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
-															</span>
-															
-															<span style="float: right">
-															<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20"><?php echo $percentage ?>% </span><br>
-															<span>PASS</span>
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-                  						</div>
-									</div>
-								<?php }
-								else{ ?>
-									<div class="col-xl-4 col-md-4 mb-4">
-                						<div class="card border-top-primary shadow" style="border-left-style: solid; border-top-width: thick; border-top-color:red">
-											<div class="card-header">
-												<center>
-													<span class="font-weight-bold text-dark text-uppercase mb-1"><?php echo $scode ?> | <?php echo $stype ?></span>
-													<span style="float: right"><i class="fas fa-times"></i></span>
-												</center>
-											</div>
-                    						<div class="card-body">
-												<div class="row">
-													<div class="col-sm-12">
-														<div>
-															<span style="float: left">
-															<span class="font-weight-bold text-dark text-uppercase mb-1">SCORE</span><br>
-															<span class="text-gray text-uppercase mb-1"><?php echo $score ?>/<?php echo $over ?></span>
-															</span>
-															
-															<span style="float: right">
-															<span class="font-weight-bold text-dark text-uppercase mb-1" style="font-size: 20"><?php echo $percentage ?>% </span><br>
-															<span>FAILED</span>
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-                  						</div>
-									</div>
-								<?php 
-									}
-								}
-								?>
-							<br>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>	
 	</div>
 </div>	
 

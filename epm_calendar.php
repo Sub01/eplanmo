@@ -134,6 +134,12 @@ else{
             <li>
             	<a href="epm_subjects.php"><span class="fas fa-book mr-3"></span> Subjects</a>
           	</li>
+            <li>
+            	<a href="epm_grades.php"><span class="fas fa-book-open mr-3"></span> Grades</a>
+          	</li>
+            <li>
+            	<a href="epm_pomodoro.php"><span class="fas fa-stopwatch mr-3"></span> Pomodoro</a>
+          	</li>
         </ul>
     </nav>
     <div id="content" class="d-flex flex-column">

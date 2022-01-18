@@ -39,7 +39,7 @@ if(!isset($_SESSION['User'])){
 			E-PLAN MO
 	  	</div>
         <ul class="list-unstyled components mb-5">
-        	<li class="active">
+        	<li>
             	<a href="epm_admin.php"><span class="fas fa-home mr-3"></span> Dashboard</a>
           	</li>
           	<li>
@@ -53,6 +53,12 @@ if(!isset($_SESSION['User'])){
           	</li>
             <li>
             	<a href="epm_subjects.php"><span class="fas fa-book mr-3"></span> Subjects</a>
+          	</li>
+            <li>
+            	<a href="epm_grades.php"><span class="fas fa-book-open mr-3"></span> Grades</a>
+          	</li>
+            <li class="active">
+            	<a href="epm_pomodoro.php"><span class="fas fa-stopwatch mr-3"></span> Pomodoro</a>
           	</li>
         </ul>
     </nav>

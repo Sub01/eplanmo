@@ -67,12 +67,18 @@ else{
           	<li>
             	<a href="epm_agenda.php"><span class="fas fa-calendar-check mr-3"></span> Agenda</a>
           	</li>
-            <li class="active">
+            <li>
             	<a href="epm_teachers.php"><span class="fas fa-chalkboard-teacher mr-3"></span> Teachers</a>
           	</li>
             <li>
             	<a href="epm_subjects.php"><span class="fas fa-book mr-3"></span> Subjects</a>
-          	</li>	
+          	</li>
+            <li class="active">
+            	<a href="epm_grades.php"><span class="fas fa-book-open mr-3"></span> Grades</a>
+          	</li>
+            <li>
+            	<a href="epm_pomodoro.php"><span class="fas fa-stopwatch mr-3"></span> Pomodoro</a>
+          	</li>
         </ul>
     </nav>
     <div id="content" class="d-flex flex-column">
