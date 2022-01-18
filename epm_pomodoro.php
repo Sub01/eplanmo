@@ -126,7 +126,7 @@ if(!isset($_SESSION['User'])){
                                 $res = $db->query($img);
                                 $gim = mysqli_fetch_assoc($res);
                                 $pomo = $gim['Images'];
-                                echo '<img src="data:image/jpeg;base64,'.base64_encode($pomo).'" style="border-radius:20px;">'
+                                echo '<img src="data:image/jpeg;base64,'.base64_encode($pomo).'" style="border-radius:20px; width:100%;height:auto">'
                                 ?>
                         </div>
                     </div>
