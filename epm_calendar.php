@@ -249,6 +249,9 @@ else{
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
 <!--===============================================================================================-->
     <script src="assets/js/dashboard_main.js"></script>
+    <script src="assets/js/calendar_voice.js"></script>
+    <script src="assets/js/calendar_voice2.js"></script>
+        
 <!--===============================================================================================-->
 <script>
 $("document").ready(function(){
@@ -256,10 +259,6 @@ $("document").ready(function(){
     	$("div.alert").remove();
     }, <?php echo $gensetmodclose ?> );
 });
-
-$('#myTab a[href="#events"]').tab('show');
-$('#myTab a[href="#teachers"]').tab('show');
-$('#myTab a[href="#subjects"]').tab('show');
 </script>
   </body>
 </html>
