@@ -241,7 +241,7 @@ else{
             </select>
       	</div>
 		<div class="form-group">
-        	<button class="form-control" type="submit" class="btn btn-primary" name="addt">ADD</button>
+        	<button class="form-control" type="submit" class="btn btn-primary" name="ggrade">ADD</button>
       	</div>
         </form>
       </div>
