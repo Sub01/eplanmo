@@ -165,7 +165,7 @@ elseif(isset($_POST['forgot'])){
         <h2>Make your study life easier to manage</h2>
         <div class="features">
             <div class="cf">
-                <div class="feature fas fa-time">
+                <div class="feature fas fa-clock">
                     <h3>Scheduling / Timetabling</h3>
                     <p>Written from the ground up for schools, My Study Life supports week and day rotation timetables as well as traditional weekly schedules.</p>
                 </div>
