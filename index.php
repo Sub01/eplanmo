@@ -113,10 +113,58 @@ elseif(isset($_POST['forgot'])){
     <linK rel="stylesheet" href="assets/css/index.css">
 	
 </head>
-<style>
-.navbar-light .navbar-nav .nav-link .navbar-brand{
-    color: #7E9680;
-} 
+<style type="text/css">
+    .navbar-light .navbar-nav .nav-link .navbar-brand {
+        color: #7E9680;
+    }
+
+    @font-face {
+        font-family: proxima-nova;
+        src: url(https://use.typekit.com/af/06b3d8/00000000000000003b9aefb8/27/l?subset_id=2&fvd=n7&v=3) format("woff2"), url(https://use.typekit.com/af/06b3d8/00000000000000003b9aefb8/27/d?subset_id=2&fvd=n7&v=3) format("woff"), url(https://use.typekit.com/af/06b3d8/00000000000000003b9aefb8/27/a?subset_id=2&fvd=n7&v=3) format("opentype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: auto;
+    }
+
+    @font-face {
+        font-family: proxima-nova;
+        src: url(https://use.typekit.com/af/bf2380/00000000000000003b9aefe5/27/l?subset_id=2&fvd=n1&v=3) format("woff2"), url(https://use.typekit.com/af/bf2380/00000000000000003b9aefe5/27/d?subset_id=2&fvd=n1&v=3) format("woff"), url(https://use.typekit.com/af/bf2380/00000000000000003b9aefe5/27/a?subset_id=2&fvd=n1&v=3) format("opentype");
+        font-weight: 100;
+        font-style: normal;
+        font-display: auto;
+    }
+
+    @font-face {
+        font-family: proxima-nova;
+        src: url(https://use.typekit.com/af/c7956e/00000000000000003b9aefc2/27/l?subset_id=2&fvd=n6&v=3) format("woff2"), url(https://use.typekit.com/af/c7956e/00000000000000003b9aefc2/27/d?subset_id=2&fvd=n6&v=3) format("woff"), url(https://use.typekit.com/af/c7956e/00000000000000003b9aefc2/27/a?subset_id=2&fvd=n6&v=3) format("opentype");
+        font-weight: 600;
+        font-style: normal;
+        font-display: auto;
+    }
+
+    @font-face {
+        font-family: proxima-nova;
+        src: url(https://use.typekit.com/af/125f73/00000000000000003b9aefc0/27/l?subset_id=2&fvd=n4&v=3) format("woff2"), url(https://use.typekit.com/af/125f73/00000000000000003b9aefc0/27/d?subset_id=2&fvd=n4&v=3) format("woff"), url(https://use.typekit.com/af/125f73/00000000000000003b9aefc0/27/a?subset_id=2&fvd=n4&v=3) format("opentype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: auto;
+    }
+
+    @font-face {
+        font-family: proxima-nova;
+        src: url(https://use.typekit.com/af/23ba7c/00000000000000003b9aefc1/27/l?subset_id=2&fvd=i4&v=3) format("woff2"), url(https://use.typekit.com/af/23ba7c/00000000000000003b9aefc1/27/d?subset_id=2&fvd=i4&v=3) format("woff"), url(https://use.typekit.com/af/23ba7c/00000000000000003b9aefc1/27/a?subset_id=2&fvd=i4&v=3) format("opentype");
+        font-weight: 400;
+        font-style: italic;
+        font-display: auto;
+    }
+
+    @font-face {
+        font-family: proxima-nova;
+        src: url(https://use.typekit.com/af/08012d/00000000000000003b9aefbc/27/l?subset_id=2&fvd=n3&v=3) format("woff2"), url(https://use.typekit.com/af/08012d/00000000000000003b9aefbc/27/d?subset_id=2&fvd=n3&v=3) format("woff"), url(https://use.typekit.com/af/08012d/00000000000000003b9aefbc/27/a?subset_id=2&fvd=n3&v=3) format("opentype");
+        font-weight: 300;
+        font-style: normal;
+        font-display: auto;
+    }
 </style>
 	<?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
     
