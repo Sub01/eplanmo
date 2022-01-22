@@ -1124,18 +1124,22 @@ only screen and (min-resolution:192dpi) {
 }
 
 #features .feature.scheduling:before {
+    font-family: "Font Awesome 5 Free"
     content: "\e01c"
 }
 
 #features .feature.tasks:before {
+    font-family: "Font Awesome 5 Free"
     content: "\e004"
 }
 
 #features .feature.reminders:before {
+    font-family: "Font Awesome 5 Free"
     content: "\e00d"
 }
 
 #features .feature.sync:before {
+    font-family: "Font Awesome 5 Free"
     content: "\e022"
 }
 
