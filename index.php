@@ -136,8 +136,14 @@ elseif(isset($_POST['forgot'])){
 <div class="wrapper d-flex">
     <div class="container" style="margin-top: 2%;">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <h3 style="color: green">Organize your classes, task and exams &amp; never forget a lecture or assignments again. </h3>
+            <div class="col-lg-1 col-md-1 col-sm-1">
+            
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <h1 style="color: green">Organize your classes, task and exams &amp; never forget a lecture or assignments again. </h1>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1">
+            
             </div>
         </div>
 	</div>
