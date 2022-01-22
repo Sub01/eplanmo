@@ -659,7 +659,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .box .icon i:before {
-  background: white;
+  background: white ;
   /* background: linear-gradient(45deg, #E91E63 0%, #405ece 100%); */
   background-clip: border-box;
   -webkit-background-clip: text;
