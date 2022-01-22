@@ -211,8 +211,7 @@ elseif(isset($_POST['forgot'])){
 <section id="services">
       <div class="container">
         <div class="section-header">
-          <h2>Our Services</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <h2>Make your study life easier to manages</h2>
         </div>
 
         <div class="row">
