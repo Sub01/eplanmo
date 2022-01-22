@@ -137,7 +137,7 @@ elseif(isset($_POST['forgot'])){
     <div class="container" style="margin-top: 2%;">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
-                <h5 style="color: green">Organize your classes, task and exams &amp; never forget a lecture or assignments again. </h5>
+                <h3 style="color: green">Organize your classes, task and exams &amp; never forget a lecture or assignments again. </h3>
             </div>
         </div>
 	</div>
