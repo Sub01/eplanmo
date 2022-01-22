@@ -218,31 +218,31 @@ elseif(isset($_POST['forgot'])){
             <div class="box wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
               <div class="icon"><i class="fas fa-calendar"></i></div>
               <h4 class="title"><a href="">SCHEDULING</a></h4>
-              <p class="description">Written from the ground up for schools, My Study Life supports management of your time by sorting out whats need to be done earlier.</p>
+              <p class="description">Written from the ground up for schools, EPLAN Mo supports management of your time by sorting out whats need to be done earlier.</p>
             </div>
           </div>
 
           <div class="col-lg-6">
             <div class="box wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
               <div class="icon"><i class="fas fa-allergies"></i></div>
-              <h4 class="title"><a href="">Car Servicing</a></h4>
-              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
+              <h4 class="title"><a href="">TASK</a></h4>
+              <p class="description">Not just another todo list. Bespoke for schools, EPLAN MO knows you need to keep track of more than just homework.</p>
             </div>
           </div>
 
           <div class="col-lg-6">
             <div class="box wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
               <div class="icon"><i class="fas fa-car-side"></i></div>
-              <h4 class="title"><a href="">Car Checkup</a></h4>
-              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
+              <h4 class="title"><a href="">REMINDERS</a></h4>
+              <p class="description">Get notified about incomplete tasks and upcoming classes and exams with our mobile apps.</p>
             </div>
           </div>
 
           <div class="col-lg-6">
             <div class="box wow fadeInRight" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
               <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
-              <h4 class="title"><a href="">Alignment</a></h4>
-              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
+              <h4 class="title"><a href="">SYNC</a></h4>
+              <p class="description">Cross platform awesomeness. Your data seamlessly syncs across all of your devices and is accessible anytime anywhere , just connect to any active wifi or data</p>
             </div>
           </div>
 
