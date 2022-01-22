@@ -117,15 +117,16 @@ elseif(isset($_POST['forgot'])){
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#" style="color:white">Navbar</a>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
     </ul>
-    <a class="nav-link" href="#">Tour</a>
-    <a class="nav-link" href="#">Blog</a>
-    <a class="nav-link" href="#">About</a>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">SIGN IN</button>
+    <a class="nav-link" href="#" style="color:white">Tour</a>
+    <a class="nav-link" href="#" style="color:white">Blog</a>
+    <a class="nav-link" href="#" style="color:white">About</a>
+    <button class="btn btn-light my-2 my-sm-0" type="submit">SIGN IN</button>
+    </div>
 </nav>
 <div class="wrapper d-flex">
 <div class="container-fluid" style="margin-top: 5%;">
