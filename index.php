@@ -113,8 +113,8 @@ elseif(isset($_POST['forgot'])){
 	
 </head>
 <style>
-.navbar-light .navbar-nav .nav-link {
-    color: red;
+.navbar-light .navbar-nav .nav-link .navbar-brand{
+    color: white;
 } 
 </style>
 	<?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
@@ -126,15 +126,6 @@ elseif(isset($_POST['forgot'])){
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
     </ul>
     <a class="nav-link" href="#" style="color:white">Tour</a>
     <a class="nav-link" href="#" style="color:white">Blog</a>
