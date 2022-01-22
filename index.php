@@ -112,9 +112,8 @@ elseif(isset($_POST['forgot'])){
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	
 </head>
-	<?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>    
-<div class="wrapper d-flex">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar w/ text</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarText">
@@ -132,6 +131,7 @@ elseif(isset($_POST['forgot'])){
             <span class="navbar-text">Navbar text with an inline element</span>
         </div>
     </nav>
+<div class="wrapper d-flex">
 <div class="container-fluid" style="margin-top: 5%;">
 	<div class="row">
 		<div class="col-md-4">
