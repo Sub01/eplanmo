@@ -182,13 +182,8 @@ elseif(isset($_POST['forgot'])){
     <a href="epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
   </div>
 </nav>
- <?php 
-    $img = "SELECT * FROM images WHERE Name='School'";
-    $res = $db->query($img);
-    $gim = mysqli_fetch_assoc($res);
-    $pomo = $gim['Images'];
-    echo '<div class="wrapper d-flex" style="height:600px;background-size: cover; background-image:url(data:image/jpeg;base64,'.base64_encode($pomo).');">'
-?>
+ 
+<div class="wrapper d-flex" style="height:600px;background-size: cover; background-image:url(data:image/jpeg;base64,'.base64_encode($pomo).');">'
     <div class="container" style="margin-top: 2%;">
         <div class="row">
             <div class="col-lg-1 col-md-1 col-sm-1">
@@ -206,6 +201,15 @@ elseif(isset($_POST['forgot'])){
                     </div>  
                     <div class="col-lg-2 col-md-2 col-sm-2">
                     </div>
+                </div>
+                <div class="row">
+                    <?php 
+                        $img = "SELECT * FROM images WHERE Name='School'";
+                        $res = $db->query($img);
+                        $gim = mysqli_fetch_assoc($res);
+                        $pomo = $gim['Images'];
+                        echo '<img src="data:image/jpeg;base64,'.base64_encode($pomo).'" style="width:100%;height:auto">' 
+                    ?>
                 </div>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1">
@@ -227,7 +231,6 @@ elseif(isset($_POST['forgot'])){
               <p class="description">Written from the ground up for schools, EPLAN Mo supports management of your time by sorting out whats need to be done earlier.</p>
             </div>
           </div>
-
           <div class="col-lg-6">
             <div class="box wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
               <div class="icon"><i class="fas fa-tasks"></i></div>
@@ -235,7 +238,6 @@ elseif(isset($_POST['forgot'])){
               <p class="description">Not just another todo list. Bespoke for schools, EPLAN MO knows you need to keep track of more than just homework.</p>
             </div>
           </div>
-
           <div class="col-lg-6">
             <div class="box wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
               <div class="icon"><i class="fas fa-bell"></i></div>
@@ -243,7 +245,6 @@ elseif(isset($_POST['forgot'])){
               <p class="description">Get notified about incomplete tasks and upcoming classes and exams with our mobile apps.</p>
             </div>
           </div>
-
           <div class="col-lg-6">
             <div class="box wow fadeInRight" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
               <div class="icon"><i class="fas fa-sync-alt"></i></div>
