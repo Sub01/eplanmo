@@ -182,7 +182,14 @@ elseif(isset($_POST['forgot'])){
     <a href="epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
   </div>
 </nav>
-<div class="wrapper d-flex" style="height:500px;">
+ <?php 
+    $img = "SELECT * FROM images WHERE Name='School'";
+    $res = $db->query($img);
+    $gim = mysqli_fetch_assoc($res);
+    $pomo = $gim['Images'];
+    echo '<div class="wrapper d-flex" style="height:500px; background-image:url(data:image/jpeg;base64,'.base64_encode($pomo).');">'
+?>
+
     <div class="container" style="margin-top: 2%;">
         <div class="row">
             <div class="col-lg-1 col-md-1 col-sm-1">

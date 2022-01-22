@@ -122,7 +122,7 @@ if(!isset($_SESSION['User'])){
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 mb-4  py-2">
                                                         <?php 
-                                $img = "SELECT * FROM images";
+                                $img = "SELECT * FROM images WHERE Name='Pomodoro'";
                                 $res = $db->query($img);
                                 $gim = mysqli_fetch_assoc($res);
                                 $pomo = $gim['Images'];
