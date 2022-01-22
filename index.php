@@ -114,7 +114,7 @@ elseif(isset($_POST['forgot'])){
 </head>
 	<?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar w/ text</a>
+        <a class="navbar-brand" href="#">EPLAN MO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
@@ -128,7 +128,9 @@ elseif(isset($_POST['forgot'])){
                     <a class="nav-link" href="#">Pricing</a>
                 </li>
             </ul>
-            <span class="navbar-text">Navbar text with an inline element</span>
+            <span class="navbar-text">TOUR</span>
+            <span class="navbar-text">BLOG</span>
+            <span class="navbar-text">SIGN IN</span>
         </div>
     </nav>
 <div class="wrapper d-flex">
