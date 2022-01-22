@@ -224,7 +224,7 @@ elseif(isset($_POST['forgot'])){
 
           <div class="col-lg-6">
             <div class="box wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
-              <div class="icon"><i class="fas fa-allergies"></i></div>
+              <div class="icon"><i class="fas fa-tasks"></i></div>
               <h4 class="title"><a href="">TASK</a></h4>
               <p class="description">Not just another todo list. Bespoke for schools, EPLAN MO knows you need to keep track of more than just homework.</p>
             </div>
@@ -232,7 +232,7 @@ elseif(isset($_POST['forgot'])){
 
           <div class="col-lg-6">
             <div class="box wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-              <div class="icon"><i class="fas fa-car-side"></i></div>
+              <div class="icon"><i class="fas fa-bell"></i></div>
               <h4 class="title"><a href="">REMINDERS</a></h4>
               <p class="description">Get notified about incomplete tasks and upcoming classes and exams with our mobile apps.</p>
             </div>
@@ -240,7 +240,7 @@ elseif(isset($_POST['forgot'])){
 
           <div class="col-lg-6">
             <div class="box wow fadeInRight" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
-              <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
+              <div class="icon"><i class="fas fa-sync-alt"></i></div>
               <h4 class="title"><a href="">SYNC</a></h4>
               <p class="description">Cross platform awesomeness. Your data seamlessly syncs across all of your devices and is accessible anytime anywhere , just connect to any active wifi or data</p>
             </div>
