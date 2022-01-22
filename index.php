@@ -130,7 +130,7 @@ elseif(isset($_POST['forgot'])){
     <a class="nav-link" href="#" style="color:white">Tour</a>
     <a class="nav-link" href="#" style="color:white">Blog</a>
     <a class="nav-link" href="#" style="color:white">About</a>
-    <a href="epm_login".php><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
+    <a href="epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
   </div>
 </nav>
 <div class="wrapper d-flex">
