@@ -145,7 +145,9 @@ elseif(isset($_POST['forgot'])){
                 </div>
                 <div class="row">
                     <div class="container">
-                        <p style="color:gray; font-weight:bolder;font-size:14px;">It's time to say goodbye to your paper planner. EPLAN MO is everything your paper planner is and more. Schedules, Grades, Teachers, Subjects ? EPLAN MO has it covered on all your devices. Oh, and did we mention it's free ?</p>
+                        <div class="row">
+                            <p style="color:gray; font-weight:bolder;font-size:18px; text-align:justify">It's time to say goodbye to your paper planner. EPLAN MO is everything your paper planner is and more. Schedules, grades, teachers, subjects ? EPLAN MO has it covered on all your devices. Oh, and did we mention it's free ?</p>
+                        </div>
                     </div>
                 </div>
             </div>
