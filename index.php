@@ -208,7 +208,7 @@ elseif(isset($_POST['forgot'])){
         </div>
 	</div>
 </div>
-<section id="services">
+<section id="services" style="background-color:white;">
       <div class="container">
         <div class="section-header">
           <h2 style="color:green">Make your study life easier to manages</h2>
