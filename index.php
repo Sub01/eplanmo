@@ -187,7 +187,7 @@ elseif(isset($_POST['forgot'])){
     $res = $db->query($img);
     $gim = mysqli_fetch_assoc($res);
     $pomo = $gim['Images'];
-    echo '<div class="wrapper d-flex" style="height:500px;background-repeat: no-repeat; background-size: 500px; background-image:url(data:image/jpeg;base64,'.base64_encode($pomo).');">'
+    echo '<div class="wrapper d-flex" style="height:600px;background-repeat: no-repeat; background-size: cover; background-image:url(data:image/jpeg;base64,'.base64_encode($pomo).');">'
 ?>
     <div class="container" style="margin-top: 2%;">
         <div class="row">
