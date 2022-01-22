@@ -125,11 +125,7 @@ elseif(isset($_POST['forgot'])){
     <a class="nav-link" href="#">Tour</a>
     <a class="nav-link" href="#">Blog</a>
     <a class="nav-link" href="#">About</a>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">SIGN IN</button>
 </nav>
 <div class="wrapper d-flex">
 <div class="container-fluid" style="margin-top: 5%;">
