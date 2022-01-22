@@ -134,68 +134,12 @@ elseif(isset($_POST['forgot'])){
   </div>
 </nav>
 <div class="wrapper d-flex">
-<div class="container-fluid" style="margin-top: 5%;">
-	<div class="row">
-		<div class="col-md-4">
-				
-		</div>
-		<div class="col-xl-4 col-md-8 mb-4">
-        <div class="card">
-				<div class="card-header" style="background: #7A313E; height: 120px; color: #fff;">
-					<center><i class="fas fa-angle-down" style="margin-top:80px; font-size: 40px; background: #7A313E; height: 50px; width: 50px;border-radius: 60px; padding-top:10px"></i></center>
-				</div>
-            <div class="card-body">
-				    <form action="" method="POST">
-				    	<h2 class="title" style="color: #7A313E; text-align: center; padding: 20px 0 30px 0">SIGN IN</h2>
-						<div class="form-group">
-							<?php if(isset($_SESSION['message']) && $_SESSION['status'] == 'error'): ?>
-                	<div class="alert alert-danger">
-                	<?php echo $_SESSION['message']; ?>
-                	</div>
-            		<?php elseif (isset($_SESSION['message']) && $_SESSION['status'] == 'success'):?>
-                	<div class="alert alert-success">
-                	<?php echo $_SESSION['message']; ?>
-                	</div>     
-            		<?php endif; ?>
-            		<?php unset($_SESSION['message']); ?>
-            		<?php unset($_SESSION['status']); ?>
-					<?php unset($_SESSION['email']); ?>
-				    <input type="text" class="form-control" name="username" required="" placeholder="Username"  maxlength="20">
-						</div>
-
-				      	<div class="form-group">
-							<input type="password" id="password" class="form-control" name="password" placeholder="Password" required="" maxlength="20">
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<input type="checkbox" onClick="myFunction();"> Show Password
-							</div>
-						</div>
-					<div class="row">
-							<div class="col-md-12" style="padding: 20px;">
-								<a href="" data-toggle="modal" data-target="#modalforgotpass">Forgot Password</a>
-								<span style="float: right"><a href="epm_register.php">Create an account?</a></span>
-							</div>
-					</div>
-						</div>
-						<div class="row">
-				            <div class="col-lg-12" style="padding: 20px 80px 0 80px">
-				                <button type="submit" name="login" class="btn btn-block" style="background: #7A313E; border-radius: 30px"><i class="fas fa-sign-in-alt mr-2" style="color: #fff"></i><label style="color: #fff;">Sign In</label></button>
-								<?php if(isset($script)){ echo $script; } ?>
-								<?php unset($script); ?>
-								<br>
-								<br>
-				            </div>
-							<div class="col-lg 6">
-								
-							</div>
-				        </div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-3">
-		</div>
+    <div class="container" style="margin-top: 2%;">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h5 style="color: green">Organize your classes, task and exams &amp; never forget a lecture or assignments again. </h5>
+            </div>
+        </div>
 	</div>
 </div>
 							
