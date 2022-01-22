@@ -182,7 +182,7 @@ elseif(isset($_POST['forgot'])){
     <a href="epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
   </div>
 </nav>
-<div class="wrapper d-flex">
+<div class="wrapper d-flex" style="height:200px;">
     <div class="container" style="margin-top: 2%;">
         <div class="row">
             <div class="col-lg-1 col-md-1 col-sm-1">
