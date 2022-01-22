@@ -158,11 +158,33 @@ elseif(isset($_POST['forgot'])){
             </div>
         </div>
 	</div>
-    <section id="info" class="container-fluid">
-        <div class="row">
-            
+    <section id="features" class="alt ctd">
+    <div class="in">
+        <h2>Make your study life easier to manage</h2>
+        <div class="features">
+            <div class="cf">
+                <div class="feature scheduling">
+                    <h3>Scheduling / Timetabling</h3>
+                    <p>Written from the ground up for schools, My Study Life supports week and day rotation timetables as well as traditional weekly schedules.</p>
+                </div>
+                <div class="feature tasks">
+                    <h3>Tasks</h3>
+                    <p>Not just another todo list. Bespoke for schools, My Study Life knows you need to keep track of more than just homework.</p>
+                </div>
+            </div>
+            <div class="cf">
+                <div class="feature reminders">
+                    <h3>Reminders</h3>
+                    <p>Get notified about incomplete tasks and upcoming classes and exams with our mobile apps.</p>
+                </div>
+                <div class="feature sync">
+                    <h3>Sync</h3>
+                    <p>Cross platform awesomeness. Your data seamlessly syncs across all of your devices and is accessible even when you're offline.</p>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 </div>
 							
 						
