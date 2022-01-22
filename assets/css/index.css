@@ -638,7 +638,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   width: 100%;
   text-align: center;
   padding: 15px;
-  background: white;
+  background: Maroon;
   margin-bottom: 18px;
   border-radius: 50%;
   width: 70px;
@@ -660,7 +660,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .box .icon i:before {
-  background: white;
+  background: #27369f;
   /* background: linear-gradient(45deg, #E91E63 0%, #405ece 100%); */
   background-clip: border-box;
   -webkit-background-clip: text;
