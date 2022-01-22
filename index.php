@@ -213,18 +213,16 @@ elseif(isset($_POST['forgot'])){
         <div class="section-header">
           <h2>Make your study life easier to manages</h2>
         </div>
-
         <div class="row">
-
-          <div class="col-lg-4">
+          <div class="col-lg-6">
             <div class="box wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
               <div class="icon"><i class="fas fa-car-alt"></i></div>
-              <h4 class="title"><a href="">Car Wash</a></h4>
+              <h4 class="title"><a href="">SCHEDULING</a></h4>
               <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-6">
             <div class="box wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
               <div class="icon"><i class="fas fa-allergies"></i></div>
               <h4 class="title"><a href="">Car Servicing</a></h4>
@@ -232,7 +230,7 @@ elseif(isset($_POST['forgot'])){
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-6">
             <div class="box wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
               <div class="icon"><i class="fas fa-car-side"></i></div>
               <h4 class="title"><a href="">Car Checkup</a></h4>
@@ -240,7 +238,7 @@ elseif(isset($_POST['forgot'])){
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-6">
             <div class="box wow fadeInRight" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
               <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
               <h4 class="title"><a href="">Alignment</a></h4>
@@ -248,21 +246,6 @@ elseif(isset($_POST['forgot'])){
             </div>
           </div>
 
-          <div class="col-lg-4">
-            <div class="box wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-              <div class="icon"><i class="fas fa-paper-plane"></i></div>
-              <h4 class="title"><a href="">Painting</a></h4>
-              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="box wow fadeInRight" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
-              <div class="icon"><i class="fas fa-car-crash"></i></div>
-              <h4 class="title"><a href="">Modifiying</a></h4>
-              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
-            </div>
-          </div>
         </div>
 
       </div>
