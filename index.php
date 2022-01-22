@@ -140,7 +140,7 @@ elseif(isset($_POST['forgot'])){
             
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8">
-                <h2 style="color: green;text-align:center;">Organize your classes, task and exams &amp; never forget a lecture or assignments again. </h2>
+                <h2 style="color: green;text-align:center;font-weight:bolder">Organize your classes, task and exams &amp; never forget a lecture or assignments again </h2>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2">
             
