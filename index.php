@@ -120,7 +120,7 @@ elseif(isset($_POST['forgot'])){
 	<?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
     
 <nav class="navbar navbar-expand-lg" style="background-color:maroon">
-    <span class="navbar-brand" href="#">EPLAN MO</span>
+    <span class="navbar-brand" style="color:white">EPLAN MO</span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
