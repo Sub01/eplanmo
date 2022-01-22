@@ -176,7 +176,7 @@ elseif(isset($_POST['forgot'])){
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto"> 
     </ul>
-    <a class="nav-link" href="#" style="color:white">Tour</a>
+    <a class="nav-link" href="index.php" style="color:white">Home</a>
     <a class="nav-link" href="#" style="color:white">Blog</a>
     <a class="nav-link" href="#" style="color:white">About</a>
     <a href="epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
