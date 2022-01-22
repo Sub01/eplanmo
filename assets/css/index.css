@@ -651,16 +651,15 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .box .icon i {
-  /* color: #fff; */
+  color:white;
   font-size: 30px;
   transition: 0.5s;
-  /* line-height: 0; */
   margin-top: 0px;
   z-index: 99999;
 }
 
 #services .box .icon i:before {
-  background: #27369f;
+  background: white;
   /* background: linear-gradient(45deg, #E91E63 0%, #405ece 100%); */
   background-clip: border-box;
   -webkit-background-clip: text;
