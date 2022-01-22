@@ -187,9 +187,8 @@ elseif(isset($_POST['forgot'])){
     $res = $db->query($img);
     $gim = mysqli_fetch_assoc($res);
     $pomo = $gim['Images'];
-    echo '<div class="wrapper d-flex" style="height:500px; background-image:url(data:image/jpeg;base64,'.base64_encode($pomo).');">'
+    echo '<div class="wrapper d-flex" style="height:500px; background-image:url(data:image/jpeg;base64,'.base64_encode($pomo).');background-repeat: no-repeat; background-size: cover;">'
 ?>
-
     <div class="container" style="margin-top: 2%;">
         <div class="row">
             <div class="col-lg-1 col-md-1 col-sm-1">
@@ -256,88 +255,7 @@ elseif(isset($_POST['forgot'])){
         </div>
 
       </div>
-    </section>
-							
-						
-						
-				 
-
-
-<!--MODAL FOR FORGOT PASSWORD-->
-<!--===============================================================================================-->
-<div id="modalforgotpass" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title">Forgot Password</h2>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <form action="" method="POST">
-			<div class="login-content" style="padding-top: 5%;">
-				<div class="form-group">
-						<h5>Username</h5>
-						<input type="text" class="form-control" name="username2" required=""  maxlength="20">
-				</div>
-				<div class="form-group">
-						<h5>Email Address</h5>
-						<input type="email" class="form-control" name="email2" required=""  maxlength="50">
-				</div>
-			</div>
-              <button class="btn btn-primary" name="forgot" type="submit" style="width: 100%">CONFIRM</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-	<div id="modalSuccess" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-			<img src="assets/images/congrats.png" style="width: 10%;height: 10%">
-          	<h2 class="modal-title">Email Successfuly Sent</h2>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <p>Please check your email inbox for the reset password link.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-	<div id="modalEmailError" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-			<img src="assets/images/error.png" style="width: 10%;height: 10%">
-          	<h2 class="modal-title">Email has failed to send !</h2>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <p>It looks like there's and error parsing your request. Try reloading the page and check if it solved the issue.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-	
-	<div id="modalUserError" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-			<img src="assets/images/error.png" style="width: 10%;height: 10%">
-          	<h2 class="modal-title">User/Email not found!</h2>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <p>The user or email does not exist or username and email does not match the database.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-	
-	
+    </section>	
   <script>
 $("document").ready(function(){
     setTimeout(function(){
