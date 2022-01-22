@@ -144,10 +144,16 @@ elseif(isset($_POST['forgot'])){
                     <h2 style="color: green;text-align:center;font-weight:bolder">Organize your classes, task and exams &amp; never forget a lecture or assignments again </h2>
                 </div>
                 <div class="row">
-                    <div class="container">
+                    <div class="col-lg-2 col-md-2 col-sm-2">
                         <div class="row">
                             <p style="color:gray; font-weight:bolder;font-size:18px; text-align:justify">It's time to say goodbye to your paper planner. EPLAN MO is everything your paper planner is and more. Schedules, grades, teachers, subjects ? EPLAN MO has it covered on all your devices. Oh, and did we mention it's free ?</p>
                         </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8">
+                    
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
+                    
                     </div>
                 </div>
             </div>
