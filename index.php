@@ -208,33 +208,66 @@ elseif(isset($_POST['forgot'])){
         </div>
 	</div>
 </div>
-<section id="features" class="alt ctd">
-    <div class="in">
-        <h2>Make your study life easier to manage</h2>
-        <div class="features">
-            <div class="cf">
-                <div class="feature scheduling">
-                    <h3>Scheduling / Timetabling</h3>
-                    <p>Written from the ground up for schools, My Study Life supports week and day rotation timetables as well as traditional weekly schedules.</p>
-                </div>
-                <div class="feature tasks">
-                    <h3>Tasks</h3>
-                    <p>Not just another todo list. Bespoke for schools, My Study Life knows you need to keep track of more than just homework.</p>
-                </div>
-            </div>
-            <div class="cf">
-                <div class="feature reminders">
-                    <h3>Reminders</h3>
-                    <p>Get notified about incomplete tasks and upcoming classes and exams with our mobile apps.</p>
-                </div>
-                <div class="feature sync">
-                    <h3>Sync</h3>
-                    <p>Cross platform awesomeness. Your data seamlessly syncs across all of your devices and is accessible even when you're offline.</p>
-                </div>
-            </div>
+<section id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Services</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
         </div>
-    </div>
-</section>
+
+        <div class="row">
+
+          <div class="col-lg-4">
+            <div class="box wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
+              <div class="icon"><i class="fas fa-car-alt"></i></div>
+              <h4 class="title"><a href="">Car Wash</a></h4>
+              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="box wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
+              <div class="icon"><i class="fas fa-allergies"></i></div>
+              <h4 class="title"><a href="">Car Servicing</a></h4>
+              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="box wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+              <div class="icon"><i class="fas fa-car-side"></i></div>
+              <h4 class="title"><a href="">Car Checkup</a></h4>
+              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="box wow fadeInRight" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+              <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
+              <h4 class="title"><a href="">Alignment</a></h4>
+              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="box wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+              <div class="icon"><i class="fas fa-paper-plane"></i></div>
+              <h4 class="title"><a href="">Painting</a></h4>
+              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="box wow fadeInRight" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+              <div class="icon"><i class="fas fa-car-crash"></i></div>
+              <h4 class="title"><a href="">Modifiying</a></h4>
+              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
 							
 						
 						
