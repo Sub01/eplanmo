@@ -216,9 +216,9 @@ elseif(isset($_POST['forgot'])){
         <div class="row">
           <div class="col-lg-6">
             <div class="box wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
-              <div class="icon"><i class="fas fa-car-alt"></i></div>
+              <div class="icon"><i class="fas fa-calendar"></i></div>
               <h4 class="title"><a href="">SCHEDULING</a></h4>
-              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla.</p>
+              <p class="description">Written from the ground up for schools, My Study Life supports management of your time by sorting out whats need to be done earlier.</p>
             </div>
           </div>
 
