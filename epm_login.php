@@ -134,7 +134,7 @@ elseif(isset($_POST['forgot'])){
   </div>
 </nav>
 <div class="wrapper d-flex">
-<div class="container-fluid" style="margin-top: 5%;">
+<div class="container-fluid" style="margin-top: 2%;">
 	<div class="row">
 		<div class="col-md-4">
 				
