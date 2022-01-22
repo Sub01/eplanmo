@@ -158,7 +158,8 @@ elseif(isset($_POST['forgot'])){
             </div>
         </div>
 	</div>
-    <section id="features" class="container">
+</div>
+<section id="features" class="container">
     <div class="row">
         <h2>Make your study life easier to manage</h2>
         <div class="features">
@@ -185,7 +186,6 @@ elseif(isset($_POST['forgot'])){
         </div>
     </div>
 </section>
-</div>
 							
 						
 						
