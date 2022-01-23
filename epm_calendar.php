@@ -12,10 +12,11 @@ else{
 		$type = $_POST['type'];
 		$start = $_POST['start'];
 		$end = $_POST['end'];
+        
 		$datenow = date("Y-m-d H:i:s");
 	
 		if ($end > $datenow ) {
-			$sql = "INSERT INTO `events` (`Name`, `Title`, `Type`, `Start`,`End`, `Status`) VALUES('$id','$title','$type','$start','$end','Ongoing')";
+			$sql = "INSERT INTO `events` (`Name`, `Title`, `Type`, `Start`,`End`, `Status`,`Contact`,`SMS_Code`) VALUES('$id','$title','$type','$start','$end','Ongoing','$contact',`0`)";
    			$result2 = mysqli_query($db, $sql);
    			$_SESSION['status'] = "success";
    			$_SESSION['message'] = "Event Added Successfully";
@@ -23,7 +24,7 @@ else{
    			exit();
 		}
 		elseif ($end < $datenow) {
-			$sql = "INSERT INTO `events`(`ID`, `Title`, `Type`, `Start`,`End`, `Status`) VALUES('$id','$title','$type','$start','$end','Ended')";
+			$sql = "INSERT INTO `events` (`Name`, `Title`, `Type`, `Start`,`End`, `Status`,`Contact`,`SMS_Code`) VALUES('$id','$title','$type','$start','$end','Ended','$contact',`0`)";
    			$result2 = mysqli_query($db, $sql);
    			$_SESSION['status'] = "success";
    			$_SESSION['message'] = "Event Added Successfully";
