@@ -31,5 +31,5 @@ $row = mysqli_fetch_assoc($result);
 $contact = $row['Contact'];
 $message = "Hi There .$row['Name']., Your Event .$row['Title'].is .$row['Comp']. away."
 $sent = itexmo($contact,$message,'TR-CARWA618130_BQN4G','r)32u)]wx#');
-
+exit();
 ?>
