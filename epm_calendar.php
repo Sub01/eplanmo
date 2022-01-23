@@ -12,9 +12,7 @@ else{
 		$type = $_POST['type'];
 		$start = $_POST['start'];
 		$end = $_POST['end'];
-        
 		$datenow = date("Y-m-d H:i:s");
-	
 		if ($end > $datenow ) {
 			$sql = "INSERT INTO `events` (`Name`, `Title`, `Type`, `Start`,`End`, `Status`,`Contact`,`SMS_Code`) VALUES('$id','$title','$type','$start','$end','Ongoing','$contact',`0`)";
    			$result2 = mysqli_query($db, $sql);
@@ -38,29 +36,7 @@ else{
    			exit();
 		}
 	}
-	elseif(isset($_POST['ggrade'])){
-		$teacher = $_POST['gteacher'];
-		$subject = $_POST['gsubject'];
-		$score = $_POST['gscore'];
-		$over = $_POST['gover'];
-		$type = $_POST['gtype'];
-		$sql = "INSERT INTO grades (`ID`, `User`,`Subject_Code`,`Teacher`,`Score`,`Over`,`Type`) VALUES (NULL,'$id','$subject','$teacher','$score','$over','$type')";
-		$result = mysqli_query($db, $sql);
-		if($result){
-			$_SESSION['status'] = "success";
-   			$_SESSION['message'] = "Grade Added Successfully";
-   			header("Location: /epm_calendar.php");
-   			exit();
-		}
-		else{
-			$_SESSION['status'] = "error";
-   			$_SESSION['message'] = "Failed to add grade!";
-   			header("Location: /epm_calendar.php");
-   			exit();
-		}
-	}
 }
-
 ?>
 <!doctype html>
 <html lang="en">
