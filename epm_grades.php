@@ -1,4 +1,5 @@
 <?php
+include ("assets/php/update_sms.php");
 include ("assets/php/php_epm_profile.php");
 include ("assets/php/php_epm_genset.php");
 include ("assets/php/summary.php");
@@ -174,7 +175,6 @@ else{
                                             <?php endif; ?>
                                         </td>
                                         <td>
-                                        <button class="btn btn-warning btn-sm editgrade" data-bs-toggle="modal" data-bs-target="#updateGrades"><i class="fas fa-edit"></i></button>
                                         <a href="assets/php/delete_grades.php?id=<?php echo $row['ID'] ?>" onclick="return confirm('Are you sure you want to delete this teacher?')"><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></a>
                                         </td>
                                     </tr>
@@ -253,74 +253,6 @@ else{
         
       </div>
     </form>
-    </div>
-  </div>
-</div>
-    
-<div class="modal fade" id="updateGrades" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Information</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form method="post" action="assets/php/update_grades.php">
-         <div class="form-group">
-            <input type="hidden" name="id" id="nid" value="">
-            <label>Teacher</label>
-             <select class="form-control" name="teacher" id="nteacher">
-			     <option hidden> </option>
-                 <?php
-				 $name = $_SESSION['User'];
-				 $ssql = "SELECT * FROM `teachers` WHERE `User`='$name'";
-				 $sresult = $db-> query($ssql);
-				 while($srow = mysqli_fetch_array($sresult)){ ?>
-				 <option value="<?php echo $srow['T_Name']?> <?php echo $srow['T_Surname']?>"><?php echo $srow['T_Name']?> <?php echo $srow['T_Surname']?></option>
-				 <?php }?>
-             </select>
-         </div>
-         <div class="form-group">
-            <label>Subject</label>
-            <select class="form-control" name="subject" id="nsubject">
-				<option hidden> </option>
-				<?php
-				$name = $_SESSION['User'];
-				$ssql = "SELECT * FROM `subjects` WHERE `User`='$name'";
-				$sresult = $db-> query($ssql);
-				while($srow = mysqli_fetch_array($sresult)){ ?>
-				<option value="<?php echo $srow['S_Code']?>"><?php echo $srow['S_Code']?></option>
-				<?php }?>
-             </select>
-         </div>
-         <div class="form-group">
-             <div class="row">
-                <div class="col-sm-6">
-                 <label>Scores</label>
-                <input class="form-control" type="number" name="score" value="" id="nscore">
-             </div>
-             <div class="col-sm-6">
-                 <label>Items</label>
-                <input class="form-control" type="number" name="over" value="" id="nover">
-             </div>
-             </div>
-         </div>
-        <div class="form-group">
-            <label>Type</label>
-            <select name="type" class="form-control" id="ntype">
-				<option hidden> </option>
-				<option value="Written">Written</option>
-				<option value="Oral">Oral</option>
-				<option value="Practical">Practical</option>
-            </select>
-      	</div>
-		<div class="form-group">
-        	<button class="form-control" type="submit" class="btn btn-primary" name="update">UPDATE</button>
-      	</div>
-        </form>
-      </div>
     </div>
   </div>
 </div>
