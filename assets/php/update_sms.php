@@ -25,7 +25,7 @@ function itexmo($number,$message,$apicode,$passwd){
 //##########################################################################
 
 
-$sql = "SELECT *, DATEDIFF(`Start`,NOW()) AS `Comp` FROM `Events` WHERE SMS_Code='1'";
+$sql = "SELECT *, DATEDIFF(`Start`,NOW()) AS `Comp` FROM `events` WHERE SMS_Code='1'";
 $result = $db->query($sql);
 $row = mysqli_fetch_assoc($result);
 $contact = $row['Contact'];
