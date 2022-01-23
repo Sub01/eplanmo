@@ -1,5 +1,5 @@
 <?php 
-
+include ("assets/php/update_sms.php");
 $sql = "SELECT * FROM users WHERE Email='$email'";
 $result = $db-> query($sql);
 if ($result-> num_rows >0) {
