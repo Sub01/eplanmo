@@ -174,7 +174,7 @@ else{
                                             <?php endif; ?>
                                         </td>
                                         <td>
-                                        <a href="assets/php/delete_grades.php?id=<?php echo $row['ID'] ?>" onclick="return confirm('Are you sure you want to delete this teacher?')"><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></a>
+                                        <a href="assets/php/delete_grades.php?id=<?php echo $row['ID'] ?>" onclick="return confirm('Are you sure you want to delete this grade?')"><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></a>
                                         </td>
                                     </tr>
                                     <?php  } ?>

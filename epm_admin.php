@@ -1,4 +1,5 @@
 <?php
+include ("assets/php/update_sms.php");
 include ("assets/php/php_epm_profile.php");
 include ("assets/php/php_epm_genset.php");
 include ("assets/php/summary.php");
@@ -205,8 +206,8 @@ if(!isset($_SESSION['User'])){
                         				<td><?php echo $row['Start'] ?></td>
                         				<td><?php echo $row['End'] ?></td>
                         				<td>
-                        					<button type="button" class="btn btn-primary editbutton" data-bs-toggle="modal" data-bs-target="#updateEvent"><i class="fas fa-edit"></i></button>
-                            				<a name="archived" href="assets/php/event_archived.php?id=<?php echo $row['ID']?>" class="btn btn-warning" onclick="return confirm('Are you sure you want to archive this event?')"><i class="fas fa-archive"></i></a>
+                        					<button type="button" class="btn btn-sm btn-primary editbutton" data-bs-toggle="modal" data-bs-target="#updateEvent"><i class="fas fa-edit"></i></button>
+                            				<a name="archived" href="assets/php/event_archived.php?id=<?php echo $row['ID']?>" class="btn btn-sm btn-warning" onclick="return confirm('Are you sure you want to archive this event?')"><i class="fas fa-archive"></i></a>
                         				</td>
                   					</tr>
                     			<?php  } ?>
@@ -256,19 +257,19 @@ if(!isset($_SESSION['User'])){
          <div class="form-group">
             <label>Event Title</label>
             <input hidden="" name="ID" id="ID" value="">
-            <input type="text" name="title" id="title" value="">
+            <input type="text" name="title" id="title" value="" class="form-control">
          </div>
          <div class="form-group">
             <label>Event Type</label>
-            <input type="text" name="type" id="type" value="">
+            <input type="text" name="type" id="type" value="" class="form-control">
          </div>
          <div class="form-group">
             <label>Event Start</label>
-            <input type="datetime-local" name="start" id="start" value="">
+            <input type="datetime-local" name="start" id="start" value="" class="form-control">
          </div>
          <div class="form-group">
             <label>Event End</label>
-            <input type="datetime-local" name="end" id="end" value="">
+            <input type="datetime-local" name="end" id="end" value="" class="form-control">
          </div>
 		<div class="form-group">
         	<button type="submit" class="btn btn-primary">Save changes</button>
