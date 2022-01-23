@@ -3,8 +3,6 @@ include 'config.php';
 ignore_user_abort(1);
 set_time_limit(0);
 session_start();
-
-
 //##########################################################################
 // ITEXMO SEND SMS API - PHP - CURL-LESS METHOD
 // Visit www.itexmo.com/developers.php for more info about this API
@@ -31,5 +29,7 @@ $row = mysqli_fetch_assoc($result);
 $contact = $row['Contact'];
 $message = "Hi There .$row['Name']., Your Event .$row['Title'].is .$row['Comp']. away."
 $sent = itexmo($contact,$message,'TR-CARWA618130_BQN4G','r)32u)]wx#');
+sleep(24*3600); 
 exit();
+
 ?>
