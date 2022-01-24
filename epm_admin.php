@@ -226,8 +226,8 @@ if(!isset($_SESSION['User'])){
                             <div class="col-xl-12 col-md-12 mb-4">
                                 <div class="card shadow h-100 py-2">
                                     <div class="card-body">
-                                        <div id="mychart" style="width: 100%;">
-                                        </div>
+                                        <canvas id="mychart" style="width: 100%;">
+                                        </canvas>
                                     </div>
                                 </div>
                             </div>
@@ -303,7 +303,7 @@ if(!isset($_SESSION['User'])){
     <script src="assets/js/linechart.js"></script>
     <!--===============================================================================================-->
     <script src="assets/js/dashboard_main.js"></script>
-    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0-rc.1/Chart.bundle.js"></script>
     <!--===============================================================================================-->
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script>
@@ -364,36 +364,63 @@ if(!isset($_SESSION['User'])){
             });
         });
         window.onload = function() {
-            var chart = new CanvasJS.Chart("mychart", {
-                title: {
-                    text: "ACTIVITIES"
-                },
-                axisX: {
-                    title: "DATE",
-                    gridThickness: 2
-                },
-                axisY: {
-                    title: "COUNT"
-                },
-                data: [{
-                    type: "area",
-                    dataPoints: [ //array
-                        <?php 
+            var ctx = document.getElementById("mychart").getContext("2d");
+
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [
+                         <?php 
+                            $user = $_SESSION['User'];
+                            $sql2 = "SELECT CAST(`Timestamp` AS DATE) AS `Timestamp`, COUNT('ID') AS `Total`  FROM events WHERE  Name='$user' GROUP BY CAST(`Timestamp` AS DATE)";
+                            $result2 =$db->query($sql2);
+                            while ($row = mysqli_fetch_array($result2)) {?>
+                            "<?php echo $row['Timestamp'] ?>",
+                        <?php } ?>
+                    ],
+                    datasets: [{
+                        label: 'Demo',
+                        data: [
+                            <?php 
                             $user = $_SESSION['User'];
                             $sql2 = "SELECT CAST(`Timestamp` AS DATE) AS `Timestamp`, COUNT('ID') AS `Total`  FROM events WHERE  Name='$user' GROUP BY CAST(`Timestamp` AS DATE)";
                             
                             $result2 =$db->query($sql2);
-                            while ($row = mysqli_fetch_array($result2)) {?> {
-                            x: new Date(<?php echo $row['Timestamp']->format('Y-m-d'); ?>),
-                            y: <?php echo $row['Total'] ?>
-                        },
-                        <?php } ?>
-
-                    ]
-                }]
+                            while ($row = mysqli_fetch_array($result2)) {?>
+        	               { 
+                               x: <?php echo $row['Timestamp'] ?>, 
+                               y: <?php echo $row['Total'] ?>},
+			                 <?php } ?>
+                            
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            type: 'time',
+                            distribution: 'linear'
+                        }]
+                    }
+                }
             });
-
-            chart.render();
         }
 
     </script>
