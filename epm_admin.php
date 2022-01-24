@@ -385,7 +385,6 @@ else{
                     labels: [<?php echo $data1; ?> ],
                     datasets: 
                     [{
-                        label: 'Data 1',
                         data: [<?php echo $data1; ?>],
                         backgroundColor: 'transparent',
                         borderColor:'rgba(255,99,132)',
