@@ -365,7 +365,13 @@ if(!isset($_SESSION['User'])){
         });
         window.onload = function() {
             var chart = new CanvasJS.Chart("chartContainer", {
-
+                options: {
+                    scales: {
+                        xAxes: [{
+                            type: 'date'
+                        }]
+                    }
+                },
                 title: {
                     text: "ACTIVITY LOG PER DAY"
                 },
