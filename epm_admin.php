@@ -375,7 +375,7 @@ if(!isset($_SESSION['User'])){
                         data: [
                             <?php 
                             $user = $_SESSION['User'];
-                            $sql2 = "SELECT DAY(Timestamp),COUNT(*) FROM `events` WHERE Name='$user' GROUP BY DAY(Timestamp) ";
+                            $sql2 = "SELECT Timestamp,COUNT(*) FROM `events` WHERE Name='$user' GROUP BY Timestamp ";
                             $result2 =$db->query($sql2);
                             while ($row = mysqli_fetch_array($result2)) {?>
         	               { 
