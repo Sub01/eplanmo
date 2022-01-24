@@ -8,7 +8,7 @@ if(!isset($_SESSION['User'])){
 	exit();
 }
 else{
-    $user = $_SESSION['User']
+    $user = $_SESSION['User'];
     $data1 = '';
     $data2 = '';
     $sql = "SELECT  DATE_FORMAT(`Timestamp`,'%m-%d-%y') AS `Current`, COUNT(`ID`) AS `Total` FROM `events`  WHERE Name ='$user' GROUP BY `Current`";
