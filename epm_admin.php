@@ -2,6 +2,7 @@
 include ("assets/php/php_epm_profile.php");
 include ("assets/php/php_epm_genset.php");
 include ("assets/php/summary.php");
+include ("assets/php/get_data.php");
 
 if(!isset($_SESSION['User'])){
 	header("Location: index.php");
@@ -364,62 +365,33 @@ if(!isset($_SESSION['User'])){
             });
         });
         window.onload = function() {
-            var ctx = document.getElementById("mychart").getContext("2d");
-
-            var myChart = new Chart(ctx, {
+            var ctx = document.getElementById("chart").getContext('2d');
+                var myChart = new Chart(ctx, {
                 type: 'line',
-                parser: "YYYY-MM-DDTHH:mm:ss",
-                options: {
-                    scales: {
-                        xAxes: [{
-                            type: 'time',
-                        }]
-                    }
-                },
                 data: {
-                    labels: [
-                        <?php 
-                            $user = $_SESSION['User'];
-                            $sql2 = "SELECT  DATE_FORMAT(`Timestamp`,'%y-%m-%d') AS `Current`, COUNT(`ID`) AS `Total`  FROM `events` GROUP BY `Current`";
-                            $result2 =$db->query($sql2);
-                            while ($row = mysqli_fetch_array($result2)) {?> "<?php echo $row['Current'] ?>",
-                        <?php } ?>
-                    ],
-                    datasets: [{
-                        label: 'Demo',
-                        data: [
+                    labels: [<?php echo $data1; ?> ],
+                    datasets: 
+                    [{
+                        label: 'Data 1',
+                        data: [<?php echo $data1; ?>],
+                        backgroundColor: 'transparent',
+                        borderColor:'rgba(255,99,132)',
+                        borderWidth: 3
+                    },
 
-                            <?php 
-                            $user = $_SESSION['User'];
-                            $sql2 = "SELECT  DATE_FORMAT(`Timestamp`,'%y-%m-%d') AS `Current`, COUNT(`ID`) AS `Total`  FROM `events` GROUP BY `Current`";
-                            
-                            $result2 =$db->query($sql2);
-                            while ($row = mysqli_fetch_array($result2)) {?> {
-
-                                t: <?php echo $row['Current'] ?>,
-                                y: <?php echo $row['Total'] ?>
-                            },
-                            <?php } ?>
-
-                        ],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
+                    {
+                        label: 'Sales Total ',
+                        data: [<?php echo $data2; ?>, ],
+                        backgroundColor: 'transparent',
+                        borderColor:'rgba(0,255,255)',
+                        borderWidth: 3  
                     }]
+                },
+
+                options: {
+                    scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 20}]}},
+                    tooltips:{mode: 'index'},
+                    legend:{display: true, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
                 }
             });
         }
