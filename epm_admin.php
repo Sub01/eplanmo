@@ -373,20 +373,20 @@ if(!isset($_SESSION['User'])){
                     options: {
                         scales: {
                             xAxes: [{
-                                type: 'time',
+                                type: 'date',
                             }]
                         }
                     },
-                    dataPoints: [
+                    dataPoints: [{
                         <?php 
-			$user = $_SESSION['User'];
-			$sql2 = "SELECT DAY(Timestamp),COUNT(*) FROM `events` WHERE Name='$user' GROUP BY DAY(Timestamp) ";
-			$result2 =$db->query($sql2);
-            while ($row = mysqli_fetch_array($result2)) {?> {
+                        $user = $_SESSION['User'];
+			            $sql2 = "SELECT DAY(Timestamp),COUNT(*) FROM `events` WHERE Name='$user' GROUP BY DAY(Timestamp) ";
+			            $result2 =$db->query($sql2);
+                        while ($row = mysqli_fetch_array($result2)) {?> 
                             x: <?php echo $row['DAY(Timestamp)'] ?>,
                             y: <?php echo $row['COUNT(*)'] ?>
-                        },
                         <?php } ?>
+                        },
                     ]
                 }]
             });
