@@ -391,7 +391,7 @@ else{
                         label: 'Activities',
                         data: [<?php echo $data2; ?>, ],
                         backgroundColor: 'transparent',
-                        borderColor: 'rgba(0,255,255)',
+                        borderColor: 'rgba(125,0,0)',
                         borderWidth: 3
                     }
                 ]
