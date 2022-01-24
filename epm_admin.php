@@ -210,7 +210,7 @@ if(!isset($_SESSION['User'])){
                                             <td><?php echo $row['End'] ?></td>
                                             <td>
                                                 <button type="button" class="btn btn-sm btn-primary editbutton" data-bs-toggle="modal" data-bs-target="#updateEvent"><i class="fas fa-edit"></i></button>
-                                                <a name="archived" href="assets/php/event_archived.php?id=<?php echo $row['ID']?>" class="btn btn-sm btn-warning" onclick="return confirm('Are you sure you want to archive this event?')"><i class="fas fa-archive"></i></a>
+                                                <a name="archived" href="assets/php/delete_event.php?id=<?php echo $row['ID']?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this event?')"><i class="fas fa-archive"></i></a>
                                             </td>
                                         </tr>
                                         <?php  } ?>
@@ -237,7 +237,7 @@ if(!isset($_SESSION['User'])){
         <footer class="fixed-bottom" style="color:white; background-color: black;">
             <p>&copy; Gino Toralba & The rest of DS04 EST 2021</p>
         </footer>
-    </diV>
+    </div>
 
 
 

@@ -12,14 +12,14 @@ session_start();
 		if(mysqli_query($db, $sql)){
             $_SESSION['status'] = "success";
             $_SESSION['message'] = "Event Successfully Updated";
-            header("Location: /EPM/epm_admin.php");
+            header("Location: /epm_admin.php");
             exit();
         }
         else
         {
             $_SESSION['status'] = "error";
             $_SESSION['message'] = "There's an error processing your request";
-            header("Location: /EPM/epm_admin.php");
+            header("Location: /epm_admin.php");
             exit();
         }
 	}
