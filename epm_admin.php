@@ -378,7 +378,7 @@ else{
             });
         });
         window.onload = function() {
-            var ctx = document.getElementById("myhart").getContext('2d');
+            var ctx = document.getElementById("mychart").getContext('2d');
                 var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
