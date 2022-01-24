@@ -377,7 +377,7 @@ else{
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                lineColor: "maroon",
+                lineColor: "red",
                 labels: [<?php echo $data1; ?>],
                 datasets: [{
                         label: 'Date',
