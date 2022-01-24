@@ -368,6 +368,7 @@ if(!isset($_SESSION['User'])){
 
             var myChart = new Chart(ctx, {
                 type: 'line',
+                parser: "YYYY-MM-DDTHH:mm:ss",
                 options: {
                     scales: {
                         xAxes: [{
@@ -380,7 +381,6 @@ if(!isset($_SESSION['User'])){
                         <?php 
                             $user = $_SESSION['User'];
                             $sql2 = "SELECT  DATE_FORMAT(`Timestamp`,'%y-%m-%d') AS `Current`, COUNT(`ID`) AS `Total`  FROM `events` GROUP BY `Current`";
-                            
                             $result2 =$db->query($sql2);
                             while ($row = mysqli_fetch_array($result2)) {?> "<?php echo $row['Current'] ?>",
                         <?php } ?>
