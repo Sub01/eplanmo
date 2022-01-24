@@ -226,8 +226,8 @@ if(!isset($_SESSION['User'])){
                             <div class="col-xl-12 col-md-12 mb-4">
                                 <div class="card shadow h-100 py-2">
                                     <div class="card-body">
-                                        <canvas id="mychart" style="width: 100%;">
-                                        </canvas>
+                                        <div id="mychart" style="width: 100%;">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
