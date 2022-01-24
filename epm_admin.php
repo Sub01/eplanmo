@@ -372,18 +372,18 @@ if(!isset($_SESSION['User'])){
                     labels: ["2015-03-15T13:03:00Z", "2015-03-25T13:02:00Z", "2015-04-25T14:12:00Z"],
                     datasets: [{
                         label: 'Demo',
-                        data: [{
-                                t: "2015-03-15T13:03:00Z",
-                                y: 12
-                            },
-                            {
-                                t: "2015-03-25T13:02:00Z",
-                                y: 21
-                            },
-                            {
-                                t: "2015-04-25T14:12:00Z",
-                                y: 32
-                            }
+                        data: [
+                            <?php 
+                            $user = $_SESSION['User'];
+                            $sql2 = "SELECT DAY(Timestamp),COUNT(*) FROM `events` WHERE Name='$user' GROUP BY DAY(Timestamp) ";
+                            $result2 =$db->query($sql2);
+                            while ($row = mysqli_fetch_array($result2)) {?>
+        	               { 
+                               x: <?php echo $row['DAY(Timestamp)'] ?>, 
+                               y: <?php echo $row['COUNT(*)'] ?>
+                           },
+			                 <?php } ?>
+                            
                         ],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
