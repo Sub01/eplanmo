@@ -384,7 +384,7 @@ if(!isset($_SESSION['User'])){
                             
                             $result2 =$db->query($sql2);
                             while ($row = mysqli_fetch_array($result2)) {?> {
-                            x: new Date(<?php echo $row['Timestamp'] ?>),
+                            x: new Date(<?php echo $row['Timestamp']->format('Y-m-d'); ?>),
                             y: <?php echo $row['Total'] ?>
                         },
                         <?php } ?>
