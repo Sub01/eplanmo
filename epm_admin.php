@@ -369,7 +369,6 @@ if(!isset($_SESSION['User'])){
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ["2015-03-15T13:03:00Z", "2015-03-25T13:02:00Z", "2015-04-25T14:12:00Z"],
                 datasets: [{
                     label: 'Activities',
                     data: [<?php 
@@ -388,7 +387,7 @@ if(!isset($_SESSION['User'])){
             options: {
                 scales: {
                     xAxes: [{
-                        type: 'date',
+                        type: 'time',
                         distribution: 'linear'
                     }]
                 }
