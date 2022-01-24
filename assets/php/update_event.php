@@ -1,7 +1,7 @@
 <?php
 include('config.php');
 session_start();
-	if(isset($_POST['upev']){
+	if(isset($_POST['upev'])){
 		$id = $_POST['id'];
 		$title = $_POST['title'];
 		$type = $_POST['type'];
