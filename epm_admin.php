@@ -380,7 +380,7 @@ if(!isset($_SESSION['User'])){
                             while ($row = mysqli_fetch_array($result2)) {?>
         	               { 
                                
-                               x: <?php echo $row['Current'] ?>, 
+                               t: <?php echo $row['Current'] ?>, 
                                y: <?php echo $row['Total'] ?>},
 			                 <?php } ?>
                             
