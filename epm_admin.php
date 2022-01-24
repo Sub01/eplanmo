@@ -364,7 +364,8 @@ if(!isset($_SESSION['User'])){
             });
         });
         window.onload = function() {
-            var chart = new CanvasJS.Chart("chartContainer", {
+            var ctx = document.getElementById("chartContainer").getContext("2d");
+            var myChart = new Chart(ctx, {
                 title: {
                     text: "ACTIVITY LOG PER DAY"
                 },
