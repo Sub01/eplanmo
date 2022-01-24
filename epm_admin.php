@@ -259,7 +259,7 @@ if(!isset($_SESSION['User'])){
                     <form method="post" action="assets/php/update_event.php">
                         <div class="form-group">
                             <label>Event Title</label>
-                            <input hidden="" name="ID" id="ID" value="">
+                            <input hidden="" name="id" id="ID" value="">
                             <input type="text" name="title" id="title" value="" class="form-control">
                         </div>
                         <div class="form-group">
@@ -275,7 +275,7 @@ if(!isset($_SESSION['User'])){
                             <input type="datetime-local" name="end" id="end" value="" class="form-control">
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="submit" class="btn btn-primary" name="upev">Save changes</button>
                         </div>
                     </form>
                 </div>

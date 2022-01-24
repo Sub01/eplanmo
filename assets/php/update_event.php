@@ -1,8 +1,8 @@
 <?php
 include('config.php');
 session_start();
-	if(isset($_SERVER['REQUEST_METHOD']) == 'POST'){
-		$id = $_POST['ID'];
+	if(isset($_POST['upev']){
+		$id = $_POST['id'];
 		$title = $_POST['title'];
 		$type = $_POST['type'];
 		$start = $_POST['start'];
