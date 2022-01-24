@@ -226,8 +226,8 @@ if(!isset($_SESSION['User'])){
                             <div class="col-xl-12 col-md-12 mb-4">
                                 <div class="card shadow h-100 py-2">
                                     <div class="card-body">
-                                        <div id="chartContainer" style="height: 300px; width: 100%;">
-                                        </div>
+                                        <canvas id="chartContainer" style="width: 100%;">
+                                        </canvas>
                                     </div>
                                 </div>
                             </div>
@@ -303,7 +303,7 @@ if(!isset($_SESSION['User'])){
     <script src="assets/js/linechart.js"></script>
     <!--===============================================================================================-->
     <script src="assets/js/dashboard_main.js"></script>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0-rc.1/Chart.bundle.js"></script>
     <!--===============================================================================================-->
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script>
@@ -371,7 +371,7 @@ if(!isset($_SESSION['User'])){
             data: {
                 labels: ["2015-03-15T13:03:00Z", "2015-03-25T13:02:00Z", "2015-04-25T14:12:00Z"],
                 datasets: [{
-                    label: 'Demo',
+                    label: 'Activities',
                     data: [<?php 
 			                 $user = $_SESSION['User'];
 			                 $sql2 = "SELECT DAY(Timestamp),COUNT(*) FROM `events` WHERE Name='$user' GROUP BY DAY(Timestamp) ";
