@@ -410,7 +410,6 @@ else{
                             }
                         }],
                         xAxes: [{
-                            autoskip: true,
                             maxTicketsLimit: 20
                         }]
                     }
