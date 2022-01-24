@@ -144,7 +144,6 @@ if(!isset($_SESSION['User'])){
 <!--===============================================================================================-->
 <script src="assets/js/dashboard_main.js"></script>
 <!--===============================================================================================-->
-<script type="text/javascript">var subscribersSiteId='3af5d846-40b0-4f29-8b9c-cae51c36cad7';</script><script type="text/javascript" src="https://cdn.subscribers.com/assets/subscribers.js"></script>
 
 <script>
 var pomodoro = {
@@ -233,5 +232,11 @@ window.onload = function(){
   pomodoro.init();
 };
 </script>
+    
+    
+    
+    
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1739375817606067"
+     crossorigin="anonymous"></script>
   </body>
 </html>
