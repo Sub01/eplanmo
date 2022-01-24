@@ -132,6 +132,14 @@ else{
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row">
+                            <div class="col-xl-6 col-md-6 mb-4">
+                                <div class="card border-left-secondary shadow h-100 py-2">
+                                    <div class="card-header">MY ACTIVITIES</div>
+                                    <div class="card-body" id="mychart">
+                                        
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-xl-2 col-md-2 mb-4">
                                 <div class="card border-left-primary shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(0, 123, 255) ">
                                     <div class="card-body">
@@ -194,7 +202,7 @@ else{
                 </div>
 
                 <div class="row">
-                    <div class="col-xl-8 col-md-8 mb-4">
+                    <div class="col-xl-12 col-md-12 mb-4">
                         <div class="card shadow h-100 py-2">
                             <div class="card-header">
                                 <strong>ONGOING EVENTS</strong>
@@ -232,18 +240,6 @@ else{
                                         <?php  } ?>
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="row">
-                            <div class="col-xl-12 col-md-12 mb-4">
-                                <div class="card shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <canvas id="mychart" style="width: 100%;">
-                                        </canvas>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -408,5 +404,4 @@ else{
             });
     </script>
     </body>
-
 </html>
