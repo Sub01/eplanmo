@@ -175,7 +175,7 @@ else{
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4 col-md-4">
+                    <div class="col-lg-5 col-md-5 col-sm-5">
                         <div class="row">
                             <div class="col-xl-12 col-md-12 mb-4">
                                 <div class="card shadow h-100">
@@ -188,13 +188,13 @@ else{
                                                 <label>TITLE</label>
                                                 <button type="button" class="btn btn-dark btn-sm btn-start"><i class="fas fa-play"></i></button>
                                                 <button type="button" class="btn btn-dark btn-sm btn-stop"><i class="fas fa-stop"></i></button>
-                                                <input class="myInput title" type="text" name="title" required="" style="width:100%">
+                                                <input class="myInput title form-control" type="text" name="title" required="" style="width:100%">
                                             </div>
                                             <div class="form-group">
                                                 <label>TYPE</label>
                                                 <button type="button" class="btn btn-dark btn-sm btn-start-2"><i class="fas fa-play"></i></button>
                                                 <button type="button" class="btn btn-dark btn-sm btn-stop-2"><i class="fas fa-stop"></i></button>
-                                                <input class="myInput type" type="text" name="type" required="" style="width:100%">
+                                                <input class="myInput type form-control" type="text" name="type" required="" style="width:100%">
                                             </div>
                                             <div class="form-group">
                                                 <label>MODE</label>
@@ -207,11 +207,11 @@ else{
                                             </div>
                                             <div class="form-group">
                                                 <label>START</label>
-                                                <input class="myInput" type="datetime-local" name="start" required="" style="width:100%" value="">
+                                                <input class="myInput form-control" type="datetime-local" name="start" required="" style="width:100%" value="">
                                             </div>
                                             <div class="form-group">
                                                 <label>END</label>
-                                                <input class="myInput" type="datetime-local" name="end" required="" style="width:100%" value="">
+                                                <input class="myInput form-control" type="datetime-local" name="end" required="" style="width:100%" value="">
                                             </div>
                                             <div class="form-group">
                                                 <button class="btn btn-primary btn-sm" name="event" type="submit" style="width:100%">ADD EVENT</button>
@@ -222,7 +222,7 @@ else{
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-8 col-md-8 mb-4">
+                    <div class="col-xl-7 col-md-7 col-sm-7 mb-4">
                         <div class="card shadow h-100 py-2" style="max-height: 1000px;">
                             <div class="card-header" id="calendar">
 
