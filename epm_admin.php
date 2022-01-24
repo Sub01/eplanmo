@@ -366,57 +366,63 @@ if(!isset($_SESSION['User'])){
         window.onload = function() {
             var ctx = document.getElementById("mychart").getContext("2d");
 
-var myChart = new Chart(ctx, {
-  type: 'line',
-  options: {
-    scales: {
-      xAxes: [{
-        type: 'time',
-      }]
-    }
-  },
-  data: {
-    labels: ["2015-03-15T13:03:00Z", "2015-03-25T13:02:00Z", "2015-04-25T14:12:00Z"],
-    datasets: [{
-      label: 'Demo',
-      data: [
-          
-       <?php 
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                options: {
+                    scales: {
+                        xAxes: [{
+                            type: 'time',
+                        }]
+                    }
+                },
+                data: {
+                    labels: [
+                        <?php 
                             $user = $_SESSION['User'];
                             $sql2 = "SELECT  DATE_FORMAT(`Timestamp`,'%y-%m-%d') AS `Current`, COUNT(`ID`) AS `Total`  FROM `events` GROUP BY `Current`";
                             
                             $result2 =$db->query($sql2);
-                            while ($row = mysqli_fetch_array($result2)) {?>
-        	               { 
-                               
-                               t: <?php echo $row['Current'] ?>, 
-                               y: <?php echo $row['Total'] ?>
-                           },
-			                 <?php } ?>
-                            
-      ],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
-      ],
-      borderColor: [
-        'rgba(255,99,132,1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
-      ],
-      borderWidth: 1
-    }]
-  }
-});
-        }
+                            while ($row = mysqli_fetch_array($result2)) {?> "<?php echo $row['Current'] ?>",
+                        <?php } ?>
+                    ],
+                    datasets: [{
+                        label: 'Demo',
+                        data: [
 
+                            <?php 
+                            $user = $_SESSION['User'];
+                            $sql2 = "SELECT  DATE_FORMAT(`Timestamp`,'%y-%m-%d') AS `Current`, COUNT(`ID`) AS `Total`  FROM `events` GROUP BY `Current`";
+                            
+                            $result2 =$db->query($sql2);
+                            while ($row = mysqli_fetch_array($result2)) {?> {
+
+                                t: <?php echo $row['Current'] ?>,
+                                y: <?php echo $row['Total'] ?>
+                            },
+                            <?php } ?>
+
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                }
+            });
+        }
     </script>
     </body>
 
