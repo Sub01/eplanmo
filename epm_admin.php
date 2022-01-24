@@ -403,7 +403,7 @@ else{
                 options: {
                     scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 20}]}},
                     tooltips:{mode: 'index'},
-                    legend:{display: true, position: 'top', labels: {fontColor: 'rgb(0,0,0)', fontSize: 16}}
+                    legend:{display: false, position: 'top', labels: {fontColor: 'rgb(0,0,0)', fontSize: 16}}
                 }
             });
     </script>
