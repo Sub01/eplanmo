@@ -390,7 +390,7 @@ if(!isset($_SESSION['User'])){
                             $date1 = $row['Timestamp']->format('Y-m-d');?>
         	               { 
                                
-                               x: new Date(<?php echo $date1 ?>), 
+                               x: <?php echo $date1 ?>, 
                                y: <?php echo $row['Total'] ?>},
 			                 <?php } ?>
                             
