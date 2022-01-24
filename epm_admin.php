@@ -398,32 +398,17 @@ else{
 
             options: {
                 scales: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true,
-                                callback: function(value) {
-                                    if (value % 1 === 0) {
-                                        return value;
-                                    }
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            callback: function(value) {
+                                if (Number.isInteger(value)) {
+                                    return value;
                                 }
-                            }
-                        }],
-                        xAxes: [{
-                            maxTicketsLimit: 20
-                        }]
-                    }
-                },
-                tooltips: {
-                    mode: 'index'
-                },
-                legend: {
-                    display: false,
-                    position: 'top',
-                    labels: {
-                        fontColor: 'rgb(0,0,0)',
-                        fontSize: 16
-                    }
+                            },
+                            stepSize: 1
+                        }
+                    }]
                 }
             }
         });
