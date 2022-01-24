@@ -197,7 +197,7 @@ else
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <button type="submit" class="btn btn-block" name="register" style="background: #7A313E; border-radius: 30px"><i class="fas fa-sign-in-alt mr-2" style="color: #fff"></i>Sign Up</button>
+                                            <button type="submit" class="btn btn-block" name="register" style="background: #7A313E; border-radius: 30px; color:white;"><i class="fas fa-sign-in-alt mr-2" style="color: #fff"></i>Sign Up</button>
                                         </div>
                                         <div class="col-md-12" style="margin-top: 10px">
                                             <center>Already have an account? <a href="index.php"> Login here</a></center>
