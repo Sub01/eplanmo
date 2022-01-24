@@ -261,7 +261,7 @@ if(!isset($_SESSION['User'])){
                     <form method="post" action="assets/php/update_event.php">
                         <div class="form-group">
                             <label>Event Title</label>
-                            <input hidden="" name="id" id="ID" value="">
+                            <input hidden="" name="id" id="id" value="">
                             <input type="text" name="title" id="title" value="" class="form-control">
                         </div>
                         <div class="form-group">
@@ -285,7 +285,6 @@ if(!isset($_SESSION['User'])){
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
