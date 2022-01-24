@@ -87,6 +87,12 @@ else{
                 <i type="button" id="sidebarCollapse" class="fas fa-bars"></i>
                 </button>
                 <ul class="navbar-nav ml-auto">
+                    <ul class="nav navbar-nav navbar-right">
+     <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span class="glyphicon glyphicon-bell" style="font-size:18px;"></span></a>
+      <ul class="dropdown-menu"></ul>
+     </li>
+    </ul>
                     <div class="topbar-divider d-none d-sm-block"></div>
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

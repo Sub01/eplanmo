@@ -28,14 +28,14 @@ if(isset($_POST['login'])){
 			$_SESSION['email'] = $row['Email'];
 			$_SESSION['status'] = "error";
          	$_SESSION['message'] = "It appears that your account is not verified yet, please check your email and enter the OTP below to activate your account!";  
-			header("Location: epm_otp.php?email=$email");
+			header("Location: /epm_otp.php?email=$email");
          	exit();
 		 }
 		 else{
 			$_SESSION['User'] = $row['Username'];
          	$_SESSION['status'] = "success";
          	$_SESSION['message'] = "Login Sucessful";
-         	header("Location: epm_admin.php");
+         	header("Location: /epm_admin.php");
          	exit(); 
 		  }
       }
