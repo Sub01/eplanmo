@@ -374,7 +374,7 @@ if(!isset($_SESSION['User'])){
                         data: [
                             <?php 
                             $user = $_SESSION['User'];
-                            $sql2 = "SELECT  DATE_FORMAT(`Timestamp`,'%m-%d-%y') AS `Current`, COUNT(`ID`) AS `Total`  FROM `events` GROUP BY `Current`";
+                            $sql2 = "SELECT  DATE_FORMAT(`Timestamp`,'%y-%m-%d') AS `Current`, COUNT(`ID`) AS `Total`  FROM `events` GROUP BY `Current`";
                             
                             $result2 =$db->query($sql2);
                             while ($row = mysqli_fetch_array($result2)) {?>
