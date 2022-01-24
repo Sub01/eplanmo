@@ -369,7 +369,15 @@ if(!isset($_SESSION['User'])){
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ["2015-03-15T13:03:00Z", "2015-03-25T13:02:00Z", "2015-04-25T14:12:00Z"],
+                    labels: [
+                         <?php 
+                            $user = $_SESSION['User'];
+                            $sql2 = "SELECT CAST(`Timestamp` AS DATE) AS `Timestamp`, COUNT('ID') AS `Total`  FROM events WHERE  Name='$user' GROUP BY CAST(`Timestamp` AS DATE)";
+                            $result2 =$db->query($sql2);
+                            while ($row = mysqli_fetch_array($result2)) {?>
+                        "<?php echo $row['Timestamp'] ?>",
+                        <?php } ?>
+                    ],
                     datasets: [{
                         label: 'Demo',
                         data: [
