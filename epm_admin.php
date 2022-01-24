@@ -401,7 +401,12 @@ else{
                     scales: {
                         yAxes: [{
                             ticks: {
-                                stepSize: 1
+                                beginAtZero: true,
+                                callback: function(value) {
+                                    if (value % 1 === 0) {
+                                        return value;
+                                    }
+                                }
                             }
                         }],
                         xAxes: [{
