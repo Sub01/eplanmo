@@ -26,10 +26,8 @@ $result = $db->query($sql);
 while($row = mysqli_fetch_assoc($result)){
     $contact = $row['Contact'];
     $sent = itexmo($contact,"Hi",'TR-FEITA551619_PCMVG','uwxe7mqr28');
-    if($sent){
-        $sql2 = "UPDATE events SET SMS_Code=0 WHERE Contact='$contact'";
-        $result2 = $db->query($sql2);
-        exit();
-    }
+    $sql2 = "UPDATE events SET SMS_Code=0 WHERE Contact='$contact'";
+    $result2 = $db->query($sql2);
+    exit();
 }
 ?>
