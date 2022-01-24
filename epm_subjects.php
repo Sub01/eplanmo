@@ -157,7 +157,7 @@ else{
                                 <button class="btn btn-primary btn-sm" style="margin:5px;" data-toggle="modal" data-target="#addSubject"><i class="fas fa-plus"></i> ADD SUBJECT</button>
                             </div>
                             <div class="card-body" style="overflow-x:auto;">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered" id="table" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th hidden="">ID</th>
@@ -260,6 +260,11 @@ else{
     <!--===============================================================================================-->
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script>
+        $(document).ready(function() {
+            $('#table').DataTable({
+                "autoWidth": true
+            });
+        });
         $(document).ready(function() {
             $('.editsubject').on('click', function() {
                 $('#updateSubject').modal('show');
