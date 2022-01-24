@@ -387,7 +387,7 @@ if(!isset($_SESSION['User'])){
                             
                             $result2 =$db->query($sql2);
                             while ($row = mysqli_fetch_array($result2)) {
-                            $date1 = date( 'Y-m-d', strtotime($row['Timestamp']));?>
+                            $date1 = $row['Timestamp']->format('U = Y-m-d H:i:s');?>
         	               { 
                                
                                x: new Date(<?php echo $date1 ?>), 
