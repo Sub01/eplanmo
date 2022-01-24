@@ -226,7 +226,7 @@ if(!isset($_SESSION['User'])){
                             <div class="col-xl-12 col-md-12 mb-4">
                                 <div class="card shadow h-100 py-2">
                                     <div class="card-body">
-                                        <canvas id="chartContainer" style="width: 100%;">
+                                        <canvas id="mychart" style="width: 100%;">
                                         </canvas>
                                     </div>
                                 </div>
@@ -364,7 +364,7 @@ if(!isset($_SESSION['User'])){
             });
         });
         window.onload = function() {
-            var ctx = document.getElementById("examChart").getContext("2d");
+            var ctx = document.getElementById("mychart").getContext("2d");
 
             var myChart = new Chart(ctx, {
                 type: 'line',
