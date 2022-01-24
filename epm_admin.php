@@ -400,11 +400,9 @@ else{
                 scales: {
                     scales: {
                         yAxes: [{
-                            ticks: {
-                                beginAtZero: true,
-                                precision: 0,
-                                callback: function(value) {if (value % 1 === 0) {return value;}}
-                            }
+                            beginAtZero: true,
+                            precision: 0,
+                            callback: function(value) {if (value % 1 === 0) {return value;}}
                         }],
                         xAxes: [{
                             autoskip: true,
