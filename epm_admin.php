@@ -11,7 +11,7 @@ else{
     $user = $_SESSION['User'];
     $data1 = '';
     $data2 = '';
-    $sql = "SELECT `Timestamp` AS `Current`, COUNT(`ID`) AS `Total` FROM `events`  WHERE Name ='$user' GROUP BY `Current`";
+    $sql = "SELECT  DATE_FORMAT(`Timestamp`,'%m-%d-%y') AS `Current`, COUNT(`ID`) AS `Total` FROM `events`  WHERE Name ='sample' GROUP BY `Current`";
     $result = mysqli_query($db, $sql);
     while ($row = mysqli_fetch_array($result)) {
 
