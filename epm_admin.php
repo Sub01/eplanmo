@@ -192,6 +192,7 @@ if(!isset($_SESSION['User'])){
                                             <th hidden="">ID</th>
                                             <th>Event Name</th>
                                             <th>Event Type</th>
+                                            <th>Mode</th>
                                             <th>Start Date</th>
                                             <th>End Date</th>
                                             <th>Functions</th>
@@ -206,6 +207,7 @@ if(!isset($_SESSION['User'])){
                                             <td hidden=""><?php echo $row['ID'] ?></td>
                                             <td><?php echo $row['Title'] ?></td>
                                             <td><?php echo $row['Type'] ?></td>
+                                            <td><?php echo $row['Mode'] ?></td>
                                             <td><?php echo $row['Start'] ?></td>
                                             <td><?php echo $row['End'] ?></td>
                                             <td>
@@ -267,6 +269,10 @@ if(!isset($_SESSION['User'])){
                             <input type="text" name="type" id="type" value="" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label>Mode</label>
+                            <input type="text" name="mode" id="mode" value="" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label>Event Start</label>
                             <input type="datetime-local" name="start" id="start" value="" class="form-control">
                         </div>
@@ -326,7 +332,7 @@ if(!isset($_SESSION['User'])){
 
                 console.log(data);
 
-                var dateVal = new Date(data[3]);
+                var dateVal = new Date(data[4]);
                 var day = dateVal.getDate().toString().padStart(2, "0");
                 var month = (1 + dateVal.getMonth()).toString().padStart(2, "0");
                 var hour = dateVal.getHours().toString().padStart(2, "0");
@@ -335,7 +341,7 @@ if(!isset($_SESSION['User'])){
                 var ms = dateVal.getMilliseconds().toString().padStart(3, "0");
                 var inputDate = dateVal.getFullYear() + "-" + (month) + "-" + (day) + "T" + (hour) + ":" + (minute) + ":" + (sec) + "." + (ms);
 
-                var dateVal2 = new Date(data[4]);
+                var dateVal2 = new Date(data[5]);
                 var day2 = dateVal2.getDate().toString().padStart(2, "0");
                 var month2 = (1 + dateVal2.getMonth()).toString().padStart(2, "0");
                 var hour2 = dateVal2.getHours().toString().padStart(2, "0");
@@ -347,6 +353,7 @@ if(!isset($_SESSION['User'])){
                 $('#id').val(data[0]);
                 $('#title').val(data[1]);
                 $('#type').val(data[2]);
+                $('#mode').val(data[3]);
                 $('#start').val(inputDate);
                 $('#end').val(inputDate2);
 

@@ -5,10 +5,11 @@ session_start();
 		$id = $_POST['id'];
 		$title = $_POST['title'];
 		$type = $_POST['type'];
+        $mode = $_POST['mode'];
 		$start = $_POST['start'];
 		$end = $_POST['end'];
 		
-		$sql = "UPDATE `events` SET `Title` = '$title', `Type`='$type', `Start`='$start', `End`='$end' WHERE `ID`='$id'";
+		$sql = "UPDATE `events` SET `Title` = '$title', `Type`='$type',`Mode`='$mode' `Start`='$start', `End`='$end' WHERE `ID`='$id'";
 		if(mysqli_query($db, $sql)){
             $_SESSION['status'] = "success";
             $_SESSION['message'] = "Event Successfully Updated";

@@ -10,11 +10,12 @@ else{
 	if(isset($_POST["event"])) {
 		$title = $_POST['title'];
 		$type = $_POST['type'];
+        $mode = $_POST['mode'];
 		$start = $_POST['start'];
 		$end = $_POST['end'];
 		$datenow = date("Y-m-d H:i:s");
 		if ($end > $datenow ) {
-            $sql = "INSERT INTO `events`(`Name`, `Title`, `Type`, `Start`, `End`, `Status`, `Timestamp`, `Contact`, `SMS_Code`) VALUES ('$id','$title','$type','$start','$end','Ongoing','$datenow','$contact','0')";
+            $sql = "INSERT INTO `events`(`Name`, `Title`, `Type`, `Mode`,`Start`, `End`, `Status`, `Timestamp`, `Contact`, `SMS_Code`) VALUES ('$id','$title','$type','$mode','$start','$end','Ongoing','$datenow','$contact','0')";
    			$result2 = mysqli_query($db, $sql);
    			$_SESSION['status'] = "success";
    			$_SESSION['message'] = "Event Added Successfully";
@@ -22,7 +23,7 @@ else{
    			exit();
 		}
 		elseif ($end < $datenow) {
-			$sql = "INSERT INTO `events`(`Name`, `Title`, `Type`, `Start`, `End`, `Status`, `Timestamp`, `Contact`, `SMS_Code`) VALUES ('$id','$title','$type','$start','$end','Ended','$datenow','$contact','0')";
+			$sql = "INSERT INTO `events`(`Name`, `Title`, `Type`,`Mode` ,`Start`, `End`, `Status`, `Timestamp`, `Contact`, `SMS_Code`) VALUES ('$id','$title','$type','$mode','$start','$end','Ended','$datenow','$contact','0')";
    			$result2 = mysqli_query($db, $sql);
    			$_SESSION['status'] = "success";
    			$_SESSION['message'] = "Event Added Successfully";
@@ -194,6 +195,15 @@ else{
                                                 <button type="button" class="btn btn-dark btn-sm btn-start-2"><i class="fas fa-play"></i></button>
                                                 <button type="button" class="btn btn-dark btn-sm btn-stop-2"><i class="fas fa-stop"></i></button>
                                                 <input class="myInput type" type="text" name="type" required="" style="width:100%">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>MODE</label>
+                                                <select class="myInput type" name="mode" required="" style="width:100%">
+                                                    <option hidden>SELECT MODE</option>
+                                                    <option value="Not School Related">Not School Related</option>
+                                                    <option value="Asynchronous">Asynchronous</option>
+                                                    <option value="Synchronous">Synchronous</option>
+                                                </select>
                                             </div>
                                             <div class="form-group">
                                                 <label>START</label>
