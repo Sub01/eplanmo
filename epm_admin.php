@@ -395,8 +395,14 @@ else{
                     }
                 ]
             },
-
+            animation: {
+                animateScale: true
+            },
             options: {
+                responsive: true,
+                legend: {
+                    display: false
+                },
                 scales: {
                     yAxes: [{
                         ticks: {
