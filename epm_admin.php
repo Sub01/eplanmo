@@ -303,7 +303,7 @@ if(!isset($_SESSION['User'])){
     <script src="assets/js/linechart.js"></script>
     <!--===============================================================================================-->
     <script src="assets/js/dashboard_main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0-rc.1/Chart.bundle.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <!--===============================================================================================-->
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script>
