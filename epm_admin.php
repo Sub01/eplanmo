@@ -384,7 +384,14 @@ else{
                 data: {
                     labels: [<?php echo $data1; ?> ],
                     datasets: 
-                   
+                    [{
+                        label: 'Dates',
+                        data: [<?php echo $data1; ?>],
+                        backgroundColor: 'transparent',
+                        borderColor:'rgba(255,99,132)',
+                        borderWidth: 3
+                    },
+
                     {
                         label: 'Activities ',
                         data: [<?php echo $data2; ?>, ],
