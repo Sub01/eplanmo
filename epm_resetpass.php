@@ -26,7 +26,7 @@ if(isset($_GET['Code']) && isset($_GET['User']) && isset($_GET['Email'])){
 	}
 }
 else{
-	header("Location: /index.php");
+	header("Location: /epm_login.php");
 	exit();
 }
 ?>
@@ -47,6 +47,7 @@ else{
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	<link rel="stylesheet" href="assets/css/login.css">
 	<link rel="stylesheet" href="assets/css/animation.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1739375817606067" crossorigin="anonymous"></script>
 </head>
 <?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
 	<div class="container">
@@ -184,13 +185,6 @@ $('#modalReset').modal({
     keyboard: false
 })
 </script>
-
-                
-                
-                
-                
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1739375817606067"
-     crossorigin="anonymous"></script>
 <body>
 </body>
 </html>
