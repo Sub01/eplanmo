@@ -384,7 +384,7 @@ else{
                     labels: [<?php echo $data1; ?> ],
                     datasets: 
                     [{
-                        label: 'Data 1',
+                        label: 'Date',
                         data: [<?php echo $data1; ?>],
                         backgroundColor: 'transparent',
                         borderColor:'rgba(255,99,132)',
@@ -392,7 +392,7 @@ else{
                     },
 
                     {
-                        label: 'Sales Total ',
+                        label: 'Activities',
                         data: [<?php echo $data2; ?>, ],
                         backgroundColor: 'transparent',
                         borderColor:'rgba(0,255,255)',
@@ -403,7 +403,7 @@ else{
                 options: {
                     scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 20}]}},
                     tooltips:{mode: 'index'},
-                    legend:{display: true, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
+                    legend:{display: true, position: 'top', labels: {fontColor: 'rgb(0,0,0)', fontSize: 16}}
                 }
             });
     </script>
