@@ -374,16 +374,15 @@ else{
             });
         });
         var ctx = document.getElementById("mychart").getContext('2d');
-                var myChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: [<?php echo $data1; ?> ],
-                    datasets: 
-                    [{
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [<?php echo $data1; ?>],
+                datasets: [{
                         label: 'Date',
                         data: [<?php echo $data1; ?>],
                         backgroundColor: 'transparent',
-                        borderColor:'rgba(255,99,132)',
+                        borderColor: 'rgba(255,99,132)',
                         borderWidth: 3
                     },
 
@@ -391,17 +390,47 @@ else{
                         label: 'Activities',
                         data: [<?php echo $data2; ?>, ],
                         backgroundColor: 'transparent',
-                        borderColor:'rgba(0,255,255)',
-                        borderWidth: 3  
-                    }]
-                },
+                        borderColor: 'rgba(0,255,255)',
+                        borderWidth: 3
+                    }
+                ]
+            },
 
-                options: {
-                    scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 20}]}},
-                    tooltips:{mode: 'index'},
-                    legend:{display: false, position: 'top', labels: {fontColor: 'rgb(0,0,0)', fontSize: 16}}
+            options: {
+                scales: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                                callback: function(value) {
+                                    if (Number.isInteger(value)) {
+                                        return value;
+                                    }
+                                },
+                                stepSize: 1
+                            }
+                        }],
+                        xAxes: [{
+                            autoskip: true,
+                            maxTicketsLimit: 20
+                        }]
+                    }
+                },
+                tooltips: {
+                    mode: 'index'
+                },
+                legend: {
+                    display: false,
+                    position: 'top',
+                    labels: {
+                        fontColor: 'rgb(0,0,0)',
+                        fontSize: 16
+                    }
                 }
-            });
+            }
+        });
+
     </script>
     </body>
+
 </html>
