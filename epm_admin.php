@@ -377,15 +377,14 @@ else{
 
             });
         });
-        window.onload = function() {
-            var ctx = document.getElementById("mychart").getContext('2d');
+        var ctx = document.getElementById("mychart").getContext('2d');
                 var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: [<?php echo $data1; ?> ],
                     datasets: 
                     [{
-                        label: 'Dates',
+                        label: 'Data 1',
                         data: [<?php echo $data1; ?>],
                         backgroundColor: 'transparent',
                         borderColor:'rgba(255,99,132)',
@@ -393,7 +392,7 @@ else{
                     },
 
                     {
-                        label: 'Activities ',
+                        label: 'Sales Total ',
                         data: [<?php echo $data2; ?>, ],
                         backgroundColor: 'transparent',
                         borderColor:'rgba(0,255,255)',
@@ -407,7 +406,6 @@ else{
                     legend:{display: true, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
                 }
             });
-        }
     </script>
     </body>
 
