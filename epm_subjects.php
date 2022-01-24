@@ -66,7 +66,7 @@ else{
     <link rel="stylesheet" href="assets/css/chart.css">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/general.min.css">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1739375817606067" crossorigin="anonymous"></script>
 </head>
 
@@ -286,6 +286,7 @@ else{
             }, <?php echo $gensetmodclose ?>);
 
         });
+
     </script>
     </body>
 
