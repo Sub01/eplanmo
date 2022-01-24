@@ -237,6 +237,7 @@ else{
       </div>
     </div>
   </div>
+<script type="text/javascript">var subscribersSiteId='3af5d846-40b0-4f29-8b9c-cae51c36cad7';</script><script type="text/javascript" src="https://cdn.subscribers.com/assets/subscribers.js"></script>
 <script>
 const inputs = document.querySelectorAll(".input");
 function addcl(){

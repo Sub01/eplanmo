@@ -319,6 +319,7 @@ else{
 <script src="assets/js/dashboard_main.js"></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <!--===============================================================================================-->
+<script type="text/javascript">var subscribersSiteId='3af5d846-40b0-4f29-8b9c-cae51c36cad7';</script><script type="text/javascript" src="https://cdn.subscribers.com/assets/subscribers.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
      <script>
     $("document").ready(function(){
