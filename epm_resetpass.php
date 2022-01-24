@@ -1,5 +1,4 @@
 <?php
-include ("assets/php/update_sms.php");
 include("config.php");
 include ("assets/php/php_epm_genset.php");
 session_start();

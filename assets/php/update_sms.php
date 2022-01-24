@@ -1,7 +1,5 @@
 <?php
 include 'config.php';
-ignore_user_abort(1);
-set_time_limit(0);
 session_start();
 //##########################################################################
 // ITEXMO SEND SMS API - PHP - CURL-LESS METHOD
@@ -23,13 +21,17 @@ function itexmo($number,$message,$apicode,$passwd){
 //##########################################################################
 
 
-$sql = "SELECT *, DATEDIFF(`Start`,NOW()) AS `Comp` FROM `events` WHERE SMS_Code='1'";
+$sql = "SELECT *, DATEDIFF(`Start`,NOW()) as Comp FROM `events` WHERE SMS_Code='1'";
 $result = $db->query($sql);
-$row = mysqli_fetch_assoc($result);
-$contact = $row['Contact'];
-$message = "Hi There .$row['Name']., Your Event .$row['Title'].is .$row['Comp']. away."
-$sent = itexmo($contact,$message,'TR-CARWA618130_BQN4G','r)32u)]wx#');
-sleep(24*3600); 
+while($row = mysqli_fetch_assoc($result)){
+    $contact = $row['Contact'];
+    $message = "Hi There .$row['Name']., Your Event .$row['Title'].is .$row['Comp']. away."
+    $sent = itexmo($contact,$message,'TR-CARWA618130_BQN4G','r)32u)]wx#');
+    if($sent){
+        $sql2 = "UPDATE events SET SMS_Code=0 WHERE Contact='$contact'";
+        $result2 = $db->query($sql2);
+    }
+}
 exit();
 
 ?>
