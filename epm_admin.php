@@ -269,8 +269,13 @@ if(!isset($_SESSION['User'])){
                             <input type="text" name="type" id="type" value="" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Mode</label>
-                            <input type="text" name="mode" id="mode" value="" class="form-control">
+                            <label>MODE</label>
+                            <select class="form-control" name="mode" id="mode" required="" style="width:100%">
+                                <option hidden>SELECT MODE</option>
+                                <option value="Not School Related">Not School Related</option>
+                                <option value="Asynchronous">Asynchronous</option>
+                                <option value="Synchronous">Synchronous</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Event Start</label>
