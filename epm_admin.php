@@ -375,13 +375,13 @@ if(!isset($_SESSION['User'])){
                         data: [
                             <?php 
                             $user = $_SESSION['User'];
-                            $sql2 = "SELECT Timestamp,COUNT(*) FROM `events` WHERE Name='$user' GROUP BY Timestamp ";
+                            $sql2 = "SELECT CAST(`Timestamp` AS DATE) AS `Timestamp`, COUNT('ID') AS `Total`  FROM events WHERE  Name='$user' GROUP BY CAST(`Timestamp` AS DATE)";
+                            
                             $result2 =$db->query($sql2);
                             while ($row = mysqli_fetch_array($result2)) {?>
         	               { 
-                               x: <?php echo $row['DAY(Timestamp)'] ?>, 
-                               y: <?php echo $row['COUNT(*)'] ?>
-                           },
+                               x: <?php echo $row['Timestamp'] ?>, 
+                               y: <?php echo $row['Total'] ?>},
 			                 <?php } ?>
                             
                         ],
