@@ -367,12 +367,12 @@ if(!isset($_SESSION['User'])){
 
             var ctx = document.getElementById("chartContainer").getContext("2d");
 
-var myChart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: ["2015-03-15T13:03:00Z", "2015-03-25T13:02:00Z", "2015-04-25T14:12:00Z"],
-    datasets: [{
-      label: 'Demo',
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["2015-03-15T13:03:00Z", "2015-03-25T13:02:00Z", "2015-04-25T14:12:00Z"],
+                    datasets: [{
+                        label: 'Demo',
                         data: [<?php 
 			                 $user = $_SESSION['User'];
 			                 $sql2 = "SELECT Timestamp,COUNT(*) FROM `events` WHERE Name='$user' GROUP BY Timestamp";
