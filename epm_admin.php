@@ -135,8 +135,8 @@ else{
                             <div class="col-xl-6 col-md-6 mb-4">
                                 <div class="card border-left-secondary shadow h-100 py-2">
                                     <div class="card-header">MY ACTIVITIES</div>
-                                    <div class="card-body" id="mychart">
-                                        
+                                    <div class="card-body">
+                                        <canvas id="mychart"></canvas>
                                     </div>
                                 </div>
                             </div>
