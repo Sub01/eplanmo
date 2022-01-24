@@ -384,13 +384,7 @@ else{
                 data: {
                     labels: [<?php echo $data1; ?> ],
                     datasets: 
-                    [{
-                        data: [<?php echo $data1; ?>],
-                        backgroundColor: 'transparent',
-                        borderColor:'rgba(255,99,132)',
-                        borderWidth: 3
-                    },
-
+                   
                     {
                         label: 'Activities ',
                         data: [<?php echo $data2; ?>, ],
@@ -409,6 +403,7 @@ else{
                     tooltips:{
                         mode: 'index'
                     },
+                    legend:{display: true, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
                 }
             });
         }
