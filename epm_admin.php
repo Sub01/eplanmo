@@ -372,11 +372,11 @@ if(!isset($_SESSION['User'])){
                     labels: [
                         <?php 
 			                 $user = $_SESSION['User'];
-			                 $sql2 = "SELECT Timestamp, FROM `events` WHERE Name='$user'";
+			                 $sql2 = "SELECT Timestamp FROM `events` WHERE Name='$user'";
 			                 $result2 =$db->query($sql2);
                              while ($row = mysqli_fetch_array($result2)) {?> "<?php echo $row['DAY(Timestamp)'] ?>",
                         <?php } ?>
-                    ],
+                    ],  
                     datasets: [{
                         label: 'Activities',
                         data: [<?php 
