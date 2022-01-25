@@ -113,14 +113,14 @@ else{
                                 while($row = mysqli_fetch_assoc($result)){
                                 ?>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <a href=""><i class="fas fa-eye" style="color:white;"></i></a>
-                                        </div>
-                                    </div>
                                     <div>
                                         <div class="small text-gray-500"><?php echo $row['Title']?></div>
                                         <span class="font-weight-bold"><?php echo $row['Description']?></span>
+                                    </div>
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-eye" style="color:white;"></i>
+                                        </div>
                                     </div>
                                 </a>
                                 <?}?>
