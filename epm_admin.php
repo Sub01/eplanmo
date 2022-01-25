@@ -87,6 +87,7 @@ else{
                 <i type="button" id="sidebarCollapse" class="fas fa-bars"></i>
                 </button>
                 <ul class="navbar-nav ml-auto">
+
                     <!--=============================================== Dropdown - Alerts ===============================================-->
                     <!--=================================================================================================================-->
                     <li class="nav-item dropdown no-arrow mx-1">
@@ -442,8 +443,7 @@ else{
             setTimeout(function() {
                 $("div.alert").remove();
 
-            }, <?php echo $gensetmodclose ?>); ehjkeeeeeeeeeeeee               eheeheh
-
+            }, <?php echo $gensetmodclose ?>);
         });
 
 
