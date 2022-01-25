@@ -8,7 +8,7 @@ if(isset($_POST["view"]))
   $update_query = "UPDATE notif SET Status=1 WHERE Status=0 AND Name='$name'";
   mysqli_query($connect, $update_query);
  }
- $query = "SELECT * FROM notif ORDER BY ID DESC LIMIT 5";
+ $query = "SELECT * FROM notif WHERE Name='$name' ORDER BY ID DESC LIMIT 5";
  $result = mysqli_query($connect, $query);
  $output = '';
  
@@ -32,7 +32,7 @@ if(isset($_POST["view"]))
   $output .= '<li><a href="#" class="text-bold text-italic">No Notification Found</a></li>';
  }
  
- $query_1 = "SELECT * FROM notif WHERE Name='$name' Status=0";
+ $query_1 = "SELECT * FROM notif WHERE Name='$name' AND Status=0";
  $result_1 = mysqli_query($connect, $query_1);
  $count = mysqli_num_rows($result_1);
  $data = array(
