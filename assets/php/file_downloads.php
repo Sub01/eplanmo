@@ -21,6 +21,7 @@ if (isset($_GET['id'])) {
             $newCount = $row['Downloads'] + 1;
             $updateQuery = "UPDATE uploads SET Downloads='$newCount' WHERE ID='$id'";
             mysqli_query($db, $updateQuery);
+            header("Location : /epm_downloads.php")
             exit;
         }
 
