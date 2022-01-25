@@ -28,7 +28,7 @@ while($row = mysqli_fetch_assoc($result)){
     $name = $row["Name"];
     $title = $row['Title'];
     $status = "0";
-    $message = "Hi There! " .$row['Name']. ", Your Event ". $row['Title']. "is ".$row['Comp']." days away";
+    $message = "Hi There! " .$row['Name']. ", Your Event ". $row['Title']. " is ".$row['Comp']." days away";
     $sent = itexmo($contact,$message,'TR-FEITA551619_PCMVG','uwxe7mqr28');
     $sql2 = "UPDATE events SET SMS_Code=0 WHERE Contact='$contact'";
     $sql3 = "INSERT INTO `notif`(`Name`, `Title`, `Description`, `Status`) VALUES ('$name','$title','$message','$status')";
