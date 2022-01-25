@@ -91,7 +91,7 @@ else{
                     <!--=============================================== Dropdown - Alerts ===============================================-->
                     <!--=================================================================================================================-->
                     <li class="dropdown nav-item no-arrow">
-                        <a href="#" class="dropdown-toggle-notif dropdown-toggle" data-toggle="dropdown"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> 
+                        <a href="#" class=" nav-link dropdown-toggle-notif dropdown-toggle" data-toggle="dropdown"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> 
                             <i class="fas fa-bell" style="font-size:18px;"></i>
                         </a>
                         <ul class="dropdown-menu-notif dropdown-menu"></ul>
@@ -394,7 +394,7 @@ else{
 
             function load_unseen_notification(view = '') {
                 $.ajax({
-                    url: "assets/php/notif_fetch.php",
+                    url: "notif_fetch.php",
                     method: "POST",
                     data: {
                         view: view
