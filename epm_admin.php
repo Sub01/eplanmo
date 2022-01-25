@@ -114,8 +114,8 @@ else{
                                 ?>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <a href="#"><i class="fas fa-eye" style="color:white;"></i></a>
+                                        <div class="icon-circle bg-light">
+                                            <i class="fas fa-eye" style="color:white;"></i>
                                         </div>
                                     </div>
                                     <div>
