@@ -105,7 +105,7 @@ else{
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
-                                    Alerts Center
+                                    Notifications
                                 </h6>
                                 <?php 
                                 $sql = "SELECT * FROM notif WHERE Name='$user' AND Status='0' ORDER BY ID DESC";
@@ -114,8 +114,8 @@ else{
                                 ?>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
-                                        <div class="icon-circle bg-light">
-                                            <i class="fas fa-eye" style="color:white;"></i>
+                                        <div class="icon-circle bg-primary">
+                                            <a href=""><i class="fas fa-eye" style="color:white;"></i></a>
                                         </div>
                                     </div>
                                     <div>
