@@ -9,31 +9,31 @@ if(!isset($_SESSION["User"])){
 }	
 else{
     if (isset($_GET['file_id'])) {
-    $id = $_GET['file_id'];
+        $id = $_GET['file_id'];
 
-    $sql = "SELECT * FROM uploads WHERE ID='$id'";
-    $result = mysqli_query($db, $sql);
+        $sql = "SELECT * FROM uploads WHERE ID='$id'";
+        $result = mysqli_query($db, $sql);
 
-    $row = mysqli_fetch_assoc($result);
-    $filepath = '/assets/uploads/' . $row['Name'];
+        $row = mysqli_fetch_assoc($result);
+        $filepath = '/assets/uploads/' . $row['Name'];
 
-    if (file_exists($filepath)) {
-        header('Content-Description: File Transfer');
-        header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename=' . basename($filepath));
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate');
-        header('Pragma: public');
-        header('Content-Length: ' . filesize('/assets/uploads/' . $row['Name']));
-        readfile('/assets/uploads/' . $row['Name']);
+        if (file_exists($filepath)) {
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/octet-stream');
+            header('Content-Disposition: attachment; filename=' . basename($filepath));
+            header('Expires: 0');
+            header('Cache-Control: must-revalidate');
+            header('Pragma: public');
+            header('Content-Length: ' . filesize('/assets/uploads/' . $row['Name']));
+            readfile('/assets/uploads/' . $row['Name']);
         
-        $newCount = $row['Downloads'] + 1;
-        $updateQuery = "UPDATE uploads SET Downloads='$newCount'' WHERE ID='$id'";
-        mysqli_query($db, $updateQuery);
-        exit;
-    }
+            $newCount = $row['Downloads'] + 1;
+            $updateQuery = "UPDATE uploads SET Downloads='$newCount' WHERE ID='$id'";
+            mysqli_query($db, $updateQuery);
+            exit;
+        }
 
-}
+    }
 }
 
 ?>
@@ -199,7 +199,7 @@ else{
                                             <td><?php echo floor($row['Size'] / 1000) . ' KB'; ?></td>
                                             <td><?php echo $row['Downloads'] ?></td>
                                             <td>
-                                                <a href="/epm_donwloads.php?file_id=<?php echo $row['ID'] ?>"><button class="btn btn-info btn-sm"><i class="fas fa-download"></i></button></a>
+                                                <a href="/epm_downloads.php?file_id=<?php echo $row['ID'] ?>"><button class="btn btn-info btn-sm"><i class="fas fa-download"></i></button></a>
                                             </td>
                                         </tr>
                                         <?php  } ?>
