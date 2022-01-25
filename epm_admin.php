@@ -91,9 +91,9 @@ else{
                     <!--=============================================== Dropdown - Alerts ===============================================-->
                     <!--=================================================================================================================-->
                     <li class="dropdown">
-       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span class="glyphicon glyphicon-envelope" style="font-size:18px;"></span></a>
-       <ul class="dropdown-menu"></ul>
-      </li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <i class="glyphicon glyphicon-envelope" style="font-size:18px;"></i></a>
+                        <ul class="dropdown-menu"></ul>
+                    </li>
 
                     <div class="topbar-divider d-none d-sm-block"></div>
                     <li class="nav-item dropdown no-arrow">
@@ -389,10 +389,9 @@ else{
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
-
             function load_unseen_notification(view = '') {
                 $.ajax({
-                    url: "assets/php/notif_fetch.php",
+                    url: "fetch.php",
                     method: "POST",
                     data: {
                         view: view
@@ -406,19 +405,23 @@ else{
                     }
                 });
             }
-
             load_unseen_notification();
-
             $(document).on('click', '.dropdown-toggle', function() {
                 $('.count').html('');
                 load_unseen_notification('yes');
             });
-
             setInterval(function() {
                 load_unseen_notification();;
             }, 5000);
 
         });
+         $(document).on('click', '.dropdown-toggle', function(){
+            $('.count').html('');
+            load_unseen_notification('yes');
+        });
+        setInterval(function() {
+            load_unseen_notification();;
+        }, 5000);
         $(document).ready(function() {
             $('#table1').DataTable({
                 "autoWidth": true
