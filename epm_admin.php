@@ -389,6 +389,7 @@ else{
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
+
             function load_unseen_notification(view = '') {
                 $.ajax({
                     url: "fetch.php",
@@ -405,23 +406,18 @@ else{
                     }
                 });
             }
+
             load_unseen_notification();
             $(document).on('click', '.dropdown-toggle', function() {
                 $('.count').html('');
                 load_unseen_notification('yes');
             });
+
             setInterval(function() {
                 load_unseen_notification();;
             }, 5000);
 
         });
-         $(document).on('click', '.dropdown-toggle', function(){
-            $('.count').html('');
-            load_unseen_notification('yes');
-        });
-        setInterval(function() {
-            load_unseen_notification();;
-        }, 5000);
         $(document).ready(function() {
             $('#table1').DataTable({
                 "autoWidth": true
