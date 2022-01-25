@@ -116,12 +116,12 @@ else{
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
                                         <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
+                                            <i class="fas fa-trash text-red"></i>
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="small text-gray-500"><?php echo $rowp['Title']?></div>
-                                        <span class="font-weight-bold"><?php echo $rowp['Description']?></span>
+                                        <div class="small text-gray-500"><?php echo $row['Title']?></div>
+                                        <span class="font-weight-bold"><?php echo $row['Description']?></span>
                                     </div>
                                 </a>
                                 <?}?>
