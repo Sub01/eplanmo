@@ -4,7 +4,7 @@ if (isset($_POST['save'])) {
     
     $filename = $_FILES['myfile']['name'];
 
-    $destination = 'assets/uploads' . $filename;
+    $destination = 'assets/uploads/' . $filename;
 
     $extension = pathinfo($filename, PATHINFO_EXTENSION);
 
