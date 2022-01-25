@@ -392,7 +392,7 @@ else{
 
             function load_unseen_notification(view = '') {
                 $.ajax({
-                    url: "fetch.php",
+                    url: "assets/php/notif_fetch.php",
                     method: "POST",
                     data: {
                         view: view
