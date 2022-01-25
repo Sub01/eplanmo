@@ -14,7 +14,7 @@ else{
     $sql = "SELECT * FROM uploads WHERE ID='$id'";
     $result = mysqli_query($db, $sql);
 
-    $file = mysqli_fetch_assoc($result);
+    $row = mysqli_fetch_assoc($result);
     $filepath = '/assets/uploads/' . $row['Name'];
 
     if (file_exists($filepath)) {
