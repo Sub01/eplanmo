@@ -13,11 +13,9 @@ if (isset($_POST['save'])) {
 
     if (!in_array($extension, ['apk'])) {
         echo "You file extension must be .apk";
-    } elseif ($_FILES['myfile']['size'] > 10000000) { // file shouldn't be larger than 1Megabyte
-        echo "File too large!";
     } else {
         if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO uploads (Name, Size, Downloads) VALUES ('$filename', $size, 0)";
+            $sql = "INSERT INTO uploads (Name, Size, Downloads) VALUES ('$filename', '$size', '0')";
             if (mysqli_query($db, $sql)) {
                 echo "File uploaded successfully";
             }
