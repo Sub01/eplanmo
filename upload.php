@@ -11,7 +11,7 @@ if (isset($_POST['save'])) {
     $file = $_FILES['myfile']['tmp_name'];
     $size = $_FILES['myfile']['size'];
 
-    if (!in_array($extension, ['apk'])) {
+    if (!in_array($extension, ['.apk'])) {
         echo "You file extension must be .apk";
     } else {
         if (move_uploaded_file($file, $destination)) {
