@@ -98,7 +98,7 @@ else{
                                 $sql = "SELECT COUNT(ID) as Counter FROM notif WHERE Name='$user' AND Status='0'";
                                 $result = $db->query($sql);
                                 $row = mysqli_fetch_assoc($result);
-                                $ounter = $row['Counter'];
+                                $counter = $row['Counter'];
                                 ?>
                                 <span class="badge badge-danger badge-counter"><?php echo $counter ?></span>
                             </a>
