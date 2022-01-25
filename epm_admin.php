@@ -108,15 +108,14 @@ else{
                                     Alerts Center
                                 </h6>
                                 <?php 
-                                $sql = "SELECT * FROM notif WHERE Name='$user' AND Status='0'";
+                                $sql = "SELECT * FROM notif WHERE Name='$user' AND Status='0' ORDER BY ID DESC";
                                 $result = $db->query($sql);
                                 while($row = mysqli_fetch_assoc($result)){
                                 ?>
-                                
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
-                                        <div class="icon-circle bg-light">
-                                            <i class="fas fa-trash" style="color:red;"></i>
+                                        <div class="icon-circle bg-primary">
+                                            <a href="#"><i class="fas fa-eye" style="color:white;"></i></a>
                                         </div>
                                     </div>
                                     <div>
