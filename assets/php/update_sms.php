@@ -34,7 +34,7 @@ while($row = mysqli_fetch_assoc($result)){
     $sql2 = "UPDATE events SET SMS_Code=0 WHERE Contact='$contact'";
     $result2 = $db->query($sql2);
     $sql3 = "INSERT INTO notif (`Name`, `Title`,`Description`,`Status`)VALUES('$name','$title','$comp','$status')";
-    $result3 = $db-query(sql3);
+    $result3 = $db->query(sql3);
     exit();
 }
 ?>
