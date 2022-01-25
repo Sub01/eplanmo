@@ -182,7 +182,7 @@ else{
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="row">
-                            <div class="col-xl-6 col-md-6 mb-4">
+                            <div class="col-xl-12 col-md-12 col-sm-12 mb-4">
                                 <div class="card border-left-secondary shadow h-100 py-2">
                                     <div class="card-header">MY ACTIVITIES</div>
                                     <div class="card-body">
@@ -194,7 +194,7 @@ else{
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="row">
-                            <div class="col-xl-2 col-md-2 mb-4">
+                            <div class="col-xl-4 col-md-4 col-sm-4 mb-4">
                                 <div class="card border-left-primary shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(0, 123, 255) ">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -213,7 +213,7 @@ else{
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-2 col-md-2 mb-4">
+                             <div class="col-xl-4 col-md-4 col-sm-4 mb-4">
                                 <div class="card border-left-secondary shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(108, 117, 125)">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -232,7 +232,7 @@ else{
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-2 col-md-2 mb-4">
+                             <div class="col-xl-4 col-md-4 col-sm-4 mb-4">
                                 <div class="card border-left-danger shadow h-100 py-2" style="border-left-style: solid; border-left-width: thick; border-left-color:rgb(220, 53, 69)">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
