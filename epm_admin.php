@@ -91,8 +91,10 @@ else{
                     <!--=============================================== Dropdown - Alerts ===============================================-->
                     <!--=================================================================================================================-->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <i class="glyphicon glyphicon-envelope" style="font-size:18px;"></i></a>
-                        <ul class="dropdown-menu"></ul>
+                        <a href="#" class="dropdown-toggle-notif dropdown-toggle" data-toggle="dropdown"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> 
+                            <i class="fas fa-bell" style="font-size:18px;"></i>
+                        </a>
+                        <ul class="dropdown-menu-notif dropdown-menu"></ul>
                     </li>
 
                     <div class="topbar-divider d-none d-sm-block"></div>
@@ -399,7 +401,7 @@ else{
                     },
                     dataType: "json",
                     success: function(data) {
-                        $('.dropdown-menu').html(data.notification);
+                        $('.dropdown-menu-notif').html(data.notification);
                         if (data.unseen_notification > 0) {
                             $('.count').html(data.unseen_notification);
                         }
@@ -408,7 +410,7 @@ else{
             }
 
             load_unseen_notification();
-            $(document).on('click', '.dropdown-toggle', function() {
+            $(document).on('click', '.dropdown-toggle-notif', function() {
                 $('.count').html('');
                 load_unseen_notification('yes');
             });
