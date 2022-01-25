@@ -391,36 +391,6 @@ else{
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
-
-            function load_unseen_notification(view = '') {
-                $.ajax({
-                    url: "notif_fetch.php",
-                    method: "POST",
-                    data: {
-                        view: view
-                    },
-                    dataType: "json",
-                    success: function(data) {
-                        $('.dropdown-menu-notif').html(data.notification);
-                        if (data.unseen_notification > 0) {
-                            $('.count').html(data.unseen_notification);
-                        }
-                    }
-                });
-            }
-
-            load_unseen_notification();
-            $(document).on('click', '.dropdown-toggle-notif', function() {
-                $('.count').html('');
-                load_unseen_notification('yes');
-            });
-
-            setInterval(function() {
-                load_unseen_notification();;
-            }, 5000);
-
-        });
-        $(document).ready(function() {
             $('#table1').DataTable({
                 "autoWidth": true
             });
@@ -524,5 +494,60 @@ else{
 
     </script>
     </body>
-
 </html>
+<script>
+$(document).ready(function(){
+ 
+ function load_unseen_notification(view = '')
+ {
+  $.ajax({
+   url:"fetch.php",
+   method:"POST",
+   data:{view:view},
+   dataType:"json",
+   success:function(data)
+   {
+    $('.dropdown-menu').html(data.notification);
+    if(data.unseen_notification > 0)
+    {
+     $('.count').html(data.unseen_notification);
+    }
+   }
+  });
+ }
+ 
+ load_unseen_notification();
+ 
+ $('#comment_form').on('submit', function(event){
+  event.preventDefault();
+  if($('#subject').val() != '' && $('#comment').val() != '')
+  {
+   var form_data = $(this).serialize();
+   $.ajax({
+    url:"insert.php",
+    method:"POST",
+    data:form_data,
+    success:function(data)
+    {
+     $('#comment_form')[0].reset();
+     load_unseen_notification();
+    }
+   });
+  }
+  else
+  {
+   alert("Both Fields are Required");
+  }
+ });
+ 
+ $(document).on('click', '.dropdown-toggle', function(){
+  $('.count').html('');
+  load_unseen_notification('yes');
+ });
+ 
+ setInterval(function(){ 
+  load_unseen_notification();; 
+ }, 5000);
+ 
+});
+</script>
