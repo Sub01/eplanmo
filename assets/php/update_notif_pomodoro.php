@@ -7,11 +7,11 @@ if(isset($_GET['id'])){
     $sql = "UPDATE `notif` SET `Status`='1' WHERE ID='$id'";
     $result = $db->query($sql); 
     if($result){
-        header("Location: /epm_admin.php");
+        header("Location: /epm_pomodoro.php");
    	    exit();
     }
     else{
-        header("Location: /epm_admin.php");
+        header("Location: /epm_pomodoro.php");
    	    exit();
     }
 }

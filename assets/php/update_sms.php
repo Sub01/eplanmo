@@ -25,10 +25,15 @@ $sql = "SELECT *, DATEDIFF(`Start`,NOW()) as Comp FROM `events` WHERE SMS_Code='
 $result = $db->query($sql);
 while($row = mysqli_fetch_assoc($result)){
     $contact = $row['Contact'];
-    $message = "Hi There! " .$row['Name']. ", Your Event ". $row['Title']. "is ".$row['Comp']." days away";
+    $name = $row['Name'];
+    $title = $row["Title"];
+    $comp = $row["Comp"]." days away."
+    $message = "Hi There! " .$name. ", Your Event ". $title. "is ".$comp." days away.";
     $sent = itexmo($contact,$message,'TR-FEITA551619_PCMVG','uwxe7mqr28');
     $sql2 = "UPDATE events SET SMS_Code=0 WHERE Contact='$contact'";
     $result2 = $db->query($sql2);
+    $sql3 = "INSERT INTO notif VALUES (NULL,'$name','$title','$comp','0')";
+    $result3 = $db-query(sql3);
     exit();
 }
 ?>

@@ -90,6 +90,42 @@ else{
                 <i type="button" id="sidebarCollapse" class="fas fa-bars"></i>
                 </button>
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <?php 
+                                $sql = "SELECT COUNT(ID) as Counter FROM notif WHERE Name='$user' AND Status='0'";
+                                $result = $db->query($sql);
+                                $row = mysqli_fetch_assoc($result);
+                                $counter = $row['Counter'];
+                                ?>
+                                <span class="badge badge-danger badge-counter"><?php echo $counter ?></span>
+                            </a>
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Notifications
+                                </h6>
+                                <?php 
+                                $sql2 = "SELECT * FROM notif WHERE Name='$user' AND Status='0' ORDER BY ID DESC";
+                                $result2 = $db->query($sql2);
+                                while($row2 = mysqli_fetch_assoc($result2)){
+                                ?>
+                                <a class="dropdown-item d-flex align-items-center" href="assets/php/update_notif_grades.php?id=<?php echo $row2['ID']?>">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-eye" style="color:white;"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500"><?php echo $row2['Title']?></div>
+                                        <span class="font-weight-bold"><?php echo $row2['Description']?></span>
+                                    </div>
+                                </a>
+                                <?}?>
+                            </div>
+                        </li>
                     <div class="topbar-divider d-none d-sm-block"></div>
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
