@@ -108,15 +108,15 @@ else{
                                     Alerts Center
                                 </h6>
                                 <?php 
-                                $sql = "SELECT COUNT(ID) as Counter FROM notif WHERE Name='$user' AND Status='0'";
+                                $sql = "SELECT * FROM notif WHERE Name='$user' AND Status='0'";
                                 $result = $db->query($sql);
                                 while($row = mysqli_fetch_assoc($result)){
                                 ?>
                                 
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-trash text-red"></i>
+                                        <div class="icon-circle bg-light">
+                                            <i class="fas fa-trash" style="color:red;"></i>
                                         </div>
                                     </div>
                                     <div>
