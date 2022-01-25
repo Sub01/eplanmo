@@ -28,7 +28,7 @@ else{
         readfile('/assets/uploads/' . $row['Name']);
         
         $newCount = $row['Downloads'] + 1;
-        $updateQuery = "UPDATE uploads SET Downloads=$newCount WHERE ID='$id'";
+        $updateQuery = "UPDATE uploads SET Downloads='$newCount'' WHERE ID='$id'";
         mysqli_query($db, $updateQuery);
         exit;
     }
