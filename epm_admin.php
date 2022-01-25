@@ -90,7 +90,7 @@ else{
 
                     <!--=============================================== Dropdown - Alerts ===============================================-->
                     <!--=================================================================================================================-->
-                    <li class="dropdown">
+                    <li class="dropdown nav-item no-arrow">
                         <a href="#" class="dropdown-toggle-notif dropdown-toggle" data-toggle="dropdown"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> 
                             <i class="fas fa-bell" style="font-size:18px;"></i>
                         </a>
