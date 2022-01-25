@@ -1,7 +1,9 @@
 <?php
+include("config.php");
+session_start();
 if(isset($_POST["view"]))
 {
-    include("config.php");
+    
     if($_POST["view"] != '')
     {
         $name = $_SESSION['User'];
