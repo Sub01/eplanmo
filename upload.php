@@ -11,17 +11,13 @@ if (isset($_POST['save'])) {
     $file = $_FILES['myfile']['tmp_name'];
     $size = $_FILES['myfile']['size'];
 
-    if (!in_array($extension, ['.apk'])) {
-        echo "You file extension must be .apk";
-    } else {
-        if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO uploads (Name, Size, Downloads) VALUES ('$filename', '$size', '0')";
-            if (mysqli_query($db, $sql)) {
-                echo "File uploaded successfully";
-            }
-        } else {
-            echo "Failed to upload file.";
+    if (move_uploaded_file($file, $destination)) {
+        $sql = "INSERT INTO uploads (Name, Size, Downloads) VALUES ('$filename', '$size', '0')";
+        if (mysqli_query($db, $sql)) {
+            echo "File uploaded successfully";
         }
+    } else {
+            echo "Failed to upload file.";
     }
 }
 ?>
