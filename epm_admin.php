@@ -91,8 +91,8 @@ else{
                     <!--=============================================== Dropdown - Alerts ===============================================-->
                     <!--=================================================================================================================-->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span class="glyphicon glyphicon-bell" style="font-size:18px;"></span></a>
-                        <ul class="dropdown-menu"></ul>
+                        <a href="#" class="dropdown-toggle" id="dropdown-toggle" data-toggle="dropdown"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span class="glyphicon glyphicon-bell" style="font-size:18px;"></span></a>
+                        <ul class="dropdown-menu" id="dropdown-menu"></ul>
                     </li>
 
                     <div class="topbar-divider d-none d-sm-block"></div>
@@ -506,7 +506,7 @@ else{
                 },
                 dataType: "json",
                 success: function(data) {
-                    $('.dropdown-menu').html(data.notification);
+                    $('#dropdown-menu').html(data.notification);
                     if (data.unseen_notification > 0) {
                         $('.count').html(data.unseen_notification);
                     }
@@ -516,25 +516,7 @@ else{
 
         load_unseen_notification();
 
-        $('#comment_form').on('submit', function(event) {
-            event.preventDefault();
-            if ($('#subject').val() != '' && $('#comment').val() != '') {
-                var form_data = $(this).serialize();
-                $.ajax({
-                    url: "insert.php",
-                    method: "POST",
-                    data: form_data,
-                    success: function(data) {
-                        $('#comment_form')[0].reset();
-                        load_unseen_notification();
-                    }
-                });
-            } else {
-                alert("Both Fields are Required");
-            }
-        });
-
-        $(document).on('click', '.dropdown-toggle', function() {
+        $(document).on('click', '#dropdown-toggle', function() {
             $('.count').html('');
             load_unseen_notification('yes');
         });
