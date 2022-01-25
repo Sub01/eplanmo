@@ -87,7 +87,6 @@ else{
                 <i type="button" id="sidebarCollapse" class="fas fa-bars"></i>
                 </button>
                 <ul class="navbar-nav ml-auto">
-
                     <!--=============================================== Dropdown - Alerts ===============================================-->
                     <!--=================================================================================================================-->
                     <li class="nav-item dropdown no-arrow mx-1">
@@ -183,7 +182,7 @@ else{
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="row">
                             <div class="col-xl-12 col-md-12 col-sm-12 mb-4">
-                                <div class="card border-left-secondary shadow h-100 py-2">
+                                <div class="card shadow py-2">
                                     <div class="card-header">MY ACTIVITIES</div>
                                     <div class="card-body">
                                         <canvas id="mychart"></canvas>
@@ -443,7 +442,7 @@ else{
             setTimeout(function() {
                 $("div.alert").remove();
 
-            }, <?php echo $gensetmodclose ?>);
+            }, <?php echo $gensetmodclose ?>); ehjkeeeeeeeeeeeee               eheeheh
 
         });
 
