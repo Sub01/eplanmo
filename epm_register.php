@@ -51,7 +51,6 @@ else
 		$mail->isHTML(true);
 		$mail->isSMTP();
 		$mail->CharSet = "utf-8";
-        $mail->SMTPDebug = true;
 		
 		//==========================  GOOGLE ACCOUNT CREDENTIALS
 		$mail->Host = 'smtp.gmail.com';
