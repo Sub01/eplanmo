@@ -173,7 +173,7 @@ elseif(isset($_POST['forgot'])){
 
 <nav class="navbar navbar-expand-lg" style="background-color:maroon">
     <span class="navbar-brand" style="color:white">EPLAN MO</span>
-    <button class="navbar-toggler btn-outline-light" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler btn btn-outline-light" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" style="color: white !important">
         <span class="navbar-toggler-icon" style="color: white;"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
