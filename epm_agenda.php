@@ -190,7 +190,7 @@ elseif(isset($_POST['teacher'])){
                     <div class="col-md-3 col-lg-3 col-sm-3">
                         <div class="row">
                             <div class="col-xl-12 col-md-12 mb-4">
-                                <div class="card border-left-primary shadow py-2">
+                                <div class="card shadow py-2">
                                     <div class="card-header">
                                         <span style="text-align: center; color: black; font-weight: bold"><i class="fas fa-calendar"></i> TODAY</span>
                                     </div>
@@ -219,7 +219,7 @@ elseif(isset($_POST['teacher'])){
                     <div class="col-md-3 col-lg-3 col-sm-3">
                         <div class="row">
                             <div class="col-xl-12 col-md-12 mb-4">
-                                <div class="card border-left-primary shadow py-2">
+                                <div class="card shadow py-2">
                                     <div class="card-header">
                                         <span style="text-align: center; color: black; font-weight: bold"><i class="fas fa-calendar"></i> TOMMOROW</span>
                                     </div>
@@ -248,7 +248,7 @@ elseif(isset($_POST['teacher'])){
                     <div class="col-md-3 col-lg-3 col-sm-3">
                         <div class="row">
                             <div class="col-xl-12 col-md-12 mb-4">
-                                <div class="card border-left-primary shadow py-2">
+                                <div class="card shadow py-2">
                                     <div class="card-header">
                                         <span style="text-align: center; color: black; font-weight: bold"><i class="fas fa-calendar"></i> WITHIN 7 DAYS</span>
                                     </div>
@@ -277,7 +277,7 @@ elseif(isset($_POST['teacher'])){
                     <div class="col-md-3 col-lg-3 col-sm-3">
                         <div class="row">
                             <div class="col-xl-12 col-md-12 mb-4">
-                                <div class="card border-left-primary shadow py-2">
+                                <div class="card shadow py-2">
                                     <div class="card-header">
                                         <span style="text-align: center; color: black; font-weight: bold"><i class="fas fa-calendar"></i> WITHIN 14 DAYS</span>
                                     </div>

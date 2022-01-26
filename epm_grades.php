@@ -172,7 +172,7 @@ else{
                 </div>
                 <div class="row">
                     <div class="col-xl-12 col-md-12 mb-4">
-                        <div class="card border-left-danger shadow h-100 py-2">
+                        <div class="card shadow h-100 py-2">
                             <div class="card-header">
                                 <button class="btn btn-primary btn-sm" style="margin:5px;" data-toggle="modal" data-target="#addGrade"><i class="fas fa-plus"></i> ADD GRADES</button>
                             </div>
