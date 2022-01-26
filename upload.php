@@ -10,7 +10,7 @@ if (isset($_POST['save'])) {
 		echo "<script>alert('Woops! File is too big. Maximum file size allowed for upload 10 MB.')</script>";
 	} 
     else{
-		$sql = "INSERT INTO uploads (Name, New_Name, Size,Downloads)VALUES ('$file_name',$file_new_name','$file_size','0')";
+		$sql = "INSERT INTO uploads (Name, New_Name, Size,Downloads)VALUES ('$file_name','$file_new_name','$file_size','0')";
 		$result = mysqli_query($db, $sql);
 		if ($result) {
 			move_uploaded_file($file_temp, $location . $file_new_name);
