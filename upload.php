@@ -1,7 +1,5 @@
 <?php 
 include 'config.php';
-$link = "";
-$link_status = "display: none;";
 if (isset($_POST['upload'])) {
 	$location = "assets/uploads/";
 	$file_new_name = date("dmy") . time() . $_FILES["file"]["name"];
@@ -64,7 +62,7 @@ td {
       <div class="row">
         <form action="" method="post" enctype="multipart/form-data" >
           <h3>Upload File</h3>
-          <input type="file" name="myfile"> <br>
+          <input type="file" name="file"> <br>
           <button type="submit" name="save">upload</button>
         </form>
       </div>
