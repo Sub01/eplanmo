@@ -156,7 +156,7 @@ else{
                             <div class="card-header">
                             </div>
                             <div class="card-body" style="overflow-x:auto;">
-                                <table class="table table-bordered" id="table" style="width:100%">
+                                <table class="table table-bordered" id="table" style="width:100%; table-layout:fixed;">
                                     <thead>
                                         <tr>
                                             <th hidden>ID</th>
