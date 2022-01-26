@@ -1,0 +1,19 @@
+GIT
+
+git add .
+git commit -am "make it better"
+git push -u origin master
+
+
+HEROKU
+
+git push heroku master
+
+
+//adding origin
+
+git remote add origin 'your_url_name'
+
+//changing origin
+
+git remote set-url origin https://git-repo/new-repository.git
