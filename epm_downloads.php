@@ -19,7 +19,7 @@ else{
 
         if (file_exists($filepath)) {
             header('Content-Description: File Transfer');
-            header('Content-Type: application/octet-stream');
+            header('Content-Type: application/octet-stream';charset=UTF-8);
             header('Content-Disposition: attachment; filename=' . basename($filepath));
             header('Expires: 0');
             header('Cache-Control: must-revalidate');
