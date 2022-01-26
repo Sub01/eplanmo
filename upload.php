@@ -3,9 +3,9 @@ include 'config.php';
 if (isset($_POST['save'])) {
 	$location = "assets/uploads/";
 	$file_new_name = date("dmy") . time() . $_FILES["file"]["name"];
-	$file_name = $_FILES["file"]["name"];
-	$file_temp = $_FILES["file"]["tmp_name"];
-	$file_size = $_FILES["file"]["size"];
+	$file_name = $_FILES['file']["name"];
+	$file_temp = $_FILES['file']["tmp_name"];
+	$file_size = $_FILES['file']['size'];
 	if ($file_size > 10485760) {
 		echo "<script>alert('Woops! File is too big. Maximum file size allowed for upload 10 MB.')</script>";
 	} 
