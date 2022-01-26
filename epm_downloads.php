@@ -162,7 +162,6 @@ else{
                                             <th hidden>ID</th>
                                             <th>NAME</th>
                                             <th>SIZE</th>
-                                            <th>TOTAL DOWNLOADS</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </thead>
@@ -175,7 +174,6 @@ else{
                                             <td hidden><?php echo $row['ID'] ?></td>
                                             <td><?php echo $row['Name'] ?></td>
                                             <td><?php echo floor($row['Size'] / 1000) . ' KB'; ?></td>
-                                            <td><?php echo $row['Downloads'] ?></td>
                                             <td>
                                                 <a href="/assets/uploads/<?php echo $row['Name']?>"><button class="btn btn-info btn-sm"><i class="fas fa-download"></i></button></a>
                                             </td>
