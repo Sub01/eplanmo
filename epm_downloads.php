@@ -16,7 +16,7 @@ else{
 <html>
 
 <head>
-    <title>TEACHERS</title>
+    <title>DOWNLOADS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
@@ -61,6 +61,9 @@ else{
             </li>
             <li>
                 <a href="epm_pomodoro.php"><span class="fas fa-stopwatch mr-3"></span> Pomodoro</a>
+            </li>
+            <li>
+                <a href="epm_downloads.php"><span class="fas fa-downloads mr-3"></span> Downloads</a>
             </li>
         </ul>
     </nav>

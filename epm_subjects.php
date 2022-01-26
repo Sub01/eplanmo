@@ -101,6 +101,9 @@ else{
             <li>
                 <a href="epm_pomodoro.php"><span class="fas fa-stopwatch mr-3"></span> Pomodoro</a>
             </li>
+            <li>
+                <a href="epm_downloads.php"><span class="fas fa-downloads mr-3"></span> Downloads</a>
+            </li>
         </ul>
     </nav>
     <div id="content" class="d-flex flex-column">
