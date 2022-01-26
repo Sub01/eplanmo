@@ -1,25 +1,28 @@
 <?php 
 include 'config.php';
-if (isset($_POST['save'])) {
-    
-    $filename = $_FILES['myfile']['name'];
-
-    $destination = '/assets/uploads/' . $filename;
-
-    $extension = pathinfo($filename, PATHINFO_EXTENSION);
-
-    $file = $_FILES['myfile']['tmp_name'];
-    $size = $_FILES['myfile']['size'];
-
-    if (move_uploaded_file($file, $destination)) {
-        $sql = "INSERT INTO uploads (Name, Size, Downloads) VALUES ('$filename', '$size', '0')";
-        if (mysqli_query($db, $sql)) {
-            echo "File uploaded successfully";
-        }
-    } else {
-            echo "Failed to upload file.";
-    }
+$link = "";
+$link_status = "display: none;";
+if (isset($_POST['upload'])) {
+	$location = "assets/uploads/";
+	$file_new_name = date("dmy") . time() . $_FILES["file"]["name"];
+	$file_name = $_FILES["file"]["name"];
+	$file_temp = $_FILES["file"]["tmp_name"];
+	$file_size = $_FILES["file"]["size"];
+	if ($file_size > 10485760) {
+		echo "<script>alert('Woops! File is too big. Maximum file size allowed for upload 10 MB.')</script>";
+	} else {
+		$sql = "INSERT INTO uploads (Name, Size,Downloads)VALUES ('$file_new_name','$file_size','0')";
+		$result = mysqli_query($db, $sql);
+		if ($result) {
+			move_uploaded_file($file_temp, $location . $file_new_name);
+			echo "<script>alert('Wow! File uploaded successfully.')</script>";
+			}
+		} else {
+			echo "<script>alert('Woops! Something wong went.')</script>";
+		}
+	}
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
