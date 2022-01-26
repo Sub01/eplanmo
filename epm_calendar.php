@@ -125,7 +125,7 @@ else{
                 <a href="epm_pomodoro.php"><span class="fas fa-stopwatch mr-3"></span> Pomodoro</a>
             </li>
             <li>
-                <a href="epm_downloads.php"><span class="fas fa-downloads mr-3"></span> Downloads</a>
+                <a href="epm_downloads.php"><span class="fas fa-download mr-3"></span> Downloads</a>
             </li>
         </ul>
     </nav>
