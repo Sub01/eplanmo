@@ -20,7 +20,29 @@ include 'assets/php/php_epm_genset.php';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.0.1/css/all.css">
 </head>
-
+<style>
+    .ql,
+    .ql a,
+    .ql a:hover {
+        text-decoration: none;
+        color: maroon;
+    }
+    .ql{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding 10px;
+    }
+    .top-header h2{
+        color:white;
+        background-color: maroon;
+    }
+    .top-header h3{
+        color:dimgray;
+    }
+    .info-box i {
+        color: maroon;
+    }
+</style>
 <?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
 <header id="header" class="d-flex align-items-center" style="background-color:maroon">
     <div class="container">
@@ -34,9 +56,10 @@ include 'assets/php/php_epm_genset.php';
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                 </ul>
-                <a class="nav-link" href="#hero" style="color:white">Home</a>
-                <a class="nav-link" href="#featured-services" style="color:white">Services</a>
-                <a class="nav-link" href="#" style="color:white">About</a>
+                <a class="nav-link" href="#hero" style="color:white">HOME</a>
+                <a class="nav-link" href="#featured-services" style="color:white">SERVICES</a>
+                <a class="nav-link" href="#" style="color:white">ABOUT</a>
+                <a class="nav-link" href="#" style="color:white">CONTACT</a>
                 <a href="epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
             </div>
         </nav>
@@ -45,10 +68,18 @@ include 'assets/php/php_epm_genset.php';
 
 <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
-        <h1 style="margin-bottom:20px;">Welcome to <span style="color:maroon;">EPlan Mo</span></h1>
-        <div class="d-flex">
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top:200px;">
+                <h1 style="margin-bottom:20px;">Welcome to <span style="color:maroon;">EPlan Mo</span></h1>
+                <div class="d-flex">
+                    <a href="#about"><button class="scrollto btn btn-outline-dark">Get Started</button></a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <img src="assets/images/comp.png">
+            </div>
         </div>
+
     </div>
 </section>
 
@@ -91,12 +122,12 @@ include 'assets/php/php_epm_genset.php';
             </div>
         </div>
     </section>
-    
+
     <section id="about" class="about section-bg">
         <div class="container" data-aos="fade-up">
 
-            <div class="section-title">
-                <h2>About</h2>
+            <div class="section-title top-header">
+                <h2 class="top-header">About</h2>
                 <h3>How it all started</h3>
                 <p>E-Plan Mo started as a capstone project which is a requirement for the developer to finish their degree. They come up with this idea to help the students practice timely manner. They also experienced lack of time management and used it as one of the basis to develop this application.</p>
             </div>
@@ -108,7 +139,7 @@ include 'assets/php/php_epm_genset.php';
                 <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
                     <h3>Available on your devices</h3>
                     <p class="fst-italic">
-                       Soon to be deployed on Google Play Store.
+                        Soon to be deployed on Google Play Store.
                     </p>
                     <ul>
                         <li>
@@ -136,9 +167,9 @@ include 'assets/php/php_epm_genset.php';
     <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
 
-            <div class="section-title">
+            <div class="section-title top-header">
                 <h2>Contact</h2>
-                <h3><span>Contact Us</span></h3>
+                <h3><span style="color:dimgray;">Contact Us</span></h3>
                 <p></p>
             </div>
 
@@ -172,32 +203,18 @@ include 'assets/php/php_epm_genset.php';
             <div class="row" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="col-lg-6 ">
-                    <iframe class="mb-4 mb-lg-0" src="https://maps.google.com/maps?q=14.178289738227248,%20121.31915135026692&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>s
+                    <iframe class="mb-4 mb-lg-0" src="https://maps.google.com/maps?q=14.178289738227248,%20121.31915135026692&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                 </div>
 
-                <div class="col-lg-6">
-                    <form action="" method="" role="form" class="php-email-form">
-                        <div class="row">
-                            <div class="col form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                            </div>
-                            <div class="col form-group">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                        </div>
-                        <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-                        </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
-                    </form>
+                <div class="col-lg-6 footer-links">
+                    <h4>Quick Links</h4>
+                    <ul style="list-style-type: none; font-size : 1.5em; margin:10px; padding:10px;">
+                        <li class="ql"><i class="fas fa-chevron-right"></i> <a href="#hero">HOME</a></li>
+                        <li class="ql"><i class="fas fa-chevron-right"></i> <a href="#featured-services">SERVICES</a></li>
+                        <li class="ql"><i class="fas fa-chevron-right"></i> <a href="#about">ABOUT</a></li>
+                        <li class="ql"><i class="fas fa-chevron-right"></i> <a href="#contact">CONTACT</a></li>
+                    </ul>
+
                 </div>
 
             </div>
