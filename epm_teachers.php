@@ -134,7 +134,7 @@ else{
                                 $result2 = $db->query($sql2);
                                 while($row2 = mysqli_fetch_assoc($result2)){
                                 ?>
-                                <a class="dropdown-item d-flex align-items-center" href="assets/php/update_notif_teachers.php?id=<?php echo $row2['ID']?>">
+                                <a class="dropdown-item d-flex align-items-center" href="assets/php/update_notif_downloads.php?id=<?php echo $row2['ID']?>">
                                     <div class="mr-3">
                                         <div class="icon-circle bg-primary">
                                             <i class="fas fa-eye" style="color:white;"></i>
