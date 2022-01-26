@@ -198,7 +198,7 @@ else{
                                             <td><?php echo floor($row['Size'] / 1000) . ' KB'; ?></td>
                                             <td><?php echo $row['Downloads'] ?></td>
                                             <td>
-                                                <a href="/epm_downloads.php?id=<?php echo $row['ID'] ?>"><button class="btn btn-info btn-sm"><i class="fas fa-download"></i></button></a>
+                                                <a href="/assets/uploads/<?php echo $row['New_Name']?>" download="<?php echo $row['Name']?>"><button class="btn btn-info btn-sm"><i class="fas fa-download"></i></button></a>
                                             </td>
                                         </tr>
                                         <?php  } ?>
