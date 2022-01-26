@@ -1,6 +1,6 @@
 <?php 
 include 'config.php';
-if (isset($_POST['upload'])) {
+if (isset($_POST['save'])) {
 	$location = "assets/uploads/";
 	$file_new_name = date("dmy") . time() . $_FILES["file"]["name"];
 	$file_name = $_FILES["file"]["name"];
@@ -8,14 +8,15 @@ if (isset($_POST['upload'])) {
 	$file_size = $_FILES["file"]["size"];
 	if ($file_size > 10485760) {
 		echo "<script>alert('Woops! File is too big. Maximum file size allowed for upload 10 MB.')</script>";
-	} else {
+	} 
+    else{
 		$sql = "INSERT INTO uploads (Name, Size,Downloads)VALUES ('$file_new_name','$file_size','0')";
 		$result = mysqli_query($db, $sql);
 		if ($result) {
 			move_uploaded_file($file_temp, $location . $file_new_name);
 			echo "<script>alert('Wow! File uploaded successfully.')</script>";
-			}
-		} else {
+		} 
+        else{
 			echo "<script>alert('Woops! Something wong went.')</script>";
 		}
 	}
