@@ -11,7 +11,7 @@
 	$sql4 = "SELECT Count(`Name`) AS total4 FROM `events` WHERE `Name`='$name' AND `Status`='Archived'";
 	$sql5 = "SELECT Count(`T_Name`) AS total5 FROM `teachers` WHERE `User`='$name'";
 	$sql6 = "SELECT Count(`S_Code`) AS total6 FROM `subjects` WHERE `User`='$name'";
-    $sql7 = "SELECT Count(`Name`) AS total7 FROM `grades` WHERE `User`='$name'";
+    $sql7 = "SELECT Count(`User`) AS total7 FROM `grades` WHERE `User`='$name'";
 	$result1 = $db-> query($sql1);
 	$result2 = $db-> query($sql2);
 	$result3 = $db-> query($sql3);
