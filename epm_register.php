@@ -56,13 +56,13 @@ else
 		//==========================  GOOGLE ACCOUNT CREDENTIALS
 		$mail->Host = 'smtp.gmail.com';
 		$mail->SMTPAuth = "true";
-		$mail->Username = "tgp.lagunapovincialcouncil@gmail.com";
+		$mail->Username = "tgp.lagunaprovincialcouncil@gmail.com";
 		$mail->Password = "tzxslslztvpbiyhf";
 		$mail->SMTPSecure = "ssl";
 		$mail->Port = "465";
 		
 		//==========================  EMAIL INFORMATIONS
-		$mail->setFrom("tgp.lagunapovincialcouncil@gmail.com","Gino Toralba/EPM DEV");
+		$mail->setFrom("tgp.lagunaprovincialcouncil@gmail.com","Gino Toralba/EPM DEV");
 		$newname = $name. " " .$surname;
 		$mail->addAddress("$email", $name);
 		
