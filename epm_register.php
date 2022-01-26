@@ -51,17 +51,18 @@ else
 		$mail->isHTML(true);
 		$mail->isSMTP();
 		$mail->CharSet = "utf-8";
+        $mail->SMTPDebug = true;
 		
 		//==========================  GOOGLE ACCOUNT CREDENTIALS
 		$mail->Host = 'smtp.gmail.com';
 		$mail->SMTPAuth = "true";
-		$mail->Username = "mh.tokio@gmail.com";
-		$mail->Password = "cwovxtcdrzoxjmmp";
+		$mail->Username = "tgp.lagunapovincialcouncil@gmail.com";
+		$mail->Password = "tzxslslztvpbiyhf";
 		$mail->SMTPSecure = "ssl";
 		$mail->Port = "465";
 		
 		//==========================  EMAIL INFORMATIONS
-		$mail->setFrom("mh.tokio@gmail.com","Gino Toralba/EPM DEV");
+		$mail->setFrom("tgp.lagunapovincialcouncil@gmail.com","Gino Toralba/EPM DEV");
 		$newname = $name. " " .$surname;
 		$mail->addAddress("$email", $name);
 		
