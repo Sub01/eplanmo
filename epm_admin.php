@@ -327,12 +327,12 @@ else{
                                     <thead>
                                         <tr>
                                             <th hidden="">ID</th>
-                                            <th>Event Name</th>
-                                            <th>Event Type</th>
-                                            <th>Mode</th>
-                                            <th>Start Date</th>
-                                            <th>End Date</th>
-                                            <th>Functions</th>
+                                            <th>NAME</th>
+                                            <th>TYPE</th>
+                                            <th>MODE</th>
+                                            <th>START</th>
+                                            <th>END</th>
+                                            <th>ACTIONS</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -349,6 +349,44 @@ else{
                                             <td><?php echo $row['End'] ?></td>
                                             <td>
                                                 <button type="button" class="btn btn-sm btn-primary editbutton" data-bs-toggle="modal" data-bs-target="#updateEvent"><i class="fas fa-edit"></i></button>
+                                                <a name="archived" href="assets/php/delete_event.php?id=<?php echo $row['ID']?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this event?')"><i class="fas fa-archive"></i></a>
+                                            </td>
+                                        </tr>
+                                        <?php  } ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12 col-md-12 mb-4">
+                        <div class="card shadow h-100 py-2">
+                            <div class="card-header">
+                                <strong>ENDED EVENTS</strong>
+                            </div>
+                            <div class="card-body" style="overflow-x:auto;">
+                                <table class="table table-bordered" id="table2" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th hidden="">ID</th>
+                                            <th>NAME</th>
+                                            <th>TYPE</th>
+                                            <th>MODE</th>
+                                            <th>ACTIONS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                				$sql = "SELECT * FROM events WHERE Name='$username' AND Status='Ended'";
+                				$result =$db->query($sql);
+                				while ($row = mysqli_fetch_array($result)) {?>
+                                        <tr>
+                                            <td hidden=""><?php echo $row['ID'] ?></td>
+                                            <td><?php echo $row['Title'] ?></td>
+                                            <td><?php echo $row['Type'] ?></td>
+                                            <td><?php echo $row['Mode'] ?></td>
+                                            <td>
                                                 <a name="archived" href="assets/php/delete_event.php?id=<?php echo $row['ID']?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this event?')"><i class="fas fa-archive"></i></a>
                                             </td>
                                         </tr>

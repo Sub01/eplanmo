@@ -162,7 +162,7 @@ else{
                                             <th hidden>ID</th>
                                             <th>NAME</th>
                                             <th>SIZE</th>
-                                            <th>ACTION</th>
+                                            <th>ACTIONS</th>
                                         </tr>
                                     </thead>
                                     <tbody>

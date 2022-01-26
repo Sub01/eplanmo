@@ -202,7 +202,7 @@ else{
                                             <th hidden="">ID</th>
                                             <th>SUBJECT CODE</th>
                                             <th>DESCRIPTION</th>
-                                            <th>ACTION </th>
+                                            <th>ACTIONS </th>
                                         </tr>
                                     </thead>
                                     <tbody>

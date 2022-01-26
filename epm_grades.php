@@ -188,7 +188,7 @@ else{
                                             <th>ITEMS</th>
                                             <th>GRADE</th>
                                             <th>STATUS</th>
-                                            <th>ACTION</th>
+                                            <th>ACTIONS</th>
                                         </tr>
                                     </thead>
                                     <tbody>
