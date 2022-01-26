@@ -182,6 +182,7 @@ th {
   text-align: inherit; }
 
 label {
+    font-family: 'Barlow Semi Condensed', sans-serif;
   display: inline-block;
   margin-bottom: 0.5rem; }
 
