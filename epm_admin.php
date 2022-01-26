@@ -261,7 +261,7 @@ else{
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                     TEACHERS
                                                 </div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
@@ -280,7 +280,7 @@ else{
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                     SUBJECTS
                                                 </div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
@@ -299,7 +299,7 @@ else{
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                                <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
                                                     GRADES
                                                 </div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
