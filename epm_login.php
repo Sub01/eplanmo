@@ -96,7 +96,7 @@ elseif(isset($_POST['forgot'])){
 <html lang="en">
 
 <head>
-    <title>EPM LOGIN</title>
+    <title>LOGIN</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 

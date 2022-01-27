@@ -89,7 +89,7 @@ else
 <html lang="en">
 
 <head>
-    <title>EPM Registration</title>
+    <title>REGISTER</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -124,6 +124,27 @@ else
     }
 </style>
 <?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
+<header id="header" class="d-flex align-items-center" style="background-color:maroon">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <span>
+                <h1 class="logo" style="color:white;">EPLAN MO</h1>
+            </span>
+            <button class="navbar-toggler btn btn-light" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" style="color: maroon !important">
+                <span class="navbar-toggler-icon" style="color: white;"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <a class="nav-link" href="#hero" style="color:white">HOME</a>
+                <a class="nav-link" href="#featured-services" style="color:white">SERVICES</a>
+                <a class="nav-link" href="#about" style="color:white">ABOUT</a>
+                <a class="nav-link" href="#contact" style="color:white">CONTACT</a>
+                <a href="epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
+            </div>
+        </nav>
+    </div>
+</header>
 <div class="wrapper d-flex">
     <div class="container-fluid" style="margin-top: 5px; padding: 20px;">
         <div class="row">

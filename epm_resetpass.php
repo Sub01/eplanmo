@@ -34,7 +34,7 @@ else{
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>RESET PASSWORD</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!--===============================================================================================-->	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -50,6 +50,27 @@ else{
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1739375817606067" crossorigin="anonymous"></script>
 </head>
 <?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
+<header id="header" class="d-flex align-items-center" style="background-color:maroon">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <span>
+                <h1 class="logo" style="color:white;">EPLAN MO</h1>
+            </span>
+            <button class="navbar-toggler btn btn-light" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" style="color: maroon !important">
+                <span class="navbar-toggler-icon" style="color: white;"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <a class="nav-link" href="#hero" style="color:white">HOME</a>
+                <a class="nav-link" href="#featured-services" style="color:white">SERVICES</a>
+                <a class="nav-link" href="#about" style="color:white">ABOUT</a>
+                <a class="nav-link" href="#contact" style="color:white">CONTACT</a>
+                <a href="epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
+            </div>
+        </nav>
+    </div>
+</header>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-2">

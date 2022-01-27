@@ -58,8 +58,8 @@ include 'assets/php/php_epm_genset.php';
                 </ul>
                 <a class="nav-link" href="#hero" style="color:white">HOME</a>
                 <a class="nav-link" href="#featured-services" style="color:white">SERVICES</a>
-                <a class="nav-link" href="#" style="color:white">ABOUT</a>
-                <a class="nav-link" href="#" style="color:white">CONTACT</a>
+                <a class="nav-link" href="#about" style="color:white">ABOUT</a>
+                <a class="nav-link" href="#contact" style="color:white">CONTACT</a>
                 <a href="epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
             </div>
         </nav>

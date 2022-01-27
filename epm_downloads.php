@@ -50,7 +50,7 @@ else{
             <li>
                 <a href="epm_agenda.php"><span class="fas fa-calendar-check mr-3"></span> Agenda</a>
             </li>
-            <li class="active">
+            <li>
                 <a href="epm_teachers.php"><span class="fas fa-chalkboard-teacher mr-3"></span> Teachers</a>
             </li>
             <li>
@@ -62,7 +62,7 @@ else{
             <li>
                 <a href="epm_pomodoro.php"><span class="fas fa-stopwatch mr-3"></span> Pomodoro</a>
             </li>
-            <li>
+            <li class="active">
                 <a href="epm_downloads.php"><span class="fas fa-download mr-3"></span> Downloads</a>
             </li>
         </ul>
