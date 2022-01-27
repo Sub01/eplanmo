@@ -136,7 +136,7 @@ else{
                     <div class="modal-header">
                         <img src="assets/images/congrats.png" style="width: 10%;height: 10%">
                         <h2 class="modal-title">Password Reset Successfuly</h2>
-                        <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='index.php'">&times;</button>
+                        <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='/epm_login.php'">&times;</button>
                     </div>
                     <div class="modal-body">
                         <p>You can now logged in your account using your new password.</p>
