@@ -25,7 +25,7 @@ else{
 	if(!$result){
 		$_SESSION['status'] = "error";
 		$_SESSION['message'] = "SESSION EXPIRED";
-		header('Location: /epm_login.php');
+		header('Location: https://eplanmo.herokuapp.com/epm_login.php');
 		exit();
 	}
 	else{
@@ -37,13 +37,13 @@ else{
 			if($cstts =="Invalid"){
 				$_SESSION['status'] = "error";
 				$_SESSION['message'] = "YOU'VE ENTERED AN EXPIRED OTP. CLICK RESEND TO GENERATE ANOTHER OTP";
-				header("Location: /epm_otp.php?email=$email");
+				header("Location: https://eplanmo.herokuapp.com/epm_otp.php?email=$email");
 				exit();
 			}
 			elseif($otp != $_POST['otp']){
 				$_SESSION['status'] = "error";
 				$_SESSION['message'] = "OTP DO NOT MATCH";
-				header("Location: /epm_otp.php?email=$email");
+				header("Location: https://eplanmo.herokuapp.com/epm_otp.php?email=$email");
 				exit();
 			}
 			else{
@@ -52,13 +52,13 @@ else{
 				if($result2){
 					$_SESSION['status'] = "success";
 					$_SESSION['message'] = "Account Successfuly Activated";
-					header("Location: /epm_login.php");
+					header("Location: https://eplanmo.herokuapp.com/epm_login.php");
 					exit();
 				}
 				else{
 					$_SESSION['status'] = "error";
 					$_SESSION['message'] = "ERROR PASRSING REQUEST. PLEASE RELOAD THE PAGE";
-					header("Location: /epm_otp.php?email=$email");
+					header("Location: https://eplanmo.herokuapp.com/epm_otp.php?email=$email");
 					exit();
 				}
 			}
@@ -118,7 +118,7 @@ else{
 	}
 	if(isset($_POST['back'])){
 		unset($_SESSION['email']);
-		header('Location: /epm_login.php');
+		header('Location: https://eplanmo.herokuapp.com/epm_login.php');
 		exit();
 	}
 	}
@@ -162,11 +162,11 @@ else{
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                 </ul>
-                <a class="nav-link" href="#hero" style="color:white">HOME</a>
-                <a class="nav-link" href="#featured-services" style="color:white">SERVICES</a>
-                <a class="nav-link" href="#about" style="color:white">ABOUT</a>
-                <a class="nav-link" href="#contact" style="color:white">CONTACT</a>
-                <a href="https:/eplanmo.herokuapp.com/epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
+                <a class="nav-link" href="https://eplanmo.herokuapp.com/index.php#hero" style="color:white">HOME</a>
+                <a class="nav-link" href="https://eplanmo.herokuapp.com/index.php#featured-services" style="color:white">SERVICES</a>
+                <a class="nav-link" href="https://eplanmo.herokuapp.com/index.php#about" style="color:white">ABOUT</a>
+                <a class="nav-link" href="https://eplanmo.herokuapp.com/index.php#contact" style="color:white">CONTACT</a>
+                <a href="https://eplanmo.herokuapp.com/epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
             </div>
         </nav>
     </div>
@@ -222,7 +222,7 @@ else{
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <a href="epm_login.php"><button type="button" class="btn" style="width: 100%; background-color:maroon; color: white;"><i class="fas fa-hand-point-left"></i> BACK</button></a>
+                            <a href="https://eplanmo.herokuapp.com/epm_login.php"><button type="button" class="btn" style="width: 100%; background-color:maroon; color: white;"><i class="fas fa-hand-point-left"></i> BACK</button></a>
                         </div>
                         <div class="col-md-4">
                             <button type="submit" class="btn" style="width: 100%; background-color:maroon; color: white;" name="resend"><i class="fas fa-envelope"></i> RESEND EMAIL</button>
@@ -250,7 +250,7 @@ else{
             <div class="modal-header">
                 <img src="assets/images/congrats.png" style="width: 10%;height: 10%">
                 <h2 class="modal-title">Email Sent</h2>
-                <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='/epm_otp.php?email=<?php echo $email?>'">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='https://eplanmo.herokuapp.com/epm_otp.php?email=<?php echo $email?>'">&times;</button>
             </div>
             <div class="modal-body">
                 <p>Email has been successfuly resent. If you still can't find the email, try checking your spam folder.</p>

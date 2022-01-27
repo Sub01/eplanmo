@@ -137,11 +137,11 @@ else
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                 </ul>
-                <a class="nav-link" href="#hero" style="color:white">HOME</a>
-                <a class="nav-link" href="#featured-services" style="color:white">SERVICES</a>
-                <a class="nav-link" href="#about" style="color:white">ABOUT</a>
-                <a class="nav-link" href="#contact" style="color:white">CONTACT</a>
-                <a href="https:/eplanmo.herokuapp.com/epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
+                <a class="nav-link" href="https://eplanmo.herokuapp.com/index.php#hero" style="color:white">HOME</a>
+                <a class="nav-link" href="https://eplanmo.herokuapp.com/index.php#featured-services" style="color:white">SERVICES</a>
+                <a class="nav-link" href="https://eplanmo.herokuapp.com/index.php#about" style="color:white">ABOUT</a>
+                <a class="nav-link" href="https://eplanmo.herokuapp.com/index.php#contact" style="color:white">CONTACT</a>
+                <a href="https://eplanmo.herokuapp.com/epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
             </div>
         </nav>
     </div>
@@ -222,7 +222,7 @@ else
                                             <button type="submit" class="btn btn-block" name="register" style="background: #7A313E; border-radius: 30px; color:white;"><i class="fas fa-sign-in-alt mr-2" style="color: #fff"></i>Sign Up</button>
                                         </div>
                                         <div class="col-md-12" style="margin-top: 10px">
-                                            <center>Already have an account? <a href="index.php"> Login here</a></center>
+                                            <center>Already have an account? <a href="https://eplanmo.herokuapp.com/epm_login.php"> Login here</a></center>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -244,7 +244,7 @@ else
             <div class="modal-header">
                 <img src="assets/images/congrats.png" style="width: 10%;height: 10%">
                 <h2 class="modal-title">Congratulations</h2>
-                <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='epm_otp.php?email=<?php echo $email?>'">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='https://eplanmo.herokuapp.com/epm_otp.php?email=<?php echo $email?>'">&times;</button>
             </div>
             <div class="modal-body">
                 <p>Congratulations on successfuly creating your account. Please check your email for the One Time Pin Code.</p>

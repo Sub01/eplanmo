@@ -4,7 +4,7 @@ include ("assets/php/php_epm_genset.php");
 include ("assets/php/summary.php");
 
 if(!isset($_SESSION["User"])){
-	header("Location: index.php");
+	header("Location: https://eplanmo.herokuapp.com/epm_login.php");
 	exit();
 }	
 else{
@@ -43,28 +43,28 @@ else{
         </div>
         <ul class="list-unstyled components mb-5">
             <li>
-                <a href="epm_admin.php"><span class="fas fa-home mr-3"></span> Dashboard</a>
+                <a href="https://eplanmo.herokuapp.com/epm_admin.php"><span class="fas fa-home mr-3"></span> Dashboard</a>
             </li>
             <li>
-                <a href="epm_calendar.php"><span class="fas fa-calendar-week mr-3"></span> Calendar</a>
+                <a href="https://eplanmo.herokuapp.com/epm_calendar.php"><span class="fas fa-calendar-week mr-3"></span> Calendar</a>
             </li>
             <li>
-                <a href="epm_agenda.php"><span class="fas fa-calendar-check mr-3"></span> Agenda</a>
+                <a href="https://eplanmo.herokuapp.com/epm_agenda.php"><span class="fas fa-calendar-check mr-3"></span> Agenda</a>
             </li>
             <li>
-                <a href="epm_teachers.php"><span class="fas fa-chalkboard-teacher mr-3"></span> Teachers</a>
+                <a href="https://eplanmo.herokuapp.com/epm_teachers.php"><span class="fas fa-chalkboard-teacher mr-3"></span> Teachers</a>
             </li>
             <li>
-                <a href="epm_subjects.php"><span class="fas fa-book mr-3"></span> Subjects</a>
+                <a href="https://eplanmo.herokuapp.com/epm_subjects.php"><span class="fas fa-book mr-3"></span> Subjects</a>
             </li>
             <li>
-                <a href="epm_grades.php"><span class="fas fa-book-open mr-3"></span> Grades</a>
+                <a href="https://eplanmo.herokuapp.com/epm_grades.php"><span class="fas fa-book-open mr-3"></span> Grades</a>
             </li>
             <li>
-                <a href="epm_pomodoro.php"><span class="fas fa-stopwatch mr-3"></span> Pomodoro</a>
+                <a href="https://eplanmo.herokuapp.com/epm_pomodoro.php"><span class="fas fa-stopwatch mr-3"></span> Pomodoro</a>
             </li>
             <li class="active">
-                <a href="epm_downloads.php"><span class="fas fa-download mr-3"></span> Downloads</a>
+                <a href="https://eplanmo.herokuapp.com/epm_downloads.php"><span class="fas fa-download mr-3"></span> Downloads</a>
             </li>
         </ul>
     </nav>
@@ -117,7 +117,7 @@ else{
                             <?php echo '<img class="rounded-circle" height="50" width="50" alt="" loading="lazy" src="data:image/jpeg;base64,'.base64_encode($image).'"/>'; ?>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="epm_profile.php">
+                            <a class="dropdown-item" href="https://eplanmo.herokuapp.com/epm_profile.php">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Profile
                             </a>

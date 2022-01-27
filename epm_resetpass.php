@@ -26,7 +26,7 @@ if(isset($_GET['Code']) && isset($_GET['User']) && isset($_GET['Email'])){
 	}
 }
 else{
-	header("Location: https:/eplanmo.herokuapp.com/epm_login.php");
+	header("Location: https://eplanmo.herokuapp.com/epm_login.php");
 	exit();
 }
 ?>
@@ -65,10 +65,10 @@ else{
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                 </ul>
-                <a class="nav-link" href="#hero" style="color:white">HOME</a>
-                <a class="nav-link" href="#featured-services" style="color:white">SERVICES</a>
-                <a class="nav-link" href="#about" style="color:white">ABOUT</a>
-                <a class="nav-link" href="#contact" style="color:white">CONTACT</a>
+                <a class="nav-link" href="https://eplanmo.herokuapp.com/index.php#hero" style="color:white">HOME</a>
+                <a class="nav-link" href="https://eplanmo.herokuapp.com/index.php#featured-services" style="color:white">SERVICES</a>
+                <a class="nav-link" href="https://eplanmo.herokuapp.com/index.php#about" style="color:white">ABOUT</a>
+                <a class="nav-link" href="https://eplanmo.herokuapp.com/index.php#contact" style="color:white">CONTACT</a>
                 <a href="https://eplanmo.herokuapp.com/epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
             </div>
         </nav>
@@ -110,7 +110,7 @@ else{
                             <div class="row">
                                 <table style="table-layout: fixed; width:100%">
                                     <tr>
-                                        <td><button type="button" onclick="window.location.href='epm_login.php'" class="btn" style="width: 100%; background-color: maroon; color: white;"><i class="fas fa-hand-point-left"></i> BACK</button></td>
+                                        <td><button type="button" onclick="window.location.href='https://eplanmo.herokuapp.com/index.phpepm_login.php'" class="btn" style="width: 100%; background-color: maroon; color: white;"><i class="fas fa-hand-point-left"></i> BACK</button></td>
                                         <td> </td>
                                         <td><button name="submit" class="btn btn-secondary fa-pull-right" id="submit" type="submit" style="width: 100%; background-color: maroon; color: white;"><i class="fas fa-check"></i> SUBMIT</button></td>
                                     </tr>
@@ -136,7 +136,7 @@ else{
                     <div class="modal-header">
                         <img src="assets/images/congrats.png" style="width: 10%;height: 10%">
                         <h2 class="modal-title">Password Reset Successfuly</h2>
-                        <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='/epm_login.php'">&times;</button>
+                        <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='https://eplanmo.herokuapp.com/index.ph/epm_login.php'">&times;</button>
                     </div>
                     <div class="modal-body">
                         <p>You can now logged in your account using your new password.</p>
