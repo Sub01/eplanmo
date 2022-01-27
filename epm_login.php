@@ -88,7 +88,7 @@ elseif(isset($_POST['forgot'])){
             }
 		}
 		else{
-			$script = "<script> $(document).ready(function(){ $('#modalEmailError').modal('show'); }); </script>";
+			$script = "<script> $(document).ready(function(){ $('#modalUserError').modal('show'); }); </script>";
 		}
 	}
 
