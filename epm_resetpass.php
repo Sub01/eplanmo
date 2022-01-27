@@ -115,10 +115,10 @@ else{
                                 <label id="message"></label>
                             </div>
                             <div class="row">
-                                <table style="table-layout:fixed;">
+                                <table style="table-layout:fixed; width:100%">
                                     <tr>
                                         <td><button type="button" onclick="window.location.href='epm_login.php'" class="btn" style="width: 100%; background-color: maroon; color: white;"><i class="fas fa-hand-point-left"></i> BACK</button></td>
-                                        <td></td>
+                                        <td> </td>
                                         <td><button name="submit" class="btn btn-secondary fa-pull-right" id="submit" type="submit" style="width: 100%; background-color: maroon; color: white;"><i class="fas fa-check"></i> SUBMIT</button></td>
                                     </tr>
                                 </table>
