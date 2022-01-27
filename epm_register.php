@@ -53,15 +53,15 @@ else
 		$mail->CharSet = "utf-8";
 		
 		//==========================  GOOGLE ACCOUNT CREDENTIALS
-		$mail->Host = 'smtp.gmail.com';
+		$mail->Host = 'smtp.mail.yahoo.com';
 		$mail->SMTPAuth = "true";
-		$mail->Username = "tgp.lagunaprovincialcouncil@gmail.com";
-		$mail->Password = "tzxslslztvpbiyhf";
+		$mail->Username = "kirigayakazuto03@rocketmail.com";
+		$mail->Password = "mzjggsaolizjxfdu";
 		$mail->SMTPSecure = "ssl";
 		$mail->Port = "465";
 		
 		//==========================  EMAIL INFORMATIONS
-		$mail->setFrom("tgp.lagunaprovincialcouncil@gmail.com","Gino Toralba/EPM DEV");
+		$mail->setFrom("kirigayakazuto03@rocketmail.com","Gino Toralba/EPM DEV");
 		$newname = $name. " " .$surname;
 		$mail->addAddress("$email", $name);
 		

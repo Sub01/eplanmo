@@ -107,12 +107,18 @@ else{
 				$result = $db-> query($sql);
 				if($result){
 					$script = "<script> $(document).ready(function(){ $('#modalResendSuccess').modal('show'); }); </script>";
+                    header("Location: /epm_otp.php?email=$email");
+				    exit();
 				}
 				else{
 					$script = "<script> $(document).ready(function(){ $('#modalResendFailed').modal('show'); }); </script>";
+                    header("Location: /epm_otp.php?email=$email");
+				    exit();
 				}
 			}else{
 				$script = "<script> $(document).ready(function(){ $('#modalResendFailed').modal('show'); }); </script>";
+                header("Location: /epm_otp.php?email=$email");
+				exit();
 			}
 		}
 	}
@@ -130,21 +136,24 @@ else{
 <head>
     <meta charset="utf-8">
     <title>OTP</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-   
-    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
     <!--===============================================================================================-->
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!--===============================================================================================-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/animation.css">
-    <link href="assets/css/index.css" rel="stylesheet">
-
+    <!--===============================================================================================-->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1739375817606067" crossorigin="anonymous"></script>
+    <link href="assets/css/index.css" rel="stylesheet">
 </head>
 <?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
 <header id="header" class="d-flex align-items-center" style="background-color:maroon">
@@ -173,7 +182,7 @@ else{
         <div class="col-md-2">
 
         </div>
-        <div class="col-xl-8 col-md-2 mb-4" style="margin-top: 15%">
+        <div class="col-xl-8 col-md-2 mb-4" style="margin-top: 5%">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div>
@@ -185,8 +194,9 @@ else{
                             <center>
                                 <h2 class="title">EMAIL VERIFICATION</h2>
                             </center>
+                        <center>
                             <span id="timer"><?php echo $time?> seconds remaining before otp expiration.</span>
-                            <br>
+                            </center>
                             <br>
                             <?php if(isset($_SESSION['message']) && $_SESSION['status'] == 'error'): ?>
                             <div class="alert alert-danger">
@@ -201,21 +211,26 @@ else{
                             <?php unset($_SESSION['status']); ?>
                     </div>
                     <div class="row form-group">
-                        <i class="fas fa-key fa-2x" style="padding: 5px;"></i>
-                        <span style="width: 90%"><input class="form-control" type="text" name="otp" placeholder="ENTER OTP"></span>
-                    </div>
-                    <div>
-
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="container">
+                                <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+  </div>
+  <input type="text" class="form-control" placeholder="Enter OTP" aria-label="Username" aria-describedby="basic-addon1" name="otp">
+</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <button type="button" onclick="window.location.href='index.php'" class="btn" style="width: 100%"><i class="fas fa-hand-point-left"></i> BACK</button>
+                            <a href="epm_login.php"><button type="button" class="btn" style="width: 100%; background-color:maroon; color: white;"><i class="fas fa-hand-point-left"></i> BACK</button></a>
                         </div>
                         <div class="col-md-4">
-                            <button type="submit" class="btn" style="width: 100%" name="resend"><i class="fas fa-envelope"></i> RESEND EMAIL</button>
+                            <button type="submit" class="btn" style="width: 100%; background-color:maroon; color: white;" name="resend"><i class="fas fa-envelope"></i> RESEND EMAIL</button>
                         </div>
                         <div class="col-md-4">
-                            <button class="btn btn-secondary fa-pull-right" name="submit" type="submit" style="width: 100%"><i class="fas fa-check"></i> SUBMIT</button>
+                            <button class="btn btn-secondary fa-pull-right" name="submit" type="submit" style="width: 100%; background-color:maroon; color: white;"><i class="fas fa-check"></i> SUBMIT</button>
                         </div>
                     </div>
                         </form>
@@ -264,9 +279,6 @@ else{
         </div>
     </div>
 </div>
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
     const inputs = document.querySelectorAll(".input");
 
