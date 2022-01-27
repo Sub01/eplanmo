@@ -87,28 +87,18 @@ else{
                             <center>
                                 <h2 class="title">RESET PASSWORD</h2>
                             </center>
-                            <div class="input-div one">
-                                <div class="i">
-                                    <i class="fas fa-lock"></i>
-                                </div>
-                                <div class="div">
-                                    <h5>Password</h5>
-                                    <input class="input" id="pword1" type="password" name="pword1" required="" maxlength="20" style="width: 90%">
-                                </div>
-                            </div>
-                            <div style="margin-top: -20px;">
-                                <input type="checkbox" class="fa-pull-left" style="margin-top: 4px; margin-right: 4px;" onClick="showPassword1();">
-                                <p style="text-align: left">Show Password</p>
-                            </div>
-                            <div class="input-div one">
-                                <div class="i">
-                                    <i class="fas fa-lock"></i>
-                                </div>
-                                <div class="div">
-                                    <h5>Repeat Password</h5>
-                                    <input class="input" id="pword2" type="password" name="pword2" required="" maxlength="20" style="width: 90%">
-                                </div>
-                            </div>
+                            <div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+  </div>
+  <input type="text" class="form-control" placeholder="Enter New Password" aria-label="Username" aria-describedby="basic-addon1" name="pword1">
+</div>
+                            <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+  </div>
+  <input type="text" class="form-control" placeholder="Re-Enter New Password" aria-label="Username" aria-describedby="basic-addon1" name="pword2">
+</div>
                             <div style="margin-top: -20px;">
                                 <input type="checkbox" class="fa-pull-left" style="margin-top: 4px; margin-right: 4px;" onClick="showPassword2();">
                                 <p style="text-align: left">Show Password</p>
@@ -178,22 +168,15 @@ else{
                     document.getElementById('submit').disabled = true;
                 }
             });
-
-            function showPassword1() {
-                var x = document.getElementById("pword1");
-                if (x.type === "password") {
-                    x.type = "text";
-                } else {
-                    x.type = "password";
-                }
-            }
-
             function showPassword2() {
                 var x = document.getElementById("pword2");
+                 var y = document.getElementById("pword1");
                 if (x.type === "password") {
                     x.type = "text";
+                    y.type = "text";
                 } else {
                     x.type = "password";
+                    y.type = "password";
                 }
             }
             const inputs = document.querySelectorAll(".input");
