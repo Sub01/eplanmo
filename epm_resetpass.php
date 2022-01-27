@@ -100,7 +100,7 @@ else{
                                 <input type="password" class="form-control" placeholder="Re-Enter New Password" aria-label="Username" aria-describedby="basic-addon1" name="pword2">
                             </div>
                             <div style="margin-top: -20px;">
-                                <label class="checkbox-wrap checkbox-primary">Show Password</label>
+                                <label class="checkbox-wrap checkbox-primary">Show Password
                             <input type="checkbox" onClick="myFunction();">
                             <span class="checkmark"></span>
                             </div>
@@ -158,17 +158,6 @@ else{
             </div>
         </div>
         <script>
-            $('#pword1, #pword2').on('keyup', function() {
-                if ($('#pword1').val() == $('#pword2').val()) {
-                    $('#message').html('Password Match').css('color', 'green');
-                    document.getElementById('submit').disabled = false;
-
-                } else {
-                    $('#message').html('Password Do Not Match').css('color', 'red');
-                    document.getElementById('submit').disabled = true;
-                }
-            });
-
             function myFunction() {
                 var x = document.getElementById("pword1");
                 var y = document.getElementById("pword2");
@@ -180,6 +169,16 @@ else{
                     y.type = "password";
                 }
             }
+            $('#pword1, #pword2').on('keyup', function() {
+                if ($('#pword1').val() == $('#pword2').val()) {
+                    $('#message').html('Password Match').css('color', 'green');
+                    document.getElementById('submit').disabled = false;
+
+                } else {
+                    $('#message').html('Password Do Not Match').css('color', 'red');
+                    document.getElementById('submit').disabled = true;
+                }
+            });
             const inputs = document.querySelectorAll(".input");
 
             function addcl() {
