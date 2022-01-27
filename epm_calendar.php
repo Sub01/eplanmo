@@ -313,11 +313,13 @@ else{
                 // add the responsive classes after page initialization
                 window.onload = function() {
                     $('.fc-toolbar.fc-header-toolbar').addClass('row col-lg-12');
+                    $('.fc-button').addClass('btn btn-sm');
                 };
 
                 // add the responsive classes when navigating with calendar buttons
                 $(document).on('click', '.fc-button', function(e) {
-                    $('.fc-toolbar.fc-header-toolbar').addClass('row col-lg-12');
+                    $('.fc-toolbar.fc-header-toolbar').addClass('row col-lg-12 btn btn-sm');
+                    $('.fc-button').addClass('btn btn-sm');
                 });
             </script>
             </body>
