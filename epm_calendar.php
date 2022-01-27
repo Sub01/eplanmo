@@ -91,27 +91,7 @@ else{
         -webkit-appearance: none;
         margin: 0;
     }
-    .fc-button,.fc-button-primary{
-        display:inline-block;
-        font-weight:400;
-        color:#212529;
-        text-align:center;
-        vertical-align:middle;
-        -webkit-user-select:none;
-        -moz-user-select:none;
-        -ms-user-select:none;
-        user-select:none;
-        background-color:transparent;
-        border:1px solid transparent;
-        padding:.375rem .75rem;
-        font-size:1rem;
-        line-height:1.5;
-        transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
-        padding:.25rem .5rem;
-        font-size:.875rem;
-        line-height:1.5;
-        border-radius:.2rem;
-    }
+    @media screen and (max-width:767px) { .fc-toolbar.fc-header-toolbar {font-size: 60%}}
 </style>
 <?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
 <div class="wrapper d-flex">
