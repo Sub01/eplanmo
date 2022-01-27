@@ -283,7 +283,7 @@ else{
                     </div>
                     <div class="col-xl-7 col-md-7 col-sm-7 mb-4">
                         <div class="card shadow h-100 py-2" style="max-height: 1000px;">
-                            <div class="card-header" id="calendar">
+                            <div class="card-header" id="calendar" style="overflow-x:auto;">
 
                             </div>
                         </div>
