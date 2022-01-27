@@ -107,18 +107,12 @@ else{
 				$result = $db-> query($sql);
 				if($result){
 					$script = "<script> $(document).ready(function(){ $('#modalResendSuccess').modal('show'); }); </script>";
-                    header("Location: /epm_otp.php?email=$email");
-				    exit();
 				}
 				else{
-					$script = "<script> $(document).ready(function(){ $('#modalResendFailed').modal('show'); }); </script>";
-                    header("Location: /epm_otp.php?email=$email");
-				    exit();
+					$script = "<script> $(document).ready(function(){ $('#modalRegSuccess').modal('show'); }); </script>";
 				}
 			}else{
-				$script = "<script> $(document).ready(function(){ $('#modalResendFailed').modal('show'); }); </script>";
-                header("Location: /epm_otp.php?email=$email");
-				exit();
+				$script = "<script> $(document).ready(function(){ $('#modalRegSuccess').modal('show'); }); </script>";
 			}
 		}
 	}
@@ -180,7 +174,7 @@ else{
 <div class="container">
     <div class="row">
         <div class="col-md-2">
-
+            
         </div>
         <div class="col-xl-8 col-md-2 mb-4" style="margin-top: 5%">
             <div class="card border-left-primary shadow h-100 py-2">
@@ -210,6 +204,10 @@ else{
                             <?php unset($_SESSION['message']); ?>
                             <?php unset($_SESSION['status']); ?>
                     </div>
+                    <div class="row">
+        <?php if(isset($script)){ echo $script; } ?>
+        <?php unset($script); ?>
+    </div>
                     <div class="row form-group">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="container">
@@ -241,10 +239,6 @@ else{
 
         </div>
     </div>
-    <div class="row">
-        <?php if(isset($script)){ echo $script; } ?>
-        <?php unset($script); ?>
-    </div>
 </div>
 
 
@@ -256,7 +250,7 @@ else{
             <div class="modal-header">
                 <img src="assets/images/congrats.png" style="width: 10%;height: 10%">
                 <h2 class="modal-title">Email Sent</h2>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" onclick="window.location.href='/epm_otp.php?email=<?php echo $email?>'">&times;</button>
             </div>
             <div class="modal-body">
                 <p>Email has been successfuly resent. If you still can't find the email, try checking your spam folder.</p>
