@@ -91,13 +91,13 @@ else{
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
                                 </div>
-                                <input type="password" class="form-control" placeholder="Enter New Password" aria-label="Username" aria-describedby="basic-addon1" name="pword1">
+                                <input type="password" class="form-control" placeholder="Enter New Password" aria-label="Username" aria-describedby="basic-addon1" name="pword1" id="pword1">
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
                                 </div>
-                                <input type="password" class="form-control" placeholder="Re-Enter New Password" aria-label="Username" aria-describedby="basic-addon1" name="pword2">
+                                <input type="password" class="form-control" placeholder="Re-Enter New Password" aria-label="Username" aria-describedby="basic-addon1" name="pword2" id="pword2">
                             </div>
                             <div style="margin-top: -20px;">
                                 <label class="checkbox-wrap checkbox-primary">Show Password
