@@ -58,7 +58,7 @@ include 'assets/php/php_epm_genset.php';
                 <a class="nav-link" href="#featured-services" style="color:white">SERVICES</a>
                 <a class="nav-link" href="#about" style="color:white">ABOUT</a>
                 <a class="nav-link" href="#contact" style="color:white">CONTACT</a>
-                <a href="//epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
+                <a href="https:/eplanmo.herokuapp.com/epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
             </div>
         </nav>
     </div>
