@@ -108,6 +108,7 @@ else
     <link rel="stylesheet" href="assets/css/animation.css">
     <!--===============================================================================================-->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1739375817606067" crossorigin="anonymous"></script>
+    <link href="assets/css/index.css" rel="stylesheet">
 </head>
 <style>
     input::-webkit-outer-spin-button,

@@ -48,6 +48,7 @@ else{
 	<link rel="stylesheet" href="assets/css/login.css">
 	<link rel="stylesheet" href="assets/css/animation.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1739375817606067" crossorigin="anonymous"></script>
+    <link href="assets/css/index.css" rel="stylesheet">
 </head>
 <?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
 <header id="header" class="d-flex align-items-center" style="background-color:maroon">
