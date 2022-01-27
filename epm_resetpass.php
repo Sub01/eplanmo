@@ -100,9 +100,10 @@ else{
                                 <input type="password" class="form-control" placeholder="Re-Enter New Password" aria-label="Username" aria-describedby="basic-addon1" name="pword2" id="pword2">
                             </div>
                             <div style="margin-top: -20px;">
-                                <label class="checkbox-wrap checkbox-primary">Show Password
-                            <input type="checkbox" onClick="myFunction();">
-                            <span class="checkmark"></span>
+                                
+                                <input type="checkbox" onClick="myFunction();">
+                                <span class="checkmark"></span>
+                                <label class="checkbox-wrap checkbox-primary">Show Password</label>
                             </div>
                             <div class="row">
                                 <table style="table-layout: fixed; width:100%">
