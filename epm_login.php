@@ -118,21 +118,68 @@ elseif(isset($_POST['forgot'])){
     }
 </style>
 <?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
+<html lang="en">
 
-<nav class="navbar navbar-expand-lg" style="background-color:maroon">
-    <span class="navbar-brand" style="color:white">EPLAN MO</span>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-        </ul>
-        <a class="nav-link" href="index.php" style="color:white">Home</a>
-        <a class="nav-link" href="#" style="color:white">Blog</a>
-        <a class="nav-link" href="#" style="color:white">About</a>
-        <a href="epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>EPlan Mo</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="assets/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.0.1/css/all.css">
+</head>
+<style>
+    .ql,
+    .ql a,
+    .ql a:hover {
+        text-decoration: none;
+        color: maroon;
+    }
+    .ql{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding 10px;
+    }
+    .top-header h2{
+        color:white;
+        background-color: maroon;
+    }
+    .top-header h3{
+        color:dimgray;
+    }
+    .info-box i {
+        color: maroon;
+    }
+</style>
+<?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
+<header id="header" class="d-flex align-items-center" style="background-color:maroon">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <span>
+                <h1 class="logo" style="color:white;">EPLAN MO</h1>
+            </span>
+            <button class="navbar-toggler btn btn-light" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" style="color: maroon !important">
+                <span class="navbar-toggler-icon" style="color: white;"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <a class="nav-link" href="index.php#hero" style="color:white">HOME</a>
+                <a class="nav-link" href="index.php#featured-services" style="color:white">SERVICES</a>
+                <a class="nav-link" href="index.php#about" style="color:white">ABOUT</a>
+                <a class="nav-link" href="#index.phpcontact" style="color:white">CONTACT</a>
+                <a href="epm_login.php"><button class="btn btn-light my-2 my-sm-0">SIGN IN</button></a>
+            </div>
+        </nav>
     </div>
-</nav>
+</header>
 <div class="wrapper d-flex">
     <div class="container-fluid" style="margin-top: 2%;">
         <div class="row">
