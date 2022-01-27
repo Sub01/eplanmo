@@ -4,48 +4,12 @@ include ("assets/php/php_epm_genset.php");
 include ("assets/php/summary.php");
 
 if(!isset($_SESSION["User"])){
-	header("Location: index.php");
+	header("Location: https://eplanmo.herokuapp.com/epm_login.php");
 	exit();
 }	
-elseif(isset($_POST['sub'])){
-	$scode = $_POST['scode'];
-	$sdes = $_POST['sdes'];
-	$sid = $_POST['$sid'];
-	$sql = "UPDATE subjects SET S_Code='$scode' AND S_Description='$sdes' WHERE ID='$sid'";
-	$result = $db->query($sql);
-		if($result){
-			$_SESSION['status'] = "success";
-   			$_SESSION['message'] = "Subject's Information Successfuly Updated";
-			header("Location: epm_agenda.php");
-			exit();
-		}
-		else{
-			$_SESSION['status'] = "error";
-   			$_SESSION['message'] = "Failed to Update Subject's Information";
-			header("Location: epm_agenda.php");
-			exit();
-		}
+else{
+    
 }
-elseif(isset($_POST['teacher'])){
-		$tname = $_POST['tname'];
-		$tsname = $_POST['tsname'];
-		$temail = $_POST['temail'];
-		$tid = $_POST['tid'];
-		$sql = "UPDATE `teachers` SET `T_Name`='$tname', `T_Surname`='$tsname', `T_Email`='$temail' WHERE `ID`='$tid'";
-		$result = $db->query($sql);
-		if($result){
-			$_SESSION['status'] = "success";
-   			$_SESSION['message'] = "Teacher's Information Successfuly Updated";
-			header("Location: epm_agenda.php");
-			exit();
-		}
-		else{
-			$_SESSION['status'] = "error";
-   			$_SESSION['message'] = "Failed to Update Teacher's Information";
-			header("Location: epm_agenda.php");
-			exit();
-		}
-	}
 
 ?>
 <!doctype html>
@@ -78,28 +42,28 @@ elseif(isset($_POST['teacher'])){
         </div>
         <ul class="list-unstyled components mb-5">
             <li>
-                <a href="epm_admin.php"><span class="fas fa-home mr-3"></span> Dashboard</a>
+                <a href="https://eplanmo.herokuapp.com/epm_admin.php"><span class="fas fa-home mr-3"></span> Dashboard</a>
             </li>
             <li>
-                <a href="epm_calendar.php"><span class="fas fa-calendar-week mr-3"></span> Calendar</a>
+                <a href="https://eplanmo.herokuapp.com/epm_calendar.php"><span class="fas fa-calendar-week mr-3"></span> Calendar</a>
             </li>
             <li class="active">
-                <a href="epm_agenda.php"><span class="fas fa-calendar-check mr-3"></span> Agenda</a>
+                <a href="https://eplanmo.herokuapp.com/epm_agenda.php"><span class="fas fa-calendar-check mr-3"></span> Agenda</a>
             </li>
             <li>
-                <a href="epm_teachers.php"><span class="fas fa-chalkboard-teacher mr-3"></span> Teachers</a>
+                <a href="https://eplanmo.herokuapp.com/epm_teachers.php"><span class="fas fa-chalkboard-teacher mr-3"></span> Teachers</a>
             </li>
             <li>
-                <a href="epm_subjects.php"><span class="fas fa-book mr-3"></span> Subjects</a>
+                <a href="https://eplanmo.herokuapp.com/epm_subjects.php"><span class="fas fa-book mr-3"></span> Subjects</a>
             </li>
             <li>
-                <a href="epm_grades.php"><span class="fas fa-book-open mr-3"></span> Grades</a>
+                <a href="https://eplanmo.herokuapp.com/epm_grades.php"><span class="fas fa-book-open mr-3"></span> Grades</a>
             </li>
             <li>
-                <a href="epm_pomodoro.php"><span class="fas fa-stopwatch mr-3"></span> Pomodoro</a>
+                <a href="https://eplanmo.herokuapp.com/epm_pomodoro.php"><span class="fas fa-stopwatch mr-3"></span> Pomodoro</a>
             </li>
             <li>
-                <a href="epm_downloads.php"><span class="fas fa-download mr-3"></span> Downloads</a>
+                <a href="https://eplanmo.herokuapp.com/epm_downloads.php"><span class="fas fa-download mr-3"></span> Downloads</a>
             </li>
         </ul>
     </nav>
