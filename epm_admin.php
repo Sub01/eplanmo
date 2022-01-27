@@ -21,7 +21,7 @@ else{
     $user = $_SESSION['User'];
     $data1 = '';
     $data2 = '';
-    $sql = "SELECT  DATE_FORMAT(`Timestamp`,'%m-%d-%y') AS `Current`, COUNT(`ID`) AS `Total` FROM `events`  WHERE Name ='sample' GROUP BY `Current`";
+    $sql = "SELECT  DATE_FORMAT(`Timestamp`,'%m-%d-%y') AS `Current`, COUNT(`ID`) AS `Total` FROM `events`  WHERE Name ='$user' GROUP BY `Current`";
     $result = mysqli_query($db, $sql);
     while ($row = mysqli_fetch_array($result)) {
 
@@ -490,33 +490,6 @@ else{
 
 
         $(document).ready(function() {
-            function load_unseen_notification(view = '') {
-                $.ajax({
-                    url: "fetch.php",
-                    method: "POST",
-                    data: {
-                        view: view
-                    },
-                    dataType: "json",
-                    success: function(data) {
-                        $('#dropdown-menu').html(data.notification);
-                        if (data.unseen_notification > 0) {
-                            $('.count').html(data.unseen_notification);
-                        }
-                    }
-                });
-            }
-
-            load_unseen_notification();
-
-            $(document).on('click', '#dropdown-toggle', function() {
-                $('.count').html('');
-                load_unseen_notification('yes');
-            });
-
-            setInterval(function() {
-                load_unseen_notification();;
-            }, 5000);
             $('.editbutton').on('click', function() {
                 $('#updateEvent').modal('show');
                 $tr = $(this).closest('tr');
