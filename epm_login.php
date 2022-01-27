@@ -52,20 +52,22 @@ elseif(isset($_POST['forgot'])){
 		$row = $result-> fetch_assoc();
 		$code = rand(999999, 111111);
 			
-			$mail = new PHPMailer(true);
-			$mail->isHTML(true);
-			$mail->isSMTP();
-			$mail->CharSet = "utf-8";
-			//==========================  GOOGLE ACCOUNT CREDENTIALS
-			$mail->Host = 'smtp.gmail.com';
-			$mail->SMTPAuth = "true";
-			$mail->Username = "mh.tokio@gmail.com";
-			$mail->Password = "cwovxtcdrzoxjmmp";
-			$mail->SMTPSecure = "ssl";
-			$mail->Port = "465";
+			//==========================  INSTANTIATE MAILER
+		$mail = new PHPMailer(true);
+		$mail->isHTML(true);
+		$mail->isSMTP();
+		$mail->CharSet = "utf-8";
 		
-			//==========================  EMAIL INFORMATIONS
-			$mail->setFrom("mh.tokio@gmail.com","Gino Toralba/EPM DEV");
+		//==========================  GOOGLE ACCOUNT CREDENTIALS
+		$mail->Host = 'smtp.mail.yahoo.com';
+		$mail->SMTPAuth = "true";
+		$mail->Username = "kirigayakazuto03@rocketmail.com";
+		$mail->Password = "mzjggsaolizjxfdu";
+		$mail->SMTPSecure = "ssl";
+		$mail->Port = "465";
+		
+		//==========================  EMAIL INFORMATIONS
+		$mail->setFrom("kirigayakazuto03@rocketmail.com","Gino Toralba/EPM DEV");
 			$mail->addAddress("$email", $name);
 		
 			$email_template = 'epm_mail_template2.html';
