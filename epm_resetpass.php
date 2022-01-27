@@ -104,6 +104,9 @@ else{
                                 <span class="checkmark"></span>
                                 <label class="checkbox-wrap checkbox-primary">Show Password</label>
                             </div>
+                            <div style="margin-top: 20px;">
+                                <center><label id="message"></label></center>
+                            </div>
                             <div class="row">
                                 <table style="table-layout: fixed; width:100%">
                                     <tr>
@@ -116,8 +119,6 @@ else{
                                 <?php if(isset($script)){ echo $script; } ?>
                                 <?php unset($script); ?>
                             </div>
-                            <?php if(isset($script)){ echo $script; } ?>
-                            <?php unset($script); ?>
                         </form>
                     </div>
                 </div>
