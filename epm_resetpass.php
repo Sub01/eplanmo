@@ -116,9 +116,9 @@ else{
                                     </tr>
                                 </table>
 
-                                <?php if(isset($script)){ echo $script; } ?>
-                                <?php unset($script); ?>
                             </div>
+                            <div class="row"><?php if(isset($script)){ echo $script; } ?>
+                                <?php unset($script); ?></div>
                         </form>
                     </div>
                 </div>
