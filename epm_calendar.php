@@ -91,26 +91,27 @@ else{
         -webkit-appearance: none;
         margin: 0;
     }
-    .fc-button,.fc-button-primary{
-        display:inline-block;
-        font-weight:400;
-        color:#212529;
-        text-align:center;
-        vertical-align:middle;
-        -webkit-user-select:none;
-        -moz-user-select:none;
-        -ms-user-select:none;
-        user-select:none;
-        background-color:transparent;
-        border:1px solid transparent;
-        padding:.375rem .75rem;
-        font-size:1rem;
-        line-height:1.5;
-        transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
-        padding:.25rem .5rem;
-        font-size:.875rem;
-        line-height:1.5;
-        border-radius:.2rem;
+
+    .fc-button,
+    .fc-button-primary {
+        display: inline-block;
+        font-weight: 400;
+        color: #212529;
+        text-align: center;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-color: transparent;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out padding:.25rem .5rem;
+        font-size: .875rem;
+        line-height: 1.5;
+        border-radius: .2rem;
     }
 </style>
 <?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
@@ -156,41 +157,39 @@ else{
                 </button>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <?php 
+                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bell fa-fw"></i>
+                            <?php 
                                 $sql = "SELECT COUNT(ID) as Counter FROM notif WHERE Name='$user' AND Status='0'";
                                 $result = $db->query($sql);
                                 $row = mysqli_fetch_assoc($result);
                                 $counter = $row['Counter'];
                                 ?>
-                                <span class="badge badge-danger badge-counter"><?php echo $counter ?></span>
-                            </a>
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Notifications
-                                </h6>
-                                <?php 
+                            <span class="badge badge-danger badge-counter"><?php echo $counter ?></span>
+                        </a>
+                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                            <h6 class="dropdown-header">
+                                Notifications
+                            </h6>
+                            <?php 
                                 $sql2 = "SELECT * FROM notif WHERE Name='$user' AND Status='0' ORDER BY ID DESC";
                                 $result2 = $db->query($sql2);
                                 while($row2 = mysqli_fetch_assoc($result2)){
                                 ?>
-                                <a class="dropdown-item d-flex align-items-center" href="assets/php/update_notif_calendar.php?id=<?php echo $row2['ID']?>">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-eye" style="color:white;"></i>
-                                        </div>
+                            <a class="dropdown-item d-flex align-items-center" href="assets/php/update_notif_calendar.php?id=<?php echo $row2['ID']?>">
+                                <div class="mr-3">
+                                    <div class="icon-circle bg-primary">
+                                        <i class="fas fa-eye" style="color:white;"></i>
                                     </div>
-                                    <div>
-                                        <div class="small text-gray-500"><?php echo $row2['Title']?></div>
-                                        <span class="font-weight-bold"><?php echo $row2['Description']?></span>
-                                    </div>
-                                </a>
-                                <?}?>
-                            </div>
-                        </li>
+                                </div>
+                                <div>
+                                    <div class="small text-gray-500"><?php echo $row2['Title']?></div>
+                                    <span class="font-weight-bold"><?php echo $row2['Description']?></span>
+                                </div>
+                            </a>
+                            <?}?>
+                        </div>
+                    </li>
                     <div class="topbar-divider d-none d-sm-block"></div>
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -310,6 +309,15 @@ else{
                     setTimeout(function() {
                         $("div.alert").remove();
                     }, <?php echo $gensetmodclose ?>);
+                });
+                // add the responsive classes after page initialization
+                window.onload = function() {
+                    $('.fc-toolbar.fc-header-toolbar').addClass('row col-lg-12');
+                };
+
+                // add the responsive classes when navigating with calendar buttons
+                $(document).on('click', '.fc-button', function(e) {
+                    $('.fc-toolbar.fc-header-toolbar').addClass('row col-lg-12');
                 });
             </script>
             </body>
