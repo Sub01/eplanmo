@@ -312,7 +312,7 @@ else{
                 });
                 // add the responsive classes after page initialization
                 window.onload = function() {
-                    $('.fc-header-toolbar').addClass('row col-lg-12');
+                    $('.fc-button').addClass('btn btn-sm');
                 };
             </script>
             </body>
