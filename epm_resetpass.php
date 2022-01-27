@@ -99,8 +99,7 @@ else{
                                 </div>
                                 <input type="password" class="form-control" placeholder="Re-Enter New Password" aria-label="Username" aria-describedby="basic-addon1" name="pword2" id="pword2">
                             </div>
-                            <div style="margin-top: -20px;">
-                                
+                            <div style="margin-top: 20px;">
                                 <input type="checkbox" onClick="myFunction();">
                                 <span class="checkmark"></span>
                                 <label class="checkbox-wrap checkbox-primary">Show Password</label>
