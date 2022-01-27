@@ -88,21 +88,21 @@ else{
                                 <h2 class="title">RESET PASSWORD</h2>
                             </center>
                             <div class="input-group mb-3">
-  <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
-  </div>
-  <input type="password" class="form-control" placeholder="Enter New Password" aria-label="Username" aria-describedby="basic-addon1" name="pword1">
-</div>
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="Enter New Password" aria-label="Username" aria-describedby="basic-addon1" name="pword1">
+                            </div>
                             <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
-  </div>
-  <input type="password" class="form-control" placeholder="Re-Enter New Password" aria-label="Username" aria-describedby="basic-addon1" name="pword2">
-</div>
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="Re-Enter New Password" aria-label="Username" aria-describedby="basic-addon1" name="pword2">
+                            </div>
                             <div style="margin-top: -20px;">
-                                <input type="checkbox" class="fa-pull-left" style="margin-top: 4px; margin-right: 4px;" onChange="showPassword2();">
-                                <p style="text-align: left">Show Password</p>
-                                <label id="message"></label>
+                                <label class="checkbox-wrap checkbox-primary">Show Password</label>
+                            <input type="checkbox" onClick="myFunction();">
+                            <span class="checkmark"></span>
                             </div>
                             <div class="row">
                                 <table style="table-layout: fixed; width:100%">
@@ -112,9 +112,9 @@ else{
                                         <td><button name="submit" class="btn btn-secondary fa-pull-right" id="submit" type="submit" style="width: 100%; background-color: maroon; color: white;"><i class="fas fa-check"></i> SUBMIT</button></td>
                                     </tr>
                                 </table>
-                                    
-                                    <?php if(isset($script)){ echo $script; } ?>
-                                    <?php unset($script); ?>
+
+                                <?php if(isset($script)){ echo $script; } ?>
+                                <?php unset($script); ?>
                             </div>
                             <?php if(isset($script)){ echo $script; } ?>
                             <?php unset($script); ?>
@@ -168,9 +168,10 @@ else{
                     document.getElementById('submit').disabled = true;
                 }
             });
-            function showPassword2() {
-                var x = document.getElementById("pword2");
-                 var y = document.getElementById("pword1");
+
+            function myFunction() {
+                var x = document.getElementById("pword1");
+                var y = document.getElementById("pword2");
                 if (x.type === "password") {
                     x.type = "text";
                     y.type = "text";
