@@ -42,7 +42,7 @@ else
 	  	$code = rand(999999, 111111);
       	$account_status = "Unverified";
 		$code_status = "Valid";
-		$timer = 120;
+		$timer = 600;
 	  	$_SESSION['email'] = $email;
 		
 	  	
