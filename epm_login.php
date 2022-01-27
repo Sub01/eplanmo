@@ -72,7 +72,7 @@ elseif(isset($_POST['forgot'])){
 		
 			$email_template = 'epm_mail_template2.html';
 			$message = file_get_contents($email_template);
-			$message = str_replace('%username%', $username, $message);
+			$message = str_replace('%user%', $username, $message);
 			$message = str_replace('%code%', $code, $message);
 			$message = str_replace('%email%', $email, $message);
 		
@@ -88,7 +88,7 @@ elseif(isset($_POST['forgot'])){
             }
 		}
 		else{
-			$script = "<script> $(document).ready(function(){ $('#modalUserError').modal('show'); }); </script>";
+			$script = "<script> $(document).ready(function(){ $('#modalUserError ').modal('show'); }); </script>";
 		}
 	}
 
