@@ -2,7 +2,7 @@
 include ("assets/php/php_epm_profile.php");
 include ("assets/php/php_epm_genset.php");
 if(!isset($_SESSION['User'])){
-	header("Location: /index.php");
+	header("Location: https://eplanmo.herokuapp.com/index.php");
    	exit();
 }
 else{
@@ -19,7 +19,7 @@ else{
    			$result2 = mysqli_query($db, $sql);
    			$_SESSION['status'] = "success";
    			$_SESSION['message'] = "Event Added Successfully";
-   			header("Location: /epm_calendar.php");
+   			header("Location: https://eplanmo.herokuapp.com/epm_calendar.php");
    			exit();
 		}
 		elseif ($end < $datenow) {
@@ -27,13 +27,13 @@ else{
    			$result2 = mysqli_query($db, $sql);
    			$_SESSION['status'] = "success";
    			$_SESSION['message'] = "Event Added Successfully";
-   			header("Location: /epm_calendar.php");
+   			header("Location: https://eplanmo.herokuapp.com/epm_calendar.php");
    			exit();
 		}
 		else{
 			$_SESSION['status'] = "error";
    			$_SESSION['message'] = "There's an error processing your request";
-   			header("Location: /epm_calendar.php");
+   			header("Location: https://eplanmo.herokuapp.com/epm_calendar.php");
    			exit();
 		}
 	}
@@ -91,6 +91,28 @@ else{
         -webkit-appearance: none;
         margin: 0;
     }
+    .fc-button{
+        display:inline-block;
+        font-weight:400;
+        color:#212529;
+        text-align:center;
+        vertical-align:middle;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none;
+        background-color:transparent;
+        border:1px solid transparent;
+        padding:.375rem .75rem;
+        font-size:1rem;
+        line-height:1.5;
+        border-radius:.25rem;
+        transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+        padding:.25rem .5rem;
+        font-size:.875rem;
+        line-height:1.5;
+        border-radius:.2rem;
+    }
 </style>
 <?php echo '<body style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
 <div class="wrapper d-flex">
@@ -103,28 +125,28 @@ else{
         </div>
         <ul class="list-unstyled components mb-5">
             <li>
-                <a href="epm_admin.php"><span class="fas fa-home mr-3"></span> Dashboard</a>
+                <a href="https://eplanmo.herokuapp.com/epm_admin.php"><span class="fas fa-home mr-3"></span> Dashboard</a>
             </li>
             <li class="active">
-                <a href="epm_calendar.php"><span class="fas fa-calendar-week mr-3"></span> Calendar</a>
+                <a href="https://eplanmo.herokuapp.com/epm_calendar.php"><span class="fas fa-calendar-week mr-3"></span> Calendar</a>
             </li>
             <li>
-                <a href="epm_agenda.php"><span class="fas fa-calendar-check mr-3"></span> Agenda</a>
+                <a href="https://eplanmo.herokuapp.com/epm_agenda.php"><span class="fas fa-calendar-check mr-3"></span> Agenda</a>
             </li>
             <li>
-                <a href="epm_teachers.php"><span class="fas fa-chalkboard-teacher mr-3"></span> Teachers</a>
+                <a href="https://eplanmo.herokuapp.com/epm_teachers.php"><span class="fas fa-chalkboard-teacher mr-3"></span> Teachers</a>
             </li>
             <li>
-                <a href="epm_subjects.php"><span class="fas fa-book mr-3"></span> Subjects</a>
+                <a href="https://eplanmo.herokuapp.com/epm_subjects.php"><span class="fas fa-book mr-3"></span> Subjects</a>
             </li>
             <li>
-                <a href="epm_grades.php"><span class="fas fa-book-open mr-3"></span> Grades</a>
+                <a href="https://eplanmo.herokuapp.com/epm_grades.php"><span class="fas fa-book-open mr-3"></span> Grades</a>
             </li>
             <li>
-                <a href="epm_pomodoro.php"><span class="fas fa-stopwatch mr-3"></span> Pomodoro</a>
+                <a href="https://eplanmo.herokuapp.com/epm_pomodoro.php"><span class="fas fa-stopwatch mr-3"></span> Pomodoro</a>
             </li>
             <li>
-                <a href="epm_downloads.php"><span class="fas fa-download mr-3"></span> Downloads</a>
+                <a href="https://eplanmo.herokuapp.com/epm_downloads.php"><span class="fas fa-download mr-3"></span> Downloads</a>
             </li>
         </ul>
     </nav>
