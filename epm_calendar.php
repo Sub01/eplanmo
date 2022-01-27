@@ -282,7 +282,7 @@ else{
                     </div>
                     <div class="col-xl-7 col-md-7 col-sm-7 mb-4">
                         <div class="card shadow h-100 py-2" style="max-height: 1000px;">
-                            <div class="card-header" id="calendar" style="overflow-x:auto;">
+                            <div class="card-header" id="calendar">
 
                             </div>
                         </div>
@@ -312,8 +312,14 @@ else{
                 });
                 // add the responsive classes after page initialization
                 window.onload = function() {
+                    $('.fc-toolbar.fc-header-toolbar').addClass('row col-lg-12 ');
                     $('.fc-button').addClass('btn btn-sm');
                 };
+
+                // add the responsive classes when navigating with calendar buttons
+                $(document).on('click', '.fc-button', function(e) {
+                    $('.fc-toolbar.fc-header-toolbar').addClass('row col-lg-12 btn btn-sm');
+                });
             </script>
             </body>
 
