@@ -1,10 +1,10 @@
 <?php 
 include 'config.php';
 if (isset($_POST['save'])) {
-    $file_name = $_FILES['file']["name"];
-    $file_type = $_FILES['file']["type"];
+    $file_name = $_FILES['file']['name'];
+    $file_type = $_FILES['file']['type'];
     $file_size = $_FILES['file']['size'];
-	$file_temp = $_FILES['file']["tmp_name"];
+	$file_temp = $_FILES['file']['tmp_name'];
     $file_new_name = date("dmy") . time() . $_FILES["file"]["name"];
     $file_store = "../assets/uploads/".$file_new_name;
 	if ($file_size > 10485760) {
@@ -22,7 +22,6 @@ if (isset($_POST['save'])) {
 		}
 	}
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
