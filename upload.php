@@ -1,7 +1,7 @@
 <?php 
 include 'config.php';
 if (isset($_POST['save'])) {
-	$location = "$_SERVER["DOCUMENT_ROOT"].'assets/uploads/";
+	$location = $_SERVER["DOCUMENT_ROOT"]."assets/uploads/";
 	$file_new_name = date("dmy") . time() . $_FILES["file"]["name"];
 	$file_name = $_FILES['file']["name"];
 	$file_temp = $_FILES['file']["tmp_name"];
