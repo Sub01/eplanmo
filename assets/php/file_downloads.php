@@ -18,7 +18,8 @@ if (file_exists($file))
     ob_clean();
     flush();
     readfile($file);
+    header("Location:https://eplanmo.herokuapp.com/epm_downloads.php")
     exit;
     }
-} //- the missing closing brace
+}
 ?>
