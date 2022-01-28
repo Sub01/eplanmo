@@ -162,6 +162,7 @@ else{
                                         <tr>
                                             <th hidden>ID</th>
                                             <th>NAME</th>
+                                            <th>TYPE</th>
                                             <th>SIZE</th>
                                             <th>ACTIONS</th>
                                         </tr>
@@ -174,6 +175,7 @@ else{
                                         <tr>
                                             <td hidden><?php echo $row['ID'] ?></td>
                                             <td><?php echo $row['Name'] ?></td>
+                                            <td><?php echo $row['Type'] ?></td>
                                             <td><?php echo floor($row['Size'] / 1000) . ' KB'; ?></td>
                                             <td>
                                                 <a href="https://eplanmo.herokuapp.com/assets/uploads/<?php echo $row['New_Name']?>" dowload="<?php echo $row['Name']?>"><button class="btn btn-info btn-sm"><i class="fas fa-download"></i></button></a>
