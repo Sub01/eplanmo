@@ -2,8 +2,8 @@
 if(isset($_GET['path'])){
     $file = $_GET['path'];
     $fileName = basename($file);
-    $filePath = 'assets/uploads/'.$fileName;
-    if(!empty($fileName) && file_exists($filePath)){
+    $filePath = '../assets/uploads/'.$fileName;
+    if(file_exists($filePath)){
         header("Cache-Control: public");
         header("Content-Description: File Transfer");
         header("Content-Disposition: attachment; filename=$fileName");
