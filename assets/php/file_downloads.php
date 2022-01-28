@@ -17,6 +17,7 @@ if(isset($_GET['link']))
         ob_clean();
         flush();
         readfile($file);
+        header("Location: https://eplanmo.herokuapp.com/epm_downloads.php")
         exit;
     }
 }
