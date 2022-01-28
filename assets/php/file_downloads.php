@@ -1,24 +1,22 @@
 <?php
 if(isset($_GET['path'])){
-    $url = "/".$_GET['path'];
-    clearstatcache();
-    if(file_exists($url)) {
-        header('Content-Description: File Transfer');
-        header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename="'.basename($url).'"');
-        header('Content-Length: ' . filesize($url));
-        header('Pragma: public');
-        flush();
-        readfile($url,true);
-        die();
-    }
-    else{
-        echo "File path does not exist.";
-    }
+    $file = $_GET['path'];
+    $fileName = basename($file);
+$filePath = 'assets/uploads/'.$fileName;
+if(!empty($fileName) && file_exists($filePath)){
+    // Define headers
+    header("Cache-Control: public");
+    header("Content-Description: File Transfer");
+    header("Content-Disposition: attachment; filename=$fileName");
+    header("Content-Type: application/zip");
+    header("Content-Transfer-Encoding: binary");
+    
+    // Read the file
+    readfile($filePath);
+    exit;
+}else{
+    echo 'The file does not exist.';
 }
-else{
-    echo "File path is not defined."
 }
-
 
 ?>
