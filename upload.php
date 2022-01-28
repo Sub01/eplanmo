@@ -6,14 +6,16 @@ if (isset($_POST['save'])) {
     $file_type = $_FILES['file']['type'];
     $file_size = $_FILES['file']['size'];
 	$file_temp = $_FILES['file']['tmp_name'];
+    $code = rand(999999, 111111);
+    $file_new_name = $code.$file['name'];
 	if ($file_size > 10485760) {
 		echo "<script>alert('Woops! File is too big. Maximum file size allowed for upload 10 MB.')</script>";
 	} 
     else{
-		$sql = "INSERT INTO uploads (Name, New_Name, Size,Type)VALUES ('$file_name','$file_name','$file_size','$file_type')";
+		$sql = "INSERT INTO uploads (Name, New_Name, Size,Type)VALUES ('$file_name','$file_new_name','$file_size','$file_type')";
 		$result = mysqli_query($db, $sql);
 		if ($result) {
-			move_uploaded_file($file['tmp_name'],"assets/uploads/".$file['name']);
+			move_uploaded_file($file['tmp_name'],"assets/uploads/".$file_new_name);
 			echo "<script>alert('Wow! File uploaded successfully.')</script>";
 		} 
         else{
