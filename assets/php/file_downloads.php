@@ -1,7 +1,9 @@
 <?php
 
 if(isset($_GET['link'])){
-    $filename = $_GET['link'];
+    $file = $_GET['link'];
+    $path = "/assets/uploads/";
+    $filename = $path.$file;
     if(file_exists($filename)) {
         header('Content-Description: File Transfer');
         header('Content-Type: application/octet-stream');
