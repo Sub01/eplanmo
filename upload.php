@@ -1,20 +1,19 @@
 <?php 
 include 'config.php';
 if (isset($_POST['save'])) {
+    $file = $_FILES["file"];
     $file_name = $_FILES['file']['name'];
     $file_type = $_FILES['file']['type'];
     $file_size = $_FILES['file']['size'];
 	$file_temp = $_FILES['file']['tmp_name'];
-    $file_new_name = date("dmy") . time() . $_FILES["file"]["name"];
-    $file_store = "../assets/uploads/".$file_new_name;
 	if ($file_size > 10485760) {
 		echo "<script>alert('Woops! File is too big. Maximum file size allowed for upload 10 MB.')</script>";
 	} 
     else{
-		$sql = "INSERT INTO uploads (Name, New_Name, Size,Type)VALUES ('$file_name','$file_new_name','$file_size','$file_type')";
+		$sql = "INSERT INTO uploads (Name, New_Name, Size,Type)VALUES ('$file_name','$file_name','$file_size','$file_type')";
 		$result = mysqli_query($db, $sql);
 		if ($result) {
-			move_uploaded_file($file_temp,$file_store);
+			move_uploaded_file($file['tmp_name'],"assets/uploads/".$file['name']);
 			echo "<script>alert('Wow! File uploaded successfully.')</script>";
 		} 
         else{
