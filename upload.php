@@ -6,8 +6,7 @@ if (isset($_POST['save'])) {
     $file_type = $_FILES['file']['type'];
     $file_size = $_FILES['file']['size'];
 	$file_temp = $_FILES['file']['tmp_name'];
-    $code = rand(999999, 111111);
-    $file_new_name = round(microtime(true)) . '.' .$file;
+    $file_new_name = round(microtime(true)) . '.' .$file_name;
 	if ($file_size > 10485760) {
 		echo "<script>alert('Woops! File is too big. Maximum file size allowed for upload 10 MB.')</script>";
 	} 
