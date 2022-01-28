@@ -176,7 +176,7 @@ else{
                                             <td><?php echo $row['Name'] ?></td>
                                             <td><?php echo floor($row['Size'] / 1000) . ' KB'; ?></td>
                                             <td>
-                                                <a href="assets/php/file_downloads.php?link=<?php echo $row['New_Name']?>"><button class="btn btn-info btn-sm"><i class="fas fa-download"></i></button></a>
+                                                <a href="assets/php/file_downloads.php?path=assets/uploads/<?php echo $row['New_Name']?>"><button class="btn btn-info btn-sm"><i class="fas fa-download"></i></button></a>
                                             </td>
                                         </tr>
                                         <?php  } ?>
