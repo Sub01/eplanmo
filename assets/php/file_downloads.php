@@ -1,6 +1,6 @@
 <?php
 if(isset($_GET['path'])){
-    $url = $_GET['path'];
+    $url = "/".$_GET['path'];
     clearstatcache();
     if(file_exists($url)) {
         header('Content-Description: File Transfer');
