@@ -1,25 +1,30 @@
 <?php
-if(isset($_GET['link']))
-{
-    $var_1 = $_GET['link'];
 
-$dir = "assets/uploads/";
-$file = $dir . $var_1;
+if(isset($_GET['link'])){
+    $filename = $_GET['link'];
+    if(file_exists($filename)) {
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header("Cache-Control: no-cache, must-revalidate");
+        header("Expires: 0");
+        header('Content-Disposition: attachment; filename="'.basename($filename).'"');
+        header('Content-Length: ' . filesize($filename));
+        header('Pragma: public');
 
-if (file_exists($file))
-    {
-    header('Content-Description: File Transfer');
-    header('Content-Type: application/octet-stream');
-    header('Content-Disposition: attachment; filename='.basename($file));
-    header('Expires: 0');
-    header('Cache-Control: must-revalidate');
-    header('Pragma: public');
-    header('Content-Length: ' . filesize($file));
-    ob_clean();
-    flush();
-    readfile($file);
-    header("Location:https://eplanmo.herokuapp.com/epm_downloads.php")
-    exit;
+        flush();
+
+
+        readfile($filename);
+
+
+        die();
+    }
+    else{
+        echo "File does not exist.";
     }
 }
+else{
+   echo "Filename is not defined." 
+}
+
 ?>
