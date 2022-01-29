@@ -295,7 +295,11 @@ else{
                         $("div.alert").remove();
                     }, <?php echo $gensetmodclose ?>);
                 });
-                flatpickr("input[type=datetime-local]", {});
+                flatpickr("input[type=datetime-local]", {
+                    enableTime: true,
+                    dateFormat: "Y-m-d H:i",
+                    minDate: "today"
+                });
                 
             </script>
             </body>
