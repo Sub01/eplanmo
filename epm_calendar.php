@@ -293,8 +293,7 @@ else{
                     setTimeout(function() {
                         $("div.alert").remove();
                     }, <?php echo $gensetmodclose ?>);
-                });
-                var today = new Date();
+                    var today = new Date();
                 var dd = today.getDate();
                 var mm = today.getMonth()+1;
                 var yyyy = today.getFullYear();
@@ -307,6 +306,8 @@ else{
                 today = yyyy+'-'+mm+'-'+dd;
                 document.getElementById("date1").setAttribute("min", today);
                 document.getElementById("date2").setAttribute("min", today);
+                });
+                
             </script>
             </body>
 
