@@ -291,6 +291,12 @@ else{
                         $("div.alert").remove();
                     }, <?php echo $gensetmodclose ?>);
                 });
+                $(function () {
+                    $('#datetimepicker').datetimepicker({
+                    minDate : moment()
+            });
+        });
+
             </script>
             </body>
 
