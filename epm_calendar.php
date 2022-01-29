@@ -257,11 +257,11 @@ else{
                                             </div>
                                             <div class="form-group">
                                                 <label>START</label>
-                                                <input class="myInput form-control" type="text" name="start" required="" style="width:100%" value="" id="date1">
+                                                <input class="myInput form-control" type="datetime-local" name="start" required="" style="width:100%" value="" id="date1">
                                             </div>
                                             <div class="form-group">
                                                 <label>END</label>
-                                                <input class="myInput form-control" type="text" name="end" required="" style="width:100%" value="">
+                                                <input class="myInput form-control" type="datetime-local" name="end" required="" style="width:100%" value="">
                                             </div>
                                             <div class="form-group">
                                                 <button class="btn btn-primary btn-sm" name="event" type="submit" style="width:100%">ADD EVENT</button>
