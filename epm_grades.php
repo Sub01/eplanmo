@@ -9,7 +9,7 @@ if(!isset($_SESSION["User"])){
 }	
 else{
     $id = $_SESSION['User'];
-    if(isset($_POST['ggrade'])){
+    if(isset($_POST['update'])){
 		$teacher = $_POST['gteacher'];
 		$subject = $_POST['gsubject'];
 		$score = $_POST['gscore'];
