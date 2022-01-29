@@ -57,7 +57,7 @@ else{
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
 
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1739375817606067" crossorigin="anonymous"></script>
@@ -249,10 +249,10 @@ else{
                                             </div>
                                             <div class="form-group">
                                                 <label>START</label>
-                                               <div class='input-group date' id='date1'>
+                                                <div class='input-group date' id='date1'>
                     <input type='text' class="form-control" name="start">
                     <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
+                        <span class="fas fa-calendar"></span>
                     </span>
                 </div>
                                             </div>
@@ -261,7 +261,7 @@ else{
                                                 <div class='input-group date' id='date2'>
                     <input type='text' class="form-control" name="end">
                     <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
+                        <span class="fas fa-calendar"></span>
                     </span>
                 </div>
                                             </div>
@@ -292,6 +292,7 @@ else{
             <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
             <!--===============================================================================================-->
             <script src="assets/js/dashboard_main.js"></script>
             <script src="assets/js/calendar_voice.js"></script>
