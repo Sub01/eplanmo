@@ -246,11 +246,11 @@ else{
                                             </div>
                                             <div class="form-group">
                                                 <label>START</label>
-                                                <input class="myInput form-control" type="datetime-local" name="start" required="" style="width:100%" value="">
+                                                <input class="myInput form-control datetimepicker" type="datetime-local" name="start" required="" style="width:100%" value="">
                                             </div>
                                             <div class="form-group">
                                                 <label>END</label>
-                                                <input class="myInput form-control" type="datetime-local" name="end" required="" style="width:100%" value="">
+                                                <input class="myInput form-control datetimepicker" type="datetime-local" name="end" required="" style="width:100%" value="">
                                             </div>
                                             <div class="form-group">
                                                 <button class="btn btn-primary btn-sm" name="event" type="submit" style="width:100%">ADD EVENT</button>
@@ -292,7 +292,7 @@ else{
                     }, <?php echo $gensetmodclose ?>);
                 });
                 $(function () {
-                    $('#datetimepicker').datetimepicker({
+                    $('.datetimepicker').datetimepicker({
                     minDate : moment()
             });
         });
