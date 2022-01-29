@@ -59,13 +59,14 @@ else{
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
 
 
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1739375817606067" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.0.0-beta2/css/tempus-dominus.css" integrity="sha512-nYyjqNXfY5IWOHku56FIiRntoIbMTDH//ZKcmW6KE4uTPvnLtKdz/UcwfluGSaDc0ALkuQbNUYngjDtQKMsN7Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.0.0-beta2/css/tempus-dominus.min.css" integrity="sha512-sgYSfiXXixvVc8ojhIJA37WrKLFxM3OfcKp50IslLw9jDKa3fuZThq1/zyhWprGqwGLK0CTCTsDMOpHBWVhxxg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.0.0-beta2/js/jQuery-provider.js" integrity="sha512-tYeooh6kCogzGUtrLVNFmMJ6icM/0oZ/9LxGcfiU6nc7gbqkY3262Y7q+r8AkSyetdq2u2Yhb5TqdLa8gQKeAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.0.0-beta2/js/jQuery-provider.min.js" integrity="sha512-cIm+OXUHsSUA8jRFipO3wQZjrqXAxBcr9QFFLbsWICo743oKPbpwT01DLuN2oFivzN2YMI/8P0cEPQ62bee67w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.0.0-beta2/js/tempus-dominus.esm.js" integrity="sha512-VrIWLQt70jhwS+3qS/C3NVSiERXIxL6bac7s5goIBD7t0NKY1AZcz37raabBJ4dHD4PJiajXQzRh86XkwrxPDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.0.0-beta2/js/tempus-dominus.esm.js" integrity="sha512-VrIWLQt70jhwS+3qS/C3NVSiERXIxL6bac7s5goIBD7t0NKY1AZcz37raabBJ4dHD4PJiajXQzRh86XkwrxPDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.0.0-beta2/js/tempus-dominus.esm.min.js" integrity="sha512-H1dW8RP/Na2zrhEAtCo8I98WU16TFchZAwAg4JRBOyHZbWg4rduG1NQhthBh+9JEVhtYAlY4ea/sRdkBbtsWVA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.0.0-beta2/js/tempus-dominus.js" integrity="sha512-kJJK0IU5vz3SXPCFsYEAdl8U6TPb5KMhQCbwuJgY7yti4gX7sNOh09T0UV7Ol2+OtVEnLi0NLfpIG080jU8tng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -256,21 +257,11 @@ else{
                                             </div>
                                             <div class="form-group">
                                                 <label>START</label>
-                                                <div class='input-group date' id='date1'>
-                    <input type='text' class="form-control" name="start">
-                    <span class="input-group-addon">
-                        <span><i class="fas fa-calendar"></i></span>
-                    </span>
-                </div>
+                                                <input class="myInput form-control" type="text" name="start" required="" style="width:100%" value="" id="date1">
                                             </div>
                                             <div class="form-group">
                                                 <label>END</label>
-                                                <div class='input-group date' id='date2'>
-                    <input type='text' class="form-control" name="end">
-                    <span class="input-group-addon">
-                        <span0><i class="fas fa-calendar"></i></span>
-                    </span>
-                </div>
+                                                <input class="myInput form-control" type="text" name="end" required="" style="width:100%" value="">
                                             </div>
                                             <div class="form-group">
                                                 <button class="btn btn-primary btn-sm" name="event" type="submit" style="width:100%">ADD EVENT</button>
@@ -299,7 +290,6 @@ else{
             <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
-             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
             <!--===============================================================================================-->
             <script src="assets/js/dashboard_main.js"></script>
             <script src="assets/js/calendar_voice.js"></script>
@@ -313,10 +303,7 @@ else{
                     }, <?php echo $gensetmodclose ?>);
                 });
                 $(function () {
-                    $('#date1').datetimepicker({
-                        minDate:new Date()
-                    });
-                    $('#date2').datetimepicker({
+                    $('#datetimepickerDemo').datetimepicker({
                         minDate:new Date()
                     });
                 });
