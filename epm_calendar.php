@@ -87,6 +87,9 @@ else{
 
 </head>
 <style>
+    .input-group /deep/ input {
+        width: 100%;
+    }
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
         -webkit-appearance: none;
@@ -298,7 +301,9 @@ else{
                 flatpickr("input[type=datetime-local]", {
                     enableTime: true,
                     dateFormat: "Y-m-d H:i",
-                    minDate: "today"
+                    minDate: "today",
+                    time_24hr: true,
+                    innerWidth:
                 });
                 
             </script>
