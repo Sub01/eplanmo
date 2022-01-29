@@ -253,7 +253,7 @@ else{
                                             </div>
                                             <div class="form-group">
                                                 <label>END</label>
-                                                <input class="myInput form-control" type="datetime-local" name="end" required="" style="width:100%" value="" id="date2">
+                                                <input class="myInput form-control" type="datetime-local" name="end" required="" style="width:100%" value="" min="Now()">
                                             </div>
                                             <div class="form-group">
                                                 <button class="btn btn-primary btn-sm" name="event" type="submit" style="width:100%">ADD EVENT</button>
@@ -293,19 +293,14 @@ else{
                     setTimeout(function() {
                         $("div.alert").remove();
                     }, <?php echo $gensetmodclose ?>);
-                    var today = new Date();
-                var dd = today.getDate();
-                var mm = today.getMonth()+1;
-                var yyyy = today.getFullYear();
-                if(dd<10){
-                    dd='0'+dd
-                } 
-                if(mm<10){
-                    mm='0'+mm
-                } 
-                today = yyyy+'-'+mm+'-'+dd;
-                document.getElementById("date1").setAttribute("min", today);
-                document.getElementById("date2").setAttribute("min", today);
+                });
+                $(function () {
+                    $('#date1').datetimepicker({
+                        minDate:new Date()
+                    });
+                    $('#date2').datetimepicker({
+                        minDate:new Date()
+                    });
                 });
                 
             </script>
