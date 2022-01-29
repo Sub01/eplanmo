@@ -252,7 +252,7 @@ else{
                                                 <div class='input-group date' id='date1'>
                     <input type='text' class="form-control" name="start">
                     <span class="input-group-addon">
-                        <span class="fas fa-calendar"></span>
+                        <span><i class="fas fa-calendar"></i></span>
                     </span>
                 </div>
                                             </div>
@@ -261,7 +261,7 @@ else{
                                                 <div class='input-group date' id='date2'>
                     <input type='text' class="form-control" name="end">
                     <span class="input-group-addon">
-                        <span class="fas fa-calendar"></span>
+                        <span0><i class="fas fa-calendar"></i></span>
                     </span>
                 </div>
                                             </div>
