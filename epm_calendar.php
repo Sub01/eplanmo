@@ -249,11 +249,11 @@ else{
                                             </div>
                                             <div class="form-group">
                                                 <label>START</label>
-                                                <input class="myInput form-control datetimepicker" type="datetime-local" name="start" required="" style="width:100%" value="">
+                                                <input class="myInput form-control" type="datetime-local" name="start" required="" style="width:100%" value="" id="date1">
                                             </div>
                                             <div class="form-group">
                                                 <label>END</label>
-                                                <input class="myInput form-control datetimepicker" type="datetime-local" name="end" required="" style="width:100%" value="">
+                                                <input class="myInput form-control" type="datetime-local" name="end" required="" style="width:100%" value="" id="date2">
                                             </div>
                                             <div class="form-group">
                                                 <button class="btn btn-primary btn-sm" name="event" type="submit" style="width:100%">ADD EVENT</button>
@@ -294,13 +294,19 @@ else{
                         $("div.alert").remove();
                     }, <?php echo $gensetmodclose ?>);
                 });
-                $(function() {
-                    var date = new Date();
-                    var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-                    $('.datetimepicker').datetimepicker({
-                        minDate: today
-                    });
-                });
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth()+1;
+                var yyyy = today.getFullYear();
+                if(dd<10){
+                    dd='0'+dd
+                } 
+                if(mm<10){
+                    mm='0'+mm
+                } 
+                today = yyyy+'-'+mm+'-'+dd;
+                document.getElementById("date1").setAttribute("min", today);
+                document.getElementById("date2").setAttribute("min", today);
             </script>
             </body>
 
