@@ -303,7 +303,10 @@ else{
                     }, <?php echo $gensetmodclose ?>);
                 });
                 $(function () {
-                    $('#datetimepickerDemo').datetimepicker({
+                    $('#date1').datetimepicker({
+                        minDate:new Date()
+                    });
+                    $('#date2').datetimepicker({
                         minDate:new Date()
                     });
                 });
