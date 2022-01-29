@@ -302,8 +302,7 @@ else{
                     enableTime: true,
                     dateFormat: "Y-m-d H:i",
                     minDate: "today",
-                    time_24hr: true,
-                    innerWidth:
+                    time_24hr: true
                 });
                 
             </script>
