@@ -32,7 +32,7 @@ else{
     elseif(isset($_POST['adds'])){
 		$scode= $_POST['scode'];
 		$sdes= $_POST['sdes'];
-        $sort="SELECT * FROM subjects WHERE (S_Code='$scode' OR S_Description='$sdes') AND User='$id'";
+        $sort="SELECT * FROM subjects WHERE (`S_Code`='$scode' OR `S_Description`='$sdes') AND User='$id'";
         $fetch_sort=$db->query($sort);
         if($fetch){
             $_SESSION['status'] = "error";
