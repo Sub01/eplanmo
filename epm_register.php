@@ -109,6 +109,8 @@ else
     <!--===============================================================================================-->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1739375817606067" crossorigin="anonymous"></script>
     <link href="assets/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <style>
     input::-webkit-outer-spin-button,
@@ -123,6 +125,7 @@ else
     input[type="date"]:in-range::-webkit-datetime-edit-text {
         color: black;
     }
+
 </style>
 <?php echo '<body class="page-top" style="background-image:url(data:image/jpeg;base64,'.base64_encode($gensetbackground).');background-repeat: no-repeat; background-size: cover;background-attachment: fixed;">' ?>
 <header id="header" class="d-flex align-items-center" style="background-color:maroon">
@@ -187,7 +190,7 @@ else
                                                 <input class="form-control" type="text" name="sname" required="" placeholder="Last Name" maxlength="25" style="width: 100%" minlength="4">
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" type="date" name="bday" required="" placeholder="Birthday" maxlength="25" style="width: 100%">
+                                                <input class="form-control" type="datetime-local" name="bday" required="" placeholder="Birthday" maxlength="25" style="width: 100%">
                                             </div>
                                             <div class="form-group">
                                                 <input class="form-control" type="tel" name="cno" required="" placeholder="Contact (09***** / +63*****)" onKeyPress="if(this.value.length==14) return false;" style="width: 100%" pattern="^(09|\+639)\d{9}$">
@@ -312,6 +315,16 @@ else
         }, <?php echo $gensetmodclose ?>);
 
     });
+    flatpickr("input[type=datetime-local]", {
+        enableTime: false,
+        dateFormat: "Y-m-d H:i",
+        time_24hr: true,
+        disable: [{
+            from: "today" - 18,
+            to: "today"
+        }]
+    });
+
 </script>
 </body>
 
