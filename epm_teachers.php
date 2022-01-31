@@ -35,7 +35,7 @@ else{
 		$temail = $_POST['temail'];
         
         $sort ="SELECT * FROM teachers WHERE T_Name='$tname' AND T_Surname='$tsurname' AND User='$id'";
-        $feth_sort = $db->query($fetch)
+        $feth_sort = $db->query($fetch);
         if($feth_sort){
             $_SESSION['status'] = "error";
    			$_SESSION['message'] = "Teacher already added";
