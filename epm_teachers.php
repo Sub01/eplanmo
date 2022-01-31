@@ -34,8 +34,8 @@ else{
 		$tsurname = $_POST['tsurname'];
 		$temail = $_POST['temail'];
         
-        $sort ="SELECT * FROM teachers WHERE T_Name='$tname' AND T_Surname='$tsurname' AND User='$id'";
-        $feth_sort = $db->query($fetch);
+        $sort ="SELECT * FROM teachers WHERE (T_Name='$tname' AND T_Surname='$tsurname') AND User='$id'";
+        $feth_sort = $db->query($sort);
         if($feth_sort){
             $_SESSION['status'] = "error";
    			$_SESSION['message'] = "Teacher already added";
@@ -44,19 +44,19 @@ else{
         }
         else{
             $sql = "INSERT INTO teachers (`User`,T_Name,`T_Surname`,T_Email) VALUES ('$id','$tname','$tsurname','$temail')";
-		$result = mysqli_query($db, $sql);
-		if($result){
-			$_SESSION['status'] = "success";
-   			$_SESSION['message'] = "Teacher Added Successfully";
-   			header("Location: https://eplanmo.herokuapp.com/epm_teachers.php");
-   			exit();
-		}
-		else{
-			$_SESSION['status'] = "error";
-   			$_SESSION['message'] = "Failed to add teacher!";
-   			header("Location: https://eplanmo.herokuapp.com/epm_teachers.php");
-   			exit();
-		}
+            $result = mysqli_query($db, $sql);
+            if($result){
+                $_SESSION['status'] = "success";
+   	            $_SESSION['message'] = "Teacher Added Successfully";
+   	            header("Location: https://eplanmo.herokuapp.com/epm_teachers.php");
+   	            exit();
+            }
+            else{
+                $_SESSION['status'] = "error";
+   	            $_SESSION['message'] = "Failed to add teacher!";
+   	            header("Location: https://eplanmo.herokuapp.com/epm_teachers.php");
+   	            exit();
+            }
         }
 	}
 }
