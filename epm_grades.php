@@ -286,10 +286,10 @@ else{
                                     <option value="Written">Written</option>
                                     <option value="Oral">Oral</option>
                                     <option value="Practical">Practical</option>
-                                </select>
+                                </select>sss
                             </div>
                             <div class="form-group">
-                                <button class="form-control" type="submit" class="btn btn-primary" name="update" style="backgroud-color: blue;">ADD</button>
+                                <button class="form-control" type="submit" class="btn btn-primary" name="update" style="background-color: blue;">ADD</button>
                             </div>
 
                         </div>
