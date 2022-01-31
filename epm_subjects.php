@@ -34,7 +34,7 @@ else{
 		$sdes= $_POST['sdes'];
         $sort="SELECT * FROM subjects WHERE (`S_Code`='$scode' OR `S_Description`='$sdes') AND User='$id'";
         $fetch_sort=$db->query($sort);
-        if($fetch){
+        if($fetch_sort){
             $_SESSION['status'] = "error";
    			$_SESSION['message'] = "Subject already added";
    			header("Location: https://eplanmo.herokuapp.com/epm_subjects.php");
