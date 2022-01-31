@@ -289,7 +289,7 @@ else{
                                 </select>sss
                             </div>
                             <div class="form-group">
-                                <button class="form-control" type="submit" class="btn btn-primary" name="update" style="background-color: blue;">ADD</button>
+                                <button class="form-control" type="submit" class="btn btn-primary" name="update" style="background-color: blue; color:white;">ADD</button>
                             </div>
 
                         </div>
