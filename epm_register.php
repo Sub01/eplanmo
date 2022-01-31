@@ -318,11 +318,7 @@ else
     flatpickr("input[type=datetime-local]", {
         enableTime: false,
         dateFormat: "Y-m-d H:i",
-        time_24hr: true,
-        disable: [{
-            from: "today" - 18,
-            to: "today"
-        }]
+        time_24hr: true
     });
 
 </script>
