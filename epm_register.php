@@ -178,19 +178,19 @@ else
                                         <div class="col-xl-6 col-md-6 mb-4">
                                             <h5>Personal Information</h5>
                                             <div class="form-group">
-                                                <input class="form-control" type="text" name="name" required="" placeholder="First Name" maxlength="25" style="width: 100%">
+                                                <input class="form-control" type="text" name="name" required="" placeholder="First Name" maxlength="25" style="width: 100%" minlength="4">
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" type="text" name="mname" required="" placeholder="Middle Name" maxlength="25">
+                                                <input class="form-control" type="text" name="mname" required="" placeholder="Middle Name" maxlength="25" minlength="4">
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" type="text" name="sname" required="" placeholder="Last Name" maxlength="25" style="width: 100%">
+                                                <input class="form-control" type="text" name="sname" required="" placeholder="Last Name" maxlength="25" style="width: 100%" minlength="4">
                                             </div>
                                             <div class="form-group">
                                                 <input class="form-control" type="date" name="bday" required="" placeholder="Birthday" maxlength="25" style="width: 100%">
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" type="number" name="cno" required="" placeholder="Phone Number" onKeyPress="if(this.value.length==14) return false;" style="width: 100%">
+                                                <input class="form-control" type="number" name="cno" required="" placeholder="Phone Number" onKeyPress="if(this.value.length==14) return false;" style="width: 100%" pattern=".{11,14}">
                                             </div>
                                             <div class="form-group">
                                                 <input class="form-control" type="email" name="email" required="" placeholder="Email" maxlength="50" style="width: 100%">
@@ -202,14 +202,13 @@ else
                                         <div class="col-xl-6 col-md-6 mb-4">
                                             <h5>Account Information</h5>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="uname" required="" placeholder="Username" maxlength="20">
+                                                <input type="text" class="form-control" name="uname" required="" placeholder="Username" maxlength="20" minlength="5">
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="pword1" type="password" name="pword1" required="" placeholder="Password" maxlength="20">
-                                                <!-- <input type="checkbox" class="fa-pull-left" style="margin-top: 4px; margin-right: 4px;" onClick="showPassword1();"><p style="text-align: left">Show Password</p> -->
+                                                <input class="form-control" id="pword1" type="password" name="pword1" required="" placeholder="Password" maxlength="20" minlength="8">
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" id="pword2" type="password" name="pword2" required="" placeholder="Re-type Password" maxlength="20"><br>
+                                                <input class="form-control" id="pword2" type="password" name="pword2" required="" placeholder="Re-type Password" maxlength="20" minlength="8"><br>
                                                 <input type="checkbox" style="margin-top: 4px; margin-right: 4px;" onClick="showPassword1();">Show Password
                                                 <center><label id="message"></label></center>
                                                 Select Profile Picture (Required)
