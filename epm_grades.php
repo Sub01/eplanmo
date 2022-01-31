@@ -198,7 +198,7 @@ else{
                                     while ($row = mysqli_fetch_array($result)) {
                                     $score = $row['Score'];
 		                            $over = $row['Over'];
-                                    $percentage = (($row['Score']/$row['Over']) * 100);
+                                    $percentage = (($row['Score']/$row['Over']) * 50 + 50);
                                     ?>
                                         <tr>
                                             <td hidden><?php echo $row['ID'] ?></td>
