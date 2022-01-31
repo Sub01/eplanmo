@@ -190,7 +190,7 @@ else
                                                 <input class="form-control" type="date" name="bday" required="" placeholder="Birthday" maxlength="25" style="width: 100%">
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" type="tel" name="cno" required="" placeholder="Phone Number" onKeyPress="if(this.value.length==14) return false;" style="width: 100%" pattern="^(09|\+639)\d{9}$">
+                                                <input class="form-control" type="tel" name="cno" required="" placeholder="09**** or +63*****" onKeyPress="if(this.value.length==14) return false;" style="width: 100%" pattern="^(09|\+639)\d{9}$">
                                             </div>
                                             <div class="form-group">
                                                 <input class="form-control" type="email" name="email" required="" placeholder="Email" maxlength="50" style="width: 100%">
