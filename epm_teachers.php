@@ -160,7 +160,7 @@ else{
                                 Profile
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="index.php" onclick="return confirm('Are you sure you want to Log Out?')">
+                            <a class="dropdown-item" href="https://eplanmo.herokuapp.com/assets/php/session_logout.php" onclick="return confirm('Are you sure you want to Log Out?')">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
@@ -255,7 +255,7 @@ else{
                                 <input class="form-control" type="email" name="temail" value="">
                             </div>
                             <div class="form-group">
-                                <button class="form-control" type="submit" class="btn btn-primary" name="addt">ADD</button>
+                                <button class="form-control" type="submit" class="btn btn-primary" name="addt" style="background-color:blue; color:white;">ADD</button>
                             </div>
                         </form>
                     </div>
@@ -288,7 +288,7 @@ else{
                                 <input class="form-control" type="email" name="temail" id="temail" value="">
                             </div>
                             <div class="form-group">
-                                <button class="form-control" type="submit" class="btn btn-primary" name="teacher">Save changes</button>
+                                <button class="form-control" type="submit" class="btn btn-primary" name="teacher" style="background-color:blue; color:white;">Save changes</button>
                             </div>
                         </form>
                     </div>

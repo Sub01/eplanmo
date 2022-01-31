@@ -250,7 +250,7 @@ else{
                             <input class="form-control" type="text" name="sdes" value="">
                         </div>
                         <div class="form-group">
-                            <button class="form-control" type="submit" class="btn btn-primary" name="adds">ADD SUBJECT</button>
+                            <button class="form-control" type="submit" class="btn btn-primary" name="adds" style="background-color:blue; color:white;">ADD SUBJECT</button>
                         </div>
                     </form>
                 </div>

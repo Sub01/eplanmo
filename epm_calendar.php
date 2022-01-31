@@ -14,7 +14,13 @@ else{
 		$start = $_POST['start'];
 		$end = $_POST['end'];
 		$datenow = date("Y-m-d H:i:s");
-		if ($end > $datenow ) {
+        if($end>$start){
+            $_SESSION['status'] = "error";
+   			$_SESSION['message'] = "Event end date and time cannot be lower than the event start date and time.";
+   			header("Location: https://eplanmo.herokuapp.com/epm_calendar.php");
+   			exit();
+        }
+		elseif ($end > $datenow ) {
             $sql = "INSERT INTO `events`(`Name`, `Title`, `Type`, `Mode`,`Start`, `End`, `Status`, `Timestamp`, `Contact`, `SMS_Code`) VALUES ('$id','$title','$type','$mode','$start','$end','Ongoing','$datenow','$contact','0')";
    			$result2 = mysqli_query($db, $sql);
    			$_SESSION['status'] = "success";
