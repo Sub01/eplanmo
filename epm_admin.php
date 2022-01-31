@@ -348,7 +348,7 @@ else{
                                             <td><?php echo $row['Start'] ?></td>
                                             <td><?php echo $row['End'] ?></td>
                                             <td>
-                                                <button type="button" class="btn btn-sm btn-primary editbutton" data-bs-toggle="modal" data-bs-target="#updateEvent"><i class="fas fa-edit"></i></button>
+                                                <button type="button" class="btn btn-sm btn-warning editbutton" data-bs-toggle="modal" data-bs-target="#updateEvent"><i class="fas fa-edit"></i></button>
                                                 <a name="archived" href="assets/php/delete_event.php?id=<?php echo $row['ID']?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this event?')"><i class="fas fa-archive"></i></a>
                                             </td>
                                         </tr>
@@ -434,7 +434,7 @@ else{
                         <div class="form-group">
                             <label>MODE</label>
                             <select class="form-control" name="mode" id="mode" required="" style="width:100%">
-                                <option hidden>SELECT MODE</option>
+                                <option hidden value="">SELECT MODE</option>
                                 <option value="Not School Related">Not School Related</option>
                                 <option value="Asynchronous">Asynchronous</option>
                                 <option value="Synchronous">Synchronous</option>
