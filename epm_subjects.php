@@ -32,7 +32,16 @@ else{
     elseif(isset($_POST['adds'])){
 		$scode= $_POST['scode'];
 		$sdes= $_POST['sdes'];
-		$sql = "INSERT INTO subjects (`S_Code`,`S_Description`,`User`) VALUES ('$scode','$sdes','$id')";
+        $sort="SELECT * FROM subjects WHERE (S_Code='$scode' OR S_Description='$sdes') AND User='$id'";
+        $fetch_sort=$db->query($sort);
+        if($fetch){
+            $_SESSION['status'] = "error";
+   			$_SESSION['message'] = "Subject already added";
+   			header("Location: https://eplanmo.herokuapp.com/epm_subjects.php");
+   			exit();
+        }
+        else{
+            $sql = "INSERT INTO subjects (`S_Code`,`S_Description`,`User`) VALUES ('$scode','$sdes','$id')";
 		$result = mysqli_query($db, $sql);
 		if($result){
 			$_SESSION['status'] = "success";
@@ -46,6 +55,7 @@ else{
    			header("Location: https://eplanmo.herokuapp.com/epm_subject.php");
    			exit();
 		}
+        }
 	}
 }
 

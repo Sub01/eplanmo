@@ -33,7 +33,17 @@ else{
 		$tname = $_POST['tname'];
 		$tsurname = $_POST['tsurname'];
 		$temail = $_POST['temail'];
-		$sql = "INSERT INTO teachers (`User`,T_Name,`T_Surname`,T_Email) VALUES ('$id','$tname','$tsurname','$temail')";
+        
+        $sort ="SELECT * FROM teachers WHERE T_Name='$tname' AND T_Surname='$tsurname' AND User='$id'";
+        $feth_sort = $db->query($fetch)
+        if($feth_sort){
+            $_SESSION['status'] = "error";
+   			$_SESSION['message'] = "Teacher already added";
+   			header("Location: https://eplanmo.herokuapp.com/epm_teachers.php");
+   			exit();
+        }
+        else{
+            $sql = "INSERT INTO teachers (`User`,T_Name,`T_Surname`,T_Email) VALUES ('$id','$tname','$tsurname','$temail')";
 		$result = mysqli_query($db, $sql);
 		if($result){
 			$_SESSION['status'] = "success";
@@ -47,6 +57,7 @@ else{
    			header("Location: https://eplanmo.herokuapp.com/epm_teachers.php");
    			exit();
 		}
+        }
 	}
 }
 
