@@ -190,7 +190,7 @@ else{
                                 Profile
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="index.php" onclick="return confirm('Are you sure you want to Log Out?')">
+                            <a class="dropdown-item" href="https://eplanmo.herokuapp.com/assets/php/session_logout.php" onclick="return confirm('Are you sure you want to Log Out?')">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
