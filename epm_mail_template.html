@@ -18,13 +18,57 @@
 		padding-left:15px;
 		margin-right:auto;
 		margin-left:auto
-	}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.row{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.no-gutters{margin-right:0;margin-left:0}.no-gutters>.col,.no-gutters>[class*=col-]{padding-right:0;padding-left:0}
+	}
+    @media (min-width:576px){
+        .container{
+            max-width:540px
+        }
+    }
+    @media (min-width:768px){
+        .container{
+            max-width:720px
+        }
+    }
+    @media (min-width:992px){
+        .container{
+            max-width:960px
+        }
+    }
+    @media (min-width:1200px){
+        .container{
+            max-width:1140px
+        }
+    }
+    .container-fluid{
+        width:100%;
+        padding-right:15px;
+        padding-left:15px;
+        margin-right:auto;
+        margin-left:auto
+    }
+    .row{
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        -ms-flex-wrap:wrap;
+        flex-wrap:wrap;
+        margin-right:-15px;
+        margin-left:-15px
+    }
+    .no-gutters{
+        margin-right:0;
+        margin-left:0
+    }
+    .no-gutters>.col,.no-gutters>[class*=col-]{
+        padding-right:0;
+        padding-left:0
+    }
 </style>
 	
 <body>
 	
 <!--== CONTAINER ==-->
-<div style="width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto"> 
+<div class="container-fluid"> 
 	
 	<!--== ROW ==-->
 	<div style="display:-webkit-box; display:-ms-flexbox; display:flex; -ms-flex-wrap:wrap; flex-wrap:wrap; margin-right:-15px; margin-left:-15px;">
@@ -38,7 +82,7 @@
 		<div style="-webkit-box-flex:0; -ms-flex:0 0 83.333333%; flex:0 0 83.333333%; max-width:83.333333%; position:relative; width:100%; min-height:1px; padding-right:15px; padding-left:15px;">
 			
 			<!--== ROW ==-->
-			<div style="display:-webkit-box; display:-ms-flexbox; display:flex; -ms-flex-wrap:wrap; flex-wrap:wrap; margin-right:-15px; margin-left:-15px; border-radius:10px 10px 0 0; padding:10px; background-color:#28FD01; border-style: solid solid none solid;">
+			<div style="display:-webkit-box; display:-ms-flexbox; display:flex; -ms-flex-wrap:wrap; flex-wrap:wrap; margin-right:-15px; margin-left:-15px; border-radius:10px 10px 0 0; padding:10px; background-color:maroon; color: white; border-style: solid solid none solid;">
 				
 				<!--== COL-SM-1  ==-->
 				<div style="-webkit-box-flex:0; -ms-flex:0 0 8.333333%; flex:0 0 8.333333%; max-width:8.333333%; position:relative; width:100%; min-height:1px; padding-right:15px; padding-left:15px;">
@@ -54,7 +98,7 @@
 				<!--== COL-SM-9  ==-->
 				<div style="-webkit-box-flex:0; -ms-flex:0 0 75%; flex:0 0 75%; max-width:75%; position:relative; width:100%; min-height:1px; padding-right:15px; padding-left:15px;">
 					
-					<h1 style="margin-top: 6%;">Welcome %user% to E-Plan Mo!</h1>
+					<h1 style="margin-top: 6%; color:white;">Welcome %user% to E-Plan Mo!</h1>
 				</div>
 				
 			</div>
@@ -121,14 +165,14 @@
 			
 			
 			<!--== ROW ==-->
-			<div style="display:-webkit-box; display:-ms-flexbox; display:flex; -ms-flex-wrap:wrap; flex-wrap:wrap; margin-right:-15px; margin-left:-15px; border-radius:0 0 10px 10px; padding:10px; background-color:#28FD01; border-style:  none solid solid solid;">
+			<div style="display:-webkit-box; display:-ms-flexbox; display:flex; -ms-flex-wrap:wrap; flex-wrap:wrap; margin-right:-15px; margin-left:-15px; border-radius:0 0 10px 10px; padding:10px; background-color:maroon; border-style:  none solid solid solid;">
 				
 				<!--== COL-SM-12 ==-->
 				<div style="-webkit-box-flex:0; -ms-flex:0 0 100%; flex:0 0 100%; max-width:100%; position:relative; width:100%; min-height:1px; padding-right:15px; padding-left:15px;">
 					<center>
-					<h6>LAGUNA STATE POLYTECHNIC UNIVERSITY</h6>
-					<h6>BSIT 4D SMP | CAPSTONE DS04</h6>
-					<h6>JJP - AMR - GT | EST 2021</h6>
+					<h6 style="color: white;">LAGUNA STATE POLYTECHNIC UNIVERSITY</h6>
+					<h6 style="color:white;">BSIT 4D SMP | CAPSTONE DS04</h6>
+					<h6 style="color:white;">JJP - AMR - GT | EST 2021</h6>
 					</center>
 				</div>
 				
