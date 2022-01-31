@@ -298,12 +298,6 @@ else{
                 $('#temail').val(data[3]);
             });
         });
-        flatpickr("input[type=datetime-local]", {
-                    enableTime: true,
-                    dateFormat: "Y-m-d H:i",
-                    minDate: "today",
-                    time_24hr: true
-                });
     </script>
     </body>
 

@@ -485,7 +485,12 @@ else{
 
             }, <?php echo $gensetmodclose ?>);
         });
-
+        flatpickr("input[type=datetime-local]", {
+                    enableTime: true,
+                    dateFormat: "Y-m-d H:i",
+                    minDate: "today",
+                    time_24hr: true
+                });
 
         $(document).ready(function() {
             $('.editbutton').on('click', function() {
