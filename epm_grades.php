@@ -17,7 +17,7 @@ else{
 		$type = $_POST['gtype'];
         if($score>$over){
             $_SESSION['status'] = "error";
-   			$_SESSION['message'] = "Score should not be over total of items";
+   			$_SESSION['message'] = "Score should not be higher than the number of items";
    			header("Location: https://eplanmo.herokuapp.com/epm_grades.php");
    			exit();
         }
