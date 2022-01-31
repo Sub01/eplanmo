@@ -241,13 +241,13 @@ else{
                                                 <label>TITLE</label>
                                                 <button type="button" class="btn btn-dark btn-sm btn-start"><i class="fas fa-play"></i></button>
                                                 <button type="button" class="btn btn-dark btn-sm btn-stop"><i class="fas fa-stop"></i></button>
-                                                <input class="myInput title form-control" type="text" name="title" required="" style="width:100%">
+                                                <input class="myInput title form-control" type="text" name="title" required="" style="width:100%" minlength="5" maxlength="30">
                                             </div>
                                             <div class="form-group">
                                                 <label>TYPE</label>
                                                 <button type="button" class="btn btn-dark btn-sm btn-start-2"><i class="fas fa-play"></i></button>
                                                 <button type="button" class="btn btn-dark btn-sm btn-stop-2"><i class="fas fa-stop"></i></button>
-                                                <input class="myInput type form-control" type="text" name="type" required="" style="width:100%">
+                                                <input class="myInput type form-control" type="text" name="type" required="" style="width:100%" minlength="5" maxlength="30">
                                             </div>
                                             <div class="form-group">
                                                 <label>MODE</label>

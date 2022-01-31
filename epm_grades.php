@@ -15,20 +15,28 @@ else{
 		$score = $_POST['gscore'];
 		$over = $_POST['gover'];
 		$type = $_POST['gtype'];
-		$sql = "INSERT INTO grades (`User`,`Subject_Code`,`Teacher`,`Score`,`Over`,`Type`) VALUES ('$id','$subject','$teacher','$score','$over','$type')";
-		$result = mysqli_query($db, $sql);
-		if($result){
-			$_SESSION['status'] = "success";
-   			$_SESSION['message'] = "Grade Added Successfully";
+        if($score>$over){
+            $_SESSION['status'] = "error";
+   			$_SESSION['message'] = "Score should not be over total of items";
    			header("Location: https://eplanmo.herokuapp.com/epm_grades.php");
    			exit();
-		}
-		else{
-			$_SESSION['status'] = "error";
-   			$_SESSION['message'] = "Failed to add grade!";
-   			header("Location: https://eplanmo.herokuapp.com/epm_grades.php");
-   			exit();
-		}
+        }
+        else{
+            $sql = "INSERT INTO grades (`User`,`Subject_Code`,`Teacher`,`Score`,`Over`,`Type`) VALUES ('$id','$subject','$teacher','$score','$over','$type')";
+            $result = mysqli_query($db, $sql);
+            if($result){
+                $_SESSION['status'] = "success";
+   	            $_SESSION['message'] = "Grade Added Successfully";
+   	            header("Location: https://eplanmo.herokuapp.com/epm_grades.php");
+   	            exit();
+            }
+            else{
+                $_SESSION['status'] = "error";
+   	            $_SESSION['message'] = "Failed to add grade!";
+   	            header("Location: https://eplanmo.herokuapp.com/epm_grades.php");
+   	            exit();
+            }
+        }
 	}
 }
 ?>
@@ -271,11 +279,11 @@ else{
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <label>Scores</label>
-                                        <input class="form-control" type="number" name="gscore" value="">
+                                        <input class="form-control" type="number" name="gscore" value="" required="">
                                     </div>
                                     <div class="col-sm-6">
                                         <label>Items</label>
-                                        <input class="form-control" type="number" name="gover" value="">
+                                        <input class="form-control" type="number" name="gover" value="" required="">
                                     </div>
                                 </div>
                             </div>
@@ -286,7 +294,7 @@ else{
                                     <option value="Written">Written</option>
                                     <option value="Oral">Oral</option>
                                     <option value="Practical">Practical</option>
-                                </select>sss
+                                </select>
                             </div>
                             <div class="form-group">
                                 <button class="form-control" type="submit" class="btn btn-primary" name="update" style="background-color: blue; color:white;">ADD</button>

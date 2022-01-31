@@ -244,15 +244,15 @@ else{
                         <form method="post" action="">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input class="form-control" type="text" name="tname" value="">
+                                <input class="form-control" type="text" name="tname" value="" required minlength="3" maxlength="20">
                             </div>
                             <div class="form-group">
                                 <label>Last Name</label>
-                                <input class="form-control" type="text" name="tsurname" value="">
+                                <input class="form-control" type="text" name="tsurname" value="" required minlength="3" maxlength="10">
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input class="form-control" type="email" name="temail" value="">
+                                <input class="form-control" type="email" name="temail" value="" required>
                             </div>
                             <div class="form-group">
                                 <button class="form-control" type="submit" class="btn btn-primary" name="addt" style="background-color:blue; color:white;">ADD</button>
@@ -277,15 +277,15 @@ else{
                             <div class="form-group">
                                 <label>Name</label>
                                 <input hidden="" name="tid" id="tid" value="">
-                                <input class="form-control" type="text" name="tname" id="tname" value="">
+                                <input class="form-control" type="text" name="tname" id="tname" value="" required minlength="3" maxlength="20">
                             </div>
                             <div class="form-group">
                                 <label>Last Name</label>
-                                <input class="form-control" type="text" name="tsname" id="tsname" value="">
+                                <input class="form-control" type="text" name="tsname" id="tsname" value="" required minlength="3" maxlength="20">
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input class="form-control" type="email" name="temail" id="temail" value="">
+                                <input class="form-control" type="email" name="temail" id="temail" value="" required>
                             </div>
                             <div class="form-group">
                                 <button class="form-control" type="submit" class="btn btn-primary" name="teacher" style="background-color:blue; color:white;">Save changes</button>

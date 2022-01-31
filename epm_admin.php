@@ -405,10 +405,6 @@ else{
     </div>
 
 
-
-
-
-
     <!--MODAL FOR UPDATE EVENT-->
     <!--===============================================================================================-->
     <div class="modal fade" id="updateEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -424,12 +420,12 @@ else{
                     <form method="post" action="assets/php/update_event.php">
                         <div class="form-group">
                             <label>Event Title</label>
-                            <input hidden="" name="id" id="id" value="">
+                            <input hidden="" name="id" id="id" value="" minlength="5" maxlength="30" required="">
                             <input type="text" name="title" id="title" value="" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Event Type</label>
-                            <input type="text" name="type" id="type" value="" class="form-control">
+                            <input type="text" name="type" id="type" value="" class="form-control"  minlength="5" maxlength="30" required="">
                         </div>
                         <div class="form-group">
                             <label>MODE</label>
