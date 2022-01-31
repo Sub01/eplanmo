@@ -289,7 +289,7 @@ else{
                                 </select>
                             </div>
                             <div class="form-group">
-                                <button class="form-control" type="submit" class="btn btn-primary" name="update">ADD</button>
+                                <button class="form-control" type="submit" class="btn btn-primary" name="update" style="backgroud-color: blue;">ADD</button>
                             </div>
 
                         </div>
