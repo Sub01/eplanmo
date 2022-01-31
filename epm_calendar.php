@@ -251,7 +251,7 @@ else{
                                             <div class="form-group">
                                                 <label>MODE</label>
                                                 <select class="myInput type form-control" name="mode" required="" style="width:100%">
-                                                    <option hidden>SELECT MODE</option>
+                                                    <option hidden value="">SELECT MODE</option>
                                                     <option value="Not School Related">Not School Related</option>
                                                     <option value="Asynchronous">Asynchronous</option>
                                                     <option value="Synchronous">Synchronous</option>
